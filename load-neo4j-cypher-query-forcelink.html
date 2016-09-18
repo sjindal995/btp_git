@@ -273,7 +273,7 @@ var s = new sigma({
         s.graph.nodes().forEach(function(n) {
             n.label = n.neo4j_data['name'];
             n.level = 3;
-            // n.type = 'square';
+            n.type = 'square';
             // n.image= {url:'D:/study/btp/New%20folder/linkurious.js/examples/img/img1.png'};
             n.size = s.graph.degree(n.id)+5;
             // if (n.neo4j_labels[0] == 'People' && s.graph.degree(n.id) < 2){
@@ -283,20 +283,23 @@ var s = new sigma({
             // 	n.hidden = true;
             // }
             if (n.neo4j_labels[0] == 'Company') {
-                n.type = 'circle';
+                // n.type = 'circle';
                 n.color = '#BB0000';
-                n.image = {url:'img/cmpny.png'};
+                n.image = {url:'img/cmpny.png',
+                            scale:0.8};
                 // n.url = urls[0];
 
             }   
             if (n.neo4j_labels[0] == 'People') {
-                n.type = 'diamond';
-                n.image = {url:'img/ppl.png'};
+                // n.type = 'diamond';
+                n.image = { url:'img/ppl.png',
+                            scale:0.8};
                 n.color = '#00BB00';
             }
             if (n.neo4j_labels[0] == 'Industry') {
-                n.type = 'square';
-                n.image = {url:'img/ind.png'};
+                // n.type = 'square';
+                n.image = { url:'img/ind.png',
+                            scale: 0.8};
                 n.color = '#0000BB';
             }   
         });
@@ -409,8 +412,8 @@ var s = new sigma({
 
     sigma.neo4j.cypher(
             { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-            // 'MATCH (n:Company)-[r]->(m:People) RETURN n,r,m LIMIT 100',
-            'MATCH (n:Company)-[r]->(i:Industry) RETURN n,r,i LIMIT 100',
+            'MATCH (n)-[r]->(m) RETURN n,r,m LIMIT 100',
+            // 'MATCH (n:Company)-[r]->(i:Industry) RETURN n,r,i LIMIT 100',
             s,
             customiseGraph
     );
