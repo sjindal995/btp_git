@@ -71,18 +71,21 @@
 <script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curve.js"></script>
 <script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.arrow.js"></script>
 <script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.exporters.gexf/sigma.exporters.gexf.js"></script>
 
 <div id="container">
     <style>
         #graph-container {
-            top: 0;
+            top: 40;
             bottom: 0;
             left: 0;
             right: 0;
             position: absolute;
         }
     </style>
-    <div id="graph-container"></div>
+    <div id="graph-container">
+    </div>
+    <p id="btn">btn</p>
 </div>
 
 <script type="application/javascript">
@@ -235,7 +238,6 @@
 //       );
 //     });
 
-
 var s = new sigma({
     renderer: {
         container: document.getElementById('graph-container'),
@@ -277,10 +279,10 @@ var s = new sigma({
             // n.image= {url:'D:/study/btp/New%20folder/linkurious.js/examples/img/img1.png'};
             n.size = s.graph.degree(n.id)+5;
             // if (n.neo4j_labels[0] == 'People' && s.graph.degree(n.id) < 2){
-            // 	n.hidden = true;
+            //  n.hidden = true;
             // }
             // else if (n.neo4j_labels[0] == 'Company' && s.graph.degree(n.id) == 0){
-            // 	n.hidden = true;
+            //  n.hidden = true;
             // }
             if (n.neo4j_labels[0] == 'Company') {
                 // n.type = 'circle';
@@ -317,24 +319,43 @@ var s = new sigma({
         s.refresh();
 
         s.graph.edges().forEach(function(e){
-            e.type = 'curved';
-            if(e.neo4j_type=='FUNDS'){
-                e.color = "#BB0000";                
+            e.type = 'curve';
+            if(e.neo4j_type=='INDUSTRY'){
+                e.color = "#123456";                
             }
-            if(e.neo4j_type=='HOLDS_FUNDS_IN'){
-                e.color = "#00BB00";                
+            if(e.neo4j_type=='IS_BANK_OF'){
+                e.color = "#234567";                
+            }
+            if(e.neo4j_type=='IS_COLLABORATOR_OF'){
+                e.color = "#345678";                
+            }
+            
+            if(e.neo4j_type=='FUNDS_INDUSTRY'){
+                e.color = "#456789";                
+            }
+            if(e.neo4j_type=='HOLDS_FUND_IN'){
+                e.color = "#567890";                
             }
             if(e.neo4j_type=='INVESTED_IN'){
-                e.color = "#0000BB";                
+                e.color = "#678901";                
             }
             if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
-                e.color = "#BBBB00";                
+                e.color = "#789012";                
             }
             if(e.neo4j_type=='MANAGES'){
-                e.color = "#BB00BB";                
+                e.color = "#890123";                
             }
             if(e.neo4j_type=='MANAGING_DIRECTOR'){
-                e.color = "#000";                
+                e.color = "#901234";                
+            }
+            if(e.neo4j_type=='COMPANY_SECRETARY'){
+                e.color = "#012345";                
+            }
+            if(e.neo4j_type=='AUDITOR'){
+                e.color = "#AAAAAA";                
+            }
+            if(e.neo4j_type=='CHAIRMAN'){
+                e.color = "#BBBBBB";                
             }
         }); 
         s.refresh();
@@ -348,13 +369,13 @@ var s = new sigma({
         });
 
         // // Bind the events:
-        fa.bind('start stop', function(e) {
-         console.log(e.type);
-         document.getElementById('layout-notification').style.visibility = '';
-         if (e.type == 'start') {
-         document.getElementById('layout-notification').style.visibility = 'visible';
-         }
-        });
+        // fa.bind('start stop', function(e) {
+        //  console.log(e.type);
+        //  document.getElementById('layout-notification').style.visibility = '';
+        //  if (e.type == 'start') {
+        //  document.getElementById('layout-notification').style.visibility = 'visible';
+        //  }
+        // });
 
         // s.toJSON({
         //   download: true,
@@ -388,36 +409,53 @@ var s = new sigma({
 
 
 
-        var activeState = sigma.plugins.activeState(s);
+        // var activeState = sigma.plugins.activeState(s);
 
-        // Initialize the dragNodes plugin:
-        var dragListener = sigma.plugins.dragNodes(s, s.renderers[0], activeState);
+        // // Initialize the dragNodes plugin:
+        // var dragListener = sigma.plugins.dragNodes(s, s.renderers[0], activeState);
 
-        // Initialize the Select plugin:
-        var select = sigma.plugins.select(s, activeState);
+        // // Initialize the Select plugin:
+        // var select = sigma.plugins.select(s, activeState);
 
-        // Initialize the Keyboard plugin:
-        var keyboard = sigma.plugins.keyboard(s, s.renderers[0]);
+        // // Initialize the Keyboard plugin:
+        // var keyboard = sigma.plugins.keyboard(s, s.renderers[0]);
 
-        // Bind the Keyboard plugin to the Select plugin:
-        select.bindKeyboard(keyboard);
+        // // Bind the Keyboard plugin to the Select plugin:
+        // select.bindKeyboard(keyboard);
 
-        // Curve parallel edges:
-        sigma.canvas.edges.autoCurve(s);
+        // // Curve parallel edges:
+        // sigma.canvas.edges.autoCurve(s);
     
-
-        
+        console.log("finished customise graph");
 
     }   
 
-    sigma.neo4j.cypher(
-            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-            'MATCH (n)-[r]->(m) RETURN n,r,m LIMIT 100',
-            // 'MATCH (n:Company)-[r]->(i:Industry) RETURN n,r,i LIMIT 100',
-            s,
-            customiseGraph
-    );
+        sigma.neo4j.cypher(
+                { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+                'MATCH (n:Company)-[r]->(m:People) RETURN n,r,m LIMIT 100',
+                // 'MATCH (n:Company)-[r]->(i:Industry) RETURN n,r,i LIMIT 100',
+                s,
+                customiseGraph
+        );
 
+    function f2(){
+        console.log(s);
+        var gexfString = s.toGEXF();
 
+        // Download the GEXF file
+        s.toGEXF({download: true});
+    }
+    document.getElementById("btn").onclick=function(){
+        console.log(s);
+        // var gexfString = s.toGEXF();
 
+        // // Download the GEXF file
+        // s.toGEXF({download: true});
+        s.toJSON({
+          download: true,
+            pretty: true,
+          filename: 'myGraph.json'
+        });
+
+    }
 </script>
