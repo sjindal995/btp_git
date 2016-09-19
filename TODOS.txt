@@ -1,0 +1,27 @@
+ye sab dekh lena
+
+- gexf/json proper export so that layout is preserved (agar ho pata hai to maybe gexf/json import wale me dragnodes chala ke dekh sakte hain)
+
+- s.bind('clickNode doubleClickNode rightClickNode', function(e) {
+  console.log(e.type, e.data.node.label, e.data.captor); 
+}); : is type ki cheez se bhi try kar lena save karne ka
+
+- jo naye type ke edges hain unke liye colors
+
+- edge ke types(dotted,curved etc) change karne ka dekh lena, normal tareeke se to nahi ho raha , edge labels ya edge ko dhang se understandable dikhane ka bhi dekh lena
+
+- edges aur legend ke liye plugin-legend.html dekh lena, isme custom edges hain, aur maybe ye bhi renderers-linkurious-edges-shapes.html
+
+- apparently type = curve se curved aur arrow se arrowed aata hai, curvedArrow se curved arrow aata hai, lekin dotted aur kuch doosre types de rakhe the usme, unko kaise use karna hai wo dekh lena , edge-renderers.html
+
+- filters wala laga ke dekh lena, from filters.html
+
+- ek dagre wala layout hota hai, uske bhi chala ke dekh lena, dagre.html, wo hierarchial ke iye hota hai shayad, aur ye layout plugin-layouts-fruchtermanReingold.html, lekin ye shayad chote graphs ke liye hai
+
+Iske neeche wale future me try karne ke liye hain,
+
+- file: locate.html, isme kuch studaap hai, ye abhi dekh lena nahi to bad me dekh lenge
+
+- plugin-fullscreen.html
+
+-
