@@ -1,0 +1,188 @@
+{
+ "nodes": [
+  {
+   "id": "294481",
+   "label": "Avro Sales Pvt Ltd",
+   "x": -0.18025992810726166,
+   "y": -0.08319516479969025,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "30330",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "5150",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Wholesale of machinery  equipment and supplies",
+    "fax": "NA",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Listed",
+    "sector": "Trading",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "100",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "19 Kasturba Gandhi New Delhi  110001  New Delhi",
+    "financial_year_end": "March",
+    "incorporation_year": "1985",
+    "name": "Avro Sales Pvt Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "fa2_x": -0.18025992810726166,
+   "fa2_y": -0.08319516479969025
+  },
+  {
+   "id": "391886",
+   "label": "Usha International Ltd",
+   "x": 0.3475295305252075,
+   "y": 0.1604301929473877,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Mas Services Limited T-34 2nd Floor Okhla Industrial Are Phase II New Delhi - 110020.91-011-26387281/83",
+    "idCompany": "308",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "2930",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "27-Sep-2009",
+    "nic_activity": "Manufacture & trading of domestic appliances",
+    "fax": "91-11-23318118",
+    "bussiness_group": "Siddharth Shriram",
+    "listing": "Delhi Kolkata",
+    "sector": "Consumer Durables",
+    "email": "NA",
+    "book_closure_month": "Aug",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-11-23318114",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "19 Kasturba Gandhi Marg New Delhi  110001  New Delhi",
+    "financial_year_end": "March",
+    "incorporation_year": "1935",
+    "name": "Usha International Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "fa2_x": 0.3475295305252075,
+   "fa2_y": 0.1604301929473877
+  }
+ ],
+ "edges": [
+  {
+   "id": "557142",
+   "label": "IS_SUBSIDIARY_OF",
+   "source": "294481",
+   "target": "391886",
+   "neo4j_type": "IS_SUBSIDIARY_OF",
+   "neo4j_data": {
+    "percent_holding": "0.00",
+    "year": "Mar 12",
+    "investments_cost": "0.04",
+    "shares_count": "0"
+   },
+   "size": 1,
+   "type": "curve",
+   "hover_color": "#000",
+   "color": "#789012",
+   "cc_prev_type": "curvedArrow",
+   "cc": {
+    "y": null
+   },
+   "hover": false
+  },
+  {
+   "id": "557143",
+   "label": "IS_SUBSIDIARY_OF",
+   "source": "294481",
+   "target": "391886",
+   "neo4j_type": "IS_SUBSIDIARY_OF",
+   "neo4j_data": {
+    "percent_holding": "100.00",
+    "year": "Mar 11",
+    "investments_cost": "0.00",
+    "shares_count": "0"
+   },
+   "size": 1,
+   "type": "curve",
+   "hover_color": "#000",
+   "color": "#789012",
+   "cc_prev_type": "curvedArrow",
+   "cc": {
+    "y": 4
+   },
+   "hover": false
+  },
+  {
+   "id": "557146",
+   "label": "IS_SUBSIDIARY_OF",
+   "source": "294481",
+   "target": "391886",
+   "neo4j_type": "IS_SUBSIDIARY_OF",
+   "neo4j_data": {
+    "percent_holding": "100.00",
+    "year": "Mar 10",
+    "investments_cost": "0.27",
+    "shares_count": "9667"
+   },
+   "size": 1,
+   "type": "curve",
+   "hover_color": "#000",
+   "color": "#789012",
+   "cc_prev_type": "curvedArrow",
+   "cc": {
+    "y": 2
+   },
+   "hover": false
+  },
+  {
+   "id": "557147",
+   "label": "IS_SUBSIDIARY_OF",
+   "source": "294481",
+   "target": "391886",
+   "neo4j_type": "IS_SUBSIDIARY_OF",
+   "neo4j_data": {
+    "percent_holding": "100.00",
+    "year": "Mar 09",
+    "investments_cost": "0.27",
+    "shares_count": "9667"
+   },
+   "size": 1,
+   "type": "curve",
+   "hover_color": "#000",
+   "color": "#789012",
+   "cc_prev_type": "curvedArrow",
+   "cc": {
+    "y": 1.3333333333333333
+   },
+   "hover": false
+  }
+ ]
+}
