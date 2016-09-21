@@ -149,7 +149,7 @@ var s = new sigma({
         maxEdgeSize: 1.5,
         minNodeSize: 5,
         maxNodeSize: 15,
-        animationsTime: 5000,
+        // animationsTime: 5000,
         // scalingMode: 'outside',
         // batchEdgesDrawing: true,
         sideMargin: 1,
@@ -324,7 +324,7 @@ var s = new sigma({
 
         sigma.neo4j.cypher(
                 { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-                'MATCH (n:Company)-[r:IS_SUBSIDIARY_OF{}]->(m:Company) RETURN n,r,m LIMIT 200',
+                'MATCH (n:Company)-[r:IS_SUBSIDIARY_OF{}]->(m:Company) RETURN n,r,m',
                 // 'MATCH (n:Company)-[r:IS_SUBSIDIARY_OF{}]->(n2:Company) WHERE n.name="Avro Sales Pvt Ltd" AND n2.name="Usha International Ltd" RETURN n,r,n2 LIMIT 200',
                 s,
                 customiseGraph
