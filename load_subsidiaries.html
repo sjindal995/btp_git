@@ -193,44 +193,53 @@ sigma.parsers.json('subsidiaries.json',
   function(s){
       s.refresh();
         // s.graph.nodes().forEach(function(n) {
-        //     n.label = n.neo4j_data['name'];
-        //     n.level = 3;
-        //     n.type = 'square';
-        //     // n.image= {url:'D:/study/btp/New%20folder/linkurious.js/examples/img/img1.png'};
-        //     n.size = s.graph.degree(n.id)+5;
-        //     // if (n.neo4j_labels[0] == 'People' && s.graph.degree(n.id) < 2){
-        //     //  n.hidden = true;
-        //     // }
-        //     // else if (n.neo4j_labels[0] == 'Company' && s.graph.degree(n.id) == 0){
-        //     //  n.hidden = true;
-        //     // }
-        //     if (n.neo4j_labels[0] == 'Company') {
-        //         // n.type = 'circle';
-        //         n.color = '#BB0000';
-        //         n.image = {url:'img/cmpny.png',
-        //                     scale:0.8};
-        //         // n.url = urls[0];
+        //     // n.label = n.neo4j_data['name'];
+        //     // n.level = 3;
+        //     // n.type = 'square';
+        //     // // n.image= {url:'D:/study/btp/New%20folder/linkurious.js/examples/img/img1.png'};
+        //     // n.size = s.graph.degree(n.id)+5;
+        //     // // if (n.neo4j_labels[0] == 'People' && s.graph.degree(n.id) < 2){
+        //     // //  n.hidden = true;
+        //     // // }
+        //     // // else if (n.neo4j_labels[0] == 'Company' && s.graph.degree(n.id) == 0){
+        //     // //  n.hidden = true;
+        //     // // }
+        //     // if (n.neo4j_labels[0] == 'Company') {
+        //     //     // n.type = 'circle';
+        //     //     n.color = '#BB0000';
+        //     //     n.image = {url:'img/cmpny.png',
+        //     //                 scale:0.8};
+        //     //     // n.url = urls[0];
 
-        //     }   
-        //     if (n.neo4j_labels[0] == 'People') {
-        //         // n.type = 'diamond';
-        //         n.image = { url:'img/ppl.png',
-        //                     scale:0.8};
-        //         n.color = '#00BB00';
+        //     // }   
+        //     // if (n.neo4j_labels[0] == 'People') {
+        //     //     // n.type = 'diamond';
+        //     //     n.image = { url:'img/ppl.png',
+        //     //                 scale:0.8};
+        //     //     n.color = '#00BB00';
+        //     // }
+        //     // if (n.neo4j_labels[0] == 'Industry') {
+        //     //     // n.type = 'square';
+        //     //     n.image = { url:'img/ind.png',
+        //     //                 scale: 0.8};
+        //     //     n.color = '#0000BB';
+        //     // }   
+
+        //     if(s.graph.degree(n.id) < 20){
+        //         n.hidden = true;
         //     }
-        //     if (n.neo4j_labels[0] == 'Industry') {
-        //         // n.type = 'square';
-        //         n.image = { url:'img/ind.png',
-        //                     scale: 0.8};
-        //         n.color = '#0000BB';
-        //     }   
         // });
 
         
         // s.refresh();
 
-        // s.graph.edges().forEach(function(e){
-        //     e.label = e.neo4j_type;
+        s.graph.edges().forEach(function(e){
+            // console.log(s.graph.degree(e.target));
+            // if(s.graph.degree(e.target) < 100){
+            //     s.graph.nodes(e.target).hidden = true;
+            //     s.graph.nodes(e.source).hidden = true;
+            // }
+            // e.label = e.neo4j_type;
         //     e.type = 'curvedArrow';
         //     e.hover_color = '#000'
         //     if(e.neo4j_type=='INDUSTRY'){
@@ -272,7 +281,7 @@ sigma.parsers.json('subsidiaries.json',
         //     if(e.neo4j_type=='CHAIRMAN'){
         //         e.color = "#BBBBBB";                
         //     }
-        // }); 
+        }); 
 
         // s.refresh();
         // sigma.canvas.edges.autoCurve(s);

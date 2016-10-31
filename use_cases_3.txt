@@ -1,0 +1,47 @@
+1.Family firms (companies managed by people with the same last name)
+	match (n)-[r:MANAGES]-(p) where p.name contains SURNAME return n,r,p
+	Message: Visualize the companies that are controlled by respective families. Get if the input company is a family firm or not and get family firms which have a big influence in the corporate network.
+	
+3.People or companies (+ their subsidiaries) connected to industry sectors
+	Message: Industry sectors that a particular company spans through subsidiaries or investments or both.
+	
+4.Companies/set of people which connect some companies and how connected they are without those people
+	Message: Show network graphs of 2 companies with investments and subsidiaries and then add people network for the companies and show connections between these companies and also show the strength of relationship by number of common entities in the companies.
+
+5.all companies which have collaborators in a country 
+	match (c)-[r:IS_COLLABORATOR_OF]-(c2) where r.country="France" return c,r,c2  
+	collaborators of a company in a specific country
+	Message: Given a country, how many and which companies have collaborators in that country. Also show all collaborators of a company over the world visualizing collaborators in each country;
+
+
+all collaborators of a company (edge color distinguished by country)
+
+9.Management intersection between 2 companies (common people on management graph of a set of companies). input: Company names, ouput : management graph of the companies and the intersection
+	Message: visualize connection between two companies via their management and does the connection exist without any of its management members via subsidiaries or investments.
+
+10. Investments of a company, (edge width denotes no. of shares)
+	Companies with >x investments
+	
+
+11.Heirarchical investment graph of a company (A company invested in some companies then these companies invested in more companies and so on). input: Company output: investment graph for a company. Nodes can be distinguished based on industries of the companies.
+
+12.Investments of a company along with funds held in that company
+
+13.Inter sector investments. edge weights = shares_count
+Inter sector subsidiaries. edge weights = shares_count
+
+14.companies of some specific industry, along with their subsidiaries/collabs(and their industries)
+
+15. Companies & their subsidiaries (edge width denotes percent holding)
+	Companies with >x subsidiaries
+
+16. Companies (& other relations) of a specific business group
+	match (n:Company)where n.bussiness_group = "Mahindra" optional match (n)-[r2:IS_SUBSIDIARY_OF]-(n2) return n,r,c,r2,n2
+
+17. People with highest remunerations, over all companies;
+	over a specific industry/sector
+
+18. Funds with market share > x in some industry
+
+
+

@@ -1,0 +1,403 @@
+<!-- START SIGMA IMPORTS -->
+
+<script src="file:///C:/linkurious/src/sigma.core.js"></script>
+<script src="file:///C:/linkurious/src/conrad.js"></script>
+<script src="file:///C:/linkurious/src/utils/sigma.utils.js"></script>
+<script src="file:///C:/linkurious/src/utils/sigma.polyfills.js"></script>
+<script src="file:///C:/linkurious/src/sigma.settings.js"></script>
+<script src="file:///C:/linkurious/src/classes/sigma.classes.dispatcher.js"></script>
+<script src="file:///C:/linkurious/src/classes/sigma.classes.configurable.js"></script>
+<script src="file:///C:/linkurious/src/classes/sigma.classes.graph.js"></script>
+<script src="file:///C:/linkurious/src/classes/sigma.classes.camera.js"></script>
+<script src="file:///C:/linkurious/src/classes/sigma.classes.quad.js"></script>
+<script src="file:///C:/linkurious/src/captors/sigma.captors.mouse.js"></script>
+<script src="file:///C:/linkurious/src/captors/sigma.captors.touch.js"></script>
+<script src="file:///C:/linkurious/src/renderers/sigma.renderers.canvas.js"></script>
+<script src="file:///C:/linkurious/src/renderers/sigma.renderers.webgl.js"></script>
+<script src="file:///C:/linkurious/src/renderers/sigma.renderers.svg.js"></script>
+<script src="file:///C:/linkurious/src/renderers/sigma.renderers.def.js"></script>
+<script src="file:///C:/linkurious/src/renderers/webgl/sigma.webgl.nodes.def.js"></script>
+<script src="file:///C:/linkurious/src/renderers/webgl/sigma.webgl.nodes.fast.js"></script>
+<script src="file:///C:/linkurious/src/renderers/webgl/sigma.webgl.edges.def.js"></script>
+<script src="file:///C:/linkurious/src/renderers/webgl/sigma.webgl.edges.fast.js"></script>
+<script src="file:///C:/linkurious/src/renderers/webgl/sigma.webgl.edges.arrow.js"></script>
+<script src="file:///C:/linkurious/src/renderers/canvas/sigma.canvas.labels.def.js"></script>
+<script src="file:///C:/linkurious/src/renderers/canvas/sigma.canvas.hovers.def.js"></script>
+<script src="file:///C:/linkurious/src/renderers/canvas/sigma.canvas.nodes.def.js"></script>
+<script src="file:///C:/linkurious/src/renderers/canvas/sigma.canvas.edges.def.js"></script>
+<script src="file:///C:/linkurious/src/renderers/canvas/sigma.canvas.edges.curve.js"></script>
+<script src="file:///C:/linkurious/src/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
+<script src="file:///C:/linkurious/src/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+<script src="file:///C:/linkurious/src/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="file:///C:/linkurious/src/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="file:///C:/linkurious/src/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="file:///C:/linkurious/src/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="file:///C:/linkurious/src/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+<script src="file:///C:/linkurious/src/renderers/svg/sigma.svg.utils.js"></script>
+<script src="file:///C:/linkurious/src/renderers/svg/sigma.svg.nodes.def.js"></script>
+<script src="file:///C:/linkurious/src/renderers/svg/sigma.svg.edges.def.js"></script>
+<script src="file:///C:/linkurious/src/renderers/svg/sigma.svg.edges.curve.js"></script>
+<script src="file:///C:/linkurious/src/renderers/svg/sigma.svg.edges.curvedArrow.js"></script>
+<script src="file:///C:/linkurious/src/renderers/svg/sigma.svg.labels.def.js"></script>
+<script src="file:///C:/linkurious/src/renderers/svg/sigma.svg.hovers.def.js"></script>
+<script src="file:///C:/linkurious/src/middlewares/sigma.middlewares.rescale.js"></script>
+<script src="file:///C:/linkurious/src/middlewares/sigma.middlewares.copy.js"></script>
+<script src="file:///C:/linkurious/src/misc/sigma.misc.animation.js"></script>
+<script src="file:///C:/linkurious/src/misc/sigma.misc.bindEvents.js"></script>
+<script src="file:///C:/linkurious/src/misc/sigma.misc.bindDOMEvents.js"></script>
+<script src="file:///C:/linkurious/src/misc/sigma.misc.drawHovers.js"></script>
+<!-- END SIGMA IMPORTS -->
+
+<script src="file:///C:/linkurious/plugins/sigma.parsers.json/sigma.parsers.json.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.exporters.json/sigma.exporters.json.js"></script>
+
+<script src="file:///C:/linkurious/plugins/sigma.parsers.cypher/sigma.parsers.cypher.js"></script>
+
+<script src="file:///C:/linkurious/plugins/sigma.plugins.animate/sigma.plugins.animate.js"></script>
+
+<script src="file:///C:/linkurious/plugins/sigma.layouts.forceLink/worker.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.layouts.forceLink/supervisor.js"></script>
+
+<script src="file:///C:/linkurious/plugins/sigma.plugins.dragNodes/sigma.plugins.dragNodes.js"></script>
+
+<script src="file:///C:/linkurious/plugins/sigma.helpers.graph/sigma.helpers.graph.js"></script>
+
+<script src="file:///C:/linkurious/plugins/sigma.plugins.activeState/sigma.plugins.activeState.js"></script>
+
+<script src="file:///C:/linkurious/plugins/sigma.plugins.select/sigma.plugins.select.js"></script>
+
+<script src="file:///C:/linkurious/plugins/sigma.plugins.keyboard/sigma.plugins.keyboard.js"></script>
+<!-- <script src="file:///C:/linkurious/plugins/sigma.layouts.noverlap/sigma.layouts.noverlap.js"></script>
+ -->
+<!-- <script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script> -->
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.def.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.cross.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.diamond.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.equilateral.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.square.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.star.js"></script>
+
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.def.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curve.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.arrow.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.arrow.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.curve.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.curvedArrow.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.dashed.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.def.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.dotted.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.parallel.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.tapered.js"></script>
+
+<!-- <script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script> -->
+
+<script src="file:///C:/linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dashed.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dotted.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.parallel.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.tapered.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dashed.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dotted.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.parallel.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.tapered.js"></script>
+
+<script src="file:///C:/linkurious/plugins/sigma.plugins.legend/sigma.plugins.legend.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.plugins.design/sigma.plugins.design.js"></script>
+
+<script src="file:///C:/linkurious/plugins/sigma.renderers.edgeLabels/settings.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.def.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curve.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curvedArrow.js"></script>
+
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/settings.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.labels.def.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.autoCurve.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.plugins.animate/sigma.plugins.animate.js"></script>
+<script src="file:///C:/linkurious/plugins/sigma.layouts.dagre/sigma.layout.dagre.js"></script>
+<!-- <script src="dagre.js"></script> -->
+<script src="file:///C:/linkurious/plugins/sigma.layouts.fruchtermanReingold/sigma.layout.fruchtermanReingold.js"></script>
+
+
+
+
+<div id="container">
+    <style>
+        #graph-container {
+            top: 40;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+        }
+    </style>
+    <div id="graph-container">
+    </div>
+    <button id="btn">Download JSON</button>
+</div>
+
+<script type="application/javascript">
+
+var s = new sigma({
+    renderer: {
+        container: document.getElementById('graph-container'),
+        type: 'canvas'
+    },
+    settings: {
+        dragNodeStickiness: 0.01,
+        defaultNodeBorderColor: '#000',
+        defaultNodeHoverBorderColor: '#000',
+        // enableEdgeHovering: false,
+        minEdgeSize: 0.5,
+        maxEdgeSize: 1.5,
+        minNodeSize: 5,
+        maxNodeSize: 15,
+        animationsTime: 5000,
+        scalingMode: 'outside',
+        // batchEdgesDrawing: true,
+        sideMargin: 1,
+        labelThreshold: 18,
+
+        edgeColor: 'default',
+        defaultEdgeColor: '#000000',
+        // edgeLabelSize: 'proportional',
+        edgeLabelSizePowRatio: 1,
+        edgeLabelThreshold: 3,
+        // minEdgeSize: 10,
+        enableEdgeHovering: true,
+
+        // edgeLabelHoverShadowColor: '#BBBBBB',
+        edgeHoverColor: "edge",
+        // defaultEdgeHoverColor: '#000',
+        edgeHoverSizeRatio: 1,
+        edgeHoverExtremities: true,
+
+        // labelSize: 'proportional',
+        // labelSizeRatio: 1,
+        imageThreshold: 0,
+        
+
+
+    }
+});
+
+
+
+     function customiseGraph(s) {
+
+        s.graph.nodes().forEach(function(n) {
+            n.label = n.neo4j_data['name'];
+            n.level = 3;
+            n.type = 'square';
+            // n.image= {url:'D:/study/btp/New%20folder/linkurious.js/examples/img/img1.png'};
+            n.size = s.graph.degree(n.id)+5;
+            // if (n.neo4j_labels[0] == 'People' && s.graph.degree(n.id) < 2){
+            //  n.hidden = true;
+            // }
+            // else if (n.neo4j_labels[0] == 'Company' && s.graph.degree(n.id) == 0){
+            //  n.hidden = true;
+            // }
+            if (n.neo4j_labels[0] == 'Company') {
+                // n.type = 'circle';
+                n.color = '#BB0000';
+                n.image = {url:'img/cmpny.png',
+                            scale:0.8};
+                // n.url = urls[0];
+
+            }   
+            if (n.neo4j_labels[0] == 'People') {
+                if(n.label=='Ratan N Tata') n.size = 20; 
+                // n.type = 'diamond';
+                n.image = { url:'img/ppl.png',
+                            scale:0.8};
+                n.color = '#00BB00';
+            }
+            if (n.neo4j_labels[0] == 'Industry') {
+                // n.type = 'square';
+                n.image = { url:'img/ind.png',
+                            scale: 0.8};
+                n.color = '#0000BB';
+            }   
+        });
+
+        
+        s.refresh();
+
+        s.graph.edges().forEach(function(e){
+            e.label = e.neo4j_type;
+            // e.type = 'curvedArrow';
+            e.type = 'arrow';
+            e.hover_color = '#000'
+            if(e.neo4j_type=='INDUSTRY'){
+                // e.type = 'arrow';
+                e.color = "#123456";                
+            }
+            if(e.neo4j_type=='IS_BANK_OF'){
+                e.color = "#234567";                
+            }
+            if(e.neo4j_type=='IS_COLLABORATOR_OF'){
+                e.color = "#345678";                
+            }
+            
+            if(e.neo4j_type=='FUNDS_INDUSTRY'){
+                // e.type = 'curvedArrow';
+                e.color = "#456789";                
+            }
+            if(e.neo4j_type=='HOLDS_FUND_IN'){
+                e.color = "#567890";                
+            }
+            if(e.neo4j_type=='INVESTED_IN'){
+                e.color = "#678901";                
+            }
+            if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
+                e.color = "#AABBCC";                
+            }
+            if(e.neo4j_type=='MANAGES'){
+                e.color = "#890123";                
+            }
+            if(e.neo4j_type=='MANAGING_DIRECTOR'){
+                s.graph.dropEdge(e.id);
+                // e.color = "#901234";
+                // temp = e.target;
+                // e.target = e.source;
+                // e.source = temp;
+            }
+            if(e.neo4j_type=='COMPANY_SECRETARY'){
+                s.graph.dropEdge(e.id);
+                // e.color = "#012345";                
+                // temp = e.target;
+                // e.target = e.source;                 
+                // e.source = temp;                
+            }
+            if(e.neo4j_type=='AUDITOR'){
+                s.graph.dropEdge(e.id);
+                // e.color = "#AAAAAA";                
+                // temp = e.target;
+                // e.target = e.source;
+                // e.source = temp;                
+            }
+            if(e.neo4j_type=='CHAIRMAN'){
+                s.graph.dropEdge(e.id);
+                // e.color = "#BBBBBB";                
+                // temp = e.target;
+                // e.target = e.source;
+                // e.source = temp;                
+            }
+        }); 
+
+        // s.refresh();
+        // var fa = sigma.layouts.configForceLink(s, {
+        //  worker: true,
+        //  autoStop: true,
+        //  background: true,
+        //  scaleRatio: 10,
+        //  // maxIterations:200,
+        //  gravity: 3,
+        //  easing: 'quadraticInOut'
+
+
+        // });
+
+        // // Start the ForceLink algorithm:
+        // sigma.layouts.startForceLink();
+
+
+        // var dagreListener = sigma.layouts.dagre.configure(s, {
+        //     directed: true, // take edge direction into account
+        //     rankdir: 'TB',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
+        //           // where T = top, B = bottom, L = left, and R = right.
+        //     easing: 'quadraticInOut', // animation transition function
+        //     duration: 800,   // animation duration
+        //     // nodes : s.graph.nodes().slice(0,30), // subset of nodes
+        //     // boundingBox: {minX: 10, maxX: 20, minY: 10, maxY:20} // constrain layout bounds ; object or true (all current positions of the given nodes)
+        // });
+
+        // // Bind the events:
+        // dagreListener.bind('start stop interpolate', function(e) {
+        //     console.log(e.type);
+        // });
+
+        // // Start the DAG layout:
+        // sigma.layouts.dagre.start(s);
+            var frListener = sigma.layouts.fruchtermanReingold.configure(s, {
+                iterations: 100,
+                easing: 'quadraticInOut',
+                duration: 800
+            });
+
+            // Bind the events:
+            frListener.bind('start stop interpolate', function(e) {
+                console.log(e.type);
+            });
+
+            // Start the Fruchterman-Reingold algorithm:
+            sigma.layouts.fruchtermanReingold.start(s);
+
+
+
+
+
+        var activeState = sigma.plugins.activeState(s);
+
+        // Initialize the dragNodes plugin:
+        var dragListener = sigma.plugins.dragNodes(s, s.renderers[0], activeState);
+
+        // Initialize the Select plugin:
+        var select = sigma.plugins.select(s, activeState);
+
+        // Initialize the Keyboard plugin:
+        var keyboard = sigma.plugins.keyboard(s, s.renderers[0]);
+
+        // Bind the Keyboard plugin to the Select plugin:
+        select.bindKeyboard(keyboard);
+
+    
+        console.log("finished customise graph");
+
+    }   
+
+        sigma.neo4j.cypher(
+                { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+                // 'match (n{name:"Axis Bank Ltd"})-[r:IS_BANK_OF]-(k) return n,r,k limit 100',
+                'match (n:Company) where n.bussiness_group = "Tata" optional match (n)-[r2:IS_SUBSIDIARY_OF]-(n2) return n,r2,n2',
+                // 'match (c)-[r:IS_COLLABORATOR_OF]-(c2) where r.country="France" return c,r,c2',
+                // 'match (p)-[r:MANAGES]->(c) where p.name contains "Birla" return p,r,c',
+                // 'match (n:Company{sector:"Tyres"})-[r:INDUSTRY]-(c), (n1:Company{sector:"Automobile"})-[r1:INDUSTRY]-(c1)   optional match (n)-[r2]-(n2)-[r3]-(n1) return n,r,c,n1,r1,c1,r2,n2,r3',
+                // 'MATCH (n:Company)-[r]->(i:Industry) RETURN n,r,i LIMIT 100',
+                s,
+                customiseGraph
+        );
+
+
+
+    function f2(){
+        console.log(s);
+        var gexfString = s.toGEXF();
+
+        // Download the GEXF file
+        s.toGEXF({download: true});
+    }
+    // var legend = sigma.plugins.legend(s);
+    // legend.addWidget('edge','color');
+    // legend.addWidget('node','size');
+    // legend.setPlacement('left'); 
+    // legend.setVisibility(true);
+    // legend.draw();
+    document.getElementById("btn").onclick=function(){
+        console.log("sadadasdasdas")
+        // console.log(legend.getWidget('node','size'));
+        
+        s.toJSON({
+          download: true,
+            pretty: true,
+          filename: 'company_industry.json'
+        });
+        // legend.exportPng('legend.png');
+
+    }
+</script>

@@ -1,0 +1,4231 @@
+{
+ "nodes": [
+  {
+   "id": "181897",
+   "label": "A D Ambani",
+   "x": 7.317073170731708,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "A D Ambani",
+    "idPeople": "3520",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "181899",
+   "label": "M D Ambani",
+   "x": 0,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "M D Ambani",
+    "idPeople": "3523",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "182759",
+   "label": "Dhirubhai H Ambani",
+   "x": 169.02439024390245,
+   "y": 0,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Dhirubhai H Ambani",
+    "idPeople": "4511",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "182762",
+   "label": "Ramniklal H Ambani",
+   "x": 160.97560975609755,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Ramniklal H Ambani",
+    "idPeople": "4514",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "188031",
+   "label": "Vinod C Ambani",
+   "x": 14.634146341463415,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Vinod C Ambani",
+    "idPeople": "10433",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "192332",
+   "label": "Mukesh Ambani",
+   "x": 87.8048780487805,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Mukesh Ambani",
+    "idPeople": "15126",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "195337",
+   "label": "Vimal Ambani",
+   "x": 21.951219512195124,
+   "y": 0,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Vimal Ambani",
+    "idPeople": "18454",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "201208",
+   "label": "B J Ambani",
+   "x": 36.58536585365854,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "B J Ambani",
+    "idPeople": "24883",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "206154",
+   "label": "Chandresh B Ambani",
+   "x": 58.53658536585366,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Chandresh B Ambani",
+    "idPeople": "30266",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "206158",
+   "label": "Mukesh B Ambani",
+   "x": 51.21951219512195,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Mukesh B Ambani",
+    "idPeople": "30270",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "206159",
+   "label": "Bhupendra J Ambani",
+   "x": 43.90243902439025,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Bhupendra J Ambani",
+    "idPeople": "30271",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "209591",
+   "label": "V M Ambani",
+   "x": 65.85365853658537,
+   "y": 0,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "V M Ambani",
+    "idPeople": "33965",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "213752",
+   "label": "Ashok Ambani",
+   "x": 80.48780487804878,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Ashok Ambani",
+    "idPeople": "38466",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "218600",
+   "label": "Vipul Ambani",
+   "x": 95.1219512195122,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "Graduate in Chemical Engineering",
+    "name": "Vipul Ambani",
+    "idPeople": "43697",
+    "age": "33"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "221396",
+   "label": "Vinod M Ambani",
+   "x": 141.9512195121951,
+   "y": 0,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Vinod M Ambani",
+    "idPeople": "46743",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "236603",
+   "label": "Mukesh D Ambani",
+   "x": 133.90243902439025,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Mukesh D Ambani",
+    "idPeople": "63208",
+    "age": "37"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "237743",
+   "label": "Anil Dhirubhai Ambani",
+   "x": 152.1951219512195,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "BSc & MBA",
+    "name": "Anil Dhirubhai Ambani",
+    "idPeople": "64423",
+    "age": "43"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "246778",
+   "label": "Isha Mukesh Ambani",
+   "x": 109.7560975609756,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Isha Mukesh Ambani",
+    "idPeople": "74113",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "246779",
+   "label": "Akash Mukesh Ambani",
+   "x": 102.4390243902439,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Akash Mukesh Ambani",
+    "idPeople": "74114",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "252034",
+   "label": "Anil Dhirajlal Ambani",
+   "x": 191.70731707317074,
+   "y": 0,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Anil Dhirajlal Ambani",
+    "idPeople": "79633",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "252035",
+   "label": "Tina Anil Ambani",
+   "x": 184.390243902439,
+   "y": 0,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Tina Anil Ambani",
+    "idPeople": "79634",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "265974",
+   "label": "Vimal Ramniklal Ambani",
+   "x": 207.8048780487805,
+   "y": 0,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Vimal Ramniklal Ambani",
+    "idPeople": "93882",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "265975",
+   "label": "Ramniklal Hirachand Ambani",
+   "x": 199.02439024390245,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Ramniklal Hirachand Ambani",
+    "idPeople": "93883",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "270522",
+   "label": "Purvi Ramesh Ambani",
+   "x": 292.6829268292683,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Purvi Ramesh Ambani",
+    "idPeople": "98514",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "273982",
+   "label": "Anil D Ambani",
+   "x": 241.46341463414635,
+   "y": 0,
+   "size": 16,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Anil D Ambani",
+    "idPeople": "102316",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "275839",
+   "label": "Anil Dhirubhai Ambani",
+   "x": 280.9756097560976,
+   "y": 0,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Anil Dhirubhai Ambani",
+    "idPeople": "104713",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "278518",
+   "label": "Mukesh D Ambani",
+   "x": 120,
+   "y": 0,
+   "size": 10,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Mukesh D Ambani",
+    "idPeople": "108181",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "290912",
+   "label": "Ambani & Co",
+   "x": 300,
+   "y": 0,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "People"
+   },
+   "neo4j_data": {
+    "qualifications": "NA",
+    "name": "Ambani & Co",
+    "idPeople": "124621",
+    "age": "-1"
+   },
+   "level": 3,
+   "type": "square",
+   "image": {
+    "url": "img/ppl.png",
+    "scale": 0.8
+   },
+   "color": "#00BB00",
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "295764",
+   "label": "Reliance Polypropylene Ltd (Merged)",
+   "x": 263.4146341463415,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Reliance Polypropylene Ltd Maker Chamber IV 3rd Floor 222 Nariman Point Mumbai - 400 021.",
+    "idCompany": "1441",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "24139",
+    "market_lot": "1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Manufacture of other plastics in primary forms (in",
+    "fax": "NA",
+    "bussiness_group": "Anil Ambani",
+    "listing": "Not Listed",
+    "sector": "Petrochemicals",
+    "email": "NA",
+    "book_closure_month": "Mar",
+    "BSE_code": "523070",
+    "website": "NA",
+    "BSE_group": "B",
+    "telephone": "NA",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "Maker Chamber IV 3rd Floor 222 Nariman Point Mumbai  400021  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1986",
+    "name": "Reliance Polypropylene Ltd (Merged)"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "295765",
+   "label": "Classic Electricals Ltd",
+   "x": 14.634146341463415,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Classic Electricals Ltd Merchant Chamber 3rd Floor 41 New Marine Lines Mumbai - 400020.",
+    "idCompany": "1440",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "51102",
+    "market_lot": "1",
+    "reuters": "CLET.BO",
+    "AGM_date": "30-Sep-2015",
+    "nic_activity": "Trade in manufactured products",
+    "fax": "NA",
+    "bussiness_group": "Indian Private",
+    "listing": "Mumbai",
+    "sector": "Trading",
+    "email": "NA",
+    "book_closure_month": "Sep",
+    "BSE_code": "512213",
+    "website": "NA",
+    "BSE_group": "P",
+    "telephone": "NA",
+    "face_value": "10",
+    "bloomberg_code": "CEL IN",
+    "total_employees": "-1",
+    "reg_office": "1301 13th Flr Peninsula Busine Tower-B SB Marg Lower Parel(W) Mumbai  400013  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1985",
+    "name": "Classic Electricals Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "304064",
+   "label": "Nucleus It Enabled Services Ltd",
+   "x": 292.6829268292683,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "65607",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "72900",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Other computer related activities (for example act",
+    "fax": "NA",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Listed",
+    "sector": "IT - Software",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "Nucleus House Saki Vihar Road Opp L&T Gate 7 Andheri (E) Mumbai  400072  Maharashtra",
+    "financial_year_end": "NA",
+    "incorporation_year": "2008",
+    "name": "Nucleus It Enabled Services Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "304700",
+   "label": "Reliance Innoventures Pvt Ltd",
+   "x": 178.53658536585365,
+   "y": 150,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "45212",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "NA",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "24-Sep-2013",
+    "nic_activity": "NA",
+    "fax": "NA",
+    "bussiness_group": "Anil Ambani",
+    "listing": "Not Listed",
+    "sector": "Miscellaneous",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "502 Plot No 91/94 Prabhat Colony Santacruz-East Mumbai  400055  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "2005",
+    "name": "Reliance Innoventures Pvt Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "304839",
+   "label": "Larsen & Toubro Ltd",
+   "x": 0,
+   "y": 150,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Sharepro Services India P Ltd Samhita Complex Plot No 13 AB Saki Naka Andheri(E) Mumbai-400072.91-22-67720300/40091-22-28591568",
+    "idCompany": "348",
+    "NSE_code": "LT",
+    "ISIN_demat": "INE018A01030",
+    "nic_code": "4520",
+    "market_lot": "1",
+    "reuters": "LART.BO",
+    "AGM_date": "09-Sep-2015",
+    "nic_activity": "Building of complete constructions or parts thereo",
+    "fax": "91-22-67525893",
+    "bussiness_group": "L&T Group",
+    "listing": "London Luxembourg MCX-SX Mumbai NSE",
+    "sector": "Infrastructure Developers & Operators",
+    "email": "NA",
+    "book_closure_month": "Sep",
+    "BSE_code": "500510",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-22-67525656",
+    "face_value": "2",
+    "bloomberg_code": "LT IN",
+    "total_employees": "44081",
+    "reg_office": "L&T House Ballard Estate Mumbai  400001  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1946",
+    "name": "Larsen & Toubro Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "304976",
+   "label": "Reliance Logistics Pvt Ltd(Merged)",
+   "x": 73.17073170731707,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Devti Fabrics Ltd 3rd Floor Maker Chambers IV 222  Nariman Point Mumbai-400021.",
+    "idCompany": "17723",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "60231",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "30-Sep-2005",
+    "nic_activity": "Freight transport by motor vehicles",
+    "fax": "NA",
+    "bussiness_group": "Mukesh Ambani",
+    "listing": "Not Listed",
+    "sector": "Logistics",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-22-26466700",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "PlotNo 17 State Transport Road Santacruz (West) Mumbai  400054  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1985",
+    "name": "Reliance Logistics Pvt Ltd(Merged)"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "307008",
+   "label": "Yashraj Investments And Leasing Co Pvt Ltd",
+   "x": 203.41463414634146,
+   "y": 150,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "52404",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65910",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Financial leasing [Operatinal leasing is classifie",
+    "fax": "NA",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Listed",
+    "sector": "Finance",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "-1",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "Shop No.70 Gold Filled Plz Sion Bandra Link Rd Dharavi Mumbai  400017  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1986",
+    "name": "Yashraj Investments And Leasing Co Pvt Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "308685",
+   "label": "Pipavav Defence & Offshore Engineering Company Ltd",
+   "x": 270.7317073170732,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy Selenium Tow-B Pl-31&32 Gachibowli Nanakramguda Hyderabad-5000032.91-40-67161606/160291-40-67161791",
+    "idCompany": "23050",
+    "NSE_code": "PIPAVAVDOC",
+    "ISIN_demat": "INE542F01012",
+    "nic_code": "35117",
+    "market_lot": "1",
+    "reuters": "PIPA.BO",
+    "AGM_date": "30-Sep-2015",
+    "fax": "91-2794-661100",
+    "bussiness_group": "Indian Private",
+    "listing": "MCX-SX Mumbai NSE",
+    "nic_activity": "Conversion  alteration and breaking-up of ships",
+    "sector": "Ship Building",
+    "email": "NA",
+    "book_closure_month": "Aug",
+    "BSE_code": "533107",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-2794-661000",
+    "face_value": "10",
+    "bloomberg_code": "PIPV IN",
+    "total_employees": "604",
+    "reg_office": "Pipavav Port Post Ucchaya Via Rajula Amreli  365560  Gujarat",
+    "financial_year_end": "March",
+    "incorporation_year": "1997",
+    "name": "Pipavav Defence & Offshore Engineering Company Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "309837",
+   "label": "Reliance Project Ventures & Management Pvt Ltd",
+   "x": 196.09756097560975,
+   "y": 150,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "64797",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "NA",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "NA",
+    "fax": "NA",
+    "bussiness_group": "Anil Ambani",
+    "listing": "Not Listed",
+    "sector": "Miscellaneous",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "502 Plot No 91/94 Prabhat Colo Santacruz (E) Mumbai  400055  Maharashtra",
+    "financial_year_end": "NA",
+    "incorporation_year": "2005",
+    "name": "Reliance Project Ventures & Management Pvt Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "317482",
+   "label": "Reliance Communications Ltd",
+   "x": 226.82926829268294,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy Selenium Tow-B Pl-31&32 Gachibowli Nanakramguda Hyderabad-5000032.91-40-67161606/160291-40-67161791",
+    "idCompany": "27206",
+    "NSE_code": "RCOM",
+    "ISIN_demat": "INE330H01018",
+    "nic_code": "64202",
+    "market_lot": "1",
+    "reuters": "RLCM.BO",
+    "AGM_date": "30-Sep-2015",
+    "fax": "91-22-30376622",
+    "bussiness_group": "Anil Ambani",
+    "listing": "Luxembourg MCX-SX Mumbai NSE",
+    "nic_activity": "Mobile phone and other related services",
+    "sector": "Telecomm-Service",
+    "email": "NA",
+    "book_closure_month": "Sep",
+    "BSE_code": "532712",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-22-30386286",
+    "face_value": "5",
+    "bloomberg_code": "RCOM IN",
+    "total_employees": "14169",
+    "reg_office": "H Block 1st Floor Dhirubhai Ambani KnowledgeCity Navi Mumbai  400710  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "2004",
+    "name": "Reliance Communications Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "326592",
+   "label": "Reliance Polyethylene Ltd (Merged)",
+   "x": 278.0487804878049,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Reliance Polyethylene Ltd 84-A Mittal Court 8th Floor 224 Nariman Point Mumbai - 400 021.",
+    "idCompany": "2785",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "24139",
+    "market_lot": "1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Manufacture of other plastics in primary forms (in",
+    "fax": "NA",
+    "bussiness_group": "Anil Ambani",
+    "listing": "Not Listed",
+    "sector": "Petrochemicals",
+    "email": "NA",
+    "book_closure_month": "Sep",
+    "BSE_code": "524298",
+    "website": "NA",
+    "BSE_group": "B",
+    "telephone": "NA",
+    "face_value": "10",
+    "bloomberg_code": "RPEL IN",
+    "total_employees": "-1",
+    "reg_office": "Maker Chamber IV 3rd Floor 222 Nariman Point Mumbai  400021  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1986",
+    "name": "Reliance Polyethylene Ltd (Merged)"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "327641",
+   "label": "Liberty Consultants Pvt Ltd",
+   "x": 212.1951219512195,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "66148",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65923",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Activities of commercial loan companies.(Included",
+    "fax": "NA",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Listed",
+    "sector": "Finance",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "Anjan Garh P O Shyam Nagar Parganas (North)  743127  West Bengal",
+    "financial_year_end": "March",
+    "incorporation_year": "NA",
+    "name": "Liberty Consultants Pvt Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "331048",
+   "label": "Reliance Capital Trustee Company Ltd",
+   "x": 141.9512195121951,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "22649",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "74",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Business services",
+    "fax": "NA",
+    "bussiness_group": "Anil Ambani",
+    "listing": "Not Available",
+    "sector": "Miscellaneous",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "Mumbai  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1995",
+    "name": "Reliance Capital Trustee Company Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "341742",
+   "label": "Shri Mahalaxmi Agricultural Developments Ltd",
+   "x": 300,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Purva Sharegistry (I) Pvt Ltd 9 ShivShakti Indl Es J R Boricha Marg Lower Parel Mumbai - 400 011.91-22-23010771/2301891-22-23012517",
+    "idCompany": "7528",
+    "NSE_code": "NA",
+    "ISIN_demat": "INE317G01025",
+    "nic_code": "01119",
+    "market_lot": "1",
+    "reuters": "NA",
+    "AGM_date": "21-Sep-2015",
+    "nic_activity": "Growing of other crops  n.e.c (Includes growing of",
+    "fax": "91-79-61344949",
+    "bussiness_group": "Indian Private",
+    "listing": "Ahmedabad Mumbai",
+    "sector": "FMCG",
+    "email": "NA",
+    "book_closure_month": "Sep",
+    "BSE_code": "539010",
+    "website": "NA",
+    "BSE_group": "XD",
+    "telephone": "91-79-61344987",
+    "face_value": "5",
+    "bloomberg_code": "MADL IN",
+    "total_employees": "-1",
+    "reg_office": "11-103 GCP Business Center Vijay Char Rasta Memnagar Ahmedabad  380014  Gujarat",
+    "financial_year_end": "NA",
+    "incorporation_year": "1993",
+    "name": "Shri Mahalaxmi Agricultural Developments Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "342388",
+   "label": "Reliance Industrial Investments & Holdings Ltd",
+   "x": 134.6341463414634,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Reliance Indl Invsts & Holding 3rd Floor Maker Chambers IV 222  Nariman Point Mumbai-400021.",
+    "idCompany": "16297",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65993",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Non-operating financial holding companies (Investm",
+    "fax": "NA",
+    "bussiness_group": "Mukesh Ambani",
+    "listing": "Not Listed",
+    "sector": "Finance",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "3rd Floor Maker Chambers IV 222 Nariman Point Mumbai  400021  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1986",
+    "name": "Reliance Industrial Investments & Holdings Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "342653",
+   "label": "Reliance Petroleum Ltd (Merged)",
+   "x": 170.4878048780488,
+   "y": 150,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd 46 Avenue 4 Street No 1 Banjara Hills Hyderabad - 500034.91-040-23431546/4991-40-23431551",
+    "idCompany": "3306",
+    "NSE_code": "RELPETRO",
+    "ISIN_demat": "INE014A01013",
+    "nic_code": "23200",
+    "market_lot": "1",
+    "reuters": "RLPT.BO",
+    "AGM_date": "12-Jun-2001",
+    "fax": "91-288-517850/ 292149",
+    "nic_activity": "Manufacture of refined petroleum products",
+    "bussiness_group": "Anil Ambani",
+    "listing": "Not Listed",
+    "sector": "Refineries",
+    "email": "NA",
+    "book_closure_month": "Oct",
+    "BSE_code": "500364",
+    "website": "NA",
+    "BSE_group": "B",
+    "telephone": "91-288-510000/4916000/2847413",
+    "face_value": "10",
+    "bloomberg_code": "RLPCZ IN",
+    "total_employees": "-1",
+    "reg_office": "Village Motikhavdi P O Digvijay Gram Jamnagar  361140  Gujarat",
+    "financial_year_end": "March",
+    "incorporation_year": "1991",
+    "name": "Reliance Petroleum Ltd (Merged)"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "343458",
+   "label": "Reliance Infrastructure Ltd",
+   "x": 219.5121951219512,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy Selenium Tow-B Pl-31&32 Gachibowli Nanakramguda Hyderabad-5000032.91-40-67161606/160291-40-67161791",
+    "idCompany": "88",
+    "NSE_code": "RELINFRA",
+    "ISIN_demat": "INE036A01016",
+    "nic_code": "40100",
+    "market_lot": "1",
+    "reuters": "RLIN.BO",
+    "AGM_date": "30-Sep-2015",
+    "nic_activity": "Production  collection and distribution of electri",
+    "fax": "91-22-30098128",
+    "bussiness_group": "Anil Ambani",
+    "listing": "London MCX-SX Mumbai NSE",
+    "sector": "Power Generation & Distribution",
+    "email": "NA",
+    "book_closure_month": "Sep",
+    "BSE_code": "500390",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-22-30098181",
+    "face_value": "10",
+    "bloomberg_code": "RELI IN",
+    "total_employees": "7755",
+    "reg_office": "H Block 1st Floor Dhirubhai Ambani KnowledgeCity Navi Mumbai  400710  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1929",
+    "name": "Reliance Infrastructure Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "345307",
+   "label": "Reliance Enterprises Ltd",
+   "x": 65.85365853658537,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy House 46 Road No 4 Street No1 Banjara Hills Hyderabad - 500034.91-40-23312454/2332091-040-23311968",
+    "idCompany": "6207",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65993",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "29-Sep-2006",
+    "nic_activity": "Non-operating financial holding companies (Investm",
+    "fax": "NA",
+    "bussiness_group": "Anil Ambani",
+    "listing": "Not Available",
+    "sector": "Finance",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "194 GIDC Industrial Estate Naroda Ahmedabad  382330  Gujarat",
+    "financial_year_end": "March",
+    "incorporation_year": "1991",
+    "name": "Reliance Enterprises Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "350146",
+   "label": "Veejay Lakshmi Engineering Works Ltd",
+   "x": 36.58536585365854,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "SKDC Consultants Ltd Kanapathy Towers 3rd Flr 1391/A1 Sathy Road Ganapathy Coimbatore - 641 006.91-422-6549995/2539891-422-2539837",
+    "idCompany": "4342",
+    "NSE_code": "NA",
+    "ISIN_demat": "INE466D01019",
+    "nic_code": "29260",
+    "market_lot": "1",
+    "reuters": "VLEW.BO",
+    "AGM_date": "30-Sep-2015",
+    "nic_activity": "Manufacture of machinery for textile  apparel and",
+    "fax": "91-422-2461565/2460453",
+    "bussiness_group": "V J Jayaraman",
+    "listing": "Mumbai",
+    "sector": "Engineering",
+    "email": "NA",
+    "book_closure_month": "Sep",
+    "BSE_code": "522267",
+    "website": "NA",
+    "BSE_group": "XT",
+    "telephone": "91-422-2460662/2460365/2460561",
+    "face_value": "10",
+    "bloomberg_code": "VLEW IN",
+    "total_employees": "594",
+    "reg_office": "Sengalipalayam N G G O Colony Post Coimbatore  641022  Tamil Nadu",
+    "financial_year_end": "March",
+    "incorporation_year": "1974",
+    "name": "Veejay Lakshmi Engineering Works Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "357567",
+   "label": "Hester Biosciences Ltd",
+   "x": 29.26829268292683,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Sharepro Services India Pvt Lt Devnandan Mega Mall Office No 416-420 4th Floor Ashram Rd Ahmedabad-380006.91-22-26582381 to 8491-22-28591568",
+    "idCompany": "4164",
+    "NSE_code": "HESTERBIO",
+    "ISIN_demat": "INE782E01017",
+    "nic_code": "24235",
+    "market_lot": "1",
+    "reuters": "HEST.BO",
+    "AGM_date": "15-Sep-2015",
+    "fax": "91-079-26445105",
+    "bussiness_group": "Indian Private",
+    "listing": "Mumbai NSE",
+    "nic_activity": "Manufacture of veterinary preparations",
+    "sector": "Pharmaceuticals",
+    "email": "NA",
+    "book_closure_month": "Sep",
+    "BSE_code": "524669",
+    "website": "NA",
+    "BSE_group": "B",
+    "telephone": "91-079-26445107",
+    "face_value": "10",
+    "bloomberg_code": "HBIO IN",
+    "total_employees": "289",
+    "reg_office": "1st Flr PushpakPachvati Circle Motilal Hirabhai Road Ahmedabad  380006  Gujarat",
+    "financial_year_end": "March",
+    "incorporation_year": "1987",
+    "name": "Hester Biosciences Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "358390",
+   "label": "Reliance Power Ltd",
+   "x": 285.3658536585366,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy Selenium Tow-B Pl-31&32 Gachibowli Nanakramguda Hyderabad-5000032.91-40-67161606/160291-40-67161791",
+    "idCompany": "12653",
+    "NSE_code": "RPOWER",
+    "ISIN_demat": "INE614G01033",
+    "nic_code": "40100",
+    "market_lot": "1",
+    "reuters": "RPOL.BO",
+    "AGM_date": "30-Sep-2015",
+    "nic_activity": "Production  collection and distribution of electri",
+    "fax": "91-22-30385169",
+    "bussiness_group": "Anil Ambani",
+    "listing": "Luxembourg MCX-SX Mumbai NSE",
+    "sector": "Power Generation & Distribution",
+    "email": "NA",
+    "book_closure_month": "Sep",
+    "BSE_code": "532939",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-22-30327648",
+    "face_value": "10",
+    "bloomberg_code": "RPWR IN",
+    "total_employees": "-1",
+    "reg_office": "H Block First Floor Dhirubhai Ambani KnowledgeCity Navi Mumbai  400710  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1995",
+    "name": "Reliance Power Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "359911",
+   "label": "Sarang Chemicals Ltd",
+   "x": 80.48780487804878,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Sharex Dynamic (India) Pvt Ltd Unit No 1 Luthra Ind Andheri Kurla Road Safed Pool Andheri(E Mumbai - 400 072.91-22-2851 560691-22-2851 2885",
+    "idCompany": "7461",
+    "NSE_code": "NA",
+    "ISIN_demat": "INE003E01026",
+    "nic_code": "24119",
+    "market_lot": "1",
+    "reuters": "SARN.BO",
+    "AGM_date": "28-Sep-2012",
+    "fax": "NA",
+    "nic_activity": "Manufacture of basic organic chemicals n.e.c.",
+    "bussiness_group": "Indian Private",
+    "listing": "Ahmedabad Mumbai Vadodara",
+    "sector": "Chemicals",
+    "email": "NA",
+    "book_closure_month": "Sep",
+    "BSE_code": "532031",
+    "website": "NA",
+    "BSE_group": "XT",
+    "telephone": "NA",
+    "face_value": "1",
+    "bloomberg_code": "SRGC IN",
+    "total_employees": "-1",
+    "reg_office": "C/4/806 Anushruti Tower Thaltej Cross Roads S G Road Ahmedabad  380054  Gujarat",
+    "financial_year_end": "March",
+    "incorporation_year": "1989",
+    "name": "Sarang Chemicals Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "362116",
+   "label": "Karrox Technologies Ltd",
+   "x": 96.58536585365853,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "13688",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "80302",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "30-Sep-2009",
+    "nic_activity": "Technical/vocational higher education",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "fax": "NA",
+    "sector": "Computer Education",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "Saurabh Building Modi Estate LBS Marg Ghatkopar (West) Mumbai  400086  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1992",
+    "name": "Karrox Technologies Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "368239",
+   "label": "Sanrhea Technical Textile Ltd",
+   "x": 21.951219512195124,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Link Intime India Pvt Ltd Unit No 303 3rd floo Shoppers Plaza V Plaza II Off CC Road Ahmedabad - 380009.91-079-2646517991-079-26465179",
+    "idCompany": "3025",
+    "NSE_code": "NA",
+    "ISIN_demat": "INE589J01015",
+    "nic_code": "17000",
+    "market_lot": "1",
+    "reuters": "MAHP.BO",
+    "AGM_date": "30-Sep-2015",
+    "nic_activity": "Weaving  manufacturing of man-made fiber and man-m",
+    "fax": "91-02764-52004",
+    "bussiness_group": "Indian Private",
+    "listing": "Ahmedabad Mumbai",
+    "sector": "Textiles",
+    "email": "NA",
+    "book_closure_month": "Sep",
+    "BSE_code": "514280",
+    "website": "NA",
+    "BSE_group": "Z",
+    "telephone": "91-02764-53168/25204",
+    "face_value": "10",
+    "bloomberg_code": "MAP IN",
+    "total_employees": "-1",
+    "reg_office": "Parshwanath Chambers 2nd Floor Nr New RBI Bldng Ashram Road Ahmedabad  380014  Gujarat",
+    "financial_year_end": "March",
+    "incorporation_year": "1983",
+    "name": "Sanrhea Technical Textile Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "369697",
+   "label": "Reliance Capital Ventures Ltd(Merged)",
+   "x": 241.46341463414635,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Plot No 17-24 Vittal Rao Nagar Madhapur Hyderabad-500081.91-040-44655185/446591-040-23420814/2342",
+    "idCompany": "27259",
+    "NSE_code": "RCAPVL",
+    "ISIN_demat": "INE331H01016",
+    "nic_code": "65923",
+    "market_lot": "1",
+    "reuters": "RLCV.BO",
+    "AGM_date": "14-Jan-2006",
+    "nic_activity": "Activities of commercial loan companies.(Included",
+    "fax": "91-022-30376622",
+    "bussiness_group": "Anil Ambani",
+    "listing": "Not Listed",
+    "sector": "Finance",
+    "email": "NA",
+    "book_closure_month": "Aug",
+    "BSE_code": "532703",
+    "website": "NA",
+    "BSE_group": "B",
+    "telephone": "91-022-30386268/30386010",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "H Block 1st Floor Dhirubhai Ambani Knowledge Cit Navi Mumbai  400710  Maharashtra",
+    "financial_year_end": "December",
+    "incorporation_year": "2004",
+    "name": "Reliance Capital Ventures Ltd(Merged)"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "369698",
+   "label": "Reliance Energy Ventures Ltd(Merged)",
+   "x": 234.14634146341464,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Plot No 17-24 Vittal Rao Nagar Madhapur Hyderabad-500081.91-040-44655185/446591-040-23420814/2342",
+    "idCompany": "27258",
+    "NSE_code": "RENVL",
+    "ISIN_demat": "INE329H01010",
+    "nic_code": "4010",
+    "market_lot": "1",
+    "reuters": "RLEV.BO",
+    "AGM_date": "14-Jan-2006",
+    "nic_activity": "Production  collection and distribution of electri",
+    "fax": "91-22-30376622",
+    "bussiness_group": "Anil Ambani",
+    "listing": "Not Listed",
+    "sector": "Power Generation & Distribution",
+    "email": "NA",
+    "book_closure_month": "Aug",
+    "BSE_code": "532704",
+    "website": "NA",
+    "BSE_group": "B",
+    "telephone": "91-22-30386010",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "H Block Ist Floor Dhirubhai Ambani Knowledge Park Navi Mum Mumbai  400710  Maharashtra",
+    "financial_year_end": "December",
+    "incorporation_year": "2000",
+    "name": "Reliance Energy Ventures Ltd(Merged)"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "385774",
+   "label": "Reliance Industries Ltd",
+   "x": 159.5121951219512,
+   "y": 150,
+   "size": 9,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy Selenium Tow-B Pl-31&32 Gachibowli Nanakramguda Hyderabad-5000032.91-40-67161606/160291-40-67161791",
+    "idCompany": "476",
+    "NSE_code": "RELIANCE",
+    "ISIN_demat": "INE002A01018",
+    "nic_code": "23200",
+    "market_lot": "1",
+    "reuters": "RELI.BO",
+    "AGM_date": "12-Jun-2015",
+    "fax": "91-22-22785111",
+    "bussiness_group": "Mukesh Ambani",
+    "listing": "London Luxembourg MCX-SX Mumbai NASDAQ NSE",
+    "nic_activity": "Manufacture of refined petroleum products",
+    "sector": "Refineries",
+    "email": "NA",
+    "book_closure_month": "May",
+    "BSE_code": "500325",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-22-22785000",
+    "face_value": "10",
+    "bloomberg_code": "RIL IN",
+    "total_employees": "24930",
+    "reg_office": "3rd Floor Maker Chambers IV 222 Nariman Point Mumbai  400021  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1973",
+    "name": "Reliance Industries Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "386768",
+   "label": "Reliance Jio Infocomm Ltd",
+   "x": 107.5609756097561,
+   "y": 150,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "40440",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "64202",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Provision of value added telecom services; paging ",
+    "fax": "91-22-22785560",
+    "bussiness_group": "Mukesh Ambani",
+    "listing": "Not Listed",
+    "sector": "Telecomm-Service",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-22-22785500",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "3rd Floor Maker Chambers IV 222 Nariman Point Mumbai  400021  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "2007",
+    "name": "Reliance Jio Infocomm Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "393169",
+   "label": "Infra Industries Ltd",
+   "x": 47.5609756097561,
+   "y": 150,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Purva Sharegistry (I) Pvt Ltd 9 ShivShakti Indl Es J R Boricha Marg Lower Parel Mumbai - 400 011.91-22-23010771/2301891-22-23012517",
+    "idCompany": "5297",
+    "NSE_code": "NA",
+    "ISIN_demat": "INE287D01019",
+    "nic_code": "25209",
+    "market_lot": "1",
+    "reuters": "INFR.BO",
+    "AGM_date": "30-Sep-2015",
+    "fax": "91-22-22078013",
+    "bussiness_group": "Indian Private",
+    "listing": "Mumbai",
+    "nic_activity": "Manufacture of other plastic products",
+    "sector": "Plastic products",
+    "email": "NA",
+    "book_closure_month": "Sep",
+    "BSE_code": "530777",
+    "website": "NA",
+    "BSE_group": "XT",
+    "telephone": "91-22-32946372",
+    "face_value": "10",
+    "bloomberg_code": "INFRI IN",
+    "total_employees": "-1",
+    "reg_office": "Dhiraj Chambers 7th Floor 9 Hazarimal Somani Marg Mumbai  400001  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1989",
+    "name": "Infra Industries Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "395222",
+   "label": "Reliance Petroleum Ltd(Merged)",
+   "x": 123.65853658536585,
+   "y": 150,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy House 46 Road No 4 Street No1 Banjara Hills Hyderabad - 500034.91-40-23312454/2332091-040-23311968",
+    "idCompany": "27314",
+    "NSE_code": "RPL",
+    "ISIN_demat": "INE475H01011",
+    "nic_code": "2320",
+    "market_lot": "1",
+    "reuters": "RPET.BO",
+    "AGM_date": "07-Jun-2008",
+    "nic_activity": "Manufacture of refined petroleum products",
+    "fax": "91-288-3011850",
+    "bussiness_group": "Mukesh Ambani",
+    "listing": "Not Listed",
+    "sector": "Refineries",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "532743",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-288-3011805/3010101",
+    "face_value": "10",
+    "bloomberg_code": "RPET IN",
+    "total_employees": "-1",
+    "reg_office": "Motikhavdi P O Digvijaygram Jamnagar  361140  Gujarat",
+    "financial_year_end": "March",
+    "incorporation_year": "2005",
+    "name": "Reliance Petroleum Ltd(Merged)"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "403557",
+   "label": "Indian Petrochemicals Corporation Ltd(Merged)",
+   "x": 87.8048780487805,
+   "y": 150,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd 46 Avenue 4 Street No 1 Banjara Hills Hyderabad - 500034.91-040-23431546/4991-40-23431551",
+    "idCompany": "2333",
+    "NSE_code": "IPCL",
+    "ISIN_demat": "INE006A01019",
+    "nic_code": "24139",
+    "market_lot": "1",
+    "reuters": "IPCL.BO",
+    "AGM_date": "02-Dec-2006",
+    "nic_activity": "Manufacture of other plastics in primary forms (in",
+    "fax": "91-0265-6693834",
+    "bussiness_group": "Mukesh Ambani",
+    "listing": "Not Listed",
+    "sector": "Petrochemicals",
+    "email": "NA",
+    "book_closure_month": "Nov/Dec",
+    "BSE_code": "500105",
+    "website": "NA",
+    "BSE_group": "B",
+    "telephone": "91-0265-6696000/7000",
+    "face_value": "10",
+    "bloomberg_code": "IPCL IN",
+    "total_employees": "14274",
+    "reg_office": "P O Petrochemicals Vadodara  391346  Gujarat",
+    "financial_year_end": "March",
+    "incorporation_year": "1969",
+    "name": "Indian Petrochemicals Corporation Ltd(Merged)"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "403682",
+   "label": "Telecom Infrastructure Finance Pvt Ltd",
+   "x": 187.3170731707317,
+   "y": 150,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "48764",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65923",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Activities of commercial loan companies.(Included",
+    "fax": "NA",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Listed",
+    "sector": "Finance",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "-1",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "502 Plot No. 91/94 Prabhat Colony Santacruz (Eas Mumbai  400055  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "2007",
+    "name": "Telecom Infrastructure Finance Pvt Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "406878",
+   "label": "Reliance Infratel Ltd",
+   "x": 149.26829268292684,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "27791",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "64203",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Maintenance of telecom network",
+    "fax": "91-22-30376622",
+    "bussiness_group": "Anil Ambani",
+    "listing": "Not Listed",
+    "sector": "Telecomm Equipment & Infra Services",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-22-30386286",
+    "face_value": "5",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "H Block 1st Floor Dhirubhai Ambani KnowledgeCity Navi Mumbai  400710  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "2001",
+    "name": "Reliance Infratel Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "409826",
+   "label": "Reliance Natural Resources Ltd (Merged)",
+   "x": 248.78048780487805,
+   "y": 150,
+   "size": 6,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Madhura Estate Municipal No.1-9/13 Madhapur Village Hyderabad - 500081.91-040-44338100/403091-040-23420859",
+    "idCompany": "27260",
+    "NSE_code": "RNRL",
+    "ISIN_demat": "INE328H01012",
+    "nic_code": "1120",
+    "market_lot": "1",
+    "reuters": "RENR.BO",
+    "AGM_date": "28-Jul-2009",
+    "nic_activity": "Service activities incidental to oil and gas extra",
+    "fax": "91-22-30376622/33",
+    "bussiness_group": "Anil Ambani",
+    "listing": "Mumbai",
+    "sector": "Miscellaneous",
+    "email": "NA",
+    "book_closure_month": "Jul",
+    "BSE_code": "532709",
+    "website": "NA",
+    "BSE_group": "XD",
+    "telephone": "91-22-30386020/10",
+    "face_value": "5",
+    "bloomberg_code": "RNR IN",
+    "total_employees": "31",
+    "reg_office": "H Block 1st Floor Dhirubhai Ambani KnowledgeCity Navi Mumbai  400710  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "2000",
+    "name": "Reliance Natural Resources Ltd (Merged)"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  },
+  {
+   "id": "410350",
+   "label": "Reliance Capital Ltd",
+   "x": 256.0975609756098,
+   "y": 150,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy Selenium Tow-B Pl-31&32 Gachibowli Nanakramguda Hyderabad-5000032.91-40-67161606/160291-40-67161791",
+    "idCompany": "1866",
+    "NSE_code": "RELCAPITAL",
+    "ISIN_demat": "INE013A01015",
+    "nic_code": "65923",
+    "market_lot": "1",
+    "reuters": "RLCP.BO",
+    "AGM_date": "30-Sep-2015",
+    "fax": "91-22-30327202",
+    "bussiness_group": "Anil Ambani",
+    "listing": "Luxembourg MCX-SX Mumbai New York NSE",
+    "nic_activity": "Activities of commercial loan companies.(Included",
+    "sector": "Finance",
+    "email": "NA",
+    "book_closure_month": "Sep",
+    "BSE_code": "500111",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-22-30479800",
+    "face_value": "10",
+    "bloomberg_code": "RCAPT IN",
+    "total_employees": "18508",
+    "reg_office": "H Block 1st Floor Dhirubhai Ambani KnowledgeCity Navi Mumbai  400710  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1986",
+    "name": "Reliance Capital Ltd"
+   },
+   "level": 3,
+   "type": "square",
+   "color": "#BB0000",
+   "image": {
+    "url": "img/cmpny.png",
+    "scale": 0.8
+   },
+   "dagre_x": null,
+   "dagre_y": null
+  }
+ ],
+ "edges": [
+  {
+   "id": "348585",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "343458",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "5800.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123"
+  },
+  {
+   "id": "351597",
+   "label": "MANAGES",
+   "source": "181897",
+   "target": "304839",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "000.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Independent Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 50,
+     "y": null
+    },
+    "1": {
+     "x": 50,
+     "y": 25
+    },
+    "2": {
+     "x": 0,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "351604",
+   "label": "MANAGES",
+   "source": "181899",
+   "target": "304839",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2000",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 0,
+     "y": null
+    },
+    "1": {
+     "x": 0,
+     "y": 25
+    },
+    "2": {
+     "x": 0,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "352820",
+   "label": "MANAGES",
+   "source": "182759",
+   "target": "385774",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "1000.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1155,
+     "y": 0
+    },
+    "1": {
+     "x": 1125,
+     "y": 25
+    },
+    "2": {
+     "x": 1090,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "352823",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "385774",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "executive": "NA",
+    "renumerations": "12000.00",
+    "independent": "NA",
+    "year": "2003",
+    "designation": "Vice Chairman & M.D."
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1650,
+     "y": 0
+    },
+    "1": {
+     "x": 1105,
+     "y": 25
+    },
+    "2": {
+     "x": 1090,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "352824",
+   "label": "MANAGES",
+   "source": "182762",
+   "target": "385774",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Independent Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1100,
+     "y": 0
+    },
+    "1": {
+     "x": 1080,
+     "y": 25
+    },
+    "2": {
+     "x": 1090,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "352828",
+   "label": "MANAGES",
+   "source": "278518",
+   "target": "385774",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Additional Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123"
+  },
+  {
+   "id": "360452",
+   "label": "MANAGES",
+   "source": "188031",
+   "target": "295765",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2009",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 100,
+     "y": null
+    },
+    "1": {
+     "x": 100,
+     "y": 25
+    },
+    "2": {
+     "x": 100,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "363044",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "410350",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "2600.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1650,
+     "y": 0
+    },
+    "1": {
+     "x": 1765,
+     "y": 25
+    },
+    "2": {
+     "x": 1750,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "366498",
+   "label": "MANAGES",
+   "source": "192332",
+   "target": "403557",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2001",
+    "designation": "Chairman (Non-Executive)"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 600,
+     "y": 0
+    },
+    "1": {
+     "x": 610,
+     "y": 25
+    },
+    "2": {
+     "x": 600,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "370846",
+   "label": "MANAGES",
+   "source": "195337",
+   "target": "368239",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "executive": "Non-Executive",
+    "renumerations": "0.00",
+    "independent": "Independent",
+    "year": "2015",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 150,
+     "y": null
+    },
+    "1": {
+     "x": 150,
+     "y": 25
+    },
+    "2": {
+     "x": 150,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "372575",
+   "label": "MANAGES",
+   "source": "182759",
+   "target": "342653",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2000",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1155,
+     "y": 0
+    },
+    "1": {
+     "x": 1185,
+     "y": 25
+    },
+    "2": {
+     "x": 1165,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "372579",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "342653",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2001",
+    "designation": "Managing Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123"
+  },
+  {
+   "id": "372581",
+   "label": "MANAGES",
+   "source": "278518",
+   "target": "342653",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2001",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123"
+  },
+  {
+   "id": "378020",
+   "label": "MANAGES",
+   "source": "195337",
+   "target": "357567",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "800.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 150,
+     "y": 0
+    },
+    "1": {
+     "x": 200,
+     "y": 25
+    },
+    "2": {
+     "x": 200,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "379148",
+   "label": "MANAGES",
+   "source": "201208",
+   "target": "350146",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "400.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 250,
+     "y": null
+    },
+    "1": {
+     "x": 250,
+     "y": 25
+    },
+    "2": {
+     "x": 250,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "386013",
+   "label": "MANAGES",
+   "source": "206154",
+   "target": "393169",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2007",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 400,
+     "y": null
+    },
+    "1": {
+     "x": 400,
+     "y": 25
+    },
+    "2": {
+     "x": 325,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "386017",
+   "label": "MANAGES",
+   "source": "206158",
+   "target": "393169",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Managing Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123"
+  },
+  {
+   "id": "386018",
+   "label": "MANAGES",
+   "source": "206159",
+   "target": "393169",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2013",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 300,
+     "y": null
+    },
+    "1": {
+     "x": 300,
+     "y": 25
+    },
+    "2": {
+     "x": 325,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "391118",
+   "label": "MANAGES",
+   "source": "209591",
+   "target": "345307",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2006",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 450,
+     "y": null
+    },
+    "1": {
+     "x": 450,
+     "y": 25
+    },
+    "2": {
+     "x": 450,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "396971",
+   "label": "MANAGES",
+   "source": "213752",
+   "target": "359911",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2007",
+    "designation": "Additional Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 550,
+     "y": null
+    },
+    "1": {
+     "x": 550,
+     "y": 25
+    },
+    "2": {
+     "x": 550,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "402233",
+   "label": "MANAGES",
+   "source": "275839",
+   "target": "358390",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "2200.00",
+    "executive": "Non-Executive",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123"
+  },
+  {
+   "id": "404813",
+   "label": "MANAGES",
+   "source": "218600",
+   "target": "362116",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2009",
+    "designation": "Additional Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 650,
+     "y": 0
+    },
+    "1": {
+     "x": 660,
+     "y": 25
+    },
+    "2": {
+     "x": 660,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "409412",
+   "label": "MANAGES",
+   "source": "221396",
+   "target": "342388",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2008",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 970,
+     "y": 0
+    },
+    "1": {
+     "x": 920,
+     "y": 25
+    },
+    "2": {
+     "x": 920,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "412032",
+   "label": "MANAGES",
+   "source": "209591",
+   "target": "304976",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2005",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 450,
+     "y": 0
+    },
+    "1": {
+     "x": 500,
+     "y": 25
+    },
+    "2": {
+     "x": 500,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "420216",
+   "label": "MANAGES",
+   "source": "221396",
+   "target": "331048",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2005",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 970,
+     "y": null
+    },
+    "1": {
+     "x": 970,
+     "y": 25
+    },
+    "2": {
+     "x": 970,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "437537",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "317482",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "000.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123"
+  },
+  {
+   "id": "437781",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "369698",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2005",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123"
+  },
+  {
+   "id": "437786",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "369697",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2005",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123"
+  },
+  {
+   "id": "437787",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "409826",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2009",
+    "designation": "Company Secretary"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123"
+  },
+  {
+   "id": "438055",
+   "label": "MANAGES",
+   "source": "236603",
+   "target": "395222",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "Non-Executive",
+    "independent": "NA",
+    "year": "2005",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 915,
+     "y": 0
+    },
+    "1": {
+     "x": 870,
+     "y": 25
+    },
+    "2": {
+     "x": 845,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "440352",
+   "label": "MANAGES",
+   "source": "237743",
+   "target": "406878",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "executive": "Non-Executive",
+    "renumerations": "0.00",
+    "independent": "Non-Independent",
+    "year": "2009",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1040,
+     "y": 0
+    },
+    "1": {
+     "x": 1020,
+     "y": 25
+    },
+    "2": {
+     "x": 1020,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "455719",
+   "label": "MANAGES",
+   "source": "246778",
+   "target": "386768",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Additional director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 750,
+     "y": 0
+    },
+    "1": {
+     "x": 770,
+     "y": 25
+    },
+    "2": {
+     "x": 735,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "455721",
+   "label": "MANAGES",
+   "source": "246779",
+   "target": "386768",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Additional director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 700,
+     "y": 0
+    },
+    "1": {
+     "x": 720,
+     "y": 25
+    },
+    "2": {
+     "x": 735,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "455723",
+   "label": "MANAGES",
+   "source": "278518",
+   "target": "386768",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123"
+  },
+  {
+   "id": "464197",
+   "label": "MANAGES",
+   "source": "252034",
+   "target": "304700",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2013",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1310,
+     "y": 0
+    },
+    "1": {
+     "x": 1235,
+     "y": 25
+    },
+    "2": {
+     "x": 1220,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "464199",
+   "label": "MANAGES",
+   "source": "252035",
+   "target": "304700",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2013",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1260,
+     "y": 0
+    },
+    "1": {
+     "x": 1205,
+     "y": 25
+    },
+    "2": {
+     "x": 1220,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "473201",
+   "label": "MANAGES",
+   "source": "252034",
+   "target": "403682",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2014",
+    "designation": "Additional director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1310,
+     "y": 0
+    },
+    "1": {
+     "x": 1305,
+     "y": 25
+    },
+    "2": {
+     "x": 1280,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "473203",
+   "label": "MANAGES",
+   "source": "252035",
+   "target": "403682",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2014",
+    "designation": "Additional director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1260,
+     "y": 0
+    },
+    "1": {
+     "x": 1255,
+     "y": 25
+    },
+    "2": {
+     "x": 1280,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "481575",
+   "label": "MANAGES",
+   "source": "265974",
+   "target": "307008",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1420,
+     "y": 0
+    },
+    "1": {
+     "x": 1415,
+     "y": 25
+    },
+    "2": {
+     "x": 1390,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "481576",
+   "label": "MANAGES",
+   "source": "265975",
+   "target": "307008",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1360,
+     "y": 0
+    },
+    "1": {
+     "x": 1380,
+     "y": 25
+    },
+    "2": {
+     "x": 1390,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "486059",
+   "label": "MANAGES",
+   "source": "252034",
+   "target": "309837",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2014",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1310,
+     "y": 0
+    },
+    "1": {
+     "x": 1355,
+     "y": 25
+    },
+    "2": {
+     "x": 1340,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "486062",
+   "label": "MANAGES",
+   "source": "252035",
+   "target": "309837",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2014",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1260,
+     "y": 0
+    },
+    "1": {
+     "x": 1325,
+     "y": 25
+    },
+    "2": {
+     "x": 1340,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "488073",
+   "label": "MANAGES",
+   "source": "270522",
+   "target": "304064",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2015",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 2000,
+     "y": null
+    },
+    "1": {
+     "x": 2000,
+     "y": 25
+    },
+    "2": {
+     "x": 2000,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "489201",
+   "label": "MANAGES",
+   "source": "265974",
+   "target": "327641",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.00",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "2014",
+    "designation": "Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1420,
+     "y": 0
+    },
+    "1": {
+     "x": 1450,
+     "y": 25
+    },
+    "2": {
+     "x": 1450,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "493796",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "295764",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1650,
+     "y": 0
+    },
+    "1": {
+     "x": 1800,
+     "y": 25
+    },
+    "2": {
+     "x": 1800,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "496855",
+   "label": "MANAGES",
+   "source": "275839",
+   "target": "358390",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1920,
+     "y": 0
+    },
+    "1": {
+     "x": 1950,
+     "y": 25
+    },
+    "2": {
+     "x": 1950,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "501846",
+   "label": "MANAGES",
+   "source": "278518",
+   "target": "403557",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 820,
+     "y": 0
+    },
+    "1": {
+     "x": 585,
+     "y": 25
+    },
+    "2": {
+     "x": 600,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "504128",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "308685",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1650,
+     "y": 0
+    },
+    "1": {
+     "x": 1850,
+     "y": 25
+    },
+    "2": {
+     "x": 1850,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "505793",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "369697",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1650,
+     "y": null
+    },
+    "1": {
+     "x": 1650,
+     "y": 25
+    },
+    "2": {
+     "x": 1650,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "505795",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "369698",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1650,
+     "y": 0
+    },
+    "1": {
+     "x": 1600,
+     "y": 25
+    },
+    "2": {
+     "x": 1600,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "510682",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "317482",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1650,
+     "y": 0
+    },
+    "1": {
+     "x": 1550,
+     "y": 25
+    },
+    "2": {
+     "x": 1550,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "518012",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "326592",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1650,
+     "y": 0
+    },
+    "1": {
+     "x": 1900,
+     "y": 25
+    },
+    "2": {
+     "x": 1900,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "518137",
+   "label": "MANAGES",
+   "source": "278518",
+   "target": "385774",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123"
+  },
+  {
+   "id": "518138",
+   "label": "MANAGES",
+   "source": "278518",
+   "target": "385774",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Managing Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 820,
+     "y": 0
+    },
+    "1": {
+     "x": 1055,
+     "y": 25
+    },
+    "2": {
+     "x": 1090,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "519005",
+   "label": "MANAGES",
+   "source": "278518",
+   "target": "386768",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 820,
+     "y": 0
+    },
+    "1": {
+     "x": 695,
+     "y": 25
+    },
+    "2": {
+     "x": 735,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "522529",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "409826",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1650,
+     "y": 0
+    },
+    "1": {
+     "x": 1700,
+     "y": 25
+    },
+    "2": {
+     "x": 1700,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "525335",
+   "label": "MANAGES",
+   "source": "278518",
+   "target": "395222",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 820,
+     "y": null
+    },
+    "1": {
+     "x": 820,
+     "y": 25
+    },
+    "2": {
+     "x": 845,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "526141",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "343458",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1650,
+     "y": 0
+    },
+    "1": {
+     "x": 1500,
+     "y": 25
+    },
+    "2": {
+     "x": 1500,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "530002",
+   "label": "MANAGES",
+   "source": "290912",
+   "target": "341742",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Auditor"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 2050,
+     "y": null
+    },
+    "1": {
+     "x": 2050,
+     "y": 25
+    },
+    "2": {
+     "x": 2050,
+     "y": null
+    }
+   }
+  },
+  {
+   "id": "535864",
+   "label": "MANAGES",
+   "source": "206158",
+   "target": "393169",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Managing Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 350,
+     "y": null
+    },
+    "1": {
+     "x": 350,
+     "y": 25
+    },
+    "2": {
+     "x": 325,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "537253",
+   "label": "MANAGES",
+   "source": "275839",
+   "target": "410350",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1920,
+     "y": 0
+    },
+    "1": {
+     "x": 1735,
+     "y": 25
+    },
+    "2": {
+     "x": 1750,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "538210",
+   "label": "MANAGES",
+   "source": "278518",
+   "target": "342653",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Chairman"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 820,
+     "y": 0
+    },
+    "1": {
+     "x": 1145,
+     "y": 25
+    },
+    "2": {
+     "x": 1165,
+     "y": 50
+    }
+   }
+  },
+  {
+   "id": "538211",
+   "label": "MANAGES",
+   "source": "273982",
+   "target": "342653",
+   "neo4j_type": "MANAGES",
+   "neo4j_data": {
+    "renumerations": "0.0",
+    "executive": "NA",
+    "independent": "NA",
+    "year": "NA",
+    "designation": "Managing Director"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#890123",
+   "points": {
+    "0": {
+     "x": 1650,
+     "y": 0
+    },
+    "1": {
+     "x": 1165,
+     "y": 25
+    },
+    "2": {
+     "x": 1165,
+     "y": null
+    }
+   }
+  }
+ ]
+}

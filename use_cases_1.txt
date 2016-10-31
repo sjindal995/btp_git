@@ -1,0 +1,46 @@
+1.Family firms (companies managed by people with the same last name)
+	
+2.Seach connections between big entities in graph
+
+3.People or companies (+ their subsidiaries) connected to industry sectors	
+
+4.Companies/set of people which connect some companies and how connected they are without those people
+
+5.all companies which have collaborators in a country 
+collaborators of a company in a specific country
+all collaborators of a company (edge color distinguished by country)
+
+6.Companies with no of collaborators > x
+
+7.Visualize Connection of banks inter-bank network, input = bank name or void; output = connection graph
+(match (n1:Company)-[r1:IS_BANK_OF]->(n2:Company), (n3:Company)-[r2:IS_BANK_OF]->(n4:Company), (n3)-[r]-(n1) where not(n3.idCompany='67650' or n1.idCompany='67650') return n1,r,n3 limit 10000)
+
+8.Companies that have a specific bank as their banker, 
+Banks with >x  is_bank_of relations
+
+9.Management intersection between 2 companies (common people on management graph of a set of companies). input: Company names, ouput : management graph of the companies and the intersection
+
+10. Investments of a company, (edge width denotes no. of shares)
+	Companies with >x investments
+
+11.Heirarchical investment graph of a company (A company invested in some companies then these companies invested in more companies and so on). input: Company ouput: investment graph for a company. Nodes can be distinguished based on industries of the companies.
+
+12.Investments of a company along with funds held in that company
+
+13.Inter sector investments. edge weights = shares_count
+Inter sector subsidiaries. edge weights = shares_count
+
+14.companies of some specific industry, along with their subsidiaries/collabs(and their industries)
+
+15. Companies & their subsidiaries (edge width denotes percent holding)
+	Companies with >x subsidiaries
+
+16. Companies (& other relations) of a specific business group
+
+17. People with highest remunerations, over all companies;
+	over a specific industry/sector
+
+18. Funds with market share > x in some industry
+
+
+

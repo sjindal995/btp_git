@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>
+	Untitled Page
+</title><link type="text/css" rel="stylesheet" href="../PlusSite.css" />
+    <script type="text/javascript" language="javascript">            
+       function Printchk()   
+		{
+			url = "FinOverview.aspx?isprnt=Y&amp;id=fin"			 
+			ccwin = window.open(url,'ccwin','x=0,y=0,toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=1,copyhistory=no,width=650,height=440,screenX=0,screenY=0,left=210,top=200');
+			if (window.focus)
+			{
+				ccwin.focus();
+			}
+			return false;
+		}
+		function DocPrint()
+		{
+			 var disp_setting="toolbar=yes,location=no,directories=yes,menubar=yes,"; 
+           disp_setting+="scrollbars=yes,width=650, height=600, left=100, top=25"; 
+           var content_vlue = document.getElementById("divPrint").innerHTML; 
+  
+           var docprint=window.open("","",disp_setting); 
+           docprint.document.open();       
+           docprint.document.write('&lt;html&gt;&lt;body onLoad="self.print()"&gt;&lt;center&gt;');          
+           docprint.document.write(content_vlue);          
+           docprint.document.write('&lt;/center&gt;&lt;/body&gt;&lt;/html&gt;'); 
+           docprint.document.close(); 
+           docprint.focus();   
+		   	     
+		  document.getElementById("btnPrint").style.display='none';			
+		  document.getElementById("btnclose").style.display='none';		
+		}   
+      
+    
+    </script>    
+    
+</head>
+<body>
+    <form id="form1" action="FinOverview.aspx?id=fin" method="post" name="form1">
+<div>
+<input type="hidden" value="/wEPDwUKLTc5MjEyNzI2Mg9kFgICAw9kFgYCAg8WAh4HT25jbGljawUScmV0dXJuIFByaW50Y2hrKCk7ZAIFDw8WAh4EVGV4dAVGQWNjdXJhdGUgSW52ZXN0bWVudCBDbyBMdGQ8YnI+SW5kdXN0cnkgOiBGaW5hbmNlIC0gSW52ZXN0bWVudCAvIE90aGVyc2RkAgYPDxYCHwEFDihScyBpbiBDcm9yZXMpZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFCEltZ2V4Y2VsBQdJbWdXb3Jk3Anep45cTO9OeR+xG4zlGBaAT8A=" id="__VIEWSTATE" name="__VIEWSTATE" />
+</div>
+
+        <div>
+            <table width="100%" cellspacing="0" cellpadding="0" id="divPrint">
+                <tbody><tr>
+                    <td valign="top">
+                        
+
+<script type="text/javascript" language="javascript">
+//document.oncontextmenu=new Function("return false");
+    function GoCloseWin() //all popup
+    {   
+     var win
+     win=parent.close();     
+    }     	
+
+</script>
+
+<!--oncontextmenu="return false;" onselectstart="return false;" -->
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody><tr>
+        <td width="90%" valign="middle" nowrap="nowrap" background="../images/HeaderBack.gif" class="ColHeadL" style="height: 22px;">
+            Company &gt;&gt; Finance &gt;&gt; Financial Overview
+        </td>    
+       
+         <td width="10%" valign="bottom" nowrap="nowrap" background="../images/HeaderBack.gif" align="right" class="ColHeadL">
+                       
+        </td>
+    </tr>
+</tbody></table>
+ 
+<script>
+document.oncontextmenu=new Function("return false");
+</script></td>
+                </tr>
+            <tr>
+                <td valign="top" align="right" style="padding-right:20px;height:5px"> 
+                   <img border="0" onclick="return Printchk();" alt="Print" style="cursor:pointer" title="Print" id="Imgprint" src="/images/printer.gif" /> 
+                  <input type="image" border="0" style="border-width:0px;" src="/Images/excel.gif" title="Export To Excel" id="Imgexcel" name="Imgexcel" />
+                                       
+                             <input type="image" border="0" style="border-width:0px;cursor: hand" src="/Images/word.gif" title="Export To Word" id="ImgWord" name="ImgWord" />                                         
+                </td>
+            </tr>
+                
+                <tr>
+                    <td valign="bottom" nowrap="nowrap" align="center" colspan="2" class="bottomborder">
+                        <span style="font-weight:bold;" class="CompanyLblName" id="LblComp">Accurate Investment Co Ltd<br />Industry : Finance - Investment / Others</span></td>
+                </tr>
+                <tr>
+                    <td class="tdrightHeader" colspan="2">
+                        <span id="lblCurrency">(Rs in Crores)</span></td>
+                </tr>
+                    <tr>
+                        <td valign="top" colspan="2">
+                            <table width="100%" cellspacing="1" cellpadding="0" border="0" bgcolor="#cccccc">
+                                <tbody><tr>
+                                    <td valign="top" bgcolor="#ffffff">
+                                        <table width="100%" cellspacing="0" cellpadding="2" border="0">
+                                            <tbody><tr>
+                                                <td bgcolor="#ffffff">
+                                                    <table border="0" style="width:100%;" id="Finover">
+	<tbody><tr>
+		<td><table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" bordercolordark="#D7D7E1" bordercolorlight="#FFFFFF"><tbody><tr><td valign="top"><table width="100%" cellspacing="1" cellpadding="2" border="0" class="tablelines"><tbody><tr><td colspan="12" class="SubSbHdrLeft"><b>Financial Overview </b></td></tr><tr><td width="25%" nowrap="nowrap" class="SubSbHdrLeft"></td><td></td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement"></td><td></td></tr></tbody></table></td></tr></tbody></table></td>
+	</tr>
+</tbody></table>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                <tr>
+                    <td valign="top" align="left" class="Nodata" colspan="2" id="TdNoData">
+                    </td>
+
+                </tr>
+                <tr>
+                    
+                </tr>
+            </tbody></table>
+        </div>
+    </form>
+
+
+</body></html>

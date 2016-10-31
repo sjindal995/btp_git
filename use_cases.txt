@@ -1,0 +1,37 @@
+1. Family firms (if company has >x members in management with same last name)
+2. Seach connections between big entities in graph
+3. If connection graph for two nodes is similar, whetther the two nodes are same or they are close to each other
+5. Family graph
+4. People or companies (+ their subsidiaries) connected to more than x industry sectors		hierarchical/dagre 
+6. companies/set of people which connect some companies and how connected they are without those people
+7. Country wise segmentation of companies, inputs can be a company or a country (span of a company to other countries via subsidiaries, banks etc, and in other case visualize all the companies that have some ties in the specified country)
+8. Visualize Connection of banks inter-bank network, input = bank name or void; output = connection graph
+(match (n1:Company)-[r1:IS_BANK_OF]->(n2:Company), (n3:Company)-[r2:IS_BANK_OF]->(n4:Company), (n3)-[r]-(n1) where not(n3.idCompany='67650' or n1.idCompany='67650') return n1,r,n3 limit 10000)
+
+10. Management intersection between a set of companies (common people on management graph of a set of companies). input: Company names, ouput : management graph of the companies and the intersection
+
+11. Heirarchical investment graph of a company (A company invested in some companies then these companies invested in more companies and so on). input: Company ouput: investment graph for a company. Nodes can be distinguished based on industries of the companies.
+
+12. Relations between funds and companies/industries based on shares_count
+
+13. Inter sector investments. edge weights = shares_count
+
+14. Inter sector subsidiaries. edge weights = shares_count
+
+15. Inter sector collaborations.
+
+16. 
+companies of some specific industry, along with their subsidiaries/collabs(and their industries)
+an industry and (how much does a company span in a particular insudtry sector)
+
+
+
+
+optional match (i1:Industry{idIndustry:'-4'}) optional match (i2:Industry{idIndustry:'-5'}) optional match (i3:Industry{idIndustry:'1'})
+FOREACH (o IN CASE WHEN i3 IS NOT NULL THEN [i3] ELSE [] END |
+	FOREACH (o IN CASE WHEN i2 IS NOT NULL THEN [i2] ELSE [] END |
+  create (i2)-[:DUMMY2{}]->(i3)
+))
+FOREACH (o IN CASE WHEN i1 IS NOT NULL THEN [i1] ELSE [] END |
+  create (i1)-[:DUMMY2{}]->(i2)
+)

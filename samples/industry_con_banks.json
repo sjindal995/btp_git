@@ -1,0 +1,6838 @@
+{
+ "nodes": [
+  {
+   "id": "178553",
+   "label": "Banks - Private Sector",
+   "x": 152.84991592304945,
+   "y": 150.44715115290518,
+   "size": 29,
+   "neo4j_labels": {
+    "0": "Industry"
+   },
+   "neo4j_data": {
+    "idIndustry": "31",
+    "name": "Banks - Private Sector"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#0f0",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "178554",
+   "label": "Banks - Public Sector",
+   "x": 123.68230955304318,
+   "y": 35.97249501229098,
+   "size": 30,
+   "neo4j_labels": {
+    "0": "Industry"
+   },
+   "neo4j_data": {
+    "idIndustry": "32",
+    "name": "Banks - Public Sector"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#000",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "296063",
+   "label": "Mogaveera Co-Operative Bank Ltd",
+   "x": 52.40431795878312,
+   "y": 128.57142857142858,
+   "size": 12,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "6476",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "fax": "91-22-22076454/22093769",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-22-22070967/1048/1049/2682/5483",
+    "face_value": "100",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "203 Venkatesh Chambers Prescot Road Fort Mumbai  400001  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "NA",
+    "name": "Mogaveera Co-Operative Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "296716",
+   "label": "Progressive Co-Operative Bank Ltd",
+   "x": 64.18056918547596,
+   "y": 128.57142857142858,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "18103",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "12-Nov-2008",
+    "nic_activity": "Monetary intermediation of commercial banks",
+    "fax": "NA",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Listed",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-022-24013659/24013661",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "21",
+    "reg_office": "135 Ganesh Bhuvan Jain Society SwamyShri Vallabhdas Mg Sion(W Mumbai  400022  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "NA",
+    "name": "Progressive Co-Operative Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "306265",
+   "label": "Bareilly Corporation Bank Ltd",
+   "x": 72.42394504416094,
+   "y": 128.57142857142858,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Bareilly Corporation Bank Ltd BCB Bhawan 126 Civil Lines Bareilly.",
+    "idCompany": "7818",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "27-Jul-1998",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "NA",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "BCB Bhawan 126 Civil Lines Bareilly  Uttar Pradesh",
+    "financial_year_end": "March",
+    "incorporation_year": "1928",
+    "name": "Bareilly Corporation Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "306995",
+   "label": "State Bank Of Bikaner And Jaipur",
+   "x": 39.19054040767554,
+   "y": 66.64565726332755,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy Selenium Tow-B Pl-31&32 Gachibowli Nanakramguda Hyderabad-5000032.91-40-67161606/160291-40-67161791",
+    "idCompany": "5961",
+    "NSE_code": "SBBJ",
+    "ISIN_demat": "INE648A01026",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "SBKB.BO",
+    "AGM_date": "16-Jun-2015",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-141-5101176",
+    "bussiness_group": "SBI Group",
+    "listing": "Jaipur MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "501061",
+    "website": "NA",
+    "BSE_group": "B",
+    "telephone": "91-141-5101539",
+    "face_value": "10",
+    "bloomberg_code": "SBBJ IN",
+    "total_employees": "13238",
+    "reg_office": "Tilak Marg C-Scheme Jaipur  302005  Rajasthan",
+    "financial_year_end": "March",
+    "incorporation_year": "1963",
+    "name": "State Bank Of Bikaner And Jaipur"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "318149",
+   "label": "State Bank Of Patiala",
+   "x": 61.231871489075786,
+   "y": 65.2236359032372,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Times Bank Ltd 5-R/s Badshah Khan Chowk NIT Faridabad - 121001.",
+    "idCompany": "6705",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "NA",
+    "bussiness_group": "SBI Group",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "100",
+    "bloomberg_code": "NA",
+    "total_employees": "11175",
+    "reg_office": "The Mall Patiala  147001  Punjab",
+    "financial_year_end": "March",
+    "incorporation_year": "1917",
+    "name": "State Bank Of Patiala"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "318417",
+   "label": "Jain Sahakari Bank Ltd",
+   "x": 85.37782139352306,
+   "y": 128.57142857142858,
+   "size": 11,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Jain Sahakari Bank Ltd. Hirabaug Khatterali Lane  C P Tank Mumbai - 400 004.",
+    "idCompany": "5817",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "50",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-22-23868550",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-22-23824374 / 23864389",
+    "face_value": "25",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "Hirabaug Khattarali Lane C P Tank Mumbai  400004  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1946",
+    "name": "Jain Sahakari Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "323514",
+   "label": "New India Co-Operative Bank Ltd",
+   "x": 94.79882237487733,
+   "y": 128.57142857142858,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "New India Co-op. Bank Ltd 241/243 P Dmello Rd Adj. G P O Fort Mumbai - 400 001.",
+    "idCompany": "6215",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-022-24382870",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-022-66264000",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "339",
+    "reg_office": "New India Bhavan A V N Marg Babasaheb Worlikar Prabhadevi Mumbai  400025  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "NA",
+    "name": "New India Co-Operative Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "327002",
+   "label": "Dena Bank",
+   "x": 156.91854759568204,
+   "y": 64.28571428571429,
+   "size": 10,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Sharepro Services India P Ltd Samhita Complex Plot No 13 AB Saki Naka Andheri(E) Mumbai-400072.91-22-67720300/40091-22-28591568",
+    "idCompany": "5533",
+    "NSE_code": "DENABANK",
+    "ISIN_demat": "INE077A01010",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "DENA.BO",
+    "AGM_date": "27-Jun-2015",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-22-26545317",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "532121",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-22-26545318/19/20",
+    "face_value": "10",
+    "bloomberg_code": "DBNK IN",
+    "total_employees": "13632",
+    "reg_office": "Dena Corp Centre C-10 G Block Bandra Kurla Complex Bandra(E) Mumbai  400051  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1938",
+    "name": "Dena Bank"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "335647",
+   "label": "South Malabar Gramin Bank",
+   "x": 104.80863591756624,
+   "y": 128.57142857142858,
+   "size": 9,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "6526",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Monetary intermediation of commercial banks",
+    "fax": "91-483-2736987",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "100",
+    "bloomberg_code": "NA",
+    "total_employees": "1527",
+    "reg_office": "Malappuram  676505  Kerala",
+    "financial_year_end": "March",
+    "incorporation_year": "NA",
+    "name": "South Malabar Gramin Bank"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "339435",
+   "label": "Bank Of India",
+   "x": 120.70657507360157,
+   "y": 64.28571428571429,
+   "size": 11,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Sharepro Services India P Ltd Samhita Complex Plot No 13 AB Saki Naka Andheri(E) Mumbai-400072.91-22-67720300/40091-22-28591568",
+    "idCompany": "5654",
+    "NSE_code": "BANKINDIA",
+    "ISIN_demat": "INE084A01016",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "BOI.BO",
+    "AGM_date": "20-Jul-2015",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-22-66684491",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jul",
+    "BSE_code": "532149",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-22-66684444",
+    "face_value": "10",
+    "bloomberg_code": "BOI IN",
+    "total_employees": "45613",
+    "reg_office": "Star House C-5 G Block Bandra-Kurla Complex Bandra(E) Mumbai  400051  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1906",
+    "name": "Bank Of India"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "341579",
+   "label": "Saraswat Co-Operative Bank Ltd",
+   "x": 115.99607458292444,
+   "y": 128.57142857142858,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Saraswat Co-operative Bank Ltd Madhushree 4th Floor Plot No 85 Sector 17 Vashi Mumbai-400703.",
+    "idCompany": "6375",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "14-Jul-2011",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "NA",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Listed",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-22-24671162-64",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "3641",
+    "reg_office": "Madhukosh S V Sovani Path Girgaum Mumbai  400004  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1918",
+    "name": "Saraswat Co-Operative Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "344314",
+   "label": "Jai Hind Co-Operative Bank Ltd",
+   "x": 141.60942100098134,
+   "y": 128.57142857142858,
+   "size": 10,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Jai Hind Co-op Bank Ltd 108 Nagindas Master Rd Fort Mumbai - 400001.",
+    "idCompany": "6598",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "14-Aug-2001",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "NA",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-22-2670772/4633/2553/2691629",
+    "face_value": "25",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "Jai Hind Building 108 Nagindas Master Road Fort Mumbai  400001  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1949",
+    "name": "Jai Hind Co-Operative Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "346357",
+   "label": "Bank Of Baroda",
+   "x": 178.07462657649867,
+   "y": 64.03861810316191,
+   "size": 17,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy Selenium Tow-B Pl-31&32 Gachibowli Nanakramguda Hyderabad-5000032.91-40-67161606/160291-40-67161791",
+    "idCompany": "5456",
+    "NSE_code": "BANKBARODA",
+    "ISIN_demat": "INE028A01039",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "BOB.BO",
+    "AGM_date": "24-Jun-2015",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-0265-2361824",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "532134",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-0265-2361724",
+    "face_value": "2",
+    "bloomberg_code": "BOB IN",
+    "total_employees": "49000",
+    "reg_office": "Baroda House Mandvi Vadodara  390006  Gujarat",
+    "financial_year_end": "March",
+    "incorporation_year": "1908",
+    "name": "Bank Of Baroda"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "346729",
+   "label": "Kalupur Commercial Cooperative Bank Ltd",
+   "x": 201.66830225711482,
+   "y": 128.57142857142858,
+   "size": 12,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "7485",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "20-Aug-2008",
+    "nic_activity": "Monetary intermediation of commercial banks",
+    "fax": "91-079-27544450/27582033",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-079-27582020-27582026",
+    "face_value": "25",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "Kalupur Bank Bhavan Ashram Rd Nr Income Tax Circle Ahmedabad  380014  Gujarat",
+    "financial_year_end": "March",
+    "incorporation_year": "NA",
+    "name": "Kalupur Commercial Cooperative Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "348771",
+   "label": "State Bank Of Travancore",
+   "x": 49.85570060835309,
+   "y": 65.69764302326732,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Integrated Enterprises (I) Ltd Kences Tower 2nd Floor No 1 Ramakrishna Street Chennai - 600 017.91-044-28140801/80391-044-28142479",
+    "idCompany": "5521",
+    "NSE_code": "SBT",
+    "ISIN_demat": "INE654A01024",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "SBKT.BO",
+    "AGM_date": "15-Jun-2015",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-471-2351137/2351861",
+    "bussiness_group": "SBI Group",
+    "listing": "Chennai Kochi MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "May",
+    "BSE_code": "532191",
+    "website": "NA",
+    "BSE_group": "B",
+    "telephone": "91-471-2359975/2351244 (10 Lines)",
+    "face_value": "10",
+    "bloomberg_code": "SBTR IN",
+    "total_employees": "14491",
+    "reg_office": "Poojappura P O Thiruvananthapuram  695012  Kerala",
+    "financial_year_end": "March",
+    "incorporation_year": "1945",
+    "name": "State Bank Of Travancore"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "348774",
+   "label": "South Indian Co-Operative Bank Ltd",
+   "x": 212.5894501263695,
+   "y": 128.41645730124395,
+   "size": 9,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "South Indian Co-op Bank Bhaudaji Bhavan Bhaudaji Road Matunga Mumbai - 400019.",
+    "idCompany": "5524",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "16-Aug-2004",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-022-24026419",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-022-24014624",
+    "face_value": "20",
+    "bloomberg_code": "NA",
+    "total_employees": "122",
+    "reg_office": "Telang Road Matunga Mumbai  400019  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1919",
+    "name": "South Indian Co-Operative Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "351046",
+   "label": "Federal Bank Ltd",
+   "x": 41.96343322136212,
+   "y": 129.21377513724866,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Integrated Enterprises (I) Ltd Kences Tower 2nd Floor No 1 Ramakrishna Street Chennai - 600 017.91-044-28140801/80391-044-28142479",
+    "idCompany": "3709",
+    "NSE_code": "FEDERALBNK",
+    "ISIN_demat": "INE171A01029",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "FED.BO",
+    "AGM_date": "29-Jun-2015",
+    "fax": "91-484-2622672/2622283",
+    "bussiness_group": "Indian Private",
+    "listing": "London MCX-SX Mumbai NSE",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "500469",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-484-2622263/2623620-29",
+    "face_value": "2",
+    "bloomberg_code": "FB IN",
+    "total_employees": "10981",
+    "reg_office": "P B No 103 Federal Towers Aluva  683101  Kerala",
+    "financial_year_end": "March",
+    "incorporation_year": "1931",
+    "name": "Federal Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "352609",
+   "label": "Syndicate Bank",
+   "x": 106.28066732090285,
+   "y": 64.28571428571429,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy Selenium Tow-B Pl-31&32 Gachibowli Nanakramguda Hyderabad-5000032.91-40-67161606/160291-40-67161791",
+    "idCompany": "5638",
+    "NSE_code": "SYNDIBANK",
+    "ISIN_demat": "INE667A01018",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "SBNK.BO",
+    "AGM_date": "26-Jun-2015",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-820-2570266",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "532276",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-820-2571181-96",
+    "face_value": "10",
+    "bloomberg_code": "SNDB IN",
+    "total_employees": "29134",
+    "reg_office": "Post Box No 1 Syndicate Bank Golden Jubilee Auditorium Manipal  576104  Karnataka",
+    "financial_year_end": "March",
+    "incorporation_year": "1925",
+    "name": "Syndicate Bank"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "356904",
+   "label": "Uco Bank",
+   "x": 145.1422963689892,
+   "y": 64.28571428571429,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy Selenium Tow-B Pl-31&32 Gachibowli Nanakramguda Hyderabad-5000032.91-40-67161606/160291-40-67161791",
+    "idCompany": "5475",
+    "NSE_code": "UCOBANK",
+    "ISIN_demat": "INE691A01018",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "UCBK.BO",
+    "AGM_date": "29-Jun-2015",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-33-22485625",
+    "bussiness_group": "Government of India",
+    "listing": "MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "532505",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-33-22254120/29",
+    "face_value": "10",
+    "bloomberg_code": "UCO IN",
+    "total_employees": "25236",
+    "reg_office": "10 B T M Sarani 7th Floor Kolkata  700001  West Bengal",
+    "financial_year_end": "March",
+    "incorporation_year": "1943",
+    "name": "Uco Bank"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "356908",
+   "label": "Canara Bank",
+   "x": 128.77788609336693,
+   "y": 63.327607423116746,
+   "size": 9,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy Selenium Tow-B Pl-31&32 Gachibowli Nanakramguda Hyderabad-5000032.91-40-67161606/160291-40-67161791",
+    "idCompany": "5471",
+    "NSE_code": "CANBK",
+    "ISIN_demat": "INE476A01014",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "CNBK.BO",
+    "AGM_date": "14-Jul-2015",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-080-22248831",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun/Jul",
+    "BSE_code": "532483",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-080-22100250",
+    "face_value": "10",
+    "bloomberg_code": "CBK IN",
+    "total_employees": "53984",
+    "reg_office": "Canara Bank Buildings 112 J C Road Bangaluru  560002  Karnataka",
+    "financial_year_end": "March",
+    "incorporation_year": "1906",
+    "name": "Canara Bank"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "359772",
+   "label": "State Bank Of Indore(Merged)",
+   "x": 114.32066893244846,
+   "y": 62.85360030308664,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "State Bank of Indore 5 Yeshwant Niwas Rd P B No 214 Indore - 452 003.",
+    "idCompany": "6010",
+    "NSE_code": "NA",
+    "ISIN_demat": "INE650A01022",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "26-May-2009",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-731-2537217/2534027/2541043",
+    "bussiness_group": "SBI Group",
+    "listing": "Not Listed",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "May",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-731-2534512/2546465/2433759",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "6285",
+    "reg_office": "5 Yeshwant Niwas Road P B No 214 Indore  452003  Madhya Pradesh",
+    "financial_year_end": "March",
+    "incorporation_year": "1960",
+    "name": "State Bank Of Indore(Merged)"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "359969",
+   "label": "Andhra Bank",
+   "x": 81.14017053034055,
+   "y": 63.801614543146854,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "MCS Ltd Kashiram Jamnadas Bg Office No 21/22 5 PD Mello Road Mumbai - 400009.",
+    "idCompany": "5859",
+    "NSE_code": "ANDHRABANK",
+    "ISIN_demat": "INE434A01013",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "ADBK.BO",
+    "AGM_date": "08-Jul-2015",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-40-2323 0883",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jul",
+    "BSE_code": "532418",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-40-2325 2371",
+    "face_value": "10",
+    "bloomberg_code": "ANDB IN",
+    "total_employees": "18525",
+    "reg_office": "Dr Pattabhi Bhavan 5-9-11 Saifabad Hyderabad  500004  Telangana",
+    "financial_year_end": "March",
+    "incorporation_year": "1923",
+    "name": "Andhra Bank"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "360643",
+   "label": "Punjab & Maharashtra Co-Op. Bank Ltd",
+   "x": 230.81452404317957,
+   "y": 128.57142857142858,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Panjab & Maharashtra Coop Bank 240 Shankar Sadan Opp. Sion Hospital Sion (E) Mumbai - 400022.",
+    "idCompany": "6199",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "28-Jul-2012",
+    "fax": "NA",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-22-2401 4197/2401 8200",
+    "face_value": "25",
+    "bloomberg_code": "NA",
+    "total_employees": "676",
+    "reg_office": "240 Shankar Sadan Opp Matalachmi Hospital Sion(E Mumbai  400022  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1983",
+    "name": "Punjab & Maharashtra Co-Op. Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "361913",
+   "label": "National Co-Operative Bank Ltd",
+   "x": 236.702649656526,
+   "y": 128.57142857142858,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "National Co-operative Bank Ltd 12 Vatsa House Janma Bhoomi Marg Fort Mumbai - 400001.",
+    "idCompany": "6720",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "NA",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "12 Vatsa House Janma Bhoomi Marg Fort Mumbai  400001  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "NA",
+    "name": "National Co-Operative Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "363052",
+   "label": "North Kanara G S B Co-Op Bank Ltd",
+   "x": 242.59077526987244,
+   "y": 128.57142857142858,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "6562",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "11-Jun-2005",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-22-23890369",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-22-23829578/23871748",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "419",
+    "reg_office": "Laxmi Sadan 361 V P Road Girgaon Mumbai  400004  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1917",
+    "name": "North Kanara G S B Co-Op Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "366920",
+   "label": "Reserve Bank Of India",
+   "x": 186.65358194308146,
+   "y": 64.28571428571429,
+   "size": 13,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "18052",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65110",
+    "reuters": "NA",
+    "market_lot": "-1",
+    "AGM_date": "NA",
+    "fax": "91-022-2222661784",
+    "nic_activity": "Central banking (relates to the functions and work",
+    "bussiness_group": "Government of India",
+    "listing": "Not Listed",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-022-22660868/22661872/22662644",
+    "face_value": "100",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "Central Office Building Shahid Bhagat Singh Marg Mumbai  400001  Maharashtra",
+    "incorporation_year": "NA",
+    "financial_year_end": "NA",
+    "name": "Reserve Bank Of India"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "367077",
+   "label": "Cosmos Co-Operative Bank Ltd",
+   "x": 161.82688123406982,
+   "y": 126.02450379322983,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "7894",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "22-Jun-2014",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "NA",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Listed",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-20-24409100",
+    "face_value": "100",
+    "bloomberg_code": "NA",
+    "total_employees": "2841",
+    "reg_office": "269/270 Shaniwar Peth Chimaji Appa Peshave Chowk Pune  411030  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1906",
+    "name": "Cosmos Co-Operative Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "373903",
+   "label": "Vima Kamgar Co-Operative Bank Ltd",
+   "x": 251.12855740922473,
+   "y": 128.57142857142858,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "25012",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "NA",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-022-65730721/65730722",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "52",
+    "reg_office": "Yogakshema Ground Floor Jeevan Bima Marg Mumbai  400021  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "NA",
+    "name": "Vima Kamgar Co-Operative Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "375858",
+   "label": "Central Bank Of India",
+   "x": 100.39254170755643,
+   "y": 64.28571428571429,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Link Intime India Pvt Ltd C-13 Pannalal Silk Mills Cmpd LBS Marg Bhandup West Mumbai - 400 078.91-022-2596383891-022-25946969",
+    "idCompany": "5539",
+    "NSE_code": "CENTRALBK",
+    "ISIN_demat": "INE483A01010",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "CBI.BO",
+    "AGM_date": "30-Jun-2015",
+    "fax": "91-22-22835198/22820989/22028605",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "532885",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-22-66387828/66387600/22028916",
+    "face_value": "10",
+    "bloomberg_code": "CBOI IN",
+    "total_employees": "39039",
+    "reg_office": "9th Floor Chandermukhi Nariman Point Mumbai  400021  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1911",
+    "name": "Central Bank Of India"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "378701",
+   "label": "Corporation Bank",
+   "x": 200.49067713444555,
+   "y": 64.28571428571429,
+   "size": 11,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy Selenium Tow-B Pl-31&32 Gachibowli Nanakramguda Hyderabad-5000032.91-40-67161606/160291-40-67161791",
+    "idCompany": "5445",
+    "NSE_code": "CORPBANK",
+    "ISIN_demat": "INE112A01023",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "CRBK.BO",
+    "AGM_date": "29-Jun-2015",
+    "fax": "91-824-2423853/2421581",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "MCX-SX Mumbai NSE",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "532179",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-824-2424971-2423853",
+    "face_value": "2",
+    "bloomberg_code": "CRPBK IN",
+    "total_employees": "19210",
+    "reg_office": "Post Box No 88 Mangaladevi Temple Road Mangalore  575001  Karnataka",
+    "financial_year_end": "March",
+    "incorporation_year": "1906",
+    "name": "Corporation Bank"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "381028",
+   "label": "State Bank Of Mysore",
+   "x": 135.51539264591446,
+   "y": 64.63103042086735,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Integrated Enterprises (I) Ltd Kences Tower 2nd Floor No 1 Ramakrishna Street Chennai - 600 017.91-044-28140801/80391-044-28142479",
+    "idCompany": "5947",
+    "NSE_code": "MYSOREBANK",
+    "ISIN_demat": "INE651A01020",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "SBKM.BO",
+    "AGM_date": "25-May-2015",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-80-22283684",
+    "bussiness_group": "SBI Group",
+    "listing": "MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "May",
+    "BSE_code": "532200",
+    "website": "NA",
+    "BSE_group": "B",
+    "telephone": "91-80-22353901-22353909/22353473",
+    "face_value": "10",
+    "bloomberg_code": "SBMS IN",
+    "total_employees": "10193",
+    "reg_office": "Mysore Bank Circle Kempegowda Road Bangalore  560254  Karnataka",
+    "financial_year_end": "March",
+    "incorporation_year": "1913",
+    "name": "State Bank Of Mysore"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "383181",
+   "label": "Allahabad Bank",
+   "x": 71.89703168975333,
+   "y": 64.98663234322214,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "MCS Share Transfer Agent Ltd 12/1/5 Manoharpukar Road Ground Floor Kolkata-700026.91-033-4072405191-033-40724050",
+    "idCompany": "5675",
+    "NSE_code": "ALBK",
+    "ISIN_demat": "INE428A01015",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "ALBK.BO",
+    "AGM_date": "26-Jun-2015",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-33-22107424",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "532480",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-33-22420878",
+    "face_value": "10",
+    "bloomberg_code": "ALBK IN",
+    "total_employees": "24231",
+    "reg_office": "2 Netaji Subhas Road Kolkata  700001  West Bengal",
+    "financial_year_end": "March",
+    "incorporation_year": "1865",
+    "name": "Allahabad Bank"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "384583",
+   "label": "Nainital Bank Ltd",
+   "x": 184.68332586620477,
+   "y": 127.35336685323767,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "7298",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-5942-236120",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Listed",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-5942-236138/236195",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "664",
+    "reg_office": "G B Pant Marg Nainital  263001  Uttaranchal",
+    "financial_year_end": "March",
+    "incorporation_year": "1922",
+    "name": "Nainital Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "387405",
+   "label": "State Bank Of Saurashtra(Merged)",
+   "x": 151.0304219823356,
+   "y": 64.28571428571429,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "State Bank of Saurashtra New Admn. Building Nilambaug Chowk P B No. 51 Bhavnagar-364001.",
+    "idCompany": "6640",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "fax": "91-278-2427032",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "bussiness_group": "SBI Group",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-278-2439390(15 Lines)",
+    "face_value": "100",
+    "bloomberg_code": "NA",
+    "total_employees": "7325",
+    "reg_office": "Nilambaug Chowk P B No. 51 Bhavnagar  364001  Gujarat",
+    "financial_year_end": "March",
+    "incorporation_year": "1902",
+    "name": "State Bank Of Saurashtra(Merged)"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "387407",
+   "label": "Citizencredit Co-Operative Bank Ltd",
+   "x": 174.75657673628788,
+   "y": 126.13355082710672,
+   "size": 9,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Citizen Co-operative Bank Ltd 8703/XV D B Gupta Road New Delhi-110055.91-11-3529563/363408",
+    "idCompany": "6642",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "fax": "91-022-26403128/26430131",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-022-26401126/26442829/30/31/32",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "392",
+    "reg_office": "Helena Apartmets 57 Mount Carmel Road Bandra(W) Mumbai  400050  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1920",
+    "name": "Citizencredit Co-Operative Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "393126",
+   "label": "Shri Arihant Co-Operative Bank Ltd",
+   "x": 258.6558369816179,
+   "y": 128.5035864272573,
+   "size": 9,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "6478",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-22-25799323",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-22-32567078",
+    "face_value": "25",
+    "bloomberg_code": "NA",
+    "total_employees": "62",
+    "reg_office": "GB 10 A & B Karma Stambh LBS Marg Vikhroli (W) Mumbai  400083  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1984",
+    "name": "Shri Arihant Co-Operative Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "393356",
+   "label": "Punjab National Bank",
+   "x": 87.77627021076214,
+   "y": 62.14258962304146,
+   "size": 9,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Beetal Fin.&Computer Ser.P Ltd Beetal House 3rd Flr Behind Local Shp Cen Nr Dada Harsukh Das New Delhi - 110062.91-11-29961281-8291-11-29961284",
+    "idCompany": "7855",
+    "NSE_code": "PNB",
+    "ISIN_demat": "INE160A01022",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "PNBK.BO",
+    "AGM_date": "30-Jun-2015",
+    "fax": "91-011-26196456/23711663/23766079",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "bussiness_group": "Government of India - PNB",
+    "listing": "MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "532461",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-011-26102303/23323654/23323657",
+    "face_value": "2",
+    "bloomberg_code": "PNB IN",
+    "total_employees": "68290",
+    "reg_office": "7 Bhikhaiji Cama Place New Delhi  110607  New Delhi",
+    "financial_year_end": "March",
+    "incorporation_year": "1895",
+    "name": "Punjab National Bank"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "394686",
+   "label": "Indian Bank",
+   "x": 206.37880274779195,
+   "y": 64.28571428571429,
+   "size": 9,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Cameo Corporate Services Ltd Subramanian Building 1ST Floor No 1 Club House Road Chennai - 600002.91-44-2846270091-44-28460129",
+    "idCompany": "6061",
+    "NSE_code": "INDIANB",
+    "ISIN_demat": "INE562A01011",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "INBA.BO",
+    "AGM_date": "27-Jun-2015",
+    "fax": "91-44-25231278",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "532814",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-44-25233231/25231253/25231254",
+    "face_value": "10",
+    "bloomberg_code": "INBK IN",
+    "total_employees": "20294",
+    "reg_office": "66 Rajaji Salai P B No 1384 Chennai  600001  Tamil Nadu",
+    "financial_year_end": "March",
+    "incorporation_year": "1907",
+    "name": "Indian Bank"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "401165",
+   "label": "Janakalyan Sahakari Bank Ltd",
+   "x": 271.7369970559372,
+   "y": 128.57142857142858,
+   "size": 9,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Janakalyan Sahakari Bank Ltd 140 Vivek Darshan Sindhi Society Opp Bhakti Bhavan Mumbai - 400071.91-22-2522 258291-22-2523 0266",
+    "idCompany": "6512",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-22-25230266",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Listed",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-22-25222582",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "486",
+    "reg_office": "140 Vivek Darshan Sindhi Soc Opp Bhakti Bhavan Chembur Mumbai  400071  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1974",
+    "name": "Janakalyan Sahakari Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "402069",
+   "label": "Pratap Co-Operative Bank Ltd",
+   "x": 277.6251226692836,
+   "y": 128.57142857142858,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "7801",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "29-Jul-2006",
+    "fax": "91-022-22423676",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-022-23445694/56871753/22412241",
+    "face_value": "25",
+    "bloomberg_code": "NA",
+    "total_employees": "40",
+    "reg_office": "40/42 Shree Mansion 1st Flr Nagdevi Street Mumbai  400003  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1981",
+    "name": "Pratap Co-Operative Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "402070",
+   "label": "Memon Co-Operative Bank Ltd",
+   "x": 222.4230367704276,
+   "y": 127.8849120772408,
+   "size": 20,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "7800",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "13-Dec-2002",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-22-23060241",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-22-23082651/52/53",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "-1",
+    "reg_office": "Patel & Sony Arcade 1st Flr 234 Bellasis Road Mumbai  400008  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "NA",
+    "name": "Memon Co-Operative Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "403244",
+   "label": "Punjab & Sind Bank",
+   "x": 192.54170755642787,
+   "y": 64.28571428571429,
+   "size": 9,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Link Intime India Pvt Ltd Narang Tower 44 Community Centre Naraina Ind Area New Delhi-110028.91-11-41410592-9491-11-41410591",
+    "idCompany": "5814",
+    "NSE_code": "PSB",
+    "ISIN_demat": "INE608A01012",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "PUNA.BO",
+    "AGM_date": "29-Jun-2015",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-11-25781639",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "533295",
+    "website": "NA",
+    "BSE_group": "B",
+    "telephone": "91-11-25782926/25812922",
+    "face_value": "10",
+    "bloomberg_code": "PJSB IN",
+    "total_employees": "9180",
+    "reg_office": "Bank House 21 Rajendra Palace New Delhi  110008  New Delhi",
+    "financial_year_end": "March",
+    "incorporation_year": "1908",
+    "name": "Punjab & Sind Bank"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "404885",
+   "label": "Bank Of Maharashtra",
+   "x": 32.685900711506775,
+   "y": 64.34330058306209,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "MCS Share Transfer Agent Ltd 002 Ground Floor Kashiram Jamnadas Bl P Demellow Rd Majid Mumbai-400009.91-22-40206020/21/2291-22-40206021",
+    "idCompany": "5607",
+    "NSE_code": "MAHABANK",
+    "ISIN_demat": "INE457A01014",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "BMBK.BO",
+    "AGM_date": "29-Jun-2015",
+    "fax": "91-20-25533246",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "MCX-SX Mumbai NSE",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "532525",
+    "website": "NA",
+    "BSE_group": "B",
+    "telephone": "91-20-25511360",
+    "face_value": "10",
+    "bloomberg_code": "BOMH IN",
+    "total_employees": "14189",
+    "reg_office": "Lokmangal 1501 Shivajinagar Pune  411005  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1935",
+    "name": "Bank Of Maharashtra"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "404886",
+   "label": "State Bank Of Hyderabad",
+   "x": 212.85574092247302,
+   "y": 64.28571428571429,
+   "size": 9,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "5606",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "NA",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "NA",
+    "bussiness_group": "SBI Group",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "NA",
+    "face_value": "100",
+    "bloomberg_code": "NA",
+    "total_employees": "12813",
+    "reg_office": "Gunfoundry Hyderabad  500001  Andhra Pradesh",
+    "financial_year_end": "March",
+    "incorporation_year": "1942",
+    "name": "State Bank Of Hyderabad"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "407503",
+   "label": "Idbi Bank Ltd",
+   "x": 172.14953757612227,
+   "y": 64.98663234322214,
+   "size": 10,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Karvy Computershare Pvt Ltd Karvy Selenium Tow-B Pl-31&32 Gachibowli Nanakramguda Hyderabad-5000032.91-40-67161606/160291-40-67161791",
+    "idCompany": "5433",
+    "NSE_code": "IDBI",
+    "ISIN_demat": "INE008A01015",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "IDBI.BO",
+    "AGM_date": "12-Aug-2015",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-22-22180411",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Aug",
+    "BSE_code": "500116",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-22-66553355/22189111",
+    "face_value": "10",
+    "bloomberg_code": "IDBI IN",
+    "total_employees": "16555",
+    "reg_office": "IDBI Tower WTC Complex 3rd Flr Cuffe Parade Colaba Mumbai  400005  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1964",
+    "name": "Idbi Bank Ltd"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "408149",
+   "label": "State Bank Of India",
+   "x": 94.41236989118372,
+   "y": 61.66858250301135,
+   "size": 13,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Datamatics Financial Services Plot No B-5 MIDC Part B Cross Lane Marol Andheri(E) Mumbai-400093.91-22-6671 215191-22-6671 2209",
+    "idCompany": "1375",
+    "NSE_code": "SBIN",
+    "ISIN_demat": "INE062A01020",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "SBI.BO",
+    "AGM_date": "02-Jul-2015",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "fax": "91-22-22855348",
+    "bussiness_group": "Government of India - SBI",
+    "listing": "Ahmedabad Delhi Kolkata London MCX-SX Mumbai NSE",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "May/Jun",
+    "BSE_code": "500112",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-22-22740841/42/43/44/45/46/47/48",
+    "face_value": "1",
+    "bloomberg_code": "SBIN IN",
+    "total_employees": "213238",
+    "reg_office": "State Bank Bhavan 14th Floor Madame Cama Road Nariman Point Mumbai  400021  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1955",
+    "name": "State Bank Of India"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "408439",
+   "label": "Greater Bombay Co-Op Bank Ltd",
+   "x": 285.8684985279686,
+   "y": 128.57142857142858,
+   "size": 7,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Greater Bombay Co-op Bank Ltd G B C B House 89 Bhuleshwar Mumbai - 400002.",
+    "idCompany": "6171",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "27-Sep-2013",
+    "fax": "91-022-2411210",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Available",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-022-2413642 2411843/2408890",
+    "face_value": "25",
+    "bloomberg_code": "NA",
+    "total_employees": "466",
+    "reg_office": "G B C B House 89 Bhuleshwar Mumbai  400002  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1952",
+    "name": "Greater Bombay Co-Op Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "409024",
+   "label": "Veerashaiva Co-Op Bank Ltd",
+   "x": 300,
+   "y": 128.57142857142858,
+   "size": 14,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "NA",
+    "idCompany": "24972",
+    "NSE_code": "NA",
+    "ISIN_demat": "NA",
+    "nic_code": "65191",
+    "market_lot": "-1",
+    "reuters": "NA",
+    "AGM_date": "05-Aug-2006",
+    "fax": "91-22-25228448",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "bussiness_group": "Indian Private",
+    "listing": "Not Listed",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "NA",
+    "BSE_code": "NA",
+    "website": "NA",
+    "BSE_group": "NA",
+    "telephone": "91-22-25299519/25299903",
+    "face_value": "10",
+    "bloomberg_code": "NA",
+    "total_employees": "84",
+    "reg_office": "P No 31 Basaveshwar Bhawan B Chowk Dr D K S Marg Chembur Mumbai  400071  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1973",
+    "name": "Veerashaiva Co-Op Bank Ltd"
+   },
+   "level": 3,
+   "type": "circle",
+   "color": "#00f",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  },
+  {
+   "id": "411433",
+   "label": "Union Bank Of India",
+   "x": 162.80667320902845,
+   "y": 64.28571428571429,
+   "size": 8,
+   "neo4j_labels": {
+    "0": "Company"
+   },
+   "neo4j_data": {
+    "reg_name_address": "Datamatics Financial Services Plot No B-5 MIDC Part B Cross Lane Marol Andheri(E) Mumbai-400093.91-22-6671 215191-22-6671 2209",
+    "idCompany": "5493",
+    "NSE_code": "UNIONBANK",
+    "ISIN_demat": "INE692A01016",
+    "nic_code": "65191",
+    "market_lot": "1",
+    "reuters": "UNBK.BO",
+    "AGM_date": "26-Jun-2015",
+    "fax": "91-22-22025238",
+    "bussiness_group": "Govt.of India - Pub.Sect.Banks",
+    "listing": "MCX-SX Mumbai NSE",
+    "nic_activity": "Monetary intermediation of commercial banks  savin",
+    "sector": "Banks",
+    "email": "NA",
+    "book_closure_month": "Jun",
+    "BSE_code": "532477",
+    "website": "NA",
+    "BSE_group": "A",
+    "telephone": "91-22-22896643/36",
+    "face_value": "10",
+    "bloomberg_code": "UNBK IN",
+    "total_employees": "35514",
+    "reg_office": "239 Vidhan Bhavan Marg Nariman Point UnionBank Bhavan Mumbai  400021  Maharashtra",
+    "financial_year_end": "March",
+    "incorporation_year": "1919",
+    "name": "Union Bank Of India"
+   },
+   "level": 3,
+   "type": "diamond",
+   "color": "#f00",
+   "dagre_x": null,
+   "dagre_y": null,
+   "active": false
+  }
+ ],
+ "edges": [
+  {
+   "id": "4290",
+   "label": "INDUSTRY",
+   "source": "327002",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "active": false
+  },
+  {
+   "id": "5930",
+   "label": "INDUSTRY",
+   "source": "339435",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "active": false
+  },
+  {
+   "id": "6865",
+   "label": "INDUSTRY",
+   "source": "346357",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "active": false
+  },
+  {
+   "id": "7320",
+   "label": "INDUSTRY",
+   "source": "348771",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "active": false
+  },
+  {
+   "id": "8285",
+   "label": "INDUSTRY",
+   "source": "356908",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "active": false
+  },
+  {
+   "id": "10675",
+   "label": "INDUSTRY",
+   "source": "375858",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "active": false
+  },
+  {
+   "id": "13065",
+   "label": "INDUSTRY",
+   "source": "394686",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "active": false
+  },
+  {
+   "id": "14380",
+   "label": "INDUSTRY",
+   "source": "404885",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "active": false
+  },
+  {
+   "id": "16460",
+   "label": "IS_BANK_OF",
+   "source": "346357",
+   "target": "393126",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1497.5,
+     "y": 50
+    },
+    "1": {
+     "x": 2247.5,
+     "y": 75
+    },
+    "2": {
+     "x": 2247.5,
+     "y": 100
+    },
+    "3": {
+     "x": 2247.5,
+     "y": 125
+    },
+    "4": {
+     "x": 2247.5,
+     "y": 150
+    },
+    "5": {
+     "x": 2247.5,
+     "y": 175
+    },
+    "6": {
+     "x": 2267.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "16464",
+   "label": "IS_BANK_OF",
+   "source": "403244",
+   "target": "393126",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1635,
+     "y": 150
+    },
+    "1": {
+     "x": 2267.5,
+     "y": 175
+    },
+    "2": {
+     "x": 2267.5,
+     "y": null
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "16465",
+   "label": "IS_BANK_OF",
+   "source": "404886",
+   "target": "393126",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1807.5,
+     "y": 150
+    },
+    "1": {
+     "x": 2287.5,
+     "y": 175
+    },
+    "2": {
+     "x": 2267.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "17082",
+   "label": "IS_BANK_OF",
+   "source": "346357",
+   "target": "296716",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1497.5,
+     "y": 50
+    },
+    "1": {
+     "x": 540,
+     "y": 75
+    },
+    "2": {
+     "x": 540,
+     "y": 100
+    },
+    "3": {
+     "x": 540,
+     "y": 125
+    },
+    "4": {
+     "x": 540,
+     "y": 150
+    },
+    "5": {
+     "x": 540,
+     "y": 175
+    },
+    "6": {
+     "x": 540,
+     "y": 200
+    },
+    "7": {
+     "x": 540,
+     "y": 225
+    },
+    "8": {
+     "x": 540,
+     "y": 250
+    },
+    "9": {
+     "x": 540,
+     "y": 275
+    },
+    "10": {
+     "x": 545,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "17083",
+   "label": "IS_BANK_OF",
+   "source": "407503",
+   "target": "296716",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1102.5,
+     "y": 250
+    },
+    "1": {
+     "x": 580,
+     "y": 275
+    },
+    "2": {
+     "x": 545,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "21221",
+   "label": "IS_BANK_OF",
+   "source": "327002",
+   "target": "361913",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1332.5,
+     "y": 150
+    },
+    "1": {
+     "x": 2010,
+     "y": 175
+    },
+    "2": {
+     "x": 2010,
+     "y": 200
+    },
+    "3": {
+     "x": 2010,
+     "y": 225
+    },
+    "4": {
+     "x": 2010,
+     "y": 250
+    },
+    "5": {
+     "x": 2010,
+     "y": 275
+    },
+    "6": {
+     "x": 2010,
+     "y": null
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "22779",
+   "label": "IS_BANK_OF",
+   "source": "356908",
+   "target": "363052",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1052.5,
+     "y": 250
+    },
+    "1": {
+     "x": 2045,
+     "y": 275
+    },
+    "2": {
+     "x": 2060,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "22783",
+   "label": "IS_BANK_OF",
+   "source": "408149",
+   "target": "363052",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1002.5,
+     "y": 250
+    },
+    "1": {
+     "x": 2070,
+     "y": 275
+    },
+    "2": {
+     "x": 2060,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "23308",
+   "label": "IS_BANK_OF",
+   "source": "366920",
+   "target": "306265",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1585,
+     "y": 150
+    },
+    "1": {
+     "x": 615,
+     "y": 175
+    },
+    "2": {
+     "x": 615,
+     "y": 200
+    },
+    "3": {
+     "x": 615,
+     "y": 225
+    },
+    "4": {
+     "x": 615,
+     "y": 250
+    },
+    "5": {
+     "x": 615,
+     "y": 275
+    },
+    "6": {
+     "x": 615,
+     "y": null
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "23365",
+   "label": "IS_BANK_OF",
+   "source": "383181",
+   "target": "296063",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 760,
+     "y": 250
+    },
+    "1": {
+     "x": 420,
+     "y": 275
+    },
+    "2": {
+     "x": 445,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "23367",
+   "label": "IS_BANK_OF",
+   "source": "339435",
+   "target": "296063",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1025,
+     "y": 150
+    },
+    "1": {
+     "x": 440,
+     "y": 175
+    },
+    "2": {
+     "x": 440,
+     "y": 200
+    },
+    "3": {
+     "x": 440,
+     "y": 225
+    },
+    "4": {
+     "x": 440,
+     "y": 250
+    },
+    "5": {
+     "x": 440,
+     "y": 275
+    },
+    "6": {
+     "x": 445,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "23368",
+   "label": "IS_BANK_OF",
+   "source": "327002",
+   "target": "296063",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1332.5,
+     "y": 150
+    },
+    "1": {
+     "x": 460,
+     "y": 175
+    },
+    "2": {
+     "x": 460,
+     "y": 200
+    },
+    "3": {
+     "x": 460,
+     "y": 225
+    },
+    "4": {
+     "x": 460,
+     "y": 250
+    },
+    "5": {
+     "x": 460,
+     "y": 275
+    },
+    "6": {
+     "x": 445,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "23370",
+   "label": "IS_BANK_OF",
+   "source": "407503",
+   "target": "296063",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1102.5,
+     "y": 250
+    },
+    "1": {
+     "x": 480,
+     "y": 275
+    },
+    "2": {
+     "x": 445,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "23373",
+   "label": "IS_BANK_OF",
+   "source": "393356",
+   "target": "296063",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 880,
+     "y": 250
+    },
+    "1": {
+     "x": 500,
+     "y": 275
+    },
+    "2": {
+     "x": 445,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "23374",
+   "label": "IS_BANK_OF",
+   "source": "366920",
+   "target": "296063",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1585,
+     "y": 150
+    },
+    "1": {
+     "x": 520,
+     "y": 175
+    },
+    "2": {
+     "x": 520,
+     "y": 200
+    },
+    "3": {
+     "x": 520,
+     "y": 225
+    },
+    "4": {
+     "x": 520,
+     "y": 250
+    },
+    "5": {
+     "x": 520,
+     "y": 275
+    },
+    "6": {
+     "x": 445,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "28977",
+   "label": "IS_BANK_OF",
+   "source": "378701",
+   "target": "373903",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1702.5,
+     "y": 150
+    },
+    "1": {
+     "x": 2132.5,
+     "y": 175
+    },
+    "2": {
+     "x": 2132.5,
+     "y": 200
+    },
+    "3": {
+     "x": 2132.5,
+     "y": 225
+    },
+    "4": {
+     "x": 2132.5,
+     "y": 250
+    },
+    "5": {
+     "x": 2132.5,
+     "y": 275
+    },
+    "6": {
+     "x": 2132.5,
+     "y": null
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "34461",
+   "label": "IS_BANK_OF",
+   "source": "378701",
+   "target": "323514",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1702.5,
+     "y": 150
+    },
+    "1": {
+     "x": 795,
+     "y": 175
+    },
+    "2": {
+     "x": 795,
+     "y": 200
+    },
+    "3": {
+     "x": 795,
+     "y": 225
+    },
+    "4": {
+     "x": 795,
+     "y": 250
+    },
+    "5": {
+     "x": 795,
+     "y": 275
+    },
+    "6": {
+     "x": 805,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "34466",
+   "label": "IS_BANK_OF",
+   "source": "408149",
+   "target": "323514",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1002.5,
+     "y": 250
+    },
+    "1": {
+     "x": 850,
+     "y": 275
+    },
+    "2": {
+     "x": 805,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "37666",
+   "label": "IS_BANK_OF",
+   "source": "346357",
+   "target": "387407",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1497.5,
+     "y": 50
+    },
+    "1": {
+     "x": 2187.5,
+     "y": 75
+    },
+    "2": {
+     "x": 2187.5,
+     "y": 100
+    },
+    "3": {
+     "x": 2187.5,
+     "y": 125
+    },
+    "4": {
+     "x": 2187.5,
+     "y": 150
+    },
+    "5": {
+     "x": 2187.5,
+     "y": 175
+    },
+    "6": {
+     "x": 2207.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "37667",
+   "label": "IS_BANK_OF",
+   "source": "339435",
+   "target": "387407",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1025,
+     "y": 150
+    },
+    "1": {
+     "x": 2207.5,
+     "y": 175
+    },
+    "2": {
+     "x": 2207.5,
+     "y": null
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "37669",
+   "label": "IS_BANK_OF",
+   "source": "394686",
+   "target": "387407",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1752.5,
+     "y": 150
+    },
+    "1": {
+     "x": 2227.5,
+     "y": 175
+    },
+    "2": {
+     "x": 2207.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "38823",
+   "label": "IS_BANK_OF",
+   "source": "346357",
+   "target": "348774",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1497.5,
+     "y": 50
+    },
+    "1": {
+     "x": 1540,
+     "y": 75
+    },
+    "2": {
+     "x": 1635,
+     "y": 100
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "38825",
+   "label": "IS_BANK_OF",
+   "source": "381028",
+   "target": "348774",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 180,
+     "y": 50
+    },
+    "1": {
+     "x": 1650,
+     "y": 75
+    },
+    "2": {
+     "x": 1635,
+     "y": 100
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "41819",
+   "label": "IS_BANK_OF",
+   "source": "346357",
+   "target": "318417",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1497.5,
+     "y": 50
+    },
+    "1": {
+     "x": 685,
+     "y": 75
+    },
+    "2": {
+     "x": 685,
+     "y": 100
+    },
+    "3": {
+     "x": 685,
+     "y": 125
+    },
+    "4": {
+     "x": 685,
+     "y": 150
+    },
+    "5": {
+     "x": 685,
+     "y": 175
+    },
+    "6": {
+     "x": 685,
+     "y": 200
+    },
+    "7": {
+     "x": 685,
+     "y": 225
+    },
+    "8": {
+     "x": 685,
+     "y": 250
+    },
+    "9": {
+     "x": 685,
+     "y": 275
+    },
+    "10": {
+     "x": 725,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "41820",
+   "label": "IS_BANK_OF",
+   "source": "339435",
+   "target": "318417",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1025,
+     "y": 150
+    },
+    "1": {
+     "x": 705,
+     "y": 175
+    },
+    "2": {
+     "x": 705,
+     "y": 200
+    },
+    "3": {
+     "x": 705,
+     "y": 225
+    },
+    "4": {
+     "x": 705,
+     "y": 250
+    },
+    "5": {
+     "x": 705,
+     "y": 275
+    },
+    "6": {
+     "x": 725,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "41824",
+   "label": "IS_BANK_OF",
+   "source": "366920",
+   "target": "318417",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1585,
+     "y": 150
+    },
+    "1": {
+     "x": 725,
+     "y": 175
+    },
+    "2": {
+     "x": 725,
+     "y": 200
+    },
+    "3": {
+     "x": 725,
+     "y": 225
+    },
+    "4": {
+     "x": 725,
+     "y": 250
+    },
+    "5": {
+     "x": 725,
+     "y": 275
+    },
+    "6": {
+     "x": 725,
+     "y": null
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "41825",
+   "label": "IS_BANK_OF",
+   "source": "306995",
+   "target": "318417",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 315,
+     "y": 250
+    },
+    "1": {
+     "x": 750,
+     "y": 275
+    },
+    "2": {
+     "x": 725,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "41826",
+   "label": "IS_BANK_OF",
+   "source": "359772",
+   "target": "318417",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 930,
+     "y": 250
+    },
+    "1": {
+     "x": 770,
+     "y": 275
+    },
+    "2": {
+     "x": 725,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "46173",
+   "label": "IS_BANK_OF",
+   "source": "356908",
+   "target": "335647",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1052.5,
+     "y": 250
+    },
+    "1": {
+     "x": 870,
+     "y": 275
+    },
+    "2": {
+     "x": 890,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "46174",
+   "label": "IS_BANK_OF",
+   "source": "408149",
+   "target": "335647",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1002.5,
+     "y": 250
+    },
+    "1": {
+     "x": 890,
+     "y": 275
+    },
+    "2": {
+     "x": 890,
+     "y": null
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "46175",
+   "label": "IS_BANK_OF",
+   "source": "348771",
+   "target": "335647",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 365,
+     "y": 250
+    },
+    "1": {
+     "x": 910,
+     "y": 275
+    },
+    "2": {
+     "x": 890,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "46617",
+   "label": "IS_BANK_OF",
+   "source": "366920",
+   "target": "360643",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1585,
+     "y": 150
+    },
+    "1": {
+     "x": 1960,
+     "y": 175
+    },
+    "2": {
+     "x": 1960,
+     "y": 200
+    },
+    "3": {
+     "x": 1960,
+     "y": 225
+    },
+    "4": {
+     "x": 1960,
+     "y": 250
+    },
+    "5": {
+     "x": 1960,
+     "y": 275
+    },
+    "6": {
+     "x": 1960,
+     "y": null
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "46624",
+   "label": "IS_BANK_OF",
+   "source": "339435",
+   "target": "341579",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1025,
+     "y": 150
+    },
+    "1": {
+     "x": 965,
+     "y": 175
+    },
+    "2": {
+     "x": 965,
+     "y": 200
+    },
+    "3": {
+     "x": 965,
+     "y": 225
+    },
+    "4": {
+     "x": 965,
+     "y": 250
+    },
+    "5": {
+     "x": 965,
+     "y": 275
+    },
+    "6": {
+     "x": 985,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "46628",
+   "label": "IS_BANK_OF",
+   "source": "408149",
+   "target": "341579",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1002.5,
+     "y": null
+    },
+    "1": {
+     "x": 1002.5,
+     "y": 275
+    },
+    "2": {
+     "x": 985,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47105",
+   "label": "IS_BANK_OF",
+   "source": "359969",
+   "target": "401165",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 830,
+     "y": 250
+    },
+    "1": {
+     "x": 2287.5,
+     "y": 275
+    },
+    "2": {
+     "x": 2307.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47107",
+   "label": "IS_BANK_OF",
+   "source": "346357",
+   "target": "401165",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1497.5,
+     "y": 50
+    },
+    "1": {
+     "x": 2307.5,
+     "y": 75
+    },
+    "2": {
+     "x": 2307.5,
+     "y": 100
+    },
+    "3": {
+     "x": 2307.5,
+     "y": 125
+    },
+    "4": {
+     "x": 2307.5,
+     "y": 150
+    },
+    "5": {
+     "x": 2307.5,
+     "y": 175
+    },
+    "6": {
+     "x": 2307.5,
+     "y": 200
+    },
+    "7": {
+     "x": 2307.5,
+     "y": 225
+    },
+    "8": {
+     "x": 2307.5,
+     "y": 250
+    },
+    "9": {
+     "x": 2307.5,
+     "y": 275
+    },
+    "10": {
+     "x": 2307.5,
+     "y": null
+    }
+   },
+   "active": true
+  },
+  {
+   "id": "47110",
+   "label": "IS_BANK_OF",
+   "source": "407503",
+   "target": "401165",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1102.5,
+     "y": 250
+    },
+    "1": {
+     "x": 2332.5,
+     "y": 275
+    },
+    "2": {
+     "x": 2307.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47670",
+   "label": "IS_BANK_OF",
+   "source": "393356",
+   "target": "402069",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 880,
+     "y": 250
+    },
+    "1": {
+     "x": 2357.5,
+     "y": 275
+    },
+    "2": {
+     "x": 2357.5,
+     "y": null
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47673",
+   "label": "IS_BANK_OF",
+   "source": "346357",
+   "target": "402070",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1497.5,
+     "y": 50
+    },
+    "1": {
+     "x": 1465,
+     "y": 75
+    },
+    "2": {
+     "x": 1465,
+     "y": 100
+    },
+    "3": {
+     "x": 1465,
+     "y": 125
+    },
+    "4": {
+     "x": 1465,
+     "y": 150
+    },
+    "5": {
+     "x": 1465,
+     "y": 175
+    },
+    "6": {
+     "x": 1622.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47674",
+   "label": "IS_BANK_OF",
+   "source": "339435",
+   "target": "402070",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1025,
+     "y": 150
+    },
+    "1": {
+     "x": 1485,
+     "y": 175
+    },
+    "2": {
+     "x": 1622.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47676",
+   "label": "IS_BANK_OF",
+   "source": "375858",
+   "target": "402070",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 852.5,
+     "y": 150
+    },
+    "1": {
+     "x": 1505,
+     "y": 175
+    },
+    "2": {
+     "x": 1622.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47677",
+   "label": "IS_BANK_OF",
+   "source": "378701",
+   "target": "402070",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1702.5,
+     "y": 150
+    },
+    "1": {
+     "x": 1562.5,
+     "y": 175
+    },
+    "2": {
+     "x": 1622.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47678",
+   "label": "IS_BANK_OF",
+   "source": "327002",
+   "target": "402070",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1332.5,
+     "y": 150
+    },
+    "1": {
+     "x": 1582.5,
+     "y": 175
+    },
+    "2": {
+     "x": 1622.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47680",
+   "label": "IS_BANK_OF",
+   "source": "394686",
+   "target": "402070",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1752.5,
+     "y": 150
+    },
+    "1": {
+     "x": 1607.5,
+     "y": 175
+    },
+    "2": {
+     "x": 1622.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47683",
+   "label": "IS_BANK_OF",
+   "source": "403244",
+   "target": "402070",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1635,
+     "y": 150
+    },
+    "1": {
+     "x": 1627.5,
+     "y": 175
+    },
+    "2": {
+     "x": 1622.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47684",
+   "label": "IS_BANK_OF",
+   "source": "366920",
+   "target": "402070",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1585,
+     "y": 150
+    },
+    "1": {
+     "x": 1647.5,
+     "y": 175
+    },
+    "2": {
+     "x": 1622.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47686",
+   "label": "IS_BANK_OF",
+   "source": "404886",
+   "target": "402070",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1807.5,
+     "y": 150
+    },
+    "1": {
+     "x": 1710,
+     "y": 175
+    },
+    "2": {
+     "x": 1622.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47687",
+   "label": "IS_BANK_OF",
+   "source": "408149",
+   "target": "402070",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1002.5,
+     "y": 250
+    },
+    "1": {
+     "x": 1060,
+     "y": 225
+    },
+    "2": {
+     "x": 1622.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47688",
+   "label": "IS_BANK_OF",
+   "source": "387405",
+   "target": "402070",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1282.5,
+     "y": 150
+    },
+    "1": {
+     "x": 1730,
+     "y": 175
+    },
+    "2": {
+     "x": 1622.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47689",
+   "label": "IS_BANK_OF",
+   "source": "352609",
+   "target": "402070",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 902.5,
+     "y": 150
+    },
+    "1": {
+     "x": 1750,
+     "y": 175
+    },
+    "2": {
+     "x": 1622.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47690",
+   "label": "IS_BANK_OF",
+   "source": "356904",
+   "target": "402070",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1232.5,
+     "y": 150
+    },
+    "1": {
+     "x": 1770,
+     "y": 175
+    },
+    "2": {
+     "x": 1622.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "47691",
+   "label": "IS_BANK_OF",
+   "source": "411433",
+   "target": "402070",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1382.5,
+     "y": 150
+    },
+    "1": {
+     "x": 1790,
+     "y": 175
+    },
+    "2": {
+     "x": 1622.5,
+     "y": 200
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "48336",
+   "label": "IS_BANK_OF",
+   "source": "375858",
+   "target": "344314",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 852.5,
+     "y": 150
+    },
+    "1": {
+     "x": 1137.5,
+     "y": 175
+    },
+    "2": {
+     "x": 1137.5,
+     "y": 200
+    },
+    "3": {
+     "x": 1137.5,
+     "y": 225
+    },
+    "4": {
+     "x": 1137.5,
+     "y": 250
+    },
+    "5": {
+     "x": 1137.5,
+     "y": 275
+    },
+    "6": {
+     "x": 1202.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "48340",
+   "label": "IS_BANK_OF",
+   "source": "408149",
+   "target": "344314",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1002.5,
+     "y": 250
+    },
+    "1": {
+     "x": 1212.5,
+     "y": 275
+    },
+    "2": {
+     "x": 1202.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "48341",
+   "label": "IS_BANK_OF",
+   "source": "356904",
+   "target": "344314",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1232.5,
+     "y": null
+    },
+    "1": {
+     "x": 1232.5,
+     "y": 175
+    },
+    "2": {
+     "x": 1232.5,
+     "y": 200
+    },
+    "3": {
+     "x": 1232.5,
+     "y": 225
+    },
+    "4": {
+     "x": 1232.5,
+     "y": 250
+    },
+    "5": {
+     "x": 1232.5,
+     "y": 275
+    },
+    "6": {
+     "x": 1202.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "48342",
+   "label": "IS_BANK_OF",
+   "source": "411433",
+   "target": "344314",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1382.5,
+     "y": null
+    },
+    "1": {
+     "x": 1382.5,
+     "y": 175
+    },
+    "2": {
+     "x": 1382.5,
+     "y": 200
+    },
+    "3": {
+     "x": 1382.5,
+     "y": 225
+    },
+    "4": {
+     "x": 1382.5,
+     "y": 250
+    },
+    "5": {
+     "x": 1382.5,
+     "y": 275
+    },
+    "6": {
+     "x": 1202.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "49938",
+   "label": "IS_BANK_OF",
+   "source": "346357",
+   "target": "346729",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1497.5,
+     "y": 50
+    },
+    "1": {
+     "x": 1417.5,
+     "y": 75
+    },
+    "2": {
+     "x": 1417.5,
+     "y": 100
+    },
+    "3": {
+     "x": 1417.5,
+     "y": 125
+    },
+    "4": {
+     "x": 1417.5,
+     "y": 150
+    },
+    "5": {
+     "x": 1417.5,
+     "y": 175
+    },
+    "6": {
+     "x": 1417.5,
+     "y": 200
+    },
+    "7": {
+     "x": 1417.5,
+     "y": 225
+    },
+    "8": {
+     "x": 1417.5,
+     "y": 250
+    },
+    "9": {
+     "x": 1417.5,
+     "y": 275
+    },
+    "10": {
+     "x": 1712.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "49939",
+   "label": "IS_BANK_OF",
+   "source": "327002",
+   "target": "346729",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1332.5,
+     "y": 150
+    },
+    "1": {
+     "x": 1437.5,
+     "y": 175
+    },
+    "2": {
+     "x": 1437.5,
+     "y": 200
+    },
+    "3": {
+     "x": 1437.5,
+     "y": 225
+    },
+    "4": {
+     "x": 1437.5,
+     "y": 250
+    },
+    "5": {
+     "x": 1437.5,
+     "y": 275
+    },
+    "6": {
+     "x": 1712.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "49944",
+   "label": "IS_BANK_OF",
+   "source": "393356",
+   "target": "346729",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 880,
+     "y": 250
+    },
+    "1": {
+     "x": 1627.5,
+     "y": 275
+    },
+    "2": {
+     "x": 1712.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "49945",
+   "label": "IS_BANK_OF",
+   "source": "366920",
+   "target": "346729",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1585,
+     "y": 150
+    },
+    "1": {
+     "x": 1817.5,
+     "y": 175
+    },
+    "2": {
+     "x": 1817.5,
+     "y": 200
+    },
+    "3": {
+     "x": 1817.5,
+     "y": 225
+    },
+    "4": {
+     "x": 1817.5,
+     "y": 250
+    },
+    "5": {
+     "x": 1817.5,
+     "y": 275
+    },
+    "6": {
+     "x": 1712.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "49946",
+   "label": "IS_BANK_OF",
+   "source": "408149",
+   "target": "346729",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1002.5,
+     "y": 250
+    },
+    "1": {
+     "x": 1837.5,
+     "y": 275
+    },
+    "2": {
+     "x": 1712.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "49947",
+   "label": "IS_BANK_OF",
+   "source": "318149",
+   "target": "346729",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 575,
+     "y": 250
+    },
+    "1": {
+     "x": 1857.5,
+     "y": 275
+    },
+    "2": {
+     "x": 1712.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "51719",
+   "label": "IS_BANK_OF",
+   "source": "366920",
+   "target": "408439",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1585,
+     "y": 150
+    },
+    "1": {
+     "x": 2427.5,
+     "y": 175
+    },
+    "2": {
+     "x": 2427.5,
+     "y": 200
+    },
+    "3": {
+     "x": 2427.5,
+     "y": 225
+    },
+    "4": {
+     "x": 2427.5,
+     "y": 250
+    },
+    "5": {
+     "x": 2427.5,
+     "y": 275
+    },
+    "6": {
+     "x": 2427.5,
+     "y": null
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "52122",
+   "label": "IS_BANK_OF",
+   "source": "383181",
+   "target": "409024",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 760,
+     "y": 250
+    },
+    "1": {
+     "x": 2447.5,
+     "y": 275
+    },
+    "2": {
+     "x": 2547.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "52123",
+   "label": "IS_BANK_OF",
+   "source": "346357",
+   "target": "409024",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1497.5,
+     "y": 50
+    },
+    "1": {
+     "x": 2467.5,
+     "y": 75
+    },
+    "2": {
+     "x": 2467.5,
+     "y": 100
+    },
+    "3": {
+     "x": 2467.5,
+     "y": 125
+    },
+    "4": {
+     "x": 2467.5,
+     "y": 150
+    },
+    "5": {
+     "x": 2467.5,
+     "y": 175
+    },
+    "6": {
+     "x": 2467.5,
+     "y": 200
+    },
+    "7": {
+     "x": 2467.5,
+     "y": 225
+    },
+    "8": {
+     "x": 2467.5,
+     "y": 250
+    },
+    "9": {
+     "x": 2467.5,
+     "y": 275
+    },
+    "10": {
+     "x": 2547.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "52124",
+   "label": "IS_BANK_OF",
+   "source": "356908",
+   "target": "409024",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1052.5,
+     "y": 250
+    },
+    "1": {
+     "x": 2487.5,
+     "y": 275
+    },
+    "2": {
+     "x": 2547.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "52125",
+   "label": "IS_BANK_OF",
+   "source": "378701",
+   "target": "409024",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1702.5,
+     "y": 150
+    },
+    "1": {
+     "x": 2507.5,
+     "y": 175
+    },
+    "2": {
+     "x": 2507.5,
+     "y": 200
+    },
+    "3": {
+     "x": 2507.5,
+     "y": 225
+    },
+    "4": {
+     "x": 2507.5,
+     "y": 250
+    },
+    "5": {
+     "x": 2507.5,
+     "y": 275
+    },
+    "6": {
+     "x": 2547.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "52127",
+   "label": "IS_BANK_OF",
+   "source": "407503",
+   "target": "409024",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1102.5,
+     "y": 250
+    },
+    "1": {
+     "x": 2527.5,
+     "y": 275
+    },
+    "2": {
+     "x": 2547.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "52128",
+   "label": "IS_BANK_OF",
+   "source": "394686",
+   "target": "409024",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1752.5,
+     "y": 150
+    },
+    "1": {
+     "x": 2547.5,
+     "y": 175
+    },
+    "2": {
+     "x": 2547.5,
+     "y": 200
+    },
+    "3": {
+     "x": 2547.5,
+     "y": 225
+    },
+    "4": {
+     "x": 2547.5,
+     "y": 250
+    },
+    "5": {
+     "x": 2547.5,
+     "y": 275
+    },
+    "6": {
+     "x": 2547.5,
+     "y": null
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "52134",
+   "label": "IS_BANK_OF",
+   "source": "404886",
+   "target": "409024",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 1807.5,
+     "y": 150
+    },
+    "1": {
+     "x": 2567.5,
+     "y": 175
+    },
+    "2": {
+     "x": 2567.5,
+     "y": 200
+    },
+    "3": {
+     "x": 2567.5,
+     "y": 225
+    },
+    "4": {
+     "x": 2567.5,
+     "y": 250
+    },
+    "5": {
+     "x": 2567.5,
+     "y": 275
+    },
+    "6": {
+     "x": 2547.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "52135",
+   "label": "IS_BANK_OF",
+   "source": "359772",
+   "target": "409024",
+   "neo4j_type": "IS_BANK_OF",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#234567",
+   "points": {
+    "0": {
+     "x": 930,
+     "y": 250
+    },
+    "1": {
+     "x": 2587.5,
+     "y": 275
+    },
+    "2": {
+     "x": 2547.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "79140",
+   "label": "INVESTED_IN",
+   "source": "351046",
+   "target": "404885",
+   "neo4j_type": "INVESTED_IN",
+   "neo4j_data": {
+    "equity_shares_count": "4700",
+    "year": "2014",
+    "investments_cost": "0.01",
+    "type": "Equity-Quoted"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#678901",
+   "active": false
+  },
+  {
+   "id": "79141",
+   "label": "INVESTED_IN",
+   "source": "351046",
+   "target": "404885",
+   "neo4j_type": "INVESTED_IN",
+   "neo4j_data": {
+    "equity_shares_count": "4700",
+    "year": "2015",
+    "investments_cost": "0.01",
+    "type": "Equity-Quoted"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#678901",
+   "points": {
+    "0": {
+     "x": 650,
+     "y": 200
+    },
+    "1": {
+     "x": 0,
+     "y": 225
+    },
+    "2": {
+     "x": 0,
+     "y": null
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "95295",
+   "label": "INVESTED_IN",
+   "source": "348774",
+   "target": "403244",
+   "neo4j_type": "INVESTED_IN",
+   "neo4j_data": {
+    "equity_shares_count": "0",
+    "year": "2014",
+    "investments_cost": "0.01",
+    "type": "Equity-Quoted"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#678901",
+   "points": {
+    "0": {
+     "x": 1635,
+     "y": null
+    },
+    "1": {
+     "x": 1635,
+     "y": 125
+    },
+    "2": {
+     "x": 1635,
+     "y": null
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "108876",
+   "label": "INVESTED_IN",
+   "source": "402070",
+   "target": "408149",
+   "neo4j_type": "INVESTED_IN",
+   "neo4j_data": {
+    "equity_shares_count": "37",
+    "year": "2014",
+    "investments_cost": "0.01",
+    "type": "Equity-Quoted"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#678901",
+   "points": {
+    "0": {
+     "x": 1622.5,
+     "y": 200
+    },
+    "1": {
+     "x": 992.5,
+     "y": 225
+    },
+    "2": {
+     "x": 1002.5,
+     "y": 250
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "109415",
+   "label": "INVESTED_IN",
+   "source": "367077",
+   "target": "378701",
+   "neo4j_type": "INVESTED_IN",
+   "neo4j_data": {
+    "equity_shares_count": "0",
+    "year": "2014",
+    "investments_cost": "0.10",
+    "type": "Equity-Quoted"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#678901",
+   "points": {
+    "0": {
+     "x": 1652.5,
+     "y": 0
+    },
+    "1": {
+     "x": 1702.5,
+     "y": 25
+    },
+    "2": {
+     "x": 1702.5,
+     "y": 50
+    },
+    "3": {
+     "x": 1702.5,
+     "y": 75
+    },
+    "4": {
+     "x": 1702.5,
+     "y": 100
+    },
+    "5": {
+     "x": 1702.5,
+     "y": 125
+    },
+    "6": {
+     "x": 1702.5,
+     "y": null
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "109416",
+   "label": "INVESTED_IN",
+   "source": "367077",
+   "target": "346357",
+   "neo4j_type": "INVESTED_IN",
+   "neo4j_data": {
+    "equity_shares_count": "0",
+    "year": "2014",
+    "investments_cost": "0.08",
+    "type": "Equity-Quoted"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#678901",
+   "points": {
+    "0": {
+     "x": 1652.5,
+     "y": 0
+    },
+    "1": {
+     "x": 1487.5,
+     "y": 25
+    },
+    "2": {
+     "x": 1497.5,
+     "y": 50
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "542643",
+   "label": "IS_SUBSIDIARY_OF",
+   "source": "384583",
+   "target": "346357",
+   "neo4j_type": "IS_SUBSIDIARY_OF",
+   "neo4j_data": {
+    "percent_holding": "98.57",
+    "year": "Mar 15",
+    "investments_cost": "0.00",
+    "shares_count": "0"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#AABBCC",
+   "active": false
+  },
+  {
+   "id": "542645",
+   "label": "IS_SUBSIDIARY_OF",
+   "source": "384583",
+   "target": "346357",
+   "neo4j_type": "IS_SUBSIDIARY_OF",
+   "neo4j_data": {
+    "percent_holding": "98.57",
+    "year": "Mar 14",
+    "investments_cost": "0.00",
+    "shares_count": "0"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#AABBCC",
+   "active": false
+  },
+  {
+   "id": "542651",
+   "label": "IS_SUBSIDIARY_OF",
+   "source": "384583",
+   "target": "346357",
+   "neo4j_type": "IS_SUBSIDIARY_OF",
+   "neo4j_data": {
+    "percent_holding": "98.57",
+    "year": "Mar 13",
+    "investments_cost": "0.00",
+    "shares_count": "0"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#AABBCC",
+   "active": false
+  },
+  {
+   "id": "544704",
+   "label": "IS_SUBSIDIARY_OF",
+   "source": "384583",
+   "target": "346357",
+   "neo4j_type": "IS_SUBSIDIARY_OF",
+   "neo4j_data": {
+    "percent_holding": "98.57",
+    "year": "Mar 15",
+    "investments_cost": "0.00",
+    "shares_count": "0"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#AABBCC",
+   "active": false
+  },
+  {
+   "id": "544706",
+   "label": "IS_SUBSIDIARY_OF",
+   "source": "384583",
+   "target": "346357",
+   "neo4j_type": "IS_SUBSIDIARY_OF",
+   "neo4j_data": {
+    "percent_holding": "98.57",
+    "year": "Mar 14",
+    "investments_cost": "0.00",
+    "shares_count": "0"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#AABBCC",
+   "active": false
+  },
+  {
+   "id": "544712",
+   "label": "IS_SUBSIDIARY_OF",
+   "source": "384583",
+   "target": "346357",
+   "neo4j_type": "IS_SUBSIDIARY_OF",
+   "neo4j_data": {
+    "percent_holding": "98.57",
+    "year": "Mar 13",
+    "investments_cost": "0.00",
+    "shares_count": "0"
+   },
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#AABBCC",
+   "points": {
+    "0": {
+     "x": 2125,
+     "y": 0
+    },
+    "1": {
+     "x": 1675,
+     "y": 25
+    },
+    "2": {
+     "x": 1497.5,
+     "y": 50
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "572955",
+   "label": "INDUSTRY",
+   "source": "296063",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 445,
+     "y": null
+    },
+    "1": {
+     "x": 445,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "573681",
+   "label": "INDUSTRY",
+   "source": "296716",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 545,
+     "y": null
+    },
+    "1": {
+     "x": 545,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "582602",
+   "label": "INDUSTRY",
+   "source": "306265",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 615,
+     "y": null
+    },
+    "1": {
+     "x": 615,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "583189",
+   "label": "INDUSTRY",
+   "source": "306995",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 315,
+     "y": 250
+    },
+    "1": {
+     "x": 20,
+     "y": 275
+    },
+    "2": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "593365",
+   "label": "INDUSTRY",
+   "source": "318149",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 575,
+     "y": 250
+    },
+    "1": {
+     "x": 40,
+     "y": 275
+    },
+    "2": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "593656",
+   "label": "INDUSTRY",
+   "source": "318417",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 725,
+     "y": null
+    },
+    "1": {
+     "x": 725,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "598047",
+   "label": "INDUSTRY",
+   "source": "323514",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 805,
+     "y": null
+    },
+    "1": {
+     "x": 805,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "601425",
+   "label": "INDUSTRY",
+   "source": "327002",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1332.5,
+     "y": 150
+    },
+    "1": {
+     "x": -155,
+     "y": 175
+    },
+    "2": {
+     "x": -155,
+     "y": 200
+    },
+    "3": {
+     "x": -155,
+     "y": 225
+    },
+    "4": {
+     "x": -155,
+     "y": 250
+    },
+    "5": {
+     "x": -155,
+     "y": 275
+    },
+    "6": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "609200",
+   "label": "INDUSTRY",
+   "source": "335647",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 890,
+     "y": null
+    },
+    "1": {
+     "x": 890,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "612783",
+   "label": "INDUSTRY",
+   "source": "339435",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1025,
+     "y": 150
+    },
+    "1": {
+     "x": -135,
+     "y": 175
+    },
+    "2": {
+     "x": -135,
+     "y": 200
+    },
+    "3": {
+     "x": -135,
+     "y": 225
+    },
+    "4": {
+     "x": -135,
+     "y": 250
+    },
+    "5": {
+     "x": -135,
+     "y": 275
+    },
+    "6": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "614871",
+   "label": "INDUSTRY",
+   "source": "341579",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 985,
+     "y": null
+    },
+    "1": {
+     "x": 985,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "617339",
+   "label": "INDUSTRY",
+   "source": "344314",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1202.5,
+     "y": null
+    },
+    "1": {
+     "x": 1202.5,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "619017",
+   "label": "INDUSTRY",
+   "source": "346357",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1497.5,
+     "y": 50
+    },
+    "1": {
+     "x": -115,
+     "y": 75
+    },
+    "2": {
+     "x": -115,
+     "y": 100
+    },
+    "3": {
+     "x": -115,
+     "y": 125
+    },
+    "4": {
+     "x": -115,
+     "y": 150
+    },
+    "5": {
+     "x": -115,
+     "y": 175
+    },
+    "6": {
+     "x": -115,
+     "y": 200
+    },
+    "7": {
+     "x": -115,
+     "y": 225
+    },
+    "8": {
+     "x": -115,
+     "y": 250
+    },
+    "9": {
+     "x": -115,
+     "y": 275
+    },
+    "10": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "619417",
+   "label": "INDUSTRY",
+   "source": "346729",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1712.5,
+     "y": null
+    },
+    "1": {
+     "x": 1712.5,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "621438",
+   "label": "INDUSTRY",
+   "source": "348771",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 365,
+     "y": 250
+    },
+    "1": {
+     "x": -95,
+     "y": 275
+    },
+    "2": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "621452",
+   "label": "INDUSTRY",
+   "source": "348774",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1635,
+     "y": 100
+    },
+    "1": {
+     "x": 1905,
+     "y": 125
+    },
+    "2": {
+     "x": 1905,
+     "y": 150
+    },
+    "3": {
+     "x": 1905,
+     "y": 175
+    },
+    "4": {
+     "x": 1905,
+     "y": 200
+    },
+    "5": {
+     "x": 1905,
+     "y": 225
+    },
+    "6": {
+     "x": 1905,
+     "y": 250
+    },
+    "7": {
+     "x": 1905,
+     "y": 275
+    },
+    "8": {
+     "x": 1905,
+     "y": 300
+    },
+    "9": {
+     "x": 1905,
+     "y": 325
+    },
+    "10": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "623348",
+   "label": "INDUSTRY",
+   "source": "351046",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 650,
+     "y": 200
+    },
+    "1": {
+     "x": 1925,
+     "y": 225
+    },
+    "2": {
+     "x": 1925,
+     "y": 250
+    },
+    "3": {
+     "x": 1925,
+     "y": 275
+    },
+    "4": {
+     "x": 1925,
+     "y": 300
+    },
+    "5": {
+     "x": 1925,
+     "y": 325
+    },
+    "6": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "624801",
+   "label": "INDUSTRY",
+   "source": "352609",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 902.5,
+     "y": 150
+    },
+    "1": {
+     "x": 60,
+     "y": 175
+    },
+    "2": {
+     "x": 60,
+     "y": 200
+    },
+    "3": {
+     "x": 60,
+     "y": 225
+    },
+    "4": {
+     "x": 60,
+     "y": 250
+    },
+    "5": {
+     "x": 60,
+     "y": 275
+    },
+    "6": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "628681",
+   "label": "INDUSTRY",
+   "source": "356904",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1232.5,
+     "y": 150
+    },
+    "1": {
+     "x": 80,
+     "y": 175
+    },
+    "2": {
+     "x": 80,
+     "y": 200
+    },
+    "3": {
+     "x": 80,
+     "y": 225
+    },
+    "4": {
+     "x": 80,
+     "y": 250
+    },
+    "5": {
+     "x": 80,
+     "y": 275
+    },
+    "6": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "628694",
+   "label": "INDUSTRY",
+   "source": "356908",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1052.5,
+     "y": 250
+    },
+    "1": {
+     "x": -75,
+     "y": 275
+    },
+    "2": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "631556",
+   "label": "INDUSTRY",
+   "source": "359772",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 930,
+     "y": 250
+    },
+    "1": {
+     "x": 100,
+     "y": 275
+    },
+    "2": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "631780",
+   "label": "INDUSTRY",
+   "source": "359969",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 830,
+     "y": 250
+    },
+    "1": {
+     "x": 120,
+     "y": 275
+    },
+    "2": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "632505",
+   "label": "INDUSTRY",
+   "source": "360643",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1960,
+     "y": null
+    },
+    "1": {
+     "x": 1960,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "633866",
+   "label": "INDUSTRY",
+   "source": "361913",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 2010,
+     "y": null
+    },
+    "1": {
+     "x": 2010,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "634906",
+   "label": "INDUSTRY",
+   "source": "363052",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 2060,
+     "y": null
+    },
+    "1": {
+     "x": 2060,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "638341",
+   "label": "INDUSTRY",
+   "source": "366920",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1585,
+     "y": 150
+    },
+    "1": {
+     "x": 140,
+     "y": 175
+    },
+    "2": {
+     "x": 140,
+     "y": 200
+    },
+    "3": {
+     "x": 140,
+     "y": 225
+    },
+    "4": {
+     "x": 140,
+     "y": 250
+    },
+    "5": {
+     "x": 140,
+     "y": 275
+    },
+    "6": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "638499",
+   "label": "INDUSTRY",
+   "source": "367077",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1652.5,
+     "y": 0
+    },
+    "1": {
+     "x": 2097.5,
+     "y": 25
+    },
+    "2": {
+     "x": 2097.5,
+     "y": 50
+    },
+    "3": {
+     "x": 2097.5,
+     "y": 75
+    },
+    "4": {
+     "x": 2097.5,
+     "y": 100
+    },
+    "5": {
+     "x": 2097.5,
+     "y": 125
+    },
+    "6": {
+     "x": 2097.5,
+     "y": 150
+    },
+    "7": {
+     "x": 2097.5,
+     "y": 175
+    },
+    "8": {
+     "x": 2097.5,
+     "y": 200
+    },
+    "9": {
+     "x": 2097.5,
+     "y": 225
+    },
+    "10": {
+     "x": 2097.5,
+     "y": 250
+    },
+    "11": {
+     "x": 2097.5,
+     "y": 275
+    },
+    "12": {
+     "x": 2097.5,
+     "y": 300
+    },
+    "13": {
+     "x": 2097.5,
+     "y": 325
+    },
+    "14": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "644683",
+   "label": "INDUSTRY",
+   "source": "373903",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 2132.5,
+     "y": null
+    },
+    "1": {
+     "x": 2132.5,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "646437",
+   "label": "INDUSTRY",
+   "source": "375858",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 852.5,
+     "y": 150
+    },
+    "1": {
+     "x": -55,
+     "y": 175
+    },
+    "2": {
+     "x": -55,
+     "y": 200
+    },
+    "3": {
+     "x": -55,
+     "y": 225
+    },
+    "4": {
+     "x": -55,
+     "y": 250
+    },
+    "5": {
+     "x": -55,
+     "y": 275
+    },
+    "6": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "648962",
+   "label": "INDUSTRY",
+   "source": "378701",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1702.5,
+     "y": 150
+    },
+    "1": {
+     "x": 160,
+     "y": 175
+    },
+    "2": {
+     "x": 160,
+     "y": 200
+    },
+    "3": {
+     "x": 160,
+     "y": 225
+    },
+    "4": {
+     "x": 160,
+     "y": 250
+    },
+    "5": {
+     "x": 160,
+     "y": 275
+    },
+    "6": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "651007",
+   "label": "INDUSTRY",
+   "source": "381028",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 180,
+     "y": null
+    },
+    "1": {
+     "x": 180,
+     "y": 75
+    },
+    "2": {
+     "x": 180,
+     "y": 100
+    },
+    "3": {
+     "x": 180,
+     "y": 125
+    },
+    "4": {
+     "x": 180,
+     "y": 150
+    },
+    "5": {
+     "x": 180,
+     "y": 175
+    },
+    "6": {
+     "x": 180,
+     "y": 200
+    },
+    "7": {
+     "x": 180,
+     "y": 225
+    },
+    "8": {
+     "x": 180,
+     "y": 250
+    },
+    "9": {
+     "x": 180,
+     "y": 275
+    },
+    "10": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "653134",
+   "label": "INDUSTRY",
+   "source": "383181",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 760,
+     "y": 250
+    },
+    "1": {
+     "x": 200,
+     "y": 275
+    },
+    "2": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "654531",
+   "label": "INDUSTRY",
+   "source": "384583",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 2125,
+     "y": 0
+    },
+    "1": {
+     "x": 2167.5,
+     "y": 25
+    },
+    "2": {
+     "x": 2167.5,
+     "y": 50
+    },
+    "3": {
+     "x": 2167.5,
+     "y": 75
+    },
+    "4": {
+     "x": 2167.5,
+     "y": 100
+    },
+    "5": {
+     "x": 2167.5,
+     "y": 125
+    },
+    "6": {
+     "x": 2167.5,
+     "y": 150
+    },
+    "7": {
+     "x": 2167.5,
+     "y": 175
+    },
+    "8": {
+     "x": 2167.5,
+     "y": 200
+    },
+    "9": {
+     "x": 2167.5,
+     "y": 225
+    },
+    "10": {
+     "x": 2167.5,
+     "y": 250
+    },
+    "11": {
+     "x": 2167.5,
+     "y": 275
+    },
+    "12": {
+     "x": 2167.5,
+     "y": 300
+    },
+    "13": {
+     "x": 2167.5,
+     "y": 325
+    },
+    "14": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "657153",
+   "label": "INDUSTRY",
+   "source": "387405",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1282.5,
+     "y": 150
+    },
+    "1": {
+     "x": 220,
+     "y": 175
+    },
+    "2": {
+     "x": 220,
+     "y": 200
+    },
+    "3": {
+     "x": 220,
+     "y": 225
+    },
+    "4": {
+     "x": 220,
+     "y": 250
+    },
+    "5": {
+     "x": 220,
+     "y": 275
+    },
+    "6": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "657158",
+   "label": "INDUSTRY",
+   "source": "387407",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 2207.5,
+     "y": null
+    },
+    "1": {
+     "x": 2207.5,
+     "y": 225
+    },
+    "2": {
+     "x": 2207.5,
+     "y": 250
+    },
+    "3": {
+     "x": 2207.5,
+     "y": 275
+    },
+    "4": {
+     "x": 2207.5,
+     "y": 300
+    },
+    "5": {
+     "x": 2207.5,
+     "y": 325
+    },
+    "6": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "662098",
+   "label": "INDUSTRY",
+   "source": "393126",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 2267.5,
+     "y": null
+    },
+    "1": {
+     "x": 2267.5,
+     "y": 225
+    },
+    "2": {
+     "x": 2267.5,
+     "y": 250
+    },
+    "3": {
+     "x": 2267.5,
+     "y": 275
+    },
+    "4": {
+     "x": 2267.5,
+     "y": 300
+    },
+    "5": {
+     "x": 2267.5,
+     "y": 325
+    },
+    "6": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "662235",
+   "label": "INDUSTRY",
+   "source": "393356",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 880,
+     "y": 250
+    },
+    "1": {
+     "x": 240,
+     "y": 275
+    },
+    "2": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "663407",
+   "label": "INDUSTRY",
+   "source": "394686",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1752.5,
+     "y": 150
+    },
+    "1": {
+     "x": -35,
+     "y": 175
+    },
+    "2": {
+     "x": -35,
+     "y": 200
+    },
+    "3": {
+     "x": -35,
+     "y": 225
+    },
+    "4": {
+     "x": -35,
+     "y": 250
+    },
+    "5": {
+     "x": -35,
+     "y": 275
+    },
+    "6": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "669591",
+   "label": "INDUSTRY",
+   "source": "401165",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 2307.5,
+     "y": null
+    },
+    "1": {
+     "x": 2307.5,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "670375",
+   "label": "INDUSTRY",
+   "source": "402069",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 2357.5,
+     "y": null
+    },
+    "1": {
+     "x": 2357.5,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "670378",
+   "label": "INDUSTRY",
+   "source": "402070",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1622.5,
+     "y": 200
+    },
+    "1": {
+     "x": 2392.5,
+     "y": 225
+    },
+    "2": {
+     "x": 2392.5,
+     "y": 250
+    },
+    "3": {
+     "x": 2392.5,
+     "y": 275
+    },
+    "4": {
+     "x": 2392.5,
+     "y": 300
+    },
+    "5": {
+     "x": 2392.5,
+     "y": 325
+    },
+    "6": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "671395",
+   "label": "INDUSTRY",
+   "source": "403244",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1635,
+     "y": 150
+    },
+    "1": {
+     "x": 260,
+     "y": 175
+    },
+    "2": {
+     "x": 260,
+     "y": 200
+    },
+    "3": {
+     "x": 260,
+     "y": 225
+    },
+    "4": {
+     "x": 260,
+     "y": 250
+    },
+    "5": {
+     "x": 260,
+     "y": 275
+    },
+    "6": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "672769",
+   "label": "INDUSTRY",
+   "source": "404885",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 0,
+     "y": null
+    },
+    "1": {
+     "x": 0,
+     "y": 275
+    },
+    "2": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "672774",
+   "label": "INDUSTRY",
+   "source": "404886",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1807.5,
+     "y": 150
+    },
+    "1": {
+     "x": 280,
+     "y": 175
+    },
+    "2": {
+     "x": 280,
+     "y": 200
+    },
+    "3": {
+     "x": 280,
+     "y": 225
+    },
+    "4": {
+     "x": 280,
+     "y": 250
+    },
+    "5": {
+     "x": 280,
+     "y": 275
+    },
+    "6": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "675186",
+   "label": "INDUSTRY",
+   "source": "407503",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1102.5,
+     "y": 250
+    },
+    "1": {
+     "x": 330,
+     "y": 275
+    },
+    "2": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "675735",
+   "label": "INDUSTRY",
+   "source": "408149",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1002.5,
+     "y": 250
+    },
+    "1": {
+     "x": 350,
+     "y": 275
+    },
+    "2": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "676042",
+   "label": "INDUSTRY",
+   "source": "408439",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 2427.5,
+     "y": null
+    },
+    "1": {
+     "x": 2427.5,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "676675",
+   "label": "INDUSTRY",
+   "source": "409024",
+   "target": "178553",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 2547.5,
+     "y": null
+    },
+    "1": {
+     "x": 2547.5,
+     "y": 325
+    },
+    "2": {
+     "x": 1985,
+     "y": 350
+    }
+   },
+   "active": false
+  },
+  {
+   "id": "678917",
+   "label": "INDUSTRY",
+   "source": "411433",
+   "target": "178554",
+   "neo4j_type": "INDUSTRY",
+   "neo4j_data": {},
+   "size": 1,
+   "type": "arrow",
+   "hover_color": "#000",
+   "color": "#123456",
+   "points": {
+    "0": {
+     "x": 1382.5,
+     "y": 150
+    },
+    "1": {
+     "x": 400,
+     "y": 175
+    },
+    "2": {
+     "x": 400,
+     "y": 200
+    },
+    "3": {
+     "x": 400,
+     "y": 225
+    },
+    "4": {
+     "x": 400,
+     "y": 250
+    },
+    "5": {
+     "x": 400,
+     "y": 275
+    },
+    "6": {
+     "x": 27.5,
+     "y": 300
+    }
+   },
+   "active": false
+  }
+ ]
+}

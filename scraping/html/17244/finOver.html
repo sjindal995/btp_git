@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>
+	Untitled Page
+</title><link type="text/css" rel="stylesheet" href="../PlusSite.css" />
+    <script type="text/javascript" language="javascript">            
+       function Printchk()   
+		{
+			url = "FinOverview.aspx?isprnt=Y&amp;id=fin"			 
+			ccwin = window.open(url,'ccwin','x=0,y=0,toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=1,copyhistory=no,width=650,height=440,screenX=0,screenY=0,left=210,top=200');
+			if (window.focus)
+			{
+				ccwin.focus();
+			}
+			return false;
+		}
+		function DocPrint()
+		{
+			 var disp_setting="toolbar=yes,location=no,directories=yes,menubar=yes,"; 
+           disp_setting+="scrollbars=yes,width=650, height=600, left=100, top=25"; 
+           var content_vlue = document.getElementById("divPrint").innerHTML; 
+  
+           var docprint=window.open("","",disp_setting); 
+           docprint.document.open();       
+           docprint.document.write('&lt;html&gt;&lt;body onLoad="self.print()"&gt;&lt;center&gt;');          
+           docprint.document.write(content_vlue);          
+           docprint.document.write('&lt;/center&gt;&lt;/body&gt;&lt;/html&gt;'); 
+           docprint.document.close(); 
+           docprint.focus();   
+		   	     
+		  document.getElementById("btnPrint").style.display='none';			
+		  document.getElementById("btnclose").style.display='none';		
+		}   
+      
+    
+    </script>    
+    
+</head>
+<body>
+    <form id="form1" action="FinOverview.aspx?id=fin" method="post" name="form1">
+<div>
+<input type="hidden" value="/wEPDwUKLTc5MjEyNzI2Mg9kFgICAw9kFgYCAg8WAh4HT25jbGljawUScmV0dXJuIFByaW50Y2hrKCk7ZAIFDw8WAh4EVGV4dAVJQSBWIFRob21hcyBFeHBvcnRzIEx0ZCwgTWFkcmFzPGJyPkluZHVzdHJ5IDogVGV4dGlsZXMgLSBSZWFkeW1hZGUgQXBwYXJlbGRkAgYPDxYCHwEFDihScyBpbiBDcm9yZXMpZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFCEltZ2V4Y2VsBQdJbWdXb3Jkml0RjyY7BVkSOMb0AL/grZQdwSA=" id="__VIEWSTATE" name="__VIEWSTATE" />
+</div>
+
+        <div>
+            <table width="100%" cellspacing="0" cellpadding="0" id="divPrint">
+                <tbody><tr>
+                    <td valign="top">
+                        
+
+<script type="text/javascript" language="javascript">
+//document.oncontextmenu=new Function("return false");
+    function GoCloseWin() //all popup
+    {   
+     var win
+     win=parent.close();     
+    }     	
+
+</script>
+
+<!--oncontextmenu="return false;" onselectstart="return false;" -->
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody><tr>
+        <td width="90%" valign="middle" nowrap="nowrap" background="../images/HeaderBack.gif" class="ColHeadL" style="height: 22px;">
+            Company &gt;&gt; Finance &gt;&gt; Financial Overview
+        </td>    
+       
+         <td width="10%" valign="bottom" nowrap="nowrap" background="../images/HeaderBack.gif" align="right" class="ColHeadL">
+                       
+        </td>
+    </tr>
+</tbody></table>
+ 
+<script>
+document.oncontextmenu=new Function("return false");
+</script></td>
+                </tr>
+            <tr>
+                <td valign="top" align="right" style="padding-right:20px;height:5px"> 
+                   <img border="0" onclick="return Printchk();" alt="Print" style="cursor:pointer" title="Print" id="Imgprint" src="/images/printer.gif" /> 
+                  <input type="image" border="0" style="border-width:0px;" src="/Images/excel.gif" title="Export To Excel" id="Imgexcel" name="Imgexcel" />
+                                       
+                             <input type="image" border="0" style="border-width:0px;cursor: hand" src="/Images/word.gif" title="Export To Word" id="ImgWord" name="ImgWord" />                                         
+                </td>
+            </tr>
+                
+                <tr>
+                    <td valign="bottom" nowrap="nowrap" align="center" colspan="2" class="bottomborder">
+                        <span style="font-weight:bold;" class="CompanyLblName" id="LblComp">A V Thomas Exports Ltd, Madras<br />Industry : Textiles - Readymade Apparel</span></td>
+                </tr>
+                <tr>
+                    <td class="tdrightHeader" colspan="2">
+                        <span id="lblCurrency">(Rs in Crores)</span></td>
+                </tr>
+                    <tr>
+                        <td valign="top" colspan="2">
+                            <table width="100%" cellspacing="1" cellpadding="0" border="0" bgcolor="#cccccc">
+                                <tbody><tr>
+                                    <td valign="top" bgcolor="#ffffff">
+                                        <table width="100%" cellspacing="0" cellpadding="2" border="0">
+                                            <tbody><tr>
+                                                <td bgcolor="#ffffff">
+                                                    <table border="0" style="width:100%;" id="Finover">
+	<tbody><tr>
+		<td><table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" bordercolordark="#D7D7E1" bordercolorlight="#FFFFFF"><tbody><tr><td valign="top"><table width="100%" cellspacing="1" cellpadding="2" border="0" class="tablelines"><tbody><tr><td colspan="12" class="SubSbHdrLeft"><b>Financial Overview </b></td></tr><tr><td width="25%" nowrap="nowrap" class="SubSbHdrLeft"></td><td width="10%" class="SubSbHdr">Mar 95</td><td width="10%" class="SubSbHdr">Mar 96</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Equity Paid Up</td><td width="10%" align="right" class="ColmElementWht">0.18</td><td width="10%" align="right" class="ColmElementWht">0.18</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Networth</td><td width="10%" align="right" class="ColmElementWht">0.49</td><td width="10%" align="right" class="ColmElementWht">0.59</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Capital Employed</td><td width="10%" align="right" class="ColmElementWht">2.81</td><td width="10%" align="right" class="ColmElementWht">2.42</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Gross Block</td><td width="10%" align="right" class="ColmElementWht">0.65</td><td width="10%" align="right" class="ColmElementWht">0.83</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Net Working Capital ( Incl. Def. Tax)</td><td width="10%" align="right" class="ColmElementWht">2.42</td><td width="10%" align="right" class="ColmElementWht">1.94</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Current Assets ( Incl. Def. Tax)</td><td width="10%" align="right" class="ColmElementWht">4.38</td><td width="10%" align="right" class="ColmElementWht">4.13</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Current Liabilities and Provisions ( Incl. Def. Tax)</td><td width="10%" align="right" class="ColmElementWht">1.96</td><td width="10%" align="right" class="ColmElementWht">2.19</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Total Assets/Liabilities (excl Reval &amp; W.off)</td><td width="10%" align="right" class="ColmElementWht">4.77</td><td width="10%" align="right" class="ColmElementWht">4.61</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Gross Sales</td><td width="10%" align="right" class="ColmElementWht">10.04</td><td width="10%" align="right" class="ColmElementWht">10.40</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Net Sales</td><td width="10%" align="right" class="ColmElementWht">10.04</td><td width="10%" align="right" class="ColmElementWht">10.40</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Other Income</td><td width="10%" align="right" class="ColmElementWht">0.73</td><td width="10%" align="right" class="ColmElementWht">0.87</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Value Of Output</td><td width="10%" align="right" class="ColmElementWht">10.47</td><td width="10%" align="right" class="ColmElementWht">10.57</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Cost of Production</td><td width="10%" align="right" class="ColmElementWht">8.93</td><td width="10%" align="right" class="ColmElementWht">10.66</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Selling Cost</td><td width="10%" align="right" class="ColmElementWht">0.53</td><td width="10%" align="right" class="ColmElementWht">0.10</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">PBIDT</td><td width="10%" align="right" class="ColmElementWht">0.50</td><td width="10%" align="right" class="ColmElementWht">0.71</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">PBDT</td><td width="10%" align="right" class="ColmElementWht">0.13</td><td width="10%" align="right" class="ColmElementWht">0.22</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">PBIT</td><td width="10%" align="right" class="ColmElementWht">0.43</td><td width="10%" align="right" class="ColmElementWht">0.62</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">PBT</td><td width="10%" align="right" class="ColmElementWht">0.06</td><td width="10%" align="right" class="ColmElementWht">0.13</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">PAT</td><td width="10%" align="right" class="ColmElementWht">0.06</td><td width="10%" align="right" class="ColmElementWht">0.13</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">CP</td><td width="10%" align="right" class="ColmElementWht">0.13</td><td width="10%" align="right" class="ColmElementWht">0.22</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Revenue earnings in forex</td><td width="10%" align="right" class="ColmElementWht">8.52</td><td width="10%" align="right" class="ColmElementWht">9.46</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Revenue expenses in forex</td><td width="10%" align="right" class="ColmElementWht">1.95</td><td width="10%" align="right" class="ColmElementWht">1.45</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Capital earnings in forex</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">0.00</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Capital expenses in forex</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">0.07</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Book Value (Unit Curr)</td><td width="10%" align="right" class="ColmElementWht">27.22</td><td width="10%" align="right" class="ColmElementWht">32.78</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Market Capitalisation</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">0.00</td></tr><tr><td width="25%" bgcolor="#ffffff" colspan="101"><b>Financial Years High &amp; Low Prices</b></td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">High Date (BSE)</td><td width="10%" align="right" class="ColmElementWht">NA</td><td width="10%" align="right" class="ColmElementWht">NA</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">High Price (BSE)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">0.00</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Low Date (BSE)</td><td width="10%" align="right" class="ColmElementWht">NA</td><td width="10%" align="right" class="ColmElementWht">NA</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Low Price (BSE)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">0.00</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">High Date (NSE)</td><td width="10%" align="right" class="ColmElementWht">NA</td><td width="10%" align="right" class="ColmElementWht">NA</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">High Price (NSE)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">0.00</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Low Date (NSE)</td><td width="10%" align="right" class="ColmElementWht">NA</td><td width="10%" align="right" class="ColmElementWht">NA</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Low Price (NSE)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">0.00</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">CEPS (annualised) (Unit Curr)</td><td width="10%" align="right" class="ColmElementWht">7.22</td><td width="10%" align="right" class="ColmElementWht">12.22</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">EPS (annualised) (Unit Curr)</td><td width="10%" align="right" class="ColmElementWht">3.33</td><td width="10%" align="right" class="ColmElementWht">7.22</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Dividend (annualised%)</td><td width="10%" align="right" class="ColmElementWht">10.00</td><td width="10%" align="right" class="ColmElementWht">20.00</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Payout (%)</td><td width="10%" align="right" class="ColmElementWht">33.33</td><td width="10%" align="right" class="ColmElementWht">30.77</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Cash Flow From Operating Activities</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">0.00</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Cash Flow From Investing Activities</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">0.00</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Cash Flow From Financing Activities</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">0.00</td></tr><tr><td width="25%" bgcolor="#ffffff" colspan="101"><b></b></td></tr><tr><td width="25%" bgcolor="#ffffff" colspan="101"><b>Rate of Growth (%)</b></td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-Net Worth (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">20.41</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-Capital Employed (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">-13.88</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-Gross Block (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">27.69</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-Gross Sales (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">3.59</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-Net Sales (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">3.59</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-Cost of Production (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">10.93</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-Total Assets (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">-3.35</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-PBIDT (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">42.00</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-PBDT (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">69.23</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-PBIT (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">44.19</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-PBT (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">116.67</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-PAT (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">116.67</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-CP (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">69.23</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-Revenue earnings in forex (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">11.03</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-Revenue expenses in forex (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">-25.64</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROG-Market Capitalisation (%)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">0.00</td></tr><tr><td width="25%" bgcolor="#ffffff" colspan="101"><b></b></td></tr><tr><td width="25%" bgcolor="#ffffff" colspan="101"><b>Key Ratios</b></td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Debt-Equity Ratio</td><td width="10%" align="right" class="ColmElementWht">4.73</td><td width="10%" align="right" class="ColmElementWht">3.84</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Long Term Debt-Equity Ratio</td><td width="10%" align="right" class="ColmElementWht">0.16</td><td width="10%" align="right" class="ColmElementWht">0.15</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Current Ratio</td><td width="10%" align="right" class="ColmElementWht">1.04</td><td width="10%" align="right" class="ColmElementWht">1.05</td></tr><tr><td width="25%" bgcolor="#ffffff" colspan="101"><b>Turnover Ratios</b></td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Fixed Assets Ratio</td><td width="10%" align="right" class="ColmElementWht">15.45</td><td width="10%" align="right" class="ColmElementWht">14.05</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Inventory Ratio</td><td width="10%" align="right" class="ColmElementWht">9.30</td><td width="10%" align="right" class="ColmElementWht">6.75</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Debtors Ratio</td><td width="10%" align="right" class="ColmElementWht">4.54</td><td width="10%" align="right" class="ColmElementWht">5.79</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Interest Cover Ratio</td><td width="10%" align="right" class="ColmElementWht">1.16</td><td width="10%" align="right" class="ColmElementWht">1.27</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">PBIDTM (%)</td><td width="10%" align="right" class="ColmElementWht">4.98</td><td width="10%" align="right" class="ColmElementWht">6.83</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">PBITM (%)</td><td width="10%" align="right" class="ColmElementWht">4.28</td><td width="10%" align="right" class="ColmElementWht">5.96</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">PBDTM (%)</td><td width="10%" align="right" class="ColmElementWht">1.29</td><td width="10%" align="right" class="ColmElementWht">2.12</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">CPM (%)</td><td width="10%" align="right" class="ColmElementWht">1.29</td><td width="10%" align="right" class="ColmElementWht">2.12</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">APATM (%)</td><td width="10%" align="right" class="ColmElementWht">0.60</td><td width="10%" align="right" class="ColmElementWht">1.25</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">ROCE (%)</td><td width="10%" align="right" class="ColmElementWht">15.30</td><td width="10%" align="right" class="ColmElementWht">23.71</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">RONW (%)</td><td width="10%" align="right" class="ColmElementWht">12.24</td><td width="10%" align="right" class="ColmElementWht">24.07</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Debtors Velocity (Days)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">63.00</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Creditors Velocity (Days)</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">64.00</td></tr><tr><td width="25%" bgcolor="#ffffff" colspan="101"><b>Assets Utilisation Ratio (times)</b></td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Value of Output/Total Assets</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">2.25</td></tr><tr><td width="25%" nowrap="nowrap" class="ColmElement">Value of Output/Gross Block</td><td width="10%" align="right" class="ColmElementWht">0.00</td><td width="10%" align="right" class="ColmElementWht">14.28</td></tr></tbody></table></td></tr></tbody></table></td>
+	</tr>
+</tbody></table>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                <tr>
+                    <td valign="top" align="left" class="Nodata" colspan="2" id="TdNoData">
+                    </td>
+
+                </tr>
+                <tr>
+                    
+                </tr>
+            </tbody></table>
+        </div>
+    </form>
+
+
+</body></html>
