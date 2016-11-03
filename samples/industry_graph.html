@@ -576,7 +576,9 @@ var s = new sigma({
 				_.$('field2').textContent=s.graph.degree(event.data.node.id);
 		});
 		s.bind('clickEdge', function(event) {
-				_.$('f1-label').textContent = "";
+        _.$('f1-label').textContent = "";
+				_.$('field1').textContent = "";
+
 				_.$('f2-label').textContent = "Number of edges:";
 				// _.$('field1').textContent=event.data.edge.label;
 				_.$('field2').textContent=event.data.edge.neo4j_data['num'];

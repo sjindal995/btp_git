@@ -145,6 +145,8 @@
 
 <script type="application/javascript">
 
+var fname = "Tata"
+
 var s = new sigma({
     renderer: {
         container: document.getElementById('graph-container'),
@@ -262,7 +264,20 @@ var s = new sigma({
                 e.color = "#AABBCC";                
             }
             if(e.neo4j_type=='MANAGES'){
-                e.color = "#890123";                
+                    e.color = "#222222";                
+                if((s.graph.nodes(e.source).label).indexOf(fname)==-1){
+
+                    tt = e.target;
+                    e.target = e.source;
+                    e.source = tt;
+                    e.color = "#999999";
+                    console.log(parseFloat(e.neo4j_data['renumerations']));
+                    if(!(parseFloat(e.neo4j_data['renumerations'])>1000.0)){
+                        e.hidden = true;
+                    }                
+                }
+
+
             }
             if(e.neo4j_type=='MANAGING_DIRECTOR'){
                 s.graph.dropEdge(e.id);
@@ -313,7 +328,7 @@ var s = new sigma({
 
         var dagreListener = sigma.layouts.dagre.configure(s, {
             directed: true, // take edge direction into account
-            rankdir: 'TB',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
+            rankdir: 'LR',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
                   // where T = top, B = bottom, L = left, and R = right.
             easing: 'quadraticInOut', // animation transition function
             duration: 800,   // animation duration
@@ -390,7 +405,7 @@ var s = new sigma({
 
         sigma.neo4j.cypher(
                 { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-                'match (c1:Company)-[r]-(p1:People) where (p1.name contains "Birla") return c1,r,p1',
+                'match (c1:Company)-[r:MANAGES]-(p1:People) where (p1.name contains "'+fname+'") match (c1)-[r2:MANAGES]-(p2:People) return c1,r,p1,r2,p2',
                 s,
                 customiseGraph
         );
