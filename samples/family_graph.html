@@ -146,6 +146,7 @@
 <script type="application/javascript">
 
 var fname = "Tata"
+var flist = '["S N Tata","Simone N Tata","Ratan N Tata", "R N Tata","Noel N Tata","N N Tata"]'
 
 var s = new sigma({
     renderer: {
@@ -157,8 +158,8 @@ var s = new sigma({
         defaultNodeBorderColor: '#000',
         defaultNodeHoverBorderColor: '#000',
         // enableEdgeHovering: false,
-        minEdgeSize: 0.5,
-        maxEdgeSize: 1.5,
+        minEdgeSize: 1.5,
+        maxEdgeSize: 2.5,
         minNodeSize: 5,
         maxNodeSize: 15,
         animationsTime: 5000,
@@ -216,7 +217,8 @@ var s = new sigma({
 
             }   
             if (n.neo4j_labels[0] == 'People') {
-                if(n.label=='Ratan N Tata') n.size = 20; 
+                n.size = 3*s.graph.degree(n.id)+5;
+                // if(n.label=='Ratan N Tata') n.size = 20; 
                 // n.type = 'diamond';
                 n.image = { url:'img/ppl.png',
                             scale:0.8};
@@ -264,7 +266,7 @@ var s = new sigma({
                 e.color = "#AABBCC";                
             }
             if(e.neo4j_type=='MANAGES'){
-                    e.color = "#222222";                
+                e.color = "#222222";                
                 if((s.graph.nodes(e.source).label).indexOf(fname)==-1){
 
                     tt = e.target;
@@ -273,9 +275,10 @@ var s = new sigma({
                     e.color = "#999999";
                     console.log(parseFloat(e.neo4j_data['renumerations']));
                     if(!(parseFloat(e.neo4j_data['renumerations'])>1000.0)){
-                        e.hidden = true;
+                        // e.hidden = true;
                     }                
                 }
+                // e.size = parseFloat(e.neo4j_data['renumerations']/1000.0 + 1.0);
 
 
             }
@@ -334,7 +337,7 @@ var s = new sigma({
             duration: 800,   // animation duration
             compound: true,
             // nodes : s.graph.nodes().slice(0,30), // subset of nodes
-            boundingBox: {minX: 0, maxX: 300, minY: 0, maxY:150} // constrain layout bounds ; object or true (all current positions of the given nodes)
+            boundingBox: {minX: 0, maxX: 300, minY: 0, maxY:200} // constrain layout bounds ; object or true (all current positions of the given nodes)
         });
 
         // Bind the events:
@@ -405,7 +408,7 @@ var s = new sigma({
 
         sigma.neo4j.cypher(
                 { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-                'match (c1:Company)-[r:MANAGES]-(p1:People) where (p1.name contains "'+fname+'") match (c1)-[r2:MANAGES]-(p2:People) return c1,r,p1,r2,p2',
+                'match (c1:Company)-[r:MANAGES]-(p1:People) where (p1.name in '+flist+') match (c1)-[r2:MANAGES]-(p2:People) return c1,r,p1,r2,p2',
                 s,
                 customiseGraph
         );

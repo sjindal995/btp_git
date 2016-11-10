@@ -146,8 +146,8 @@
 <script type="application/javascript">
 
 var iname = "Miscellaneous - Medium / Small"
-var sublist = []
-
+// var iname = "Cement - Major - South India"
+var ceid = 0;
 
 var s = new sigma({
     renderer: {
@@ -195,7 +195,7 @@ var s = new sigma({
 
 
      function customiseGraph(s) {
-
+        console.log( s.graph.nodes().length);
         s.graph.nodes().forEach(function(n) {
             n.label = n.neo4j_data['name'];
             // n.label = n.y.toString();
@@ -244,17 +244,51 @@ var s = new sigma({
                 e.type = 'line';
 
                 // console.log(s.graph.nodes(e.target).label);
-                if(s.graph.nodes(e.target).label!=iname){
-                    sublist.push(e.source);
-                    tt = e.target;
-                    e.target = e.source;
-                    e.source = tt;
-                }
+                // if(s.graph.nodes(e.target).label!=iname){
+                //     tt = e.target;
+                //     e.target = e.source;
+                //     e.source = tt;
+                // }
                 // e.type = 'arrow';
                 e.color = "#123456";
                 
             }
-
+            if(e.neo4j_type=='IS_BANK_OF'){
+                e.color = "#234567";                
+            }
+            if(e.neo4j_type=='IS_COLLABORATOR_OF'){
+                country = e.neo4j_data['country'];
+                // console.log(e.neo4j_data['country']);
+                nn = s.graph.nodes(country);
+                if(typeof nn == 'undefined'){
+                    s.graph.addNode({
+                        id: country,
+                        label: country,
+                        neo4j_labels: ["Country"],
+                        level: 3,
+                        type: 'square'
+                    });
+                }
+                nn = s.graph.nodes(country);
+                nn.image = { url:'img/'+country+'.png',
+                            scale: 1.2};
+                s.graph.addEdge({
+                    id: (++ceid) + '',
+                    target: e.source,
+                    source: country
+                })
+                console.log(nn.label);
+                console.log(typeof nn)
+                e.color = "#345678";                
+            }
+            
+            if(e.neo4j_type=='FUNDS_INDUSTRY'){
+                // e.type = 'curvedArrow';
+                e.color = "#456789";                
+            }
+            if(e.neo4j_type=='HOLDS_FUND_IN'){
+                e.color = "#567890";                
+            }
             if(e.neo4j_type=='INVESTED_IN'){
                 e.color = "#678901";                
             }
@@ -293,20 +327,12 @@ var s = new sigma({
                 // e.source = temp;                
             }
         }); 
-        console.log(sublist);
 
-        s.graph.edges().forEach(function(e){
-            if(e.neo4j_type=='MANAGES'){
-                // console.log(e.source+" "+sublist.indexOf(e.target))
-                if(sublist.indexOf(e.target)>=0){
-                    // sublist.push(e.target);
-                    tt = e.target;
-                    e.target = e.source;
-                    e.source = tt;
-                }                
+        s.graph.nodes().forEach(function(n) {
+            if(n.neo4j_labels[0]=="Country"){
+                n.size = s.graph.degree(n.id)+10
             }
         });
-
         s.refresh();
         // var fa = sigma.layouts.configForceLink(s, {
         //  worker: true,
@@ -405,7 +431,7 @@ var s = new sigma({
         sigma.neo4j.cypher(
                 { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
                 // 'match (c1:Company)-[r]-(p1:People) where (p1.name contains "Birla") return c1,r,p1',
-                'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'") optional match (c1)-[r4:MANAGES]-(p:People)-[r5:MANAGES]-(c2) return i1,r,c1,r2,c2,r3,i2,r4,p,r5',
+                'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_COLLABORATOR_OF]-(c2:Company) where (i1.name = "'+iname+'") return i1,r,c1,r2,c2',
                 s,
                 customiseGraph
         );

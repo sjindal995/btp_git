@@ -141,13 +141,17 @@
     <div id="graph-container">
     </div>
     <button id="btn">Download JSON</button>
+    <button id="chng">Add Management</button>
+    <button id="chng2">Remove Management</button>
 </div>
 
 <script type="application/javascript">
 
 var iname = "Miscellaneous - Medium / Small"
 var sublist = []
-
+var did = 0
+var nid = 0
+var ownerlist=[];
 
 var s = new sigma({
     renderer: {
@@ -193,8 +197,52 @@ var s = new sigma({
 });
 
 
+var s2 = new sigma({
+    renderer: {
+        // container: document.getElementById('graph-container'),
+        type: 'canvas'
+    },
+    settings: {
+        dragNodeStickiness: 0.01,
+        defaultNodeBorderColor: '#000',
+        defaultNodeHoverBorderColor: '#000',
+        // enableEdgeHovering: false,
+        minEdgeSize: 0.5,
+        maxEdgeSize: 1.5,
+        minNodeSize: 5,
+        maxNodeSize: 15,
+        animationsTime: 5000,
+        scalingMode: 'outside',
+        // batchEdgesDrawing: true,
+        sideMargin: 1,
+        labelThreshold: 18,
 
-     function customiseGraph(s) {
+        edgeColor: 'default',
+        defaultEdgeColor: '#000000',
+        // edgeLabelSize: 'proportional',
+        edgeLabelSizePowRatio: 1,
+        edgeLabelThreshold: 2,
+        // minEdgeSize: 10,
+        enableEdgeHovering: true,
+
+        // edgeLabelHoverShadowColor: '#BBBBBB',
+        edgeHoverColor: "edge",
+        // defaultEdgeHoverColor: '#000',
+        edgeHoverSizeRatio: 1,
+        edgeHoverExtremities: true,
+
+        // labelSize: 'proportional',
+        // labelSizeRatio: 1,
+        imageThreshold: 0,
+        
+
+
+    }
+});
+
+
+
+    function customiseGraph(s) {
 
         s.graph.nodes().forEach(function(n) {
             n.label = n.neo4j_data['name'];
@@ -263,34 +311,6 @@ var s = new sigma({
             }
             if(e.neo4j_type=='MANAGES'){
                 e.color = "#890123";                
-            }
-            if(e.neo4j_type=='MANAGING_DIRECTOR'){
-                s.graph.dropEdge(e.id);
-                // e.color = "#901234";
-                // temp = e.target;
-                // e.target = e.source;
-                // e.source = temp;
-            }
-            if(e.neo4j_type=='COMPANY_SECRETARY'){
-                s.graph.dropEdge(e.id);
-                // e.color = "#012345";                
-                // temp = e.target;
-                // e.target = e.source;                 
-                // e.source = temp;                
-            }
-            if(e.neo4j_type=='AUDITOR'){
-                s.graph.dropEdge(e.id);
-                // e.color = "#AAAAAA";                
-                // temp = e.target;
-                // e.target = e.source;
-                // e.source = temp;                
-            }
-            if(e.neo4j_type=='CHAIRMAN'){
-                s.graph.dropEdge(e.id);
-                // e.color = "#BBBBBB";                
-                // temp = e.target;
-                // e.target = e.source;
-                // e.source = temp;                
             }
         }); 
         console.log(sublist);
@@ -402,13 +422,227 @@ var s = new sigma({
 
     }   
 
-        sigma.neo4j.cypher(
-                { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-                // 'match (c1:Company)-[r]-(p1:People) where (p1.name contains "Birla") return c1,r,p1',
-                'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'") optional match (c1)-[r4:MANAGES]-(p:People)-[r5:MANAGES]-(c2) return i1,r,c1,r2,c2,r3,i2,r4,p,r5',
-                s,
-                customiseGraph
-        );
+
+    function customiseGraph2(s) {
+        nid=0
+        did=0
+        sublist=[]
+        ownerlist=[]
+        s.graph.nodes().forEach(function(n) {
+            n.label = n.neo4j_data['name'];
+            // n.label = n.y.toString();
+            n.level = 3;
+            n.type = 'square';
+            // n.image= {url:'D:/study/btp/New%20folder/linkurious.js/examples/img/img1.png'};
+            n.size = s.graph.degree(n.id)+5;
+            // if (n.neo4j_labels[0] == 'People' && s.graph.degree(n.id) < 2){
+            //  n.hidden = true;
+            // }
+            // else if (n.neo4j_labels[0] == 'Company' && s.graph.degree(n.id) == 0){
+            //  n.hidden = true;
+            // }
+            if (n.neo4j_labels[0] == 'Company') {
+                // n.type = 'circle';
+                n.color = '#BB0000';
+                n.image = {url:'img/cmpny.png',
+                            scale:0.8};
+                // n.url = urls[0];
+
+            }   
+            if (n.neo4j_labels[0] == 'People') {
+                // if(n.label=='Ratan N Tata') n.size = 20; 
+                // n.type = 'diamond';
+                n.image = { url:'img/ppl.png',
+                            scale:0.8};
+                n.color = '#00BB00';
+            }
+            if (n.neo4j_labels[0] == 'Industry') {
+                // n.type = 'square';
+                n.image = { url:'img/ind.png',
+                            scale: 0.8};
+                n.color = '#0000BB';
+            }   
+        });
+
+        
+        s.refresh();
+
+        s.graph.edges().forEach(function(e){
+            e.label = e.neo4j_type;
+            // e.type = 'curvedArrow';
+            e.type = 'arrow';
+            e.hover_color = '#000'
+            if(e.neo4j_type=='INDUSTRY'){
+                e.type = 'line';
+
+                // console.log(s.graph.nodes(e.target).label);
+                if(s.graph.nodes(e.target).label!=iname){
+                    
+                    tt = e.target;
+                    e.target = e.source;
+                    e.source = tt;
+                }
+                // else{
+                //     sublist.push(e.source);
+                // }
+                // e.type = 'arrow';
+                e.color = "#123456";
+                
+            }
+
+            if(e.neo4j_type=='INVESTED_IN'){
+                e.color = "#678901";                
+            }
+            if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
+                if(ownerlist.indexOf(e.target)<0){
+                    
+                    ownerlist.push(e.target);
+                }
+                if(sublist.indexOf(e.source)<0){
+
+                    sublist.push(e.source);
+                }
+                // s.graph.addNode({
+                //     id: 'Dummy'+(nid),
+                //     label: "Dummy",
+                //     hidden: true
+                // });
+                // s.graph.addEdge({
+                //     id: (++did)+'',
+                //     source: e.source,
+                //     target: 'Dummy'+(nid),
+                //     hidden: true
+                // })
+                // s.graph.addEdge({
+                //     id: (++did)+'',
+                //     source: 'Dummy'+(nid),
+                //     target: e.target,
+                //     hidden: true
+                // })
+                e.color = "#AABBCC";    
+                nid++;            
+            }
+            if(e.neo4j_type=='MANAGES'){
+                e.color = "#890123";                
+            }
+        }); 
+        console.log(sublist);
+
+        s.graph.nodes().forEach(function(n){
+            if(n.neo4j_labels[0] == "Company"){
+                if(sublist.indexOf(n.id)>=0){
+                    s.graph.addNode({
+                        id: 'Dummy'+(nid),
+                        label: "Dummy",
+                        hidden: true
+                    });
+                    s.graph.addEdge({
+                        id: (++did)+'',
+                        source: n.id,
+                        target: 'Dummy'+(nid),
+                        hidden: true
+                    })
+                    s.graph.addEdge({
+                        id: (++did)+'',
+                        source: 'Dummy'+(nid),
+                        target: ownerlist[Math.floor(Math.random() * ownerlist.length)],
+                        hidden: true
+                    })  
+                    nid++;
+                }
+                else{
+                    s.graph.addNode({
+                        id: 'Dummy'+(nid),
+                        label: "Dummy",
+                        hidden: true
+                    });
+                    s.graph.addEdge({
+                        id: (++did)+'',
+                        source: 'Dummy'+(nid),
+                        target: n.id,
+                        hidden: true
+                    })
+                    s.graph.addEdge({
+                        id: (++did)+'',
+                        target: 'Dummy'+(nid),
+                        source: sublist[Math.floor(Math.random() * sublist.length)],
+                        hidden: true
+                    })  
+                    nid++;
+                }        
+            }
+        })
+
+        s.graph.edges().forEach(function(e){
+            if(e.neo4j_type=='MANAGES'){
+                // console.log(e.source+" "+sublist.indexOf(e.target))
+                if(sublist.indexOf(e.target)>=0){
+                    // sublist.push(e.target);
+                    tt = e.target;
+                    e.target = e.source;
+                    e.source = tt;
+                }                
+            }
+        });
+
+        s.refresh();
+
+        var dagreListener = sigma.layouts.dagre.configure(s, {
+            directed: true, // take edge direction into account
+            // rankdir: 'TB',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
+            rankdir: 'BT',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
+                  // where T = top, B = bottom, L = left, and R = right.
+            easing: 'quadraticInOut', // animation transition function
+            duration: 800,   // animation duration
+            compound: true,
+            // nodes : s.graph.nodes().slice(0,30), // subset of nodes
+            boundingBox: {minX: 0, maxX: 300, minY: 0, maxY:150} // constrain layout bounds ; object or true (all current positions of the given nodes)
+        });
+
+        // Bind the events:
+        dagreListener.bind('start stop interpolate', function(e) {
+            console.log(e.type);
+        });
+
+        // // Start the DAG layout:
+        sigma.layouts.dagre.start(s);
+
+        var activeState = sigma.plugins.activeState(s);
+
+        // Initialize the dragNodes plugin:
+        var dragListener = sigma.plugins.dragNodes(s, s.renderers[0], activeState);
+
+        // Initialize the Select plugin:
+        var select = sigma.plugins.select(s, activeState);
+
+        // Initialize the Keyboard plugin:
+        var keyboard = sigma.plugins.keyboard(s, s.renderers[0]);
+
+        // Bind the Keyboard plugin to the Select plugin:
+        select.bindKeyboard(keyboard);
+
+    
+        console.log("finished customise graph");
+
+    }   
+
+
+
+    sigma.neo4j.cypher(
+            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+            // 'match (c1:Company)-[r]-(p1:People) where (p1.name contains "Birla") return c1,r,p1',
+            'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'") return i1,r,c1,r2,c2,r3,i2',
+            s,
+            customiseGraph
+    );
+
+    // sigma.neo4j.cypher(
+    //         { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+    //         // 'match (c1:Company)-[r]-(p1:People) where (p1.name contains "Birla") return c1,r,p1',
+    //         'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'") optional match (c1)-[r4:MANAGES]-(p:People)-[r5:MANAGES]-(c2) return i1,r,c1,r2,c2,r3,i2,r4,p,r5',
+    //         s,
+    //         customiseGraph2
+    // );
 
 
 
@@ -425,6 +659,33 @@ var s = new sigma({
     // legend.setPlacement('left'); 
     // legend.setVisibility(true);
     // legend.draw();
+
+    document.getElementById("chng").onclick=function(){
+        sigma.neo4j.cypher(
+                { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+                // 'match (c1:Company)-[r]-(p1:People) where (p1.name contains "Birla") return c1,r,p1',
+                'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'") optional match (c1)-[r4:MANAGES]-(p:People)-[r5:MANAGES]-(c2) return i1,r,c1,r2,c2,r3,i2,r4,p,r5',
+                s,
+                customiseGraph2
+        );
+        // console.log(s["settings"]);    
+
+    }
+
+    document.getElementById("chng2").onclick=function(){
+        sigma.neo4j.cypher(
+                { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+                // 'match (c1:Company)-[r]-(p1:People) where (p1.name contains "Birla") return c1,r,p1',
+                'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'") return i1,r,c1,r2,c2,r3,i2',
+                s,
+                customiseGraph
+        );
+            
+
+    }
+          
+
+
     document.getElementById("btn").onclick=function(){
         console.log("sadadasdasdas")
         // console.log(legend.getWidget('node','size'));
