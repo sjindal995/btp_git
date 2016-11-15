@@ -183,15 +183,15 @@
 
     </style>
     <div id="graph-container"></div>
-    <div id="control-pane">
+    <div id="control-pane" >
     <h4 class="underline">INFORMATION PANEL</h4>
     <h4 id="f1-label"></h4><p id="field1"></p>
     <h4 id="f2-label"></h4><p id="field2"></p>
     <h4 id="f3-label"></h4><p id="field3"></p>
     <h4 id="f4-label"></h4><p id="field4"></p>
     <h4 id="f5-label"></h4><p id="field5"></p>
+    <!-- <span class="line"></span> -->
     </div>
-    <span class="line"></span>
     <div>
       <!-- <button id="reset-btn">Reset filters</button> -->
       <!-- <button id="export-sub-btn">Export Sub</button> -->
@@ -202,6 +202,7 @@
     <button id="btn">Download JSON</button>
     <button id="chng">Add Management</button>
     <button id="chng2">Remove Management</button>
+    <button id="hide">Hide Panel</button>
 </div>
 
 <script type="application/javascript">
@@ -313,56 +314,110 @@ var s2 = new sigma({
 
 
     };
+
+    _.$('hide').onclick=function(){
+        if(self.textContent=="Hide Panel"){
+            // _.$('control-pane').hidden='true';
+            self.textContent="Show Panel";
+        }
+        else{
+            // _.$('control-pane').hidden='false';
+            self.textContent="Hide Panel";
+
+        }
+    }
+
+    function clearPane(){
+        _.$('f1-label').textContent = "";
+        _.$('f2-label').textContent = "";
+        _.$('f3-label').textContent = "";
+        _.$('f4-label').textContent = "";
+        _.$('f5-label').textContent = "";
+        _.$('field1').textContent="";
+        _.$('field2').textContent="";
+        _.$('field3').textContent="";
+        _.$('field4').textContent="";
+        _.$('field5').textContent="";    
+    }
     function updatePane(s){
         s.bind('clickNode', function(event) {
-        // alert(event.data.node.id)
-        // console.log(event.data.node.label);
-        if(event.data.node.neo4j_labels=="Company"){
-            // alert('Company')
-            _.$('f1-label').textContent = "Company Name:";
-            _.$('f2-label').textContent = "Incorporation Year:";
-            _.$('f3-label').textContent = "Sales(Rs in Cr):";
-            _.$('f4-label').textContent = "Sector:";
-            _.$('f5-label').textContent = "Business Group:";
-            _.$('field1').textContent=event.data.node.label;
-            _.$('field2').textContent=event.data.node.neo4j_data['incorporation_year'];
-            _.$('field3').textContent=event.data.node.neo4j_data['sales'];
-            _.$('field4').textContent=event.data.node.neo4j_data['sector'];
-            _.$('field5').textContent=event.data.node.neo4j_data['bussiness_group'];
-        }
-        else if(event.data.node.neo4j_labels[0]=="Industry"){
-            _.$('f1-label').textContent = "Industry Name:";
-            _.$('f2-label').textContent = "";
-            _.$('f3-label').textContent = "";
-            _.$('f4-label').textContent = "";
-            _.$('f5-label').textContent = "";
-            _.$('field1').textContent=event.data.node.label;
-            _.$('field2').textContent="";
-            _.$('field3').textContent="";
-            _.$('field4').textContent="";
-            _.$('field5').textContent="";
-        }
-        else if(event.data.node.neo4j_labels[0]=="People"){
-            _.$('f1-label').textContent = "Name:";
-            _.$('f2-label').textContent = "";
-            _.$('f3-label').textContent = "";
-            _.$('f4-label').textContent = "";
-            _.$('f5-label').textContent = "";
-            _.$('field1').textContent=event.data.node.label;
-            _.$('field2').textContent="";
-            _.$('field3').textContent="";
-            _.$('field4').textContent="";
-            _.$('field5').textContent="";
-        }
-    });
+            // alert(event.data.node.id)
+            // console.log(event.data.node.label);
+            clearPane();
+            if(event.data.node.neo4j_labels[0]=="Company"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Company Name:";
+                _.$('f2-label').textContent = "Incorporation Year:";
+                _.$('f3-label').textContent = "Sales(Rs in Cr):";
+                _.$('f4-label').textContent = "Sector:";
+                _.$('f5-label').textContent = "Business Group:";
+                _.$('field1').textContent=event.data.node.label;
+                _.$('field2').textContent=event.data.node.neo4j_data['incorporation_year'];
+                _.$('field3').textContent=event.data.node.neo4j_data['sales'];
+                _.$('field4').textContent=event.data.node.neo4j_data['sector'];
+                _.$('field5').textContent=event.data.node.neo4j_data['bussiness_group'];
+            }
+            else if(event.data.node.neo4j_labels[0]=="Industry"){
+                _.$('f1-label').textContent = "Industry Name:";
+                _.$('field1').textContent=event.data.node.label;
+            }
+            else if(event.data.node.neo4j_labels[0]=="People"){
+                _.$('f1-label').textContent = "Name:";
+                _.$('field1').textContent=event.data.node.label;
+            }
+        });
         s.bind('clickEdge', function(event) {
+            clearPane();
             
-            _.$('f1-label').textContent = "";
-            _.$('field1').textContent = "";
+            if(event.data.edge.neo4j_type=="INDUSTRY"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Company:";
+                _.$('f3-label').textContent = "Industry:";
+                _.$('field1').textContent="Company-Industry";
+                if (event.data.edge.neo4j_data['reverse']==false){
+                    _.$('field2').textContent=s.graph.nodes(event.data.edge.source).label;
+                    _.$('field3').textContent=s.graph.nodes(event.data.edge.target).label;
+                }
+                else{
+                    _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                    _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                }
+            }
+            else if(event.data.edge.neo4j_type=="IS_SUBSIDIARY_OF"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Owner:";
+                _.$('f3-label').textContent = "Subsidiary:";
+                _.$('f4-label').textContent = "% Holding:";
+                _.$('f5-label').textContent = "Shares Count:";
+                _.$('field1').textContent="Subsidiary";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field4').textContent=event.data.edge.neo4j_data['percent_holding'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['shares_count'];
+            }
+            else if(event.data.edge.neo4j_type=="MANAGES"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Company:";
+                _.$('f3-label').textContent = "Person:";
+                _.$('f4-label').textContent = "Year:";
+                _.$('f5-label').textContent = "Designation:";
+                _.$('field1').textContent="Management";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                if(event.data.edge.neo4j_data['reverse']==true){
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.target).label;
 
-            _.$('f2-label').textContent = "Number of edges:";
-            // _.$('field1').textContent=event.data.edge.label;
-            _.$('field2').textContent=event.data.edge.neo4j_data['num'];
+                }
+                _.$('field4').textContent=event.data.edge.neo4j_data['year'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['designation'];
+            }
+
+
+
         });
     }
 
@@ -412,6 +467,7 @@ var s2 = new sigma({
             e.label = e.neo4j_type;
             // e.type = 'curvedArrow';
             e.type = 'arrow';
+            e.neo4j_data['reverse']=false;
             e.hover_color = '#000'
             if(e.neo4j_type=='INDUSTRY'){
                 e.type = 'line';
@@ -422,6 +478,7 @@ var s2 = new sigma({
                     tt = e.target;
                     e.target = e.source;
                     e.source = tt;
+                    e.neo4j_data['reverse']=true;
                 }
                 // e.type = 'arrow';
                 e.color = "#123456";
@@ -448,6 +505,7 @@ var s2 = new sigma({
                     tt = e.target;
                     e.target = e.source;
                     e.source = tt;
+                    e.neo4j_data['reverse']=true;
                 }                
             }
         });
@@ -595,6 +653,8 @@ var s2 = new sigma({
         s.graph.edges().forEach(function(e){
             e.label = e.neo4j_type;
             // e.type = 'curvedArrow';
+            e.neo4j_data['reverse']=false;
+
             e.type = 'arrow';
             e.hover_color = '#000'
             if(e.neo4j_type=='INDUSTRY'){
@@ -606,6 +666,8 @@ var s2 = new sigma({
                     tt = e.target;
                     e.target = e.source;
                     e.source = tt;
+                    e.neo4j_data['reverse']=true;
+
                 }
                 // else{
                 //     sublist.push(e.source);
@@ -623,7 +685,7 @@ var s2 = new sigma({
                     
                     ownerlist.push(e.target);
                 }
-                if(sublist.indexOf(e.source)<0){
+                if(sublist.indexOf(e.source)<0 && e.source != e.target){
 
                     sublist.push(e.source);
                 }
@@ -706,6 +768,8 @@ var s2 = new sigma({
                     tt = e.target;
                     e.target = e.source;
                     e.source = tt;
+                    e.neo4j_data['reverse']=true;
+
                 }                
             }
         });
