@@ -199,6 +199,7 @@
         </div>
     
     </div>
+    <a href = "/samples/"><button type = "home" id="btn1">Home</button></a>
     <button id="btn">Download JSON</button>
     <button id="hide">Hide Panel</button>
 </div>
@@ -227,7 +228,7 @@ var flists= {
 var c = window.location.search
 
 // var iname = "Miscellaneous - Medium / Small"
-var fname = c.substr(c.search('=')+1,c.length).split("\%20").join(" ")
+var fname = c.substr(c.search('=')+1,c.length-c.search('=')-1).split("\%20").join(" ")
 
 var fliststr = fliststrs[fname]
 var flist = flists[fname]
