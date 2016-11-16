@@ -82,14 +82,14 @@
 <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.arrow.js"></script>
 <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curvedArrow.js"></script>
 
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.arrow.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.curve.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.curvedArrow.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.dashed.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.def.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.dotted.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.parallel.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.tapered.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dashed.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dotted.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.parallel.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.tapered.js"></script>
 
 <!-- <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script> -->
 
@@ -138,7 +138,7 @@
             right: 0;
             position: absolute;
         }
-        #control-pane {
+        #control-panel {
             top: 10px;
             bottom: 10px;
             right: 10px;
@@ -147,7 +147,7 @@
             background-color: rgb(249, 247, 237);
             box-shadow: 0 2px 6px rgba(0,0,0,0.3);
         }
-        #control-pane > div {
+        #control-panel > div {
             margin: 10px;
             overflow-x: auto;
         }
@@ -183,22 +183,22 @@
 
     </style>
     <div id="graph-container"></div>
-    <div id="control-pane" >
-    <h4 class="underline">INFORMATION PANEL</h4>
-    <h4 id="f1-label"></h4><p id="field1"></p>
-    <h4 id="f2-label"></h4><p id="field2"></p>
-    <h4 id="f3-label"></h4><p id="field3"></p>
-    <h4 id="f4-label"></h4><p id="field4"></p>
-    <h4 id="f5-label"></h4><p id="field5"></p>
-    <!-- <span class="line"></span> -->
+    <div id="control-panel" >
+        <h4 class="underline">INFORMATION PANEL</h4>
+        <h4 id="f1-label"></h4><p id="field1"></p>
+        <h4 id="f2-label"></h4><p id="field2"></p>
+        <h4 id="f3-label"></h4><p id="field3"></p>
+        <h4 id="f4-label"></h4><p id="field4"></p>
+        <h4 id="f5-label"></h4><p id="field5"></p>
+        <!-- <span class="line"></span> -->
+        <!-- </div> -->
+        <div>
+          <!-- <button id="reset-btn">Reset filters</button> -->
+          <!-- <button id="export-sub-btn">Export Sub</button> -->
+        </div>
+    
     </div>
-    <div>
-      <!-- <button id="reset-btn">Reset filters</button> -->
-      <!-- <button id="export-sub-btn">Export Sub</button> -->
-    </div>
-    <div id="dump" class="hidden"></div>
-    </div>
-  </div>
+  <!-- </div> -->
     <button id="btn">Download JSON</button>
     <button id="chng">Add Management</button>
     <button id="chng2">Remove Management</button>
@@ -263,48 +263,6 @@ var s = new sigma({
 });
 
 
-var s2 = new sigma({
-    renderer: {
-        // container: document.getElementById('graph-container'),
-        type: 'canvas'
-    },
-    settings: {
-        dragNodeStickiness: 0.01,
-        defaultNodeBorderColor: '#000',
-        defaultNodeHoverBorderColor: '#000',
-        // enableEdgeHovering: false,
-        minEdgeSize: 0.5,
-        maxEdgeSize: 1.5,
-        minNodeSize: 5,
-        maxNodeSize: 15,
-        animationsTime: 5000,
-        scalingMode: 'outside',
-        // batchEdgesDrawing: true,
-        sideMargin: 1,
-        labelThreshold: 18,
-
-        edgeColor: 'default',
-        defaultEdgeColor: '#000000',
-        // edgeLabelSize: 'proportional',
-        edgeLabelSizePowRatio: 1,
-        edgeLabelThreshold: 2,
-        // minEdgeSize: 10,
-        enableEdgeHovering: true,
-
-        // edgeLabelHoverShadowColor: '#BBBBBB',
-        edgeHoverColor: "edge",
-        // defaultEdgeHoverColor: '#000',
-        edgeHoverSizeRatio: 1,
-        edgeHoverExtremities: true,
-
-        // labelSize: 'proportional',
-        // labelSizeRatio: 1,
-        imageThreshold: 0,
-        
-
-
-    }
-});
 
 
     var _ = {
@@ -316,18 +274,18 @@ var s2 = new sigma({
     };
 
     _.$('hide').onclick=function(){
-        if(self.textContent=="Hide Panel"){
-            // _.$('control-pane').hidden='true';
-            self.textContent="Show Panel";
+        if(_.$('hide').textContent=="Hide Panel"){
+            _.$('control-panel').style.visibility='hidden';
+            _.$('hide').textContent="Show Panel";
         }
         else{
-            // _.$('control-pane').hidden='false';
-            self.textContent="Hide Panel";
+            _.$('control-panel').style.visibility='visible';
+            _.$('hide').textContent="Hide Panel";
 
         }
     }
 
-    function clearPane(){
+    function clearPanel(){
         _.$('f1-label').textContent = "";
         _.$('f2-label').textContent = "";
         _.$('f3-label').textContent = "";
@@ -339,11 +297,11 @@ var s2 = new sigma({
         _.$('field4').textContent="";
         _.$('field5').textContent="";    
     }
-    function updatePane(s){
+    function updatePanel(s){
         s.bind('clickNode', function(event) {
             // alert(event.data.node.id)
             // console.log(event.data.node.label);
-            clearPane();
+            clearPanel();
             if(event.data.node.neo4j_labels[0]=="Company"){
                 // alert('Company')
                 _.$('f1-label').textContent = "Company Name:";
@@ -367,7 +325,7 @@ var s2 = new sigma({
             }
         });
         s.bind('clickEdge', function(event) {
-            clearPane();
+            clearPanel();
             
             if(event.data.edge.neo4j_type=="INDUSTRY"){
                 // alert('Company')
@@ -446,7 +404,6 @@ var s2 = new sigma({
 
             }   
             if (n.neo4j_labels[0] == 'People') {
-                if(n.label=='Ratan N Tata') n.size = 20; 
                 // n.type = 'diamond';
                 n.image = { url:'img/ppl.png',
                             scale:0.8};
@@ -600,7 +557,7 @@ var s2 = new sigma({
         // Bind the Keyboard plugin to the Select plugin:
         select.bindKeyboard(keyboard);
 
-        updatePane(s)
+        updatePanel(s)
         console.log("finished customise graph");
 
     }   
@@ -810,7 +767,7 @@ var s2 = new sigma({
         // Bind the Keyboard plugin to the Select plugin:
         select.bindKeyboard(keyboard);
 
-        updatePane(s);
+        updatePanel(s);
 
         // s.bind('clickNode', function(event) {
         //     console.log(event.data.node.label);

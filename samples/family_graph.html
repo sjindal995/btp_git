@@ -137,16 +137,101 @@
             right: 0;
             position: absolute;
         }
+        #control-panel {
+            top: 10px;
+            bottom: 10px;
+            right: 10px;
+            position: absolute;
+            width: 230px;
+            background-color: rgb(249, 247, 237);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        #control-panel > div {
+            margin: 10px;
+            overflow-x: auto;
+        }
+        .line {
+            clear: both;
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 12px 0 0 0;
+            border-bottom: 1px solid #aac789;
+            background: transparent;
+        }
+        h2, h3, h4 {
+            padding: 0;
+            font-variant: small-caps;
+            font-family: 'Tahoma';
+        }
+        p {
+            font-family: 'Tahoma';
+        }   
+        .green {
+            color: #437356;
+        }
+        h4.underline {
+            color: #437356;
+            background: #f4f0e4;
+            margin: 0;
+            border-radius: 2px;
+            padding: 8px 12px;
+            font-weight: 700;
+        }
+        .hidden {
+            display: none;
+            visibility: hidden;
+        }
     </style>
-    <div id="graph-container">
+    <div id="graph-container">    </div>
+     <div id="control-panel" >
+        <h4 class="underline">INFORMATION PANEL</h4>
+        <h4 id="f1-label"></h4><p id="field1"></p>
+        <h4 id="f2-label"></h4><p id="field2"></p>
+        <h4 id="f3-label"></h4><p id="field3"></p>
+        <h4 id="f4-label"></h4><p id="field4"></p>
+        <h4 id="f5-label"></h4><p id="field5"></p>
+        <!-- <span class="line"></span> -->
+        <!-- </div> -->
+        <div>
+          <!-- <button id="reset-btn">Reset filters</button> -->
+          <!-- <button id="export-sub-btn">Export Sub</button> -->
+        </div>
+    
     </div>
     <button id="btn">Download JSON</button>
+    <button id="hide">Hide Panel</button>
 </div>
 
 <script type="application/javascript">
 
-var fname = "Tata"
-var flist = '["S N Tata","Simone N Tata","Ratan N Tata", "R N Tata","Noel N Tata","N N Tata"]'
+var fliststrs= {
+    "Tata" : '["Simone N Tata","Ratan N Tata","Noel N Tata"]',
+    "Ambani": '["Anil D Ambani", "Mukesh D Ambani", "Isha Mukesh Ambani", "Akash Mukesh Ambani", "Tina Anil Ambani"]',
+    "Birla" : '["Priyamvada Birla", "Yashovardhan Birla","Rajashree Birla", "Basant Kumar Birla","Saraladevi Birla", "Chandra Kant Birla","Kumar Mangalam Birla","Avanti Birla", "Sidharth Birla","Krishna Kumar Birla","Radhika Birla","Madhushree Birla","Nirvaan Birla", "Vedant Birla","Amita Birla","Neerja Birla","S K Birla"]',
+    "Adani" : '["Rajesh S Adani", "Gautam S Adani", "Vasant S Adani", "Pranav V Adani","Karan Gautambhai Adani"]',
+    "Godrej" : '["Nadir B Godrej", "Jamshyd N Godrej", "Adi B Godrej", "Pirojsha A Godrej", "Nisaba Godrej", "Sohrab P Godrej"]',
+    "Mahindra" : '["Keshub Mahindra","Harish Mahindra","Anand G Mahindra"]',
+    "Premji": '["Azim Hasham Premji","Yasmeen Azim Premji","Rishad Azim Premji"]'
+};
+var flists= {
+    "Tata" : ["Simone N Tata","Ratan N Tata","Noel N Tata"],
+    "Ambani": ["Anil D Ambani", "Mukesh D Ambani", "Isha Mukesh Ambani", "Akash Mukesh Ambani", "Tina Anil Ambani"],
+    "Birla" : ["Priyamvada Birla", "Yashovardhan Birla","Rajashree Birla", "Basant Kumar Birla","Saraladevi Birla", "Chandra Kant Birla","Kumar Mangalam Birla","Avanti Birla", "Sidharth Birla","Krishna Kumar Birla","Radhika Birla","Madhushree Birla","Nirvaan Birla", "Vedant Birla","Amita Birla","Neerja Birla","S K Birla"],
+    "Adani" : ["Rajesh S Adani", "Gautam S Adani", "Vasant S Adani", "Pranav V Adani","Karan Gautambhai Adani"],
+    "Godrej" : ["Nadir B Godrej", "Jamshyd N Godrej", "Adi B Godrej", "Pirojsha A Godrej", "Nisaba Godrej", "Sohrab P Godrej"],
+    "Mahindra" : ["Keshub Mahindra","Harish Mahindra","Anand G Mahindra"],
+    "Premji": ["Azim Hasham Premji","Yasmeen Azim Premji","Rishad Azim Premji"]
+};
+
+var c = window.location.search
+
+// var iname = "Miscellaneous - Medium / Small"
+var fname = c.substr(c.search('=')+1,c.length).split("\%20").join(" ")
+
+var fliststr = fliststrs[fname]
+var flist = flists[fname]
+
 
 var s = new sigma({
     renderer: {
@@ -160,7 +245,7 @@ var s = new sigma({
         // enableEdgeHovering: false,
         minEdgeSize: 1.5,
         maxEdgeSize: 2.5,
-        minNodeSize: 5,
+        minNodeSize: 10,
         maxNodeSize: 15,
         animationsTime: 5000,
         scalingMode: 'outside',
@@ -190,6 +275,173 @@ var s = new sigma({
 
     }
 });
+
+    var _ = {
+      $: function (id) {
+        return document.getElementById(id);
+      },
+
+
+    };
+
+    _.$('hide').onclick=function(){
+        if(_.$('hide').textContent=="Hide Panel"){
+            _.$('control-panel').style.visibility='hidden';
+            _.$('hide').textContent="Show Panel";
+        }
+        else{
+            _.$('control-panel').style.visibility='visible';
+            _.$('hide').textContent="Hide Panel";
+
+        }
+    }
+
+    function clearPanel(){
+        _.$('f1-label').textContent = "";
+        _.$('f2-label').textContent = "";
+        _.$('f3-label').textContent = "";
+        _.$('f4-label').textContent = "";
+        _.$('f5-label').textContent = "";
+        _.$('field1').textContent="";
+        _.$('field2').textContent="";
+        _.$('field3').textContent="";
+        _.$('field4').textContent="";
+        _.$('field5').textContent="";    
+    }
+    function updatePanel(s){
+        s.bind('clickNode', function(event) {
+            // alert(event.data.node.id)
+            // console.log(event.data.node.label);
+            clearPanel();
+            if(event.data.node.neo4j_labels[0]=="Company"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Company Name:";
+                _.$('f2-label').textContent = "Incorporation Year:";
+                _.$('f3-label').textContent = "Sales(Rs in Cr):";
+                _.$('f4-label').textContent = "Sector:";
+                _.$('f5-label').textContent = "Business Group:";
+                _.$('field1').textContent=event.data.node.label;
+                _.$('field2').textContent=event.data.node.neo4j_data['incorporation_year'];
+                _.$('field3').textContent=event.data.node.neo4j_data['sales'];
+                _.$('field4').textContent=event.data.node.neo4j_data['sector'];
+                _.$('field5').textContent=event.data.node.neo4j_data['bussiness_group'];
+            }
+            else if(event.data.node.neo4j_labels[0]=="Industry"){
+                _.$('f1-label').textContent = "Industry Name:";
+                _.$('field1').textContent=event.data.node.label;
+            }
+            else if(event.data.node.neo4j_labels[0]=="People"){
+                _.$('f1-label').textContent = "Name:";
+                _.$('field1').textContent=event.data.node.label;
+            }
+        });
+        s.bind('clickEdge', function(event) {
+            clearPanel();
+            
+            if(event.data.edge.neo4j_type=="INDUSTRY"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Company:";
+                _.$('f3-label').textContent = "Industry:";
+                _.$('field1').textContent="Company-Industry";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.target).label;
+            }
+            else if(event.data.edge.neo4j_type=="IS_SUBSIDIARY_OF"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Owner:";
+                _.$('f3-label').textContent = "Subsidiary:";
+                _.$('f4-label').textContent = "% Holding:";
+                _.$('f5-label').textContent = "Shares Count:";
+                _.$('field1').textContent="Subsidiary";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field4').textContent=event.data.edge.neo4j_data['percent_holding'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['shares_count'];
+            }
+            else if(event.data.edge.neo4j_type=="MANAGES"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Company:";
+                _.$('f3-label').textContent = "Person:";
+                _.$('f4-label').textContent = "Year:";
+                _.$('f5-label').textContent = "Designation:";
+                _.$('field1').textContent="Management";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                if(event.data.edge.neo4j_data['reverse']==true){
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.target).label;
+
+                }
+                _.$('field4').textContent=event.data.edge.neo4j_data['year'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['designation'];
+            }
+            else if(event.data.edge.neo4j_type=="IS_BANK_OF"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Company:";
+                _.$('f3-label').textContent = "Bank:";
+                _.$('field1').textContent="Company - Bank";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+            }
+            else if(event.data.edge.neo4j_type=="INVESTED_IN"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Investor:";
+                _.$('f3-label').textContent = "Investee:";
+                _.$('f4-label').textContent = "Shares Count:";
+                _.$('f5-label').textContent = "Investment Cost(Rs in Cr):";
+                _.$('field1').textContent="Investor - Investee";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field4').textContent=event.data.edge.neo4j_data['equity_shares_count'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['investments_cost'];
+            }
+            else if(event.data.edge.neo4j_type=="IS_COLLABORATOR_OF"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Company:";
+                _.$('f3-label').textContent = "Collaborator:";
+                _.$('f4-label').textContent = "% Shares:";
+                _.$('field1').textContent="Collaboration";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field4').textContent=event.data.edge.neo4j_data['percent_shares'];
+            }
+            else if(event.data.edge.neo4j_type=="HOLDS_FUND_IN"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Company:";
+                _.$('f3-label').textContent = "Fund:";
+                _.$('f4-label').textContent = "% Holding:";
+                _.$('f5-label').textContent = "Shares Count:";
+                _.$('field1').textContent="Company - Fund";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field4').textContent=event.data.edge.neo4j_data['percent_holding'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['shares_count'];
+            }
+            else if(event.data.edge.neo4j_type=="FUNDS_INDUSTRY"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Industry:";
+                _.$('f3-label').textContent = "Fund:";
+                _.$('f4-label').textContent = "Market Value:";
+                _.$('f5-label').textContent = "Shares Count:";
+                _.$('field1').textContent="Industry - Fund";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field4').textContent=event.data.edge.neo4j_data['market_value'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['shares_count'];
+            }
+
+
+
+        });
+    }
 
 
 
@@ -238,8 +490,10 @@ var s = new sigma({
         s.graph.edges().forEach(function(e){
             e.label = e.neo4j_type;
             // e.type = 'curvedArrow';
-            e.type = 'arrow';
+            // e.type = 'arrow';
             e.hover_color = '#000'
+            e.neo4j_data['reverse']=false;
+            // console.log(e.neo4j_data);
             if(e.neo4j_type=='INDUSTRY'){
                 // e.type = 'arrow';
                 e.color = "#123456";
@@ -266,16 +520,19 @@ var s = new sigma({
                 e.color = "#AABBCC";                
             }
             if(e.neo4j_type=='MANAGES'){
-                e.color = "#222222";                
-                if((s.graph.nodes(e.source).label).indexOf(fname)==-1){
+                e.color = "#222222";          
+                if(flist.indexOf(s.graph.nodes(e.source).label) < 0){      
+                // if((s.graph.nodes(e.source).label).indexOf(fname)==-1){
 
                     tt = e.target;
                     e.target = e.source;
                     e.source = tt;
                     e.color = "#999999";
+                    e.neo4j_data['reverse']=true;
                     console.log(parseFloat(e.neo4j_data['renumerations']));
                     if(!(parseFloat(e.neo4j_data['renumerations'])>1000.0)){
                         // e.hidden = true;
+                        // s.graph.nodes(e.target).hidden = true;
                     }                
                 }
                 // e.size = parseFloat(e.neo4j_data['renumerations']/1000.0 + 1.0);
@@ -401,14 +658,14 @@ var s = new sigma({
         // Bind the Keyboard plugin to the Select plugin:
         select.bindKeyboard(keyboard);
 
-    
+        updatePanel(s);
         console.log("finished customise graph");
 
     }   
 
         sigma.neo4j.cypher(
                 { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-                'match (c1:Company)-[r:MANAGES]-(p1:People) where (p1.name in '+flist+') match (c1)-[r2:MANAGES]-(p2:People) return c1,r,p1,r2,p2',
+                'match (c1:Company)-[r:MANAGES]-(p1:People) where (p1.name in '+fliststr+') match (c1)-[r2:MANAGES]-(p2:People) return c1,r,p1,r2,p2',
                 s,
                 customiseGraph
         );
