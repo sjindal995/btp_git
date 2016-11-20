@@ -1,0 +1,313 @@
+<script src="../linkurious/src/sigma.core.js"></script>
+<script src="../linkurious/src/conrad.js"></script>
+<script src="../linkurious/src/utils/sigma.utils.js"></script>
+<script src="../linkurious/src/utils/sigma.polyfills.js"></script>
+<script src="../linkurious/src/sigma.settings.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.dispatcher.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.configurable.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.graph.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.camera.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.quad.js"></script>
+<script src="../linkurious/src/captors/sigma.captors.mouse.js"></script>
+<script src="../linkurious/src/captors/sigma.captors.touch.js"></script>
+<script src="../linkurious/src/renderers/sigma.renderers.canvas.js"></script>
+<script src="../linkurious/src/renderers/sigma.renderers.webgl.js"></script>
+<script src="../linkurious/src/renderers/sigma.renderers.svg.js"></script>
+<script src="../linkurious/src/renderers/sigma.renderers.def.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.nodes.def.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.nodes.fast.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.edges.def.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.edges.fast.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.edges.arrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.labels.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.hovers.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.nodes.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edges.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edges.curve.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.utils.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.nodes.def.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.edges.def.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.edges.curve.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.edges.curvedArrow.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.labels.def.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.hovers.def.js"></script>
+<script src="../linkurious/src/middlewares/sigma.middlewares.rescale.js"></script>
+<script src="../linkurious/src/middlewares/sigma.middlewares.copy.js"></script>
+<script src="../linkurious/src/misc/sigma.misc.animation.js"></script>
+<script src="../linkurious/src/misc/sigma.misc.bindEvents.js"></script>
+<script src="../linkurious/src/misc/sigma.misc.bindDOMEvents.js"></script>
+<script src="../linkurious/src/misc/sigma.misc.drawHovers.js"></script>
+<!-- END SIGMA IMPORTS -->
+
+<script src="../linkurious/plugins/sigma.parsers.json/sigma.parsers.json.js"></script>
+<script src="../linkurious/plugins/sigma.exporters.json/sigma.exporters.json.js"></script>
+
+<script src="../linkurious/plugins/sigma.parsers.cypher/sigma.parsers.cypher.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.animate/sigma.plugins.animate.js"></script>
+
+<script src="../linkurious/plugins/sigma.layouts.forceLink/worker.js"></script>
+<script src="../linkurious/plugins/sigma.layouts.forceLink/supervisor.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.dragNodes/sigma.plugins.dragNodes.js"></script>
+
+<script src="../linkurious/plugins/sigma.helpers.graph/sigma.helpers.graph.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.activeState/sigma.plugins.activeState.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.select/sigma.plugins.select.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.keyboard/sigma.plugins.keyboard.js"></script>
+<!-- <script src="../linkurious/plugins/sigma.layouts.noverlap/sigma.layouts.noverlap.js"></script>
+ -->
+<!-- <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script> -->
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.cross.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.diamond.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.equilateral.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.square.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.star.js"></script>
+
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.arrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dashed.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dotted.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.parallel.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.tapered.js"></script>
+
+<!-- <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script> -->
+
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dashed.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dotted.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.parallel.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.tapered.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dashed.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dotted.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.parallel.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.tapered.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.legend/sigma.plugins.legend.js"></script>
+<script src="../linkurious/plugins/sigma.plugins.design/sigma.plugins.design.js"></script>
+
+<script src="../linkurious/plugins/sigma.renderers.edgeLabels/settings.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curvedArrow.js"></script>
+
+<script src="../linkurious/plugins/sigma.renderers.linkurious/settings.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.labels.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.autoCurve.js"></script>
+<script src="../linkurious/plugins/sigma.plugins.animate/sigma.plugins.animate.js"></script>
+<script src="../linkurious/plugins/sigma.layouts.dagre/sigma.layout.dagre.js"></script>
+<script src="lib/dagre.js"></script>
+<script src="../linkurious/plugins/sigma.layouts.fruchtermanReingold/sigma.layout.fruchtermanReingold.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.animate/sigma.plugins.animate.js"></script>
+<script src="../linkurious/plugins/sigma.layouts.noverlap/sigma.layouts.noverlap.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.filter/sigma.plugins.filter.js"></script>
+
+
+
+<div>
+	<style>
+		.tile {
+			width: 500px;
+			border-radius: 20px; 
+			margin: auto;
+		    border: 5px black;
+		    border-style: ridge;
+		    padding: 10px;
+		    font-family: Arial;
+		    background-color: gainsboro;
+		    /*margin: 25px;*/
+		}
+		.list{
+			width: 60%;
+			margin-left: 20%;
+			/*margin: auto;*/
+		}
+		.buttons{
+			text-align: center;
+		}
+		h2{
+			font-family: Arial;
+			text-align: center;
+		}
+	</style>
+	<h2 margin="auto" font-family='Tahoma'> Corporate Network Visualisation </h2>
+	<br>
+	<br>
+	<div class="tile">
+	<input type="radio" name="radio_btn" id="ind_graph" value="Industry Graph"/>Industry Graph
+	</div>
+	<br>
+	<div class="tile">
+	<input type="radio" name="radio_btn" id="ind2subs" value="Industry to subsidiaries graph"/> Industry to Subsidiaries Graph
+	<br>
+	<br>
+	<select id="list_1" class = "list" value="Industries">
+		<option selected="selected">Select an Industry</option>
+	</select>
+	</div>
+	<br>
+	<div class="tile">
+	<input type="radio" name="radio_btn" id="ind_cons" value="Connections between 2 industries" /> Show connections between two Industries
+	<br>
+	<br>
+	<select id="list_2" class = "list" value="Industries">
+		<option selected="selected">Select Industry 1</option>
+	</select>
+	<br>
+	<br>
+	<select id="list_3" class = "list" value="Industries">
+		<option selected="selected">Select Industry 2</option>
+	</select>
+	</div>
+	<br>
+	<div class = "tile">
+	<input type="radio" name="radio_btn" id="family_graph" value="Get family graph" />Get Family Graph
+	<br>
+	<br>
+	<select id="list_4" class = "list" value="Failies">
+		<option selected="selected">Select Family</option>
+	</select>
+	</div>
+	<br>
+	<br>
+	<div class = "buttons">
+	<input  type="submit" id="submit_btn" name="submit" value="Submit" onclick="submitForm()">
+	</div>
+</div>
+
+<script type="application/javascript">
+	// var cuisines;
+
+	// document.getElementById("list_1").hide();
+    // document.getElementById("ind2subs").change(function () {
+
+    //     if (document.getElementById(this).val() == "Industry to subsidiaries graph") {
+    //         document.getElementById("list_1").show();
+    //     } else {
+    //         document.getElementById("list_1").hide();
+    //     }
+    // });
+	var backgroundurl = "localhost/samples/"
+	var sel = document.getElementById('list_1');
+	var sel2 = document.getElementById('list_2');
+	var sel3 = document.getElementById('list_3');
+	var sel4 = document.getElementById('list_4');
+	var fragment = document.createDocumentFragment();
+	var families = ["Adani", "Ambani", "Birla","Godrej","Mahindra","Premji","Tata"];
+
+	// cuisines.forEach(function(cuisine, index) {
+	//     var opt = document.createElement('option');
+	//     opt.innerHTML = cuisine;
+	//     opt.value = cuisine;
+	//     fragment.appendChild(opt);
+	// });
+
+	var s = new sigma();
+
+	function customiseGraph(s) {
+
+    	s.graph.nodes().forEach(function(n) {
+    		if(n.neo4j_data['name'] != 'Industry Name'){
+	    		var opt = document.createElement('option');
+			    opt.innerHTML = n.neo4j_data['name'];
+			    opt.value = n.neo4j_data['name'];
+			    fragment.appendChild(opt);
+			}
+		});
+		sel.appendChild(fragment);
+		s.graph.nodes().forEach(function(n) {
+    		if(n.neo4j_data['name'] != 'Industry Name'){
+	    		var opt = document.createElement('option');
+			    opt.innerHTML = n.neo4j_data['name'];
+			    opt.value = n.neo4j_data['name'];
+			    fragment.appendChild(opt);
+			}
+		});
+		sel2.appendChild(fragment);
+		s.graph.nodes().forEach(function(n) {
+    		if(n.neo4j_data['name'] != 'Industry Name'){
+	    		var opt = document.createElement('option');
+			    opt.innerHTML = n.neo4j_data['name'];
+			    opt.value = n.neo4j_data['name'];
+			    fragment.appendChild(opt);
+			}
+		});
+		sel3.appendChild(fragment);
+		families.forEach(function(n) {
+    		if(n != ''){
+	    		var opt = document.createElement('option');
+			    opt.innerHTML = n;
+			    opt.value = n;
+			    fragment.appendChild(opt);
+			}
+		});
+		sel4.appendChild(fragment);
+    }
+
+    sigma.neo4j.cypher(
+            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+            'match (i1:Industry) return i1',
+            // 'match (n:Company)-[r]-(p) where n.bussiness_group contains "Tata" return n,r,p'
+            s,
+            customiseGraph
+    );
+
+    function submitForm(){
+    	if(document.getElementById('ind_graph').checked){
+			window.location = "industry_graph.html";
+    	}
+    	else if(document.getElementById('ind2subs').checked){
+    		var e = document.getElementById('list_1');
+    		if(e.options[e.selectedIndex].value != "Select an Industry"){
+    			window.location = "in3.html?ind="+e.options[e.selectedIndex].value;
+    		}
+    		else{
+    			alert("Please Select Industry!");
+    		}
+    	}
+    	else if(document.getElementById('ind_cons').checked){
+    		var e0 = document.getElementById('list_2');
+    		var e1 = document.getElementById('list_3');
+    		if(e0.options[e0.selectedIndex].value != "Select Industry 1" && e1.options[e1.selectedIndex].value != "Select Industry 2"){
+    			window.location = "industry_con.html?ind1="+e0.options[e0.selectedIndex].value+"&ind2="+e1.options[e1.selectedIndex].value;
+    		}
+    		else{
+    			alert("Please Select Industry!");
+    		}
+    	}
+    	else if(document.getElementById('family_graph').checked){
+    		var e = document.getElementById('list_4');
+    		if(e.options[e.selectedIndex].value != "Select Family"){
+    			window.location = "family_graph.html?family="+e.options[e.selectedIndex].value;
+    		}
+    		else{
+    			alert("Please Select Family");
+    		}
+    	}
+    }
+
+</script>

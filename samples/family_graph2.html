@@ -82,14 +82,14 @@
 <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.arrow.js"></script>
 <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curvedArrow.js"></script>
 
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.arrow.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curve.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dashed.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.def.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dotted.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.parallel.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.tapered.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.arrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.curvedArrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.dashed.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.dotted.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.parallel.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.tapered.js"></script>
 
 <!-- <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script> -->
 
@@ -126,7 +126,6 @@
 <script src="../linkurious/plugins/sigma.plugins.animate/sigma.plugins.animate.js"></script>
 <script src="../linkurious/plugins/sigma.layouts.noverlap/sigma.layouts.noverlap.js"></script>
 
-<script src="../linkurious/plugins/sigma.plugins.filter/sigma.plugins.filter.js"></script>
 
 
 <div id="container">
@@ -164,6 +163,9 @@
             padding: 0;
             font-variant: small-caps;
             font-family: 'Tahoma';
+        }
+        p {
+            font-family: 'Tahoma';
         }   
         .green {
             color: #437356;
@@ -180,10 +182,9 @@
             display: none;
             visibility: hidden;
         }
-
     </style>
-    <div id="graph-container"></div>
-    <div id="control-panel" >
+    <div id="graph-container">    </div>
+     <div id="control-panel" >
         <h4 class="underline">INFORMATION PANEL</h4>
         <h4 id="f1-label"></h4><p id="field1"></p>
         <h4 id="f2-label"></h4><p id="field2"></p>
@@ -198,28 +199,40 @@
         </div>
     
     </div>
-  <!-- </div> -->
     <a href = "/samples/"><button type = "home" id="btn1">Home</button></a>
-    <a href = "/samples/industry_graph.html"><button type = "home" id="btn1">Industry Graph</button></a>
     <button id="btn">Download JSON</button>
-    <button id="chng">Add Management</button>
-    <button id="chng2">Remove Management</button>
     <button id="hide">Hide Panel</button>
 </div>
 
 <script type="application/javascript">
 
+var fliststrs= {
+    "Tata" : '["Simone N Tata","Ratan N Tata","Noel N Tata"]',
+    "Ambani": '["Anil D Ambani", "Mukesh D Ambani", "Isha Mukesh Ambani", "Akash Mukesh Ambani", "Tina Anil Ambani"]',
+    "Birla" : '["Priyamvada Birla", "Yashovardhan Birla","Rajashree Birla", "Basant Kumar Birla","Saraladevi Birla", "Chandra Kant Birla","Kumar Mangalam Birla","Avanti Birla", "Sidharth Birla","Krishna Kumar Birla","Radhika Birla","Madhushree Birla","Nirvaan Birla", "Vedant Birla","Amita Birla","Neerja Birla","S K Birla"]',
+    "Adani" : '["Rajesh S Adani", "Gautam S Adani", "Vasant S Adani", "Pranav V Adani","Karan Gautambhai Adani"]',
+    "Godrej" : '["Nadir B Godrej", "Jamshyd N Godrej", "Adi B Godrej", "Pirojsha A Godrej", "Nisaba Godrej", "Sohrab P Godrej"]',
+    "Mahindra" : '["Keshub Mahindra","Harish Mahindra","Anand G Mahindra"]',
+    "Premji": '["Azim Hasham Premji","Yasmeen Azim Premji","Rishad Azim Premji"]'
+};
+var flists= {
+    "Tata" : ["Simone N Tata","Ratan N Tata","Noel N Tata"],
+    "Ambani": ["Anil D Ambani", "Mukesh D Ambani", "Isha Mukesh Ambani", "Akash Mukesh Ambani", "Tina Anil Ambani"],
+    "Birla" : ["Priyamvada Birla", "Yashovardhan Birla","Rajashree Birla", "Basant Kumar Birla","Saraladevi Birla", "Chandra Kant Birla","Kumar Mangalam Birla","Avanti Birla", "Sidharth Birla","Krishna Kumar Birla","Radhika Birla","Madhushree Birla","Nirvaan Birla", "Vedant Birla","Amita Birla","Neerja Birla","S K Birla"],
+    "Adani" : ["Rajesh S Adani", "Gautam S Adani", "Vasant S Adani", "Pranav V Adani","Karan Gautambhai Adani"],
+    "Godrej" : ["Nadir B Godrej", "Jamshyd N Godrej", "Adi B Godrej", "Pirojsha A Godrej", "Nisaba Godrej", "Sohrab P Godrej"],
+    "Mahindra" : ["Keshub Mahindra","Harish Mahindra","Anand G Mahindra"],
+    "Premji": ["Azim Hasham Premji","Yasmeen Azim Premji","Rishad Azim Premji"]
+};
 
 var c = window.location.search
 
 // var iname = "Miscellaneous - Medium / Small"
-var iname = c.substr(c.search('=')+1,c.length).split("\%20").join(" ")
+var fname = c.substr(c.search('=')+1,c.length-c.search('=')-1).split("\%20").join(" ")
 
+var fliststr = fliststrs[fname]
+var flist = flists[fname]
 
-var sublist = []
-var did = 0
-var nid = 0
-var ownerlist=[];
 
 var s = new sigma({
     renderer: {
@@ -231,8 +244,8 @@ var s = new sigma({
         defaultNodeBorderColor: '#000',
         defaultNodeHoverBorderColor: '#000',
         // enableEdgeHovering: false,
-        minEdgeSize: 0.5,
-        maxEdgeSize: 1.5,
+        minEdgeSize: 1.5,
+        maxEdgeSize: 2.5,
         minNodeSize: 5,
         maxNodeSize: 15,
         animationsTime: 5000,
@@ -263,9 +276,6 @@ var s = new sigma({
 
     }
 });
-
-
-
 
     var _ = {
       $: function (id) {
@@ -335,14 +345,8 @@ var s = new sigma({
                 _.$('f2-label').textContent = "Company:";
                 _.$('f3-label').textContent = "Industry:";
                 _.$('field1').textContent="Company-Industry";
-                if (event.data.edge.neo4j_data['reverse']==false){
-                    _.$('field2').textContent=s.graph.nodes(event.data.edge.source).label;
-                    _.$('field3').textContent=s.graph.nodes(event.data.edge.target).label;
-                }
-                else{
-                    _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
-                    _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
-                }
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.target).label;
             }
             else if(event.data.edge.neo4j_type=="IS_SUBSIDIARY_OF"){
                 // alert('Company')
@@ -375,6 +379,65 @@ var s = new sigma({
                 _.$('field4').textContent=event.data.edge.neo4j_data['year'];
                 _.$('field5').textContent=event.data.edge.neo4j_data['designation'];
             }
+            else if(event.data.edge.neo4j_type=="IS_BANK_OF"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Company:";
+                _.$('f3-label').textContent = "Bank:";
+                _.$('field1').textContent="Company - Bank";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+            }
+            else if(event.data.edge.neo4j_type=="INVESTED_IN"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Investor:";
+                _.$('f3-label').textContent = "Investee:";
+                _.$('f4-label').textContent = "Shares Count:";
+                _.$('f5-label').textContent = "Investment Cost(Rs in Cr):";
+                _.$('field1').textContent="Investor - Investee";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field4').textContent=event.data.edge.neo4j_data['equity_shares_count'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['investments_cost'];
+            }
+            else if(event.data.edge.neo4j_type=="IS_COLLABORATOR_OF"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Company:";
+                _.$('f3-label').textContent = "Collaborator:";
+                _.$('f4-label').textContent = "% Shares:";
+                _.$('field1').textContent="Collaboration";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field4').textContent=event.data.edge.neo4j_data['percent_shares'];
+            }
+            else if(event.data.edge.neo4j_type=="HOLDS_FUND_IN"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Company:";
+                _.$('f3-label').textContent = "Fund:";
+                _.$('f4-label').textContent = "% Holding:";
+                _.$('f5-label').textContent = "Shares Count:";
+                _.$('field1').textContent="Company - Fund";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field4').textContent=event.data.edge.neo4j_data['percent_holding'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['shares_count'];
+            }
+            else if(event.data.edge.neo4j_type=="FUNDS_INDUSTRY"){
+                // alert('Company')
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Industry:";
+                _.$('f3-label').textContent = "Fund:";
+                _.$('f4-label').textContent = "Market Value:";
+                _.$('f5-label').textContent = "Shares Count:";
+                _.$('field1').textContent="Industry - Fund";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field4').textContent=event.data.edge.neo4j_data['market_value'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['shares_count'];
+            }
 
 
 
@@ -382,7 +445,8 @@ var s = new sigma({
     }
 
 
-    function customiseGraph(s) {
+
+     function customiseGraph(s) {
 
         s.graph.nodes().forEach(function(n) {
             n.label = n.neo4j_data['name'];
@@ -397,7 +461,6 @@ var s = new sigma({
             // else if (n.neo4j_labels[0] == 'Company' && s.graph.degree(n.id) == 0){
             //  n.hidden = true;
             // }
-                console.log(n.label)
             if (n.neo4j_labels[0] == 'Company') {
                 // n.type = 'circle';
                 n.color = '#BB0000';
@@ -407,10 +470,19 @@ var s = new sigma({
 
             }   
             if (n.neo4j_labels[0] == 'People') {
+                n.size = s.graph.degree(n.id)+5;
+                if(flist.indexOf(n.label) <0){
+                    n.type = 'circle';
+                    n.size = 2;
+                }
+                else{
+                    n.image = { url:'img/ppl.png',
+                                scale:0.8};
+                    
+                }
+                    n.color = '#00BB00';
+                // if(n.label=='Ratan N Tata') n.size = 20; 
                 // n.type = 'diamond';
-                n.image = { url:'img/ppl.png',
-                            scale:0.8};
-                n.color = '#00BB00';
             }
             if (n.neo4j_labels[0] == 'Industry') {
                 // n.type = 'square';
@@ -426,26 +498,29 @@ var s = new sigma({
         s.graph.edges().forEach(function(e){
             e.label = e.neo4j_type;
             // e.type = 'curvedArrow';
-            e.type = 'arrow';
-            e.neo4j_data['reverse']=false;
+            // e.type = 'arrow';
             e.hover_color = '#000'
+            e.neo4j_data['reverse']=false;
+            // console.log(e.neo4j_data);
             if(e.neo4j_type=='INDUSTRY'){
-                e.type = 'line';
-
-                // console.log(s.graph.nodes(e.target).label);
-                if(s.graph.nodes(e.target).label!=iname){
-                    sublist.push(e.source);
-                    sublist.push(e.target);
-                    tt = e.target;
-                    e.target = e.source;
-                    e.source = tt;
-                    e.neo4j_data['reverse']=true;
-                }
                 // e.type = 'arrow';
                 e.color = "#123456";
                 
             }
-
+            if(e.neo4j_type=='IS_BANK_OF'){
+                e.color = "#234567";                
+            }
+            if(e.neo4j_type=='IS_COLLABORATOR_OF'){
+                e.color = "#345678";                
+            }
+            
+            if(e.neo4j_type=='FUNDS_INDUSTRY'){
+                // e.type = 'curvedArrow';
+                e.color = "#456789";                
+            }
+            if(e.neo4j_type=='HOLDS_FUND_IN'){
+                e.color = "#567890";                
+            }
             if(e.neo4j_type=='INVESTED_IN'){
                 e.color = "#678901";                
             }
@@ -453,24 +528,54 @@ var s = new sigma({
                 e.color = "#AABBCC";                
             }
             if(e.neo4j_type=='MANAGES'){
-                e.color = "#890123";                
+                e.color = "#222222";          
+                if(flist.indexOf(s.graph.nodes(e.source).label) < 0){      
+                // if((s.graph.nodes(e.source).label).indexOf(fname)==-1){
+
+                    tt = e.target;
+                    e.target = e.source;
+                    e.source = tt;
+                    e.color = "#999999";
+                    e.neo4j_data['reverse']=true;
+                    console.log(parseFloat(e.neo4j_data['renumerations']));
+                    if(!(parseFloat(e.neo4j_data['renumerations'])>1000.0)){
+                        // e.hidden = true;
+                        // s.graph.nodes(e.target).hidden = true;
+                    }                
+                }
+                // e.size = parseFloat(e.neo4j_data['renumerations']/1000.0 + 1.0);
+
+
+            }
+            if(e.neo4j_type=='MANAGING_DIRECTOR'){
+                s.graph.dropEdge(e.id);
+                // e.color = "#901234";
+                // temp = e.target;
+                // e.target = e.source;
+                // e.source = temp;
+            }
+            if(e.neo4j_type=='COMPANY_SECRETARY'){
+                s.graph.dropEdge(e.id);
+                // e.color = "#012345";                
+                // temp = e.target;
+                // e.target = e.source;                 
+                // e.source = temp;                
+            }
+            if(e.neo4j_type=='AUDITOR'){
+                s.graph.dropEdge(e.id);
+                // e.color = "#AAAAAA";                
+                // temp = e.target;
+                // e.target = e.source;
+                // e.source = temp;                
+            }
+            if(e.neo4j_type=='CHAIRMAN'){
+                s.graph.dropEdge(e.id);
+                // e.color = "#BBBBBB";                
+                // temp = e.target;
+                // e.target = e.source;
+                // e.source = temp;                
             }
         }); 
-        console.log(sublist);
-        // console.log(sublist);
-
-        // s.graph.edges().forEach(function(e){
-        //     if(e.neo4j_type=='MANAGES'){
-        //         // console.log(e.source+" "+sublist.indexOf(e.target))
-        //         if(sublist.indexOf(e.target)>=0){
-        //             // sublist.push(e.target);
-        //             tt = e.target;
-        //             e.target = e.source;
-        //             e.source = tt;
-        //             e.neo4j_data['reverse']=true;
-        //         }                
-        //     }
-        // });
 
         s.refresh();
         // var fa = sigma.layouts.configForceLink(s, {
@@ -489,39 +594,38 @@ var s = new sigma({
         // sigma.layouts.startForceLink();
 
 
-        var dagreListener = sigma.layouts.dagre.configure(s, {
-            directed: true, // take edge direction into account
-            // rankdir: 'TB',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
-            rankdir: 'BT',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
-                  // where T = top, B = bottom, L = left, and R = right.
-            easing: 'quadraticInOut', // animation transition function
-            duration: 800,   // animation duration
-            compound: true,
-            // nodes : s.graph.nodes().slice(0,30), // subset of nodes
-            boundingBox: {minX: 0, maxX: 300, minY: 0, maxY:150} // constrain layout bounds ; object or true (all current positions of the given nodes)
-        });
-
-        // Bind the events:
-        dagreListener.bind('start stop interpolate', function(e) {
-            console.log("e.type : " + e.type);
-        });
-
-        // // Start the DAG layout:
-        sigma.layouts.dagre.start(s);
-            
-        // var frListener = sigma.layouts.fruchtermanReingold.configure(s, {
-        //     iterations: 100,
-        //     easing: 'quadraticInOut',
-        //     duration: 800
+        // var dagreListener = sigma.layouts.dagre.configure(s, {
+        //     directed: true, // take edge direction into account
+        //     rankdir: 'LR',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
+        //           // where T = top, B = bottom, L = left, and R = right.
+        //     easing: 'quadraticInOut', // animation transition function
+        //     duration: 800,   // animation duration
+        //     compound: true,
+        //     // nodes : s.graph.nodes().slice(0,30), // subset of nodes
+        //     boundingBox: {minX: 0, maxX: 300, minY: 0, maxY:200} // constrain layout bounds ; object or true (all current positions of the given nodes)
         // });
 
-        // // Bind the events:
-        // frListener.bind('start stop interpolate', function(e) {
+        // Bind the events:
+        // dagreListener.bind('start stop interpolate', function(e) {
         //     console.log(e.type);
         // });
 
-        // // Start the Fruchterman-Reingold algorithm:
-        // sigma.layouts.fruchtermanReingold.start(s);
+        // // // Start the DAG layout:
+        // sigma.layouts.dagre.start(s);
+            
+        var frListener = sigma.layouts.fruchtermanReingold.configure(s, {
+            iterations: 500,
+            easing: 'quadraticInOut',
+            duration: 800
+        });
+
+        // Bind the events:
+        frListener.bind('start stop interpolate', function(e) {
+            console.log(e.type);
+        });
+
+        // Start the Fruchterman-Reingold algorithm:
+        sigma.layouts.fruchtermanReingold.start(s);
 
         // var noverlapListener = s.configNoverlap({
         //     maxIterations: 300,
@@ -562,281 +666,17 @@ var s = new sigma({
         // Bind the Keyboard plugin to the Select plugin:
         select.bindKeyboard(keyboard);
 
-        updatePanel(s)
-        console.log("finished customise graph");
-        if(s.graph.nodes().length==0){
-            alert("This graph has no nodes.\nPlease go back to home")
-
-        }
-
-    }   
-
-
-    function customiseGraph2(s) {
-        nid=0
-        did=0
-        sublist=[]
-        ownerlist=[]
-        s.graph.nodes().forEach(function(n) {
-            n.label = n.neo4j_data['name'];
-            // n.label = n.y.toString();
-            n.level = 3;
-            n.type = 'square';
-            // n.image= {url:'D:/study/btp/New%20folder/linkurious.js/examples/img/img1.png'};
-            n.size = s.graph.degree(n.id)+5;
-            // if (n.neo4j_labels[0] == 'People' && s.graph.degree(n.id) < 2){
-            //  n.hidden = true;
-            // }
-            // else if (n.neo4j_labels[0] == 'Company' && s.graph.degree(n.id) == 0){
-            //  n.hidden = true;
-            // }
-            if (n.neo4j_labels[0] == 'Company') {
-                // n.type = 'circle';
-                n.color = '#BB0000';
-                n.image = {url:'img/cmpny.png',
-                            scale:0.8};
-                // n.url = urls[0];
-
-            }   
-            if (n.neo4j_labels[0] == 'People') {
-                // if(n.label=='Ratan N Tata') n.size = 20; 
-                // n.type = 'diamond';
-                n.image = { url:'img/ppl.png',
-                            scale:0.8};
-                n.color = '#00BB00';
-            }
-            if (n.neo4j_labels[0] == 'Industry') {
-                // n.type = 'square';
-                n.image = { url:'img/ind.png',
-                            scale: 0.8};
-                n.color = '#0000BB';
-            }   
-        });
-
-        
-        s.refresh();
-
-        s.graph.edges().forEach(function(e){
-            e.label = e.neo4j_type;
-            // e.type = 'curvedArrow';
-            e.neo4j_data['reverse']=false;
-
-            e.type = 'arrow';
-            e.hover_color = '#000'
-            if(e.neo4j_type=='INDUSTRY'){
-                e.type = 'line';
-
-                // console.log(s.graph.nodes(e.target).label);
-                if(s.graph.nodes(e.target).label!=iname){
-                    
-                    tt = e.target;
-                    e.target = e.source;
-                    e.source = tt;
-                    e.neo4j_data['reverse']=true;
-
-                }
-                // else{
-                //     sublist.push(e.source);
-                // }
-                // e.type = 'arrow';
-                e.color = "#123456";
-                
-            }
-
-            if(e.neo4j_type=='INVESTED_IN'){
-                e.color = "#678901";                
-            }
-            if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
-                if(ownerlist.indexOf(e.target)<0){
-                    
-                    ownerlist.push(e.target);
-                }
-                if(sublist.indexOf(e.source)<0 && e.source != e.target){
-
-                    sublist.push(e.source);
-                }
-                    console.log('owner ' + s.graph.nodes(e.target).label+' '+'sub ' + s.graph.nodes(e.source).label)
-                // s.graph.addNode({
-                //     id: 'Dummy'+(nid),
-                //     label: "Dummy",
-                //     hidden: true
-                // });
-                // s.graph.addEdge({
-                //     id: (++did)+'',
-                //     source: e.source,
-                //     target: 'Dummy'+(nid),
-                //     hidden: true
-                // })
-                // s.graph.addEdge({
-                //     id: (++did)+'',
-                //     source: 'Dummy'+(nid),
-                //     target: e.target,
-                //     hidden: true
-                // })
-                e.color = "#AABBCC";    
-                nid++;            
-            }
-            if(e.neo4j_type=='MANAGES'){
-                e.color = "#890123";                
-            }
-        }); 
-        console.log(sublist);
-
-        s.graph.nodes().forEach(function(n){
-            if(n.neo4j_labels[0] == "Company"){
-                if(sublist.indexOf(n.id)>=0){
-                    s.graph.addNode({
-                        id: 'Dummy'+(nid),
-                        label: "Dummy",
-                        hidden: true
-                    });
-                    s.graph.addEdge({
-                        id: (++did)+'a',
-                        source: n.id,
-                        target: 'Dummy'+(nid),
-                        hidden: true
-                    })
-                    s.graph.addEdge({
-                        id: (++did)+'a',
-                        source: 'Dummy'+(nid),
-                        target: ownerlist[Math.floor(Math.random() * ownerlist.length)],
-                        hidden: true
-                    })  
-                    nid++;
-                }
-                else{
-                    s.graph.addNode({
-                        id: 'Dummy'+(nid),
-                        label: "Dummy",
-                        hidden: true
-                    });
-                    s.graph.addEdge({
-                        id: (++did)+'',
-                        source: 'Dummy'+(nid),
-                        target: n.id,
-                        hidden: true
-                    })
-                    s.graph.addEdge({
-                        id: (++did)+'',
-                        target: 'Dummy'+(nid),
-                        source: sublist[Math.floor(Math.random() * sublist.length)],
-                        hidden: true
-                    })  
-                    nid++;
-                }        
-            }
-        })
-
-        s.graph.edges().forEach(function(e){
-            if(e.neo4j_type=='MANAGES'){
-                // console.log(e.source+" "+sublist.indexOf(e.target))
-                if(sublist.indexOf(e.target)>=0){
-                    // sublist.push(e.target);
-                    tt = e.target;
-                    e.target = e.source;
-                    e.source = tt;
-                    e.neo4j_data['reverse']=true;
-
-                }                
-            }
-        });
-
-        s.refresh();
-
-        var dagreListener = sigma.layouts.dagre.configure(s, {
-            directed: true, // take edge direction into account
-            // rankdir: 'TB',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
-            rankdir: 'BT',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
-                  // where T = top, B = bottom, L = left, and R = right.
-            easing: 'quadraticInOut', // animation transition function
-            duration: 800,   // animation duration
-            compound: true,
-            // nodes : s.graph.nodes().slice(0,30), // subset of nodes
-            boundingBox: {minX: 0, maxX: 300, minY: 0, maxY:150} // constrain layout bounds ; object or true (all current positions of the given nodes)
-        });
-
-        // Bind the events:
-        dagreListener.bind('start stop interpolate', function(e) {
-            console.log(e.type);
-        });
-
-        // // Start the DAG layout:
-        sigma.layouts.dagre.start(s);
-
-        var activeState = sigma.plugins.activeState(s);
-
-        // Initialize the dragNodes plugin:
-        var dragListener = sigma.plugins.dragNodes(s, s.renderers[0], activeState);
-
-        // Initialize the Select plugin:
-        var select = sigma.plugins.select(s, activeState);
-
-        // Initialize the Keyboard plugin:
-        var keyboard = sigma.plugins.keyboard(s, s.renderers[0]);
-
-        // Bind the Keyboard plugin to the Select plugin:
-        select.bindKeyboard(keyboard);
-
         updatePanel(s);
-
-        // s.bind('clickNode', function(event) {
-        //     console.log(event.data.node.label);
-        //     if(even.data.node.neo4j_labels[0]=="Company"){
-        //         _.$('f1-label').textContent = "Company Name:";
-        //         _.$('f2-label').textContent = "Incorporation Year:";
-        //         _.$('f3-label').textContent = "Sales:";
-        //         _.$('field1').textContent=event.data.node.label;
-        //         _.$('field2').textContent=even.data.node.neo4j_data['incorporation_year'];
-        //         _.$('field3').textContent=even.data.node.neo4j_data['sales'];
-        //     }
-        //     else if(even.data.node.neo4j_labels[0]=="Industry"){
-        //         _.$('f1-label').textContent = "Industry Name:";
-        //         _.$('f2-label').textContent = "";
-        //         _.$('f3-label').textContent = "";
-        //         _.$('field1').textContent=event.data.node.label;
-        //         _.$('field2').textContent="";
-        //         _.$('field3').textContent="";
-        //     }
-        //     else if(even.data.node.neo4j_labels[0]=="People"){
-        //         _.$('f1-label').textContent = "Name:";
-        //         _.$('f2-label').textContent = "";
-        //         _.$('f3-label').textContent = "";
-        //         _.$('field1').textContent=event.data.node.label;
-        //         _.$('field2').textContent="";
-        //         _.$('field3').textContent="";
-        //     }
-        // });
-        // s.bind('clickEdge', function(event) {
-        // _.$('f1-label').textContent = "";
-        //         _.$('field1').textContent = "";
-
-        //         _.$('f2-label').textContent = "Number of edges:";
-        //         // _.$('field1').textContent=event.data.edge.label;
-        //         _.$('field2').textContent=event.data.edge.neo4j_data['num'];
-        // });
-
-    
         console.log("finished customise graph");
 
     }   
 
-
-
-    sigma.neo4j.cypher(
-            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-            // 'match (c1:Company)-[r]-(p1:People) where (p1.name contains "Birla") return c1,r,p1',
-            'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2',
-            s,
-            customiseGraph
-    );
-
-    // sigma.neo4j.cypher(
-    //         { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-    //         // 'match (c1:Company)-[r]-(p1:People) where (p1.name contains "Birla") return c1,r,p1',
-    //         'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'") optional match (c1)-[r4:MANAGES]-(p:People)-[r5:MANAGES]-(c2) return i1,r,c1,r2,c2,r3,i2,r4,p,r5',
-    //         s,
-    //         customiseGraph2
-    // );
+        sigma.neo4j.cypher(
+                { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+                'match (c1:Company)-[r:MANAGES]-(p1:People) where (p1.name in '+fliststr+') match (c1)-[r2:MANAGES]-(p2:People) return c1,r,p1,r2,p2',
+                s,
+                customiseGraph
+        );
 
 
 
@@ -853,33 +693,6 @@ var s = new sigma({
     // legend.setPlacement('left'); 
     // legend.setVisibility(true);
     // legend.draw();
-
-    document.getElementById("chng").onclick=function(){
-        sigma.neo4j.cypher(
-                { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-                // 'match (c1:Company)-[r]-(p1:People) where (p1.name contains "Birla") return c1,r,p1',
-                'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") optional match (c1)-[r4:MANAGES]-(p:People)-[r5:MANAGES]-(c2) return i1,r,c1,r2,c2,r3,i2,r4,p,r5',
-                s,
-                customiseGraph2
-        );
-        // console.log(s["settings"]);    
-
-    }
-
-    document.getElementById("chng2").onclick=function(){
-        sigma.neo4j.cypher(
-                { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-                // 'match (c1:Company)-[r]-(p1:People) where (p1.name contains "Birla") return c1,r,p1',
-                'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2',
-                s,
-                customiseGraph
-        );
-            
-
-    }
-          
-
-
     document.getElementById("btn").onclick=function(){
         console.log("sadadasdasdas")
         // console.log(legend.getWidget('node','size'));

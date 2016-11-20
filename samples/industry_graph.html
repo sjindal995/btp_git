@@ -142,7 +142,7 @@
         }
 		#control-pane {
 			top: 10px;
-			/*bottom: 10px;*/
+			bottom: 10px;
 			right: 10px;
 			position: absolute;
 			width: 230px;
@@ -205,9 +205,10 @@
       <h4 id="f3-label">Self Links: </h4><p id="field3"></p>
     </div>
     <span class="line"></span>
-    <div>
+    <div align="center" vertical-align='bottom'>
       <button id="reset-btn">Reset filters</button>
-      <button id="export-sub-btn">Export Sub</button>
+      <br>
+      <button id="export-sub-btn">Subsidiary Graph</button>
     </div>
     <div id="dump" class="hidden"></div>
   </div>
@@ -440,7 +441,8 @@ var s = new sigma({
          worker: true,
          autoStop: true,
          background: true,
-         scaleRatio: 10,
+         scalingRatio: 0.5,
+         // alignNodeSiblings: true,
          // maxIterations:200,
          gravity: 3,
          easing: 'quadraticInOut'
@@ -472,7 +474,7 @@ var s = new sigma({
         // sigma.layouts.dagre.start(s);
             
         // var frListener = sigma.layouts.fruchtermanReingold.configure(s, {
-        //     iterations: 400,
+        //     iterations: 300,
         //     easing: 'quadraticInOut',
         //     duration: 800
         // });
