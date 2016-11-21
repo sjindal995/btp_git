@@ -82,14 +82,14 @@
 <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.arrow.js"></script>
 <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curvedArrow.js"></script>
 
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.arrow.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.curve.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.curvedArrow.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.dashed.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.def.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.dotted.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.parallel.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.tapered.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dashed.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dotted.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.parallel.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.tapered.js"></script>
 
 <!-- <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script> -->
 
@@ -145,11 +145,9 @@
 			/*background-color: gray;*/
 			transition: 1s;
 		}
-		#ind-out-list-table{
-			overflow-y: auto;
-		}
 		#ind-out-list{
 			/*height: 100%;*/
+			max-height: 80vh;
 			overflow:auto;
 			position: fixed;
 			width:35%;
@@ -159,6 +157,7 @@
 		}
 		#ind-in-list{
 			overflow:auto;
+			max-height: 80vh;
 			/*height: 100%;*/
 			position: fixed;
 			width:35%;
@@ -174,11 +173,13 @@
 			display:block;
 			padding:5;
 			/*margin: 10;*/
+			height:25;
+			overflow: hidden;
 			font-family: 'Tahoma';
 			font-size:20;
 			border:none;
 			transition: all 0.5s;
-			text-align: center;
+			/*text-align: center;*/
 			box-shadow: 0 2px #999;
 			opacity: 0.8;
 			
@@ -186,6 +187,7 @@
 		#ind-out-list-table a{
 
 			/*left: 20%;*/
+			overflow: hidden;
 			display:block;
 			padding:5;
 			margin: 10;
@@ -201,6 +203,7 @@
 		#ind-in-list-table a{
 
 			/*left: 20%;*/
+			overflow: hidden;
 			display:block;
 			padding:5;
 			margin: 10;
@@ -516,7 +519,10 @@ var s = new sigma({
 		}
 	}
 
-
+	function onclickInOut(name){
+		name2 = clickedInd;
+		window.location = 'industry_con.html?ind1='+name+'&ind2='+name2;
+	}
 
 	function clearOut(){
 		if(out==true && In==false){
@@ -588,9 +594,13 @@ var s = new sigma({
 					item.setAttribute("class","ind-out-list-element");
 					// name = ind['target'];
 					// item.style.width = (20+ind['degree']/2).toString()+"%";
+					item.setAttribute("onClick", 'onclickInOut("'+ind['target']+'")');
+					item.style.title= "Show Inter-Industry Graph";
+
 					item.onmouseover= function(){
 						// console.log("mouseover");
 						// this.style.backgroundColor='#0f0';
+						this.style.cursor='pointer';
 						this.style.opacity = 1.0;
 					}
 					item.onmouseleave= function(){
@@ -677,18 +687,24 @@ var s = new sigma({
 			// 	temp = currind['outEdges'][i];
 			// 	console.log(temp['target']);
 			// }
-			min_link = _.$('min-link-val');
+			min_link = _.$('min-link-val').textContent;
+			console.log('min link '+min_link);
 			for (var i =0; i < currind['inEdges'].length; i++) {
+				// console.log(ind['num']);
 				ind = currind['inEdges'][i];
-				if(ind['num']>=min_link){
+				if(parseInt(ind['num'])>=min_link){
+					// console.log('here');
 					var item = document.createElement('a');
 					// var item = document.createElement('button');
 					item.setAttribute("class","ind-in-list-element");
+					item.setAttribute("onClick", 'onclickInOut("'+ind['source']+'")');
+					item.style.title= "Show Inter-Industry Graph";
 					// name = ind['target'];
 					// item.style.width = (20+ind['degree']/2).toString()+"%";
 					item.onmouseover= function(){
 						// console.log("mouseover");
 						// this.style.backgroundColor='#0f0';
+						this.style.cursor='pointer';
 						this.style.opacity = 1.0;
 					}
 					item.onmouseleave= function(){
@@ -710,7 +726,7 @@ var s = new sigma({
 
 	_.$("ind-in-hide-btn").onclick= clearIn;
 
-	_.$("ind-in-btn").onclick=createIn
+	_.$("ind-in-btn").onclick=createIn;
 
 
 	_.$('reset-btn').addEventListener("click", function(e) {
@@ -766,7 +782,6 @@ var s = new sigma({
 		}); 
 
 		s.graph.nodes().forEach(function(n){
-			console.log(n.label+" "+n.neo4j_data['minlink']);
 			industries[n.label] = n.neo4j_data;
 		});
 		s.refresh();
