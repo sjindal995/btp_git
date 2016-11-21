@@ -1,0 +1,1214 @@
+<!-- START SIGMA IMPORTS -->
+
+<script src="../linkurious/src/sigma.core.js"></script>
+<script src="../linkurious/src/conrad.js"></script>
+<script src="../linkurious/src/utils/sigma.utils.js"></script>
+<script src="../linkurious/src/utils/sigma.polyfills.js"></script>
+<script src="../linkurious/src/sigma.settings.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.dispatcher.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.configurable.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.graph.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.camera.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.quad.js"></script>
+<script src="../linkurious/src/captors/sigma.captors.mouse.js"></script>
+<script src="../linkurious/src/captors/sigma.captors.touch.js"></script>
+<script src="../linkurious/src/renderers/sigma.renderers.canvas.js"></script>
+<script src="../linkurious/src/renderers/sigma.renderers.webgl.js"></script>
+<script src="../linkurious/src/renderers/sigma.renderers.svg.js"></script>
+<script src="../linkurious/src/renderers/sigma.renderers.def.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.nodes.def.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.nodes.fast.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.edges.def.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.edges.fast.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.edges.arrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.labels.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.hovers.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.nodes.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edges.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edges.curve.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.utils.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.nodes.def.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.edges.def.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.edges.curve.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.edges.curvedArrow.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.labels.def.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.hovers.def.js"></script>
+<script src="../linkurious/src/middlewares/sigma.middlewares.rescale.js"></script>
+<script src="../linkurious/src/middlewares/sigma.middlewares.copy.js"></script>
+<script src="../linkurious/src/misc/sigma.misc.animation.js"></script>
+<script src="../linkurious/src/misc/sigma.misc.bindEvents.js"></script>
+<script src="../linkurious/src/misc/sigma.misc.bindDOMEvents.js"></script>
+<script src="../linkurious/src/misc/sigma.misc.drawHovers.js"></script>
+<!-- END SIGMA IMPORTS -->
+
+<script src="../linkurious/plugins/sigma.parsers.json/sigma.parsers.json.js"></script>
+<script src="../linkurious/plugins/sigma.exporters.json/sigma.exporters.json.js"></script>
+
+<script src="../linkurious/plugins/sigma.parsers.cypher/sigma.parsers.cypher.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.animate/sigma.plugins.animate.js"></script>
+
+<script src="../linkurious/plugins/sigma.layouts.forceLink/worker.js"></script>
+<script src="../linkurious/plugins/sigma.layouts.forceLink/supervisor.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.dragNodes/sigma.plugins.dragNodes.js"></script>
+
+<script src="../linkurious/plugins/sigma.helpers.graph/sigma.helpers.graph.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.activeState/sigma.plugins.activeState.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.select/sigma.plugins.select.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.keyboard/sigma.plugins.keyboard.js"></script>
+<!-- <script src="../linkurious/plugins/sigma.layouts.noverlap/sigma.layouts.noverlap.js"></script>
+ -->
+<!-- <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script> -->
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.cross.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.diamond.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.equilateral.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.square.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.star.js"></script>
+
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.arrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dashed.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dotted.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.parallel.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.tapered.js"></script>
+
+<!-- <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script> -->
+
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dashed.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dotted.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.parallel.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.tapered.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dashed.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dotted.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.parallel.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.tapered.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.legend/sigma.plugins.legend.js"></script>
+<script src="../linkurious/plugins/sigma.plugins.design/sigma.plugins.design.js"></script>
+
+<script src="../linkurious/plugins/sigma.renderers.edgeLabels/settings.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curvedArrow.js"></script>
+
+<script src="../linkurious/plugins/sigma.renderers.linkurious/settings.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.labels.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.autoCurve.js"></script>
+<script src="../linkurious/plugins/sigma.plugins.animate/sigma.plugins.animate.js"></script>
+<script src="../linkurious/plugins/sigma.layouts.dagre/sigma.layout.dagre.js"></script>
+<script src="lib/dagre.js"></script>
+<script src="../linkurious/plugins/sigma.layouts.fruchtermanReingold/sigma.layout.fruchtermanReingold.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.animate/sigma.plugins.animate.js"></script>
+<script src="../linkurious/plugins/sigma.layouts.noverlap/sigma.layouts.noverlap.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.filter/sigma.plugins.filter.js"></script>
+
+
+<div id="container">
+    <style>
+        #top{
+            top: 50%;
+            bottom: 0;
+            left: 0;
+            right: 20%;
+            position: absolute;
+            overflow: hidden;
+        }
+        #bottom{
+            top: 40;
+            bottom: 50%;
+            left: 0;
+            right: 20%;
+            position: absolute;
+            overflow: hidden;
+        }
+        #right{
+            top: 40;
+            bottom: 0;
+            left: 80%;
+            right: 0;
+            position: absolute;
+            overflow: hidden;
+        }
+        #control-panel {
+            top: 10px;
+            bottom: 10px;
+            right: 10px;
+            position: absolute;
+            width: 230px;
+            background-color: rgb(249, 247, 237);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        #control-panel > div {
+            margin: 10px;
+            overflow-x: auto;
+        }
+        .line {
+            clear: both;
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 12px 0 0 0;
+            border-bottom: 1px solid #aac789;
+            background: transparent;
+        }
+        h2, h3, h4 {
+            padding: 0;
+            font-variant: small-caps;
+            font-family: 'Tahoma';
+        }   
+        .green {
+            color: #437356;
+        }
+        h4.underline {
+            color: #437356;
+            background: #f4f0e4;
+            margin: 0;
+            border-radius: 2px;
+            padding: 8px 12px;
+            font-weight: 700;
+        }
+        .hidden {
+            display: none;
+            visibility: hidden;
+        }
+    </style>
+    <table>
+    	<tr>
+    		<td>
+			    <div id="top">
+			    </div>
+		    </td>
+		    <td rowspan="2">
+		    	<div id="right">
+		    	</div>
+		    </td>
+	    </tr>
+	    <tr>
+	    	<td>
+			    <div id="bottom">
+			    </div>
+		    </td>
+	    </tr>
+    </table>
+    <div id="control-panel" >
+        <h4 class="underline">INFORMATION PANEL</h4>
+        <h4 id="f1-label"></h4><p id="field1"></p>
+        <h4 id="f2-label"></h4><p id="field2"></p>
+        <h4 id="f3-label"></h4><p id="field3"></p>
+        <h4 id="f4-label"></h4><p id="field4"></p>
+        <h4 id="f5-label"></h4><p id="field5"></p>
+        <div>
+        </div>
+    </div>
+    <a href = "/samples/"><button type = "home" id="btn1">Home</button></a>
+    <a href = "/samples/industry_graph.html"><button type = "home" id="btn1">Industry Graph</button></a>
+    <button id="btn">Download JSON</button>
+    <button id="chng">Add Management</button>
+    <button id="chng2">Remove Management</button>
+    <button id="hide">Hide Panel</button><br>
+    <div id="top_table_div" style="position: absolute; top: 40px; width:100%">
+        <table id="top_table" style="width:100%">
+        <tr id="top_row" style="width:100%">
+        </tr>
+        </table>
+    </div>
+    <div id="bot_table_div" style="position: absolute; bottom: 5px; width:100%">
+        <table id="bot_table" style="width:100%">
+        <tr id="bot_row" style="width:100%">
+        </tr>
+        </table>
+    </div>
+    
+    
+</div>
+
+<script type="application/javascript">
+var top_boxes_drawn=false;
+var bot_boxes_drawn=false;
+var c = window.location.search
+var iname = c.substr(c.search('=')+1,c.length).split("\%20").join(" ")
+var sublist = []
+var did = 0
+var nid = 0
+var ownerlist=[];
+var st = new sigma({
+    renderer: {
+        container: document.getElementById('top'),
+        type: 'canvas'
+    },
+    settings: {
+        dragNodeStickiness: 0.01,
+        defaultNodeBorderColor: '#000',
+        defaultNodeHoverBorderColor: '#000',
+        minEdgeSize: 0.5,
+        maxEdgeSize: 1.5,
+        minNodeSize: 5,
+        maxNodeSize: 15,
+        animationsTime: 5000,
+        scalingMode: 'outside',
+        sideMargin: 1,
+        labelThreshold: 18,
+        edgeColor: 'default',
+        defaultEdgeColor: '#000000',
+        edgeLabelSizePowRatio: 1,
+        edgeLabelThreshold: 2,
+        enableEdgeHovering: true,
+        edgeHoverColor: "edge",
+        edgeHoverSizeRatio: 1,
+        edgeHoverExtremities: true,
+        imageThreshold: 0,
+    }
+});
+var sb = new sigma({
+    renderer: {
+        container: document.getElementById('bottom'),
+        type: 'canvas'
+    },
+    settings: {
+        dragNodeStickiness: 0.01,
+        defaultNodeBorderColor: '#000',
+        defaultNodeHoverBorderColor: '#000',
+        minEdgeSize: 0.5,
+        maxEdgeSize: 1.5,
+        minNodeSize: 5,
+        maxNodeSize: 15,
+        animationsTime: 5000,
+        scalingMode: 'outside',
+        sideMargin: 1,
+        labelThreshold: 18,
+        edgeColor: 'default',
+        defaultEdgeColor: '#000000',
+        edgeLabelSizePowRatio: 1,
+        edgeLabelThreshold: 2,
+        enableEdgeHovering: true,
+        edgeHoverColor: "edge",
+        edgeHoverSizeRatio: 1,
+        edgeHoverExtremities: true,
+        imageThreshold: 0,
+    }
+});
+
+var sr = new sigma({
+    renderer: {
+        container: document.getElementById('right'),
+        type: 'canvas'
+    },
+    settings: {
+        dragNodeStickiness: 0.01,
+        defaultNodeBorderColor: '#000',
+        defaultNodeHoverBorderColor: '#000',
+        minEdgeSize: 0.5,
+        maxEdgeSize: 1.5,
+        minNodeSize: 5,
+        maxNodeSize: 15,
+        animationsTime: 5000,
+        scalingMode: 'outside',
+        sideMargin: 1,
+        labelThreshold: 18,
+        edgeColor: 'default',
+        defaultEdgeColor: '#000000',
+        edgeLabelSizePowRatio: 1,
+        edgeLabelThreshold: 2,
+        enableEdgeHovering: true,
+        edgeHoverColor: "edge",
+        edgeHoverSizeRatio: 1,
+        edgeHoverExtremities: true,
+        imageThreshold: 0,
+    }
+});
+
+    var _ = {
+      $: function (id) {
+        return document.getElementById(id);
+      },
+    };
+    _.$('hide').onclick=function(){
+        if(_.$('hide').textContent=="Hide Panel"){
+            _.$('control-panel').style.visibility='hidden';
+            _.$('hide').textContent="Show Panel";
+        }
+        else{
+            _.$('control-panel').style.visibility='visible';
+            _.$('hide').textContent="Hide Panel";
+
+        }
+    }
+    function clearPanel(){
+        _.$('f1-label').textContent = "";
+        _.$('f2-label').textContent = "";
+        _.$('f3-label').textContent = "";
+        _.$('f4-label').textContent = "";
+        _.$('f5-label').textContent = "";
+        _.$('field1').textContent="";
+        _.$('field2').textContent="";
+        _.$('field3').textContent="";
+        _.$('field4').textContent="";
+        _.$('field5').textContent="";    
+    }
+    function updatePanel(s){
+        s.bind('clickNode', function(event) {
+            clearPanel();
+            if(event.data.node.neo4j_labels[0]=="Company"){
+                _.$('f1-label').textContent = "Company Name:";
+                _.$('f2-label').textContent = "Incorporation Year:";
+                _.$('f3-label').textContent = "Sales(Rs in Cr):";
+                _.$('f4-label').textContent = "Sector:";
+                _.$('f5-label').textContent = "Business Group:";
+                _.$('field1').textContent=event.data.node.label;
+                _.$('field2').textContent=event.data.node.neo4j_data['incorporation_year'];
+                _.$('field3').textContent=event.data.node.neo4j_data['sales'];
+                _.$('field4').textContent=event.data.node.neo4j_data['sector'];
+                _.$('field5').textContent=event.data.node.neo4j_data['bussiness_group'];
+            }
+            else if(event.data.node.neo4j_labels[0]=="Industry"){
+                _.$('f1-label').textContent = "Industry Name:";
+                _.$('field1').textContent=event.data.node.label;
+            }
+            else if(event.data.node.neo4j_labels[0]=="People"){
+                _.$('f1-label').textContent = "Name:";
+                _.$('field1').textContent=event.data.node.label;
+            }
+        });
+        s.bind('clickEdge', function(event) {
+            clearPanel();
+            if(event.data.edge.neo4j_type=="INDUSTRY"){
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Company:";
+                _.$('f3-label').textContent = "Industry:";
+                _.$('field1').textContent="Company-Industry";
+                if (event.data.edge.neo4j_data['reverse']==false){
+                    _.$('field2').textContent=s.graph.nodes(event.data.edge.source).label;
+                    _.$('field3').textContent=s.graph.nodes(event.data.edge.target).label;
+                }
+                else{
+                    _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                    _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                }
+            }
+            else if(event.data.edge.neo4j_type=="IS_SUBSIDIARY_OF"){
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Owner:";
+                _.$('f3-label').textContent = "Subsidiary:";
+                _.$('f4-label').textContent = "% Holding:";
+                _.$('f5-label').textContent = "Shares Count:";
+                _.$('field1').textContent="Subsidiary";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field4').textContent=event.data.edge.neo4j_data['percent_holding'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['shares_count'];
+            }
+            else if(event.data.edge.neo4j_type=="MANAGES"){
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Company:";
+                _.$('f3-label').textContent = "Person:";
+                _.$('f4-label').textContent = "Year:";
+                _.$('f5-label').textContent = "Designation:";
+                _.$('field1').textContent="Management";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                if(event.data.edge.neo4j_data['reverse']==true){
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.target).label;
+                }
+                _.$('field4').textContent=event.data.edge.neo4j_data['year'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['designation'];
+            }
+        });
+    }
+
+    function customiseGraph(s) {
+        var industries = [];
+        var sectors = [];
+        s.graph.nodes().forEach(function(n) {
+            n.label = n.neo4j_data['name'];
+            n.level = 3;
+            n.type = 'square';
+            n.size = s.graph.degree(n.id)+5;
+                // console.log(n.label)
+            if (n.neo4j_labels[0] == 'Company') {
+                n.color = '#BB0000';
+                n.image = {url:'img/cmpny.png',
+                            scale:0.8};
+            }   
+            if (n.neo4j_labels[0] == 'People') {
+                n.image = { url:'img/ppl.png',
+                            scale:0.8};
+                n.color = '#00BB00';
+            }
+            if (n.neo4j_labels[0] == 'Industry') {
+                n.image = { url:'img/ind.png',
+                            scale: 0.8};
+                n.color = '#0000BB';
+                if(n.neo4j_data['name'] != iname){
+                    industries.push(n);
+                }
+            }   
+        });
+        s.refresh();
+        s.graph.edges().forEach(function(e){
+            e.label = e.neo4j_type;
+            e.type = 'arrow';
+            e.neo4j_data['reverse']=false;
+            e.hover_color = '#000'
+            if(e.neo4j_type=='INDUSTRY'){
+                e.type = 'line';
+                if(s.graph.nodes(e.target).label!=iname){
+                    sublist.push(e.source);
+                    sublist.push(e.target);
+                    tt = e.target;
+                    e.target = e.source;
+                    e.source = tt;
+                    e.neo4j_data['reverse']=true;
+                }
+                e.color = "#123456";
+                
+            }
+            if(e.neo4j_type=='INVESTED_IN'){
+                e.color = "#678901";                
+            }
+            if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
+                e.color = "#AABBCC";
+                var sr_sector = s.graph.nodes(e.source).neo4j_data['sector'];
+                if(sectors.indexOf(sr_sector) < 0 && sr_sector!="NA"){
+                    sectors.push(sr_sector);
+                }
+            }
+            if(e.neo4j_type=='MANAGES'){
+                e.color = "#890123";                
+            }
+        }); 
+        // console.log(sublist);
+        s.refresh();
+        var dagreListener = sigma.layouts.dagre.configure(s, {
+            directed: true, // take edge direction into account
+            rankdir: 'BT',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
+            easing: 'quadraticInOut', // animation transition function
+            duration: 800,   // animation duration
+            compound: true,
+            boundingBox: {minX: 0, maxX: 5, minY: 0, maxY:1} // constrain layout bounds ; object or true (all current positions of the given nodes)
+            // boundingBox: true
+        });
+        dagreListener.bind('start stop interpolate', function(e) {
+            console.log("e.type : " + e.type);
+        });
+        sigma.layouts.dagre.start(s);
+        var activeState = sigma.plugins.activeState(s);
+        var dragListener = sigma.plugins.dragNodes(s, s.renderers[0], activeState);
+        var select = sigma.plugins.select(s, activeState);
+        var keyboard = sigma.plugins.keyboard(s, s.renderers[0]);
+        select.bindKeyboard(keyboard);
+        updatePanel(s)
+        console.log("finished customise graph");
+        if(s.graph.nodes().length==0){
+            alert("This graph has no nodes.\nPlease go back to home")
+
+        }
+        if(!bot_boxes_drawn){
+            var tr = document.getElementById('bot_row');
+            for(var i=0;i<sectors.length;i++){
+                var td = document.createElement('td');
+                td.innerHTML = sectors[i];
+                td.style.fontSize="10px";
+                td.style.border="solid black 2px";
+                td.style.width=(100/sectors.length).toString()+"%";
+                // td.style.backgroundColor="red";
+                tr.appendChild(td);
+            }
+            bot_boxes_drawn=true;
+        }
+    }   
+    function customiseGraph2(s) {
+        nid=0
+        did=0
+        sublist=[]
+        ownerlist=[]
+        industries=[]
+        sectors=[]
+        s.graph.nodes().forEach(function(n) {
+            n.label = n.neo4j_data['name'];
+            n.level = 3;
+            n.type = 'square';
+            n.size = s.graph.degree(n.id)+5;
+            if (n.neo4j_labels[0] == 'Company') {
+                n.color = '#BB0000';
+                n.image = {url:'img/cmpny.png',
+                            scale:0.8};
+            }   
+            if (n.neo4j_labels[0] == 'People') {
+                n.image = { url:'img/ppl.png',
+                            scale:0.8};
+                n.color = '#00BB00';
+            }
+            if (n.neo4j_labels[0] == 'Industry') {
+                n.image = { url:'img/ind.png',
+                            scale: 0.8};
+                n.color = '#0000BB';
+                if(n.neo4j_data['name'] != iname){
+                    industries.push(n);
+                }
+            }   
+        });
+        s.refresh();
+        var managed_comp = [];
+        s.graph.edges().forEach(function(e){
+            if(e.neo4j_type=='MANAGES'){
+                e.color = "#890123";
+                managed_comp.push(e.target);
+            }
+        });
+        s.graph.edges().forEach(function(e){
+            e.label = e.neo4j_type;
+            e.neo4j_data['reverse']=false;
+            e.type = 'arrow';
+            e.hover_color = '#000'
+            if(e.neo4j_type=='INDUSTRY'){
+                e.type = 'line';
+                if(s.graph.nodes(e.target).label!=iname){
+                    tt = e.target;
+                    e.target = e.source;
+                    e.source = tt;
+                    e.neo4j_data['reverse']=true;
+                }
+                e.color = "#123456";
+            }
+            if(e.neo4j_type=='INVESTED_IN'){
+                e.color = "#678901";                
+            }
+            if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
+                if(ownerlist.indexOf(e.target)<0){
+                    ownerlist.push(e.target);
+                    if(managed_comp.indexOf(e.target) < 0){
+                        s.graph.addNode({
+                            id: 'Dummy'+(nid),
+                            label: "Dummy",
+                            hidden: true
+                        });
+                        s.graph.addEdge({
+                            id: (++did)+'',
+                            source: 'Dummy'+(nid),
+                            target: e.target,
+                            hidden: true
+                        })
+                        s.graph.addEdge({
+                            id: (++did)+'',
+                            target: 'Dummy'+(nid),
+                            source: e.source,
+                            hidden: true
+                        })  
+                        nid++;
+                        managed_comp.push(e.target);
+                        managed_comp.push(e.source);
+                    }
+                }
+                if(sublist.indexOf(e.source)<0 && e.source != e.target){
+                    sublist.push(e.source);
+                    if(managed_comp.indexOf(e.source) < 0){
+                        s.graph.addNode({
+                            id: 'Dummy'+(nid),
+                            label: "Dummy",
+                            hidden: true
+                        });
+                        s.graph.addEdge({
+                            id: (++did)+'a',
+                            source: e.source,
+                            target: 'Dummy'+(nid),
+                            hidden: true
+                        })
+                        s.graph.addEdge({
+                            id: (++did)+'a',
+                            source: 'Dummy'+(nid),
+                            target: e.target,
+                            hidden: true
+                        })  
+                        nid++;
+                        managed_comp.push(e.target);
+                        managed_comp.push(e.source);
+                    }
+                }
+                    // console.log('owner ' + s.graph.nodes(e.target).label+' '+'sub ' + s.graph.nodes(e.source).label)
+                e.color = "#AABBCC";    
+                nid++;
+                var sr_sector = s.graph.nodes(e.source).neo4j_data['sector'];
+                if(sectors.indexOf(sr_sector) < 0 && sr_sector!="NA"){
+                    sectors.push(sr_sector);
+                }
+            }
+            if(e.neo4j_type=='MANAGES'){
+                e.color = "#890123";                
+            }
+        }); 
+        // console.log(sublist);
+
+        // s.graph.nodes().forEach(function(n){
+        //     if(n.neo4j_labels[0] == "Company"){
+        //         if(sublist.indexOf(n.id)>=0){
+        //             s.graph.addNode({
+        //                 id: 'Dummy'+(nid),
+        //                 label: "Dummy",
+        //                 hidden: true
+        //             });
+        //             s.graph.addEdge({
+        //                 id: (++did)+'a',
+        //                 source: n.id,
+        //                 target: 'Dummy'+(nid),
+        //                 hidden: true
+        //             })
+        //             s.graph.addEdge({
+        //                 id: (++did)+'a',
+        //                 source: 'Dummy'+(nid),
+        //                 target: ownerlist[Math.floor(Math.random() * ownerlist.length)],
+        //                 hidden: true
+        //             })  
+        //             nid++;
+        //         }
+        //         else{
+        //             s.graph.addNode({
+        //                 id: 'Dummy'+(nid),
+        //                 label: "Dummy",
+        //                 hidden: true
+        //             });
+        //             s.graph.addEdge({
+        //                 id: (++did)+'',
+        //                 source: 'Dummy'+(nid),
+        //                 target: n.id,
+        //                 hidden: true
+        //             })
+        //             s.graph.addEdge({
+        //                 id: (++did)+'',
+        //                 target: 'Dummy'+(nid),
+        //                 source: sublist[Math.floor(Math.random() * sublist.length)],
+        //                 hidden: true
+        //             })  
+        //             nid++;
+        //         }        
+        //     }
+        // })
+
+        s.graph.edges().forEach(function(e){
+            if(e.neo4j_type=='MANAGES'){
+                if(sublist.indexOf(e.target)>=0){
+                    tt = e.target;
+                    e.target = e.source;
+                    e.source = tt;
+                    e.neo4j_data['reverse']=true;
+                }                
+            }
+        });
+
+        s.refresh();
+        var dagreListener = sigma.layouts.dagre.configure(s, {
+            directed: true, // take edge direction into account
+            rankdir: 'BT',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
+            easing: 'quadraticInOut', // animation transition function
+            duration: 800,   // animation duration
+            compound: true,
+            boundingBox: {minX: 0, maxX: 5, minY: 0, maxY:1} // constrain layout bounds ; object or true (all current positions of the given nodes)
+        });
+
+        dagreListener.bind('start stop interpolate', function(e) {
+            console.log(e.type);
+        });
+        sigma.layouts.dagre.start(s);
+
+        var activeState = sigma.plugins.activeState(s);
+        var dragListener = sigma.plugins.dragNodes(s, s.renderers[0], activeState);
+        var select = sigma.plugins.select(s, activeState);
+        var keyboard = sigma.plugins.keyboard(s, s.renderers[0]);
+        select.bindKeyboard(keyboard);
+        updatePanel(s);
+        if(!bot_boxes_drawn){
+            var tr = document.getElementById('bot_row');
+            for(var i=0;i<sectors.length;i++){
+                var td = document.createElement('td');
+                td.innerHTML = sectors[i];
+                td.style.border="solid black 2px";
+                td.style.width=(100/sectors.length).toString()+"%";
+                // td.style.backgroundColor="red";
+                tr.appendChild(td);
+            }
+            bot_boxes_drawn=true;
+        }
+        console.log("finished customise graph");
+    }   
+
+    function customiseGraph4(s) {
+        nid=0
+        did=0
+        sublist=[]
+        ownerlist=[]
+        var industries=[]
+        var sectors=[]
+        s.graph.nodes().forEach(function(n) {
+            n.label = n.neo4j_data['name'];
+            n.level = 3;
+            n.type = 'square';
+            n.size = s.graph.degree(n.id)+5;
+            if (n.neo4j_labels[0] == 'Company') {
+                n.color = '#BB0000';
+                n.image = {url:'img/cmpny.png',
+                            scale:0.8};
+            }   
+            if (n.neo4j_labels[0] == 'People') {
+                n.image = { url:'img/ppl.png',
+                            scale:0.8};
+                n.color = '#00BB00';
+            }
+            if (n.neo4j_labels[0] == 'Industry') {
+                n.image = { url:'img/ind.png',
+                            scale: 0.8};
+                n.color = '#0000BB';
+                if(n.neo4j_data['name'] != iname){
+                    industries.push(n);
+                }
+            }   
+        });
+        s.refresh();
+        var managed_comp = [];
+        s.graph.edges().forEach(function(e){
+            if(e.neo4j_type=='MANAGES'){
+                e.color = "#890123";
+                managed_comp.push(e.target);
+            }
+        });
+        s.graph.edges().forEach(function(e){
+            e.label = e.neo4j_type;
+            e.neo4j_data['reverse']=false;
+            e.type = 'arrow';
+            e.hover_color = '#000'
+            if(e.neo4j_type=='INDUSTRY'){
+                e.type = 'line';
+                if(s.graph.nodes(e.target).label==iname){
+                    tt = e.target;
+                    e.target = e.source;
+                    e.source = tt;
+                    e.neo4j_data['reverse']=true;
+                }
+                e.color = "#123456";
+            }
+            if(e.neo4j_type=='INVESTED_IN'){
+                e.color = "#678901";                
+            }
+            if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
+                if(ownerlist.indexOf(e.target)<0){
+                    ownerlist.push(e.target);
+                    if(managed_comp.indexOf(e.target) < 0){
+                        s.graph.addNode({
+                            id: 'Dummy'+(nid),
+                            label: "Dummy",
+                            hidden: true
+                        });
+                        s.graph.addEdge({
+                            id: (++did)+'',
+                            source: 'Dummy'+(nid),
+                            target: e.target,
+                            hidden: true
+                        })
+                        s.graph.addEdge({
+                            id: (++did)+'',
+                            target: 'Dummy'+(nid),
+                            source: e.source,
+                            hidden: true
+                        })  
+                        nid++;
+                        managed_comp.push(e.target);
+                        managed_comp.push(e.source);
+                    }
+                }
+                if(sublist.indexOf(e.source)<0 && e.source != e.target){
+                    sublist.push(e.source);
+                    if(managed_comp.indexOf(e.source) < 0){
+                        s.graph.addNode({
+                            id: 'Dummy'+(nid),
+                            label: "Dummy",
+                            hidden: true
+                        });
+                        s.graph.addEdge({
+                            id: (++did)+'a',
+                            source: e.source,
+                            target: 'Dummy'+(nid),
+                            hidden: true
+                        })
+                        s.graph.addEdge({
+                            id: (++did)+'a',
+                            source: 'Dummy'+(nid),
+                            target: e.target,
+                            hidden: true
+                        })  
+                        nid++;
+                        managed_comp.push(e.target);
+                        managed_comp.push(e.source);
+                    }
+                }
+                    // console.log('owner ' + s.graph.nodes(e.target).label+' '+'sub ' + s.graph.nodes(e.source).label)
+                e.color = "#AABBCC";    
+                nid++;
+                var sr_sector = s.graph.nodes(e.source).neo4j_data['sector'];
+                if(sectors.indexOf(sr_sector) < 0 && sr_sector!="NA"){
+                    sectors.push(sr_sector);
+                }
+            }
+            if(e.neo4j_type=='MANAGES'){
+                e.color = "#890123";                
+            }
+        }); 
+        // console.log(sublist);
+        // s.graph.nodes().forEach(function(n){
+        //     if(n.neo4j_labels[0] == "Company"){
+        //         if(sublist.indexOf(n.id)>=0){
+        //             s.graph.addNode({
+        //                 id: 'Dummy'+(nid),
+        //                 label: "Dummy",
+        //                 hidden: true
+        //             });
+        //             s.graph.addEdge({
+        //                 id: (++did)+'a',
+        //                 source: n.id,
+        //                 target: 'Dummy'+(nid),
+        //                 hidden: true
+        //             })
+        //             s.graph.addEdge({
+        //                 id: (++did)+'a',
+        //                 source: 'Dummy'+(nid),
+        //                 target: ownerlist[Math.floor(Math.random() * ownerlist.length)],
+        //                 hidden: true
+        //             })  
+        //             nid++;
+        //         }
+        //         else{
+        //             s.graph.addNode({
+        //                 id: 'Dummy'+(nid),
+        //                 label: "Dummy",
+        //                 hidden: true
+        //             });
+        //             s.graph.addEdge({
+        //                 id: (++did)+'',
+        //                 source: 'Dummy'+(nid),
+        //                 target: n.id,
+        //                 hidden: true
+        //             })
+        //             s.graph.addEdge({
+        //                 id: (++did)+'',
+        //                 target: 'Dummy'+(nid),
+        //                 source: sublist[Math.floor(Math.random() * sublist.length)],
+        //                 hidden: true
+        //             })  
+        //             nid++;
+        //         }        
+        //     }
+        // })
+
+        s.graph.edges().forEach(function(e){
+            if(e.neo4j_type=='MANAGES'){
+                if(sublist.indexOf(e.target)>=0){
+                    tt = e.target;
+                    e.target = e.source;
+                    e.source = tt;
+                    e.neo4j_data['reverse']=true;
+                }                
+            }
+        });
+
+        s.refresh();
+        var dagreListener = sigma.layouts.dagre.configure(s, {
+            directed: true, // take edge direction into account
+            rankdir: 'BT',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
+            easing: 'quadraticInOut', // animation transition function
+            duration: 800,   // animation duration
+            compound: true,
+            boundingBox: {minX: 0, maxX: 5, minY: 0, maxY:1} // constrain layout bounds ; object or true (all current positions of the given nodes)
+        });
+
+        dagreListener.bind('start stop interpolate', function(e) {
+            console.log(e.type);
+        });
+        sigma.layouts.dagre.start(s);
+
+        var activeState = sigma.plugins.activeState(s);
+        var dragListener = sigma.plugins.dragNodes(s, s.renderers[0], activeState);
+        var select = sigma.plugins.select(s, activeState);
+        var keyboard = sigma.plugins.keyboard(s, s.renderers[0]);
+        select.bindKeyboard(keyboard);
+        updatePanel(s);
+        if(!top_boxes_drawn){
+            var tr = document.getElementById('top_row');
+            for(var i=0;i<sectors.length;i++){
+                var td = document.createElement('td');
+                td.innerHTML = sectors[i];
+                td.style.border="solid black 2px";
+                td.style.width=(100/sectors.length).toString()+"%";
+                // td.style.backgroundColor="red";
+                tr.appendChild(td);
+            }
+            top_boxes_drawn=true;
+        }
+        console.log("finished customise graph");
+    }   
+
+    function customiseGraph3(s) {
+        var industries=[];
+        var sectors=[];
+        s.graph.nodes().forEach(function(n) {
+            n.label = n.neo4j_data['name'];
+            n.level = 3;
+            n.type = 'square';
+            n.size = s.graph.degree(n.id)+5;
+                // console.log(n.label)
+            if (n.neo4j_labels[0] == 'Company') {
+                n.color = '#BB0000';
+                n.image = {url:'img/cmpny.png',
+                            scale:0.8};
+            }   
+            if (n.neo4j_labels[0] == 'People') {
+                n.image = { url:'img/ppl.png',
+                            scale:0.8};
+                n.color = '#00BB00';
+            }
+            if (n.neo4j_labels[0] == 'Industry') {
+                n.image = { url:'img/ind.png',
+                            scale: 0.8};
+                n.color = '#0000BB';
+                if(n.neo4j_data['name'] != iname){
+                    industries.push(n);
+                }
+            }   
+        });
+        s.refresh();
+        s.graph.edges().forEach(function(e){
+            e.label = e.neo4j_type;
+            e.type = 'arrow';
+            e.neo4j_data['reverse']=false;
+            e.hover_color = '#000'
+            if(e.neo4j_type=='INDUSTRY'){
+                e.type = 'line';
+                if(s.graph.nodes(e.target).label==iname){
+                    sublist.push(e.source);
+                    sublist.push(e.target);
+                    tt = e.target;
+                    e.target = e.source;
+                    e.source = tt;
+                    e.neo4j_data['reverse']=true;
+                }
+                e.color = "#123456";
+                
+            }
+            if(e.neo4j_type=='INVESTED_IN'){
+                e.color = "#678901";                
+            }
+            if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
+                e.color = "#AABBCC";                
+                var sr_sector = s.graph.nodes(e.target).neo4j_data['sector'];
+                if(sectors.indexOf(sr_sector) < 0 && sr_sector!="NA"){
+                    sectors.push(sr_sector);
+                }
+            }
+            if(e.neo4j_type=='MANAGES'){
+                e.color = "#890123";                
+            }
+        }); 
+        // console.log(sublist);
+        s.refresh();
+        var dagreListener = sigma.layouts.dagre.configure(s, {
+            directed: true, // take edge direction into account
+            rankdir: 'BT',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
+            easing: 'quadraticInOut', // animation transition function
+            duration: 800,   // animation duration
+            compound: true,
+            boundingBox: {minX: 0, maxX: 5, minY: 0, maxY:1} // constrain layout bounds ; object or true (all current positions of the given nodes)
+        });
+        dagreListener.bind('start stop interpolate', function(e) {
+            console.log("e.type : " + e.type);
+        });
+        sigma.layouts.dagre.start(s);
+        var activeState = sigma.plugins.activeState(s);
+        var dragListener = sigma.plugins.dragNodes(s, s.renderers[0], activeState);
+        var select = sigma.plugins.select(s, activeState);
+        var keyboard = sigma.plugins.keyboard(s, s.renderers[0]);
+        select.bindKeyboard(keyboard);
+        updatePanel(s)
+        console.log("finished customise graph");
+        if(s.graph.nodes().length==0){
+            alert("This graph has no nodes.\nPlease go back to home");
+        }
+        if(!top_boxes_drawn){
+            var tr = document.getElementById('top_row');
+            for(var i=0;i<sectors.length;i++){
+                var td = document.createElement('td');
+                td.innerHTML = sectors[i];
+                td.style.fontSize="10px";
+                td.style.border="solid black 2px";
+                td.style.width=(100/sectors.length).toString()+"%";
+                // td.style.backgroundColor="red";
+                tr.appendChild(td);
+            }
+            top_boxes_drawn=true;
+        }
+    }
+
+    function customiseGraph5(s) {
+    	var eliminate = []
+        s.graph.nodes().forEach(function(n) {
+            n.label = n.neo4j_data['name'];
+            n.level = 3;
+            n.type = 'square';
+            n.size = s.graph.degree(n.id)+5;
+                // console.log(n.label)
+            if (n.neo4j_labels[0] == 'Company') {
+                n.color = '#BB0000';
+                n.image = {url:'img/cmpny.png',
+                            scale:0.8};
+            }   
+            if (n.neo4j_labels[0] == 'People') {
+                n.image = { url:'img/ppl.png',
+                            scale:0.8};
+                n.color = '#00BB00';
+            }
+            if (n.neo4j_labels[0] == 'Industry') {
+                n.image = { url:'img/ind.png',
+                            scale: 0.8};
+                n.color = '#0000BB';
+            }   
+        });
+        s.refresh();
+        s.graph.edges().forEach(function(e){
+            e.label = e.neo4j_type;
+            e.type = 'arrow';
+            e.hover_color = '#000'
+            if(e.neo4j_type=='INDUSTRY'){
+                e.type = 'line';
+                e.color = "#123456";
+                
+            }
+            if(e.neo4j_type=='INVESTED_IN'){
+                e.color = "#678901";
+                eliminate.push(e.source);
+                eliminate.push(e.target);                
+            }
+            if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
+                e.color = "#AABBCC";
+                eliminate.push(e.source);
+                eliminate.push(e.target);
+            }
+            if(e.neo4j_type=='MANAGES'){
+                e.color = "#890123";                
+            }
+        }); 
+        // console.log(sublist);
+        s.refresh();
+        var dagreListener = sigma.layouts.dagre.configure(s, {
+            directed: true, // take edge direction into account
+            rankdir: 'LR',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
+            easing: 'quadraticInOut', // animation transition function
+            duration: 800,   // animation duration
+            compound: true,
+            boundingBox: {minX: 0, maxX: 1.6, minY: 0, maxY:10} // constrain layout bounds ; object or true (all current positions of the given nodes)
+        });
+        dagreListener.bind('start stop interpolate', function(e) {
+            console.log("e.type : " + e.type);
+        });
+        sigma.layouts.dagre.start(s);
+        var activeState = sigma.plugins.activeState(s);
+        var dragListener = sigma.plugins.dragNodes(s, s.renderers[0], activeState);
+        var select = sigma.plugins.select(s, activeState);
+        var keyboard = sigma.plugins.keyboard(s, s.renderers[0]);
+        select.bindKeyboard(keyboard);
+        updatePanel(s)
+        console.log("finished customise graph");
+        if(s.graph.nodes().length==0){
+            alert("This graph has no nodes.\nPlease go back to home");
+        }
+    }
+
+    sigma.neo4j.cypher(
+            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+            // 'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'")  and (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2',
+            'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2',
+            st,
+            customiseGraph
+    );
+    sigma.neo4j.cypher(
+            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+            // 'match (i1:Industry)<-[r0:INDUSTRY]-(c:Company) where (i1.name = "'+iname+'") match (i1)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i2.name="'+iname+'") match (i3:Industry)<-[r4:INDUSTRY]-(c3:Company)<-[r5:IS_SUBSIDIARY_OF]-(c4:Company)-[r6:INDUSTRY]->(i1) where not (i3.name="'+iname+'") return i1,r0,c,r,c1,r2,c2,r3,i2,i3,r4,c3,r5,c4,r6',
+            'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company) where (i1.name = "'+iname+'") return i1,r,c1',
+            sr,
+            customiseGraph5
+    );
+    sigma.neo4j.cypher(
+            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+            'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'")  and (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2',
+            // 'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2',
+            sb,
+            customiseGraph3
+    );
+    function f2(){
+        console.log(st);
+        var gexfString = st.toGEXF();
+        st.toGEXF({download: true});
+        var gexfString2 = sb.toGEXF();
+        sb.toGEXF({download: true});
+    }
+    document.getElementById("chng").onclick=function(){
+        sigma.neo4j.cypher(
+                { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+                'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") optional match (c1)-[r4:MANAGES]-(p:People)-[r5:MANAGES]-(c2) return i1,r,c1,r2,c2,r3,i2,r4,p,r5',
+                // 'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:MANAGES]-(p1:People)-[r3:MANAGES]->(c2:Company)-[r4:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'") and not (i2.name="'+iname+'")  optional match (c1)<-[r5:IS_SUBSIDIARY_OF]-(c:Company)-[r6:INDUSTRY]->(i3:Industry) where not (i3.name = "'+iname+'") return i1,r,c1,r2,p1,r3,c2,r4,i2',
+                st,
+                customiseGraph2
+        );
+        sigma.neo4j.cypher(
+                { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+                'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'")  and (i2.name="'+iname+'") optional match (c1)-[r4:MANAGES]-(p:People)-[r5:MANAGES]-(c2) return i1,r,c1,r2,c2,r3,i2,r4,p,r5',
+                sb,
+                customiseGraph4
+        );
+    }
+    document.getElementById("chng2").onclick=function(){
+        sigma.neo4j.cypher(
+            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+            // 'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'")  and (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2',
+            'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2',
+            st,
+            customiseGraph
+    );
+    sigma.neo4j.cypher(
+            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+            'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'")  and (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2',
+            // 'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2',
+            sb,
+            customiseGraph3
+    );
+    }
+    document.getElementById("btn").onclick=function(){
+        console.log("sadadasdasdas")
+        s.toJSON({
+          download: true,
+            pretty: true,
+          filename: 'company_industry.json'
+        });
+    }
+</script>

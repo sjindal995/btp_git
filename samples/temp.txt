@@ -1,0 +1,92 @@
+Filter by degree
+
+MATCH (k)
+WITH k, size((k)<-[:IS_SUBSIDIARY_OF]-()) as degree
+WHERE  degree > 100
+MATCH (n)-[r:IS_SUBSIDIARY_OF]->(k)
+WHERE k.name <> n.name
+RETURN n,r,k,degree;
+
+MATCH (k)
+WITH k, size((k)-[:TYPE]->()) as degree
+WHERE k.Value='30 ' AND degree > 1
+MATCH (k)-[r:TYPE]->(n:ABC)
+RETURN n,r,k,degree;
+
+match (c1:Company)-[r1:MANAGES]-(p:People)-[r2:MANAGES]-(c2:Company) where toInt(c1.total_employees) > 100 and toInt(c2.total_employees) > 100  return c1,r1,p,r2,c2 limit 1000
+
+match (n) where n.name = "Ratan N Tata" match (n2)-[r2]-(p2) where n2.name = "R N Tata" create (n)-[r2]->(p2) delete r2 delete n2 return n,r2,p2
+
+
+Mukesh D Ambani		Mukesh Ambani
+Anil D Ambani		Anil Dhirubhai Ambani
+Ratan N Tata		R N Tata
+Basant Kumar Birla	B K Birla
+S N Tata			Simone N Tata
+	
+Ambani Family:
+["Mukesh Ambani","Anil D Ambani", "Dhirubhai H Ambani","Ramniklal H Ambani"]
+
+Tata Family:
+["S N Tata","Simone N Tata","Ratan N Tata", "R N Tata","Noel N Tata","N N Tata"]
+
+
+family graph -> show other company managers beside family members on the side and compare
+
+2 industry edges -> show industry->companies->othercompanies->otherindustries
+
+industrylinks graph -> add filter for 
+
+get sales? from the finovw
+
+
+url: https://www.capitaline.com/InnerPage/ListOfCompanies.aspx?CompName=Zytex+India
+
+problems:
+	most companies not present
+	some companies' name changed (Roopa Industries /Ltd)
+	chuchu names (Bharat)
+
+55042
+
+adi godrej and a b godrej both exist, fak adi (no pun lul)
+premji: almost no companies
+hinduja: names missing/different?
+mistry: only 2 ppl
+p s mistry == s p mistry
+
+
+q: is 	Basant Kumar Birla,		B K Birla,	1169
+		Chandra Kant Birla,		C K Birla,	1182
+		Krishna Kumar Birla		K K Birla,	101276
+		Adi B Godrej			A B Godrej	11928
+		Nadir B Godrej			N B Godrej	102258
+		Jamshyd N Godrej		J N Godrej	482
+		Sohrab P Godrej 		S P Godrej 	115691
+
+match (n:People{idPeople:"1169"}) set n.name = "Basant Kumar Birla"
+match (n:People{idPeople:"1182"}) set n.name = "Chandra Kant Birla"
+match (n:People{idPeople:"101276"}) set n.name = "Krishna Kumar Birla"
+match (n:People{idPeople:"11928"}) set n.name = "Adi B Godrej"
+match (n:People{idPeople:"102258"}) set n.name = "Nadir B Godrej"
+match (n:People{idPeople:"482"}) set n.name = "Jamshyd N Godrej"
+match (n:People{idPeople:"115691"}) set n.name = "Sohrab P Godrej"
+
+Families:
+
+Tata:	["Ratan N Tata", "Simone N Tata", "Noel N Tata"]
+Ambani:	["Anil D Ambani", "Mukesh D Ambani", "Isha Mukesh Ambani", "Akash Mukesh Ambani", "Tina Anil Ambani"]
+Birla:	["Priyamvada Birla", "Yashovardhan Birla","Rajashree Birla", "B K Birla","Saraladevi Birla", "C K Birla","Kumar Mangalam Birla","Avanti Birla", "Sidharth Birla","K K Birla","Radhika Birla","Madhushree Birla","K K Birla","Nirvaan Birla", "Vedant Birla","Amita Birla","Neerja Birla","S K Birla"]
+
+Adani:	["Rajesh S Adani", "Gautam S Adani", "Vasant S Adani", "Pranav V Adani","Karan Gautambhai Adani"]
+
+Godrej: ["N B Godrej", "J N Godrej", "A B Godrej", "Pirojsha A Godrej", "Nisaba Godrej", "S P Godrej"]
+
+Mahindra: ["Keshub Mahindra","Harish Mahindra","Anand G Mahindra"]
+
+Premji: ["Azim Hasham Premji","Yasmeen Azim Premji","Rishad Azim Premji"]
+
+Hinduja: 
+
+Mistry: ["Cyrus P Mistry", "Shapoor P Mistry", ""]
+
