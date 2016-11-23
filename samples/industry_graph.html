@@ -82,14 +82,14 @@
 <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.arrow.js"></script>
 <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curvedArrow.js"></script>
 
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.arrow.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.curve.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.curvedArrow.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.dashed.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.def.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.dotted.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.parallel.js"></script>
-<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgeshovers.tapered.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dashed.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dotted.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.parallel.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.tapered.js"></script>
 
 <!-- <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script> -->
 
@@ -132,519 +132,699 @@
 
 
 <div id="container">
-    <style>
-        #graph-container {
-            top: 40;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            position: absolute;
-        }
-		#control-pane {
-			top: 10px;
-			bottom: 10px;
-			right: 10px;
+	<style>
+		#ind-list {
+			/*top: 40;*/
+			height: 100%;
+			width:100%;
+			/*bottom: 0;*/
+			/*left: 0;*/
+			text-align:center;
+			/*right: 0;*/
 			position: absolute;
-			width: 230px;
-			background-color: rgb(249, 247, 237);
-			box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+			/*background-color: gray;*/
+			transition: 1s;
+		}
+		#ind-out-list{
+			/*height: 100%;*/
+			max-height: 80vh;
+			overflow:auto;
+			position: fixed;
+			width:35%;
+			left:45%;
+			right:20%;
+			transition: 1s;
+		}
+		#ind-in-list{
+			overflow:auto;
+			max-height: 80vh;
+			/*height: 100%;*/
+			position: fixed;
+			width:35%;
+			left:45%;
+			right:20%;
+			transition: 1s;
+		}
+		#ind-list-table a{
+			margin: 0 auto;
+			margin-bottom: 10;
+			margin-top: 10;
+			left: 20%;
+			display:block;
+			padding:5;
+			/*margin: 10;*/
+			height:25;
+			overflow: hidden;
+			font-family: 'Tahoma';
+			font-size:20;
+			border:none;
+			transition: all 0.5s;
+			/*text-align: center;*/
+			box-shadow: 0 2px #999;
+			opacity: 0.8;
+			
+		}
+		#ind-out-list-table a{
+
+			/*left: 20%;*/
+			overflow: hidden;
+			display:block;
+			padding:5;
+			margin: 10;
+			font-family: 'Tahoma';
+			font-size:20;
+			border:none;
+			transition: all 0.5s;
+			text-align: center;
+			box-shadow: 0 2px #999;
+			opacity: 0.8;
+			
+		}
+		#ind-in-list-table a{
+
+			/*left: 20%;*/
+			overflow: hidden;
+			display:block;
+			padding:5;
+			margin: 10;
+			font-family: 'Tahoma';
+			font-size:20;
+			border:none;
+			transition: all 0.5s;
+			text-align: center;
+			box-shadow: 0 2px #999;
+			opacity: 0.8;
+			
+		}
+		#control-pane {
+		  top: 10px;
+		  bottom: 10px;
+		  right: 10px;
+		  position: fixed;
+		  z-index: 1000;
+		  width: 250px;
+		  background-color: rgb(249, 247, 237);
+		  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 		}
 		#control-pane > div {
-			margin: 10px;
-			overflow-x: auto;
+		  margin: 10px;
+		  overflow-x: auto;
 		}
 		.line {
-			clear: both;
-			display: block;
-			width: 100%;
-			margin: 0;
-			padding: 12px 0 0 0;
-			border-bottom: 1px solid #aac789;
-			background: transparent;
+		  clear: both;
+		  display: block;
+		  width: 100%;
+		  margin: 0;
+		  padding: 12px 0 0 0;
+		  border-bottom: 1px solid #aac789;
+		  background: transparent;
 		}
 		h2, h3, h4 {
-			padding: 0;
-			font-variant: small-caps;
-			font-family: 'Tahoma';
-		}	
+		  padding: 0;
+		  font-variant: small-caps;
+		  font-family: 'Tahoma';
+		} 
 		.green {
-			color: #437356;
+		  color: #437356;
 		}
 		h2.underline {
-			color: #437356;
-			background: #f4f0e4;
-			margin: 0;
-			border-radius: 2px;
-			padding: 8px 12px;
-			font-weight: 700;
+		  color: #437356;
+		  background: #f4f0e4;
+		  margin: 0;
+		  border-radius: 2px;
+		  font-weight: 700;
 		}
 		.hidden {
-			display: none;
-			visibility: hidden;
+		  display: none;
+		  visibility: hidden;
 		}
+
 
 		input[type=range] {
-			width: 160px;
+		  width: 160px;
 		}
-    </style>
-    <div id="graph-container"></div>
-  <div id="control-pane">
-    <h2 class="underline">filters</h2>
+	</style>
+		<div id="graph-container" hidden="true"></div>
+	<div id="control-pane">
+		<h2 class="underline">filters</h2>
 
-    <div>
-      <h3>min degree <span id="min-degree-val">0</span></h3>
-      0 <input id="min-degree" type="range" min="0" max="0" value="0"> <span id="max-degree-value">0</span><br>
-    </div>
-    <div>
-      <h3>min link <span id="min-link-val">0</span></h3>
-      0 <input id="min-link" type="range" min="0" max="0" value="0"> <span id="max-link-value">0</span><br>
-    </div>
-    <div>
-      <h4 id="f1-label">Industry Name: </h4><p id="field1"></p>
-      <h4 id="f2-label">Degree: </h4><p id="field2"></p>
-      <h4 id="f3-label">Self Links: </h4><p id="field3"></p>
-    </div>
-    <span class="line"></span>
-    <div align="center" vertical-align='bottom'>
-      <button id="reset-btn">Reset filters</button>
-      <br>
-      <button id="export-sub-btn">Subsidiary Graph</button>
-    </div>
-    <div id="dump" class="hidden"></div>
-  </div>
-    <a href = "/samples/"><button type = "home" id="btn1">Home</button></a>
-    <button type = "home" id="btn">Download JSON</button>
+		<div>
+			<h3>min degree <span id="min-degree-val">0</span></h3>
+			0 <input id="min-degree" type="range" min="0" max="0" value="0"> <span id="max-degree-value">0</span><br>
+		</div>
+		<div>
+			<h3>min link <span id="min-link-val">0</span></h3>
+			0 <input id="min-link" type="range" min="0" max="0" value="0"> <span id="max-link-value">0</span><br>
+		</div>
+		<div>
+			<h4 id="f1-label">Industry Name: </h4><p id="field1"></p>
+			<h4 id="f2-label">Degree: </h4><p id="field2"></p>
+			<h4 id="f3-label">Self Links: </h4><p id="field3"></p>
+		</div>
+		<span class="line"></span>
+		<div align="center" vertical-align='bottom'>
+			<button id="reset-btn">Reset filters</button>
+			<button id="export-sub-btn">Subsidiary Graph</button>
+			<br>
+		<button id="ind-out-btn">Show Out Industries</button>
+		<button id="ind-out-hide-btn">Hide</button>
+		<button id="ind-in-btn">Show In Industries</button>
+		<button id="ind-in-hide-btn">Hide</button>
+		</div>
+	</div>
+		<a href = "/samples/"><button type = "home" id="btn1">Home</button></a>
+		<button type = "home" id="btn">Download JSON</button>
+		<div id="ind-list"></div>
+		<div id="ind-out-list"></div>
+		<div id="ind-in-list"></div>
 </div>
 
 <script type="application/javascript">
 
 //Filter code
 
-var filter;
+var showInds=[];
+var industries={};
+var clickedInd="";
+var colors=[
+	'#63B8FF',
+	'#7AC5CD',
+	'#43CD80',
+	'#8FBC8F',
+	'#EEC900',
+	'#EE9A49',
+	'#EE6A50',
+	'#7171C6',
+	'#71C671',
+	'#C1C1C1',
+	'#DA70D6'
+];
 
+var out=false,In=false ;
 /**
  * DOM utility functions
  */
 var _ = {
-  $: function (id) {
-    return document.getElementById(id);
-  },
+	$: function (id) {
+		return document.getElementById(id);
+	},
 
 
 };
 
-function updatePane (graph, filter) {
-  // get max degree
-  var maxDegree = 0, maxLink =0
-      categories = {};
 
-  // read nodes
-  graph.nodes().forEach(function(n) {
-    maxDegree = Math.max(maxDegree, graph.degree(n.id));
-    // categories[n.attributes.acategory] = true;
-  })
-  graph.edges().forEach(function(e) {
-  	if(e.source != e.target)
-    maxLink = Math.max(maxLink, parseFloat(e.neo4j_data['num']));
-    // categories[n.attributes.acategory] = true;
-  })
+  
 
-  // min degree
-  _.$('min-degree').max = maxDegree;
-  _.$('max-degree-value').textContent = maxDegree;
-  // min share
-  _.$('min-link').max = maxLink;
-  _.$('max-link-value').textContent = maxLink;
+function updatePane (graph) {
+	// get max degree
+	var maxDegree = 0, maxLink =0;
+	categories = {};
 
-  // reset button
-  _.$('reset-btn').addEventListener("click", function(e) {
-    _.$('min-degree').value = 0;
-    _.$('min-degree-val').textContent = '0';
-    _.$('min-link').value = 0;
-    _.$('min-link-val').textContent = '0';
-    filter.undo().apply();
-    _.$('dump').textContent = '';
-    _.hide('#dump');
-  });
+	// read nodes
+	graph.nodes().forEach(function(n) {
+		maxDegree = Math.max(maxDegree, graph.degree(n.id));
+		// categories[n.attributes.acategory] = true;
+	})
+	graph.edges().forEach(function(e) {
+		if(e.source != e.target)
+		maxLink = Math.max(maxLink, parseFloat(e.neo4j_data['num']));
+		// categories[n.attributes.acategory] = true;
+	})
 
-  // export button
-  // _.$('export-btn').addEventListener("click", function(e) {
-  //   var chain = filter.serialize();
-  //   console.log(chain);
-  //   _.$('dump').textContent = JSON.stringify(chain);
-  //   _.show('#dump');
-  // });
+	// min degree
+	_.$('min-degree').max = maxDegree;
+	_.$('max-degree-value').textContent = maxDegree;
+	// min share
+	_.$('min-link').max = maxLink;
+	_.$('max-link-value').textContent = maxLink;
+
+
 }
 
 
 
 
 var s = new sigma({
-    renderer: {
-        container: document.getElementById('graph-container'),
-        type: 'canvas'
-    },
-    settings: {
-        autoCurveSortByDirection: true,
-        dragNodeStickiness: 0.01,
-        defaultNodeBorderColor: '#000',
-        defaultNodeHoverBorderColor: '#000',
-        // enableEdgeHovering: false,
-        minEdgeSize: 0.5,
-        maxEdgeSize: 5.5,
-        minNodeSize: 5,
-        maxNodeSize: 15,
-        animationsTime: 5000,
-        scalingMode: 'outside',
-        // batchEdgesDrawing: true,
-        sideMargin: 1,
-        labelThreshold: 18,
+	renderer: {
+		container: document.getElementById('graph-container'),
+		type: 'canvas'
+	},
+	settings: {
+		autoCurveSortByDirection: true,
+		dragNodeStickiness: 0.01,
+		defaultNodeBorderColor: '#000',
+		defaultNodeHoverBorderColor: '#000',
+		// enableEdgeHovering: false,
+		minEdgeSize: 0.5,
+		maxEdgeSize: 5.5,
+		minNodeSize: 5,
+		maxNodeSize: 15,
+		animationsTime: 5000,
+		scalingMode: 'outside',
+		// batchEdgesDrawing: true,
+		sideMargin: 1,
+		labelThreshold: 18,
 
-        edgeColor: 'default',
-        defaultEdgeColor: '#000000',
-        // edgeLabelSize: 'proportional',
-        edgeLabelSizePowRatio: 1,
-        edgeLabelThreshold: 3,
-        // minEdgeSize: 10,
-        enableEdgeHovering: true,
+		edgeColor: 'default',
+		defaultEdgeColor: '#000000',
+		// edgeLabelSize: 'proportional',
+		edgeLabelSizePowRatio: 1,
+		edgeLabelThreshold: 3,
+		// minEdgeSize: 10,
+		enableEdgeHovering: true,
 
-        // edgeLabelHoverShadowColor: '#BBBBBB',
-        edgeHoverColor: "edge",
-        // defaultEdgeHoverColor: '#000',
-        edgeHoverSizeRatio: 1,
-        edgeHoverExtremities: true,
+		// edgeLabelHoverShadowColor: '#BBBBBB',
+		edgeHoverColor: "edge",
+		// defaultEdgeHoverColor: '#000',
+		edgeHoverSizeRatio: 1,
+		edgeHoverExtremities: true,
 
-        // labelSize: 'proportional',
-        // labelSizeRatio: 1,
-        imageThreshold: 0,
-        
+		// labelSize: 'proportional',
+		// labelSizeRatio: 1,
+		imageThreshold: 0,
+		
 
 
-    }
+	}
 });
 
 
 
-     function customiseGraph(s) {
-
-        s.graph.nodes().forEach(function(n) {
-            n.label = n.neo4j_data['name'];
-            // n.label = n.y.toString();
-            n.level = 3;
-            n.type = 'square';
-            // n.image= {url:'D:/study/btp/New%20folder/linkurious.js/examples/img/img1.png'};
-            n.size = s.graph.degree(n.id)+5;
-            n.neo4j_data['self_links']=0;
-            // if(s.graph.degree(n.id) < 10) n.hidden=true;
-            // if (n.neo4j_labels[0] == 'People' && s.graph.degree(n.id) < 2){
-            //  n.hidden = true;
-            // }
-            // else if (n.neo4j_labels[0] == 'Company' && s.graph.degree(n.id) == 0){
-            //  n.hidden = true;
-            // }
-            if (n.neo4j_labels[0] == 'Company') {
-                // n.type = 'circle';
-                n.color = '#BB0000';
-                n.image = {url:'img/cmpny.png',
-                            scale:0.8};
-                // n.url = urls[0];
-
-            }   
-            if (n.neo4j_labels[0] == 'People') {
-                if(n.label=='Ratan N Tata') n.size = 20; 
-                // n.type = 'diamond';
-                n.image = { url:'img/ppl.png',
-                            scale:0.8};
-                n.color = '#00BB00';
-            }
-            if (n.neo4j_labels[0] == 'Industry') {
-                // n.type = 'square';
-                n.image = { url:'img/ind.png',
-                            scale: 0.8};
-                n.color = '#0000BB';
-            }   
-        });
-
-        
-        s.refresh();
-
-        s.graph.edges().forEach(function(e){
-            // e.label = e.neo4j_type;
-            // e.type = 'curvedArrow';
-            // e.type = 'arrow';
-            e.hover_color = '#000';
-            e.size = e.neo4j_data['num']+1.5;
-            if( e.target==e.source){
-              console.log(s.graph.nodes(e.target).label);
-              s.graph.nodes(e.target).neo4j_data['self_links'] = e.neo4j_data['num']; 
-              console.log(s.graph.nodes(e.target).neo4j_data['self_links']);
-            }
-            if(e.neo4j_type=='INDUSTRY'){
-                // e.type = 'arrow';
-                e.color = "#123456";
-            }
-            if(e.neo4j_type=='IS_BANK_OF'){
-                e.color = "#234567";                
-            }
-            if(e.neo4j_type=='IS_COLLABORATOR_OF'){
-                e.color = "#345678";                
-            }
-            
-            if(e.neo4j_type=='FUNDS_INDUSTRY'){
-                // e.type = 'curvedArrow';
-                e.color = "#456789";                
-            }
-            if(e.neo4j_type=='HOLDS_FUND_IN'){
-                e.color = "#567890";                
-            }
-            if(e.neo4j_type=='INVESTED_IN'){
-                e.color = "#678901";                
-            }
-            if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
-                e.color = "#AABBCC";                
-            }
-            if(e.neo4j_type=='MANAGES'){
-                e.color = "#890123";                
-            }
-            if(e.neo4j_type=='MANAGING_DIRECTOR'){
-                s.graph.dropEdge(e.id);
-                // e.color = "#901234";
-                // temp = e.target;
-                // e.target = e.source;
-                // e.source = temp;
-            }
-            if(e.neo4j_type=='COMPANY_SECRETARY'){
-                s.graph.dropEdge(e.id);
-                // e.color = "#012345";                
-                // temp = e.target;
-                // e.target = e.source;                 
-                // e.source = temp;                
-            }
-            if(e.neo4j_type=='AUDITOR'){
-                s.graph.dropEdge(e.id);
-                // e.color = "#AAAAAA";                
-                // temp = e.target;
-                // e.target = e.source;
-                // e.source = temp;                
-            }
-            if(e.neo4j_type=='CHAIRMAN'){
-                s.graph.dropEdge(e.id);
-                // e.color = "#BBBBBB";                
-                // temp = e.target;
-                // e.target = e.source;
-                // e.source = temp;                
-            }
-        }); 
-
-        s.refresh();
-        var fa = sigma.layouts.configForceLink(s, {
-         worker: true,
-         autoStop: true,
-         background: true,
-         scalingRatio: 0.5,
-         // alignNodeSiblings: true,
-         // maxIterations:200,
-         gravity: 3,
-         easing: 'quadraticInOut'
+	function makeUL() {
+		var table = document.createElement('div');
+		table.setAttribute("id", "ind-list-table");
+		table.setAttribute("class", "ind-list-table");
+		showInds.sort(function(a, b){return b['degree']-a['degree']})
+		for (var i =0; i < showInds.length; i++) {
+			ind = showInds[i];
+			var item = document.createElement('a');
+			// var item = document.createElement('button');
+			item.setAttribute("class","ind-list-element");
+			name = ind['name'];
+			item.setAttribute("onClick", 'onclickInd("'+name+'")');
+			item.type= "button";
+			item.style.width = (20+ind['degree']/2).toString()+"%";
+			item.onmouseover= function(){
+				// console.log("mouseover");
+				// this.style.backgroundColor='#0f0';
+				if(out==false && In==false)
+				this.style.opacity = 1.5;
+			}
+			item.onmouseleave= function(){
+				// console.log("mouseleave");
+				// this.style.backgroundColor=industries[this.textContent]['color'];
+				if(out==false && In==false && this.textContent!=clickedInd)
+				this.style.opacity = 0.8;
+			}
+			// item.style.width = (200+ind['degree']*5).toString()+"px";
+			item.style.backgroundColor = ind['color'];
+			item.appendChild(document.createTextNode(ind['name']));
+			table.appendChild(item);
+		}
+		return table;
+	}
 
 
-        });
+	function changeList(e){
+		// _.$('ind-list').clear();
 
-        // Start the ForceLink algorithm:
-        sigma.layouts.startForceLink();
+		var tempinds=[];
+		if(out==true || In==true) return;
+		if(e==null){
+			for(var i in industries){
+				tempinds.push(industries[i]);
+			}
+		}
+		else{
+			var v = e.target.value;
+			
+			if(e.target.id=='min-degree'){
+				_.$('min-degree-val').textContent = v;
+			}
+			else if (e.target.id = 'min-link'){
+				_.$('min-link-val').textContent = v;
+			}
 
+			for(var i in industries){
+				if(industries[i]['degree'] >= _.$('min-degree-val').textContent && industries[i]['minlink']>= _.$('min-link-val').textContent ){
+					tempinds.push(industries[i]);
+				}
+			}
+				
+		}
 
-        // var dagreListener = sigma.layouts.dagre.configure(s, {
-        //     directed: true, // take edge direction into account
-        //     rankdir: 'TB',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
-        //           // where T = top, B = bottom, L = left, and R = right.
-        //     easing: 'quadraticInOut', // animation transition function
-        //     duration: 800,   // animation duration
-        //     compound: true,
-        //     // nodes : s.graph.nodes().slice(0,30), // subset of nodes
-        //     boundingBox: {minX: 0, maxX: 300, minY: 0, maxY:150} // constrain layout bounds ; object or true (all current positions of the given nodes)
-        // });
-
-        // // Bind the events:
-        // dagreListener.bind('start stop interpolate', function(e) {
-        //     console.log(e.type);
-        // });
-
-        // // // Start the DAG layout:
-        // sigma.layouts.dagre.start(s);
-            
-        // var frListener = sigma.layouts.fruchtermanReingold.configure(s, {
-        //     iterations: 300,
-        //     easing: 'quadraticInOut',
-        //     duration: 800
-        // });
-
-        // // Bind the events:
-        // frListener.bind('start stop interpolate', function(e) {
-        //     console.log(e.type);
-        // });
-
-        // // Start the Fruchterman-Reingold algorithm:
-        // sigma.layouts.fruchtermanReingold.start(s);
-
-        // var noverlapListener = s.configNoverlap({
-        //     maxIterations: 300,
-        //       nodeMargin: 0.1,
-        //       gridSize: 50,
-        //       easing: 'quadraticInOut', // animation transition function
-        //       duration: 1000   // animation duration. Long here for the purposes of this example only
-        //     });
-
-        //     // Bind the events:
-        //     noverlapListener.bind('start stop interpolate', function(e) {
-        //       console.log(e.type);
-        //       if(e.type === 'start') {
-        //         console.time('noverlap');
-        //       }
-        //       if(e.type === 'interpolate') {
-        //         console.timeEnd('noverlap');
-        //       }
-        //     });
-
-        //     // Start the layout:
-        //     s.startNoverlap();
-
-        // sigma.canvas.edges.autoCurve(s);
-        s.refresh()
+			
 
 
-        var activeState = sigma.plugins.activeState(s);
+		if(tempinds.length != showInds.length && _.$("ind-list-table")){
+			showInds=tempinds;
+			_.$('ind-list').removeChild(_.$('ind-list-table'));
+			_.$('ind-list').appendChild(makeUL());
+		}
+		else if(!(_.$("ind-list-table"))){
+			showInds=tempinds;
+			_.$('ind-list').appendChild(makeUL());
 
-        // Initialize the dragNodes plugin:
-        var dragListener = sigma.plugins.dragNodes(s, s.renderers[0], activeState);
+		}
+	}
 
-        // Initialize the Select plugin:
-        var select = sigma.plugins.select(s, activeState);
 
-        // Initialize the Keyboard plugin:
-        var keyboard = sigma.plugins.keyboard(s, s.renderers[0]);
 
-        // Bind the Keyboard plugin to the Select plugin:
-        select.bindKeyboard(keyboard);
 
-    
-        console.log("finished customise graph");
+	function onclickInd(name){
+		if(out==false && In==false){
+			if(clickedInd!=""){
+				list= document.getElementsByClassName("ind-list-element");
+			
+				for (var i = list.length - 1; i >= 0; i--) {
+					if(list[i].textContent==clickedInd){
+						list[i].style.opacity=0.8;
+					}
+					if(list[i].textContent==name)
+					list[i].style.opacity=1.5;
 
-        filter = sigma.plugins.filter(s);
+				}
+			}
+			clickedInd = name;
 
-		updatePane(s.graph, filter);
+			// console.log(name);
+			data= industries[name];
+			// console.log(data);
+			_.$('f1-label').textContent = "Industry Name:";
+			_.$('f2-label').textContent = "Degree:";
+			_.$('f3-label').textContent = "Self Links:";
+			_.$('field1').textContent=data['name'];
+			_.$('field2').textContent=data['degree'];
+			_.$('field3').textContent=data['self_links'];
+		}
+	}
+
+	function onclickInOut(name){
+		name2 = clickedInd;
+		window.location = 'industry_con.html?ind1='+name+'&ind2='+name2;
+	}
+
+	function clearOut(){
+		if(out==true && In==false){
+			out=false;
+			if(_.$('ind-out-list-table')){
+				_.$('ind-out-list').removeChild(_.$('ind-out-list-table'));
+				_.$('ind-list').style.width ="100%";
+				list= document.getElementsByClassName("ind-list-element");
+			
+				for (var i = list.length - 1; i >= 0; i--) {
+					
+					list[i].style.width = (20+industries[list[i].textContent]['degree']/2).toString()+"%";
+					list[i].style.opacity=0.8;
+				}
+				// outelement.style.width = (20+industries[outind]['degree']/2).toString()+"%"
+				// outelement.opacity=0.8;
+
+			}
+		}
+		
+	}
+
+	function createOut(){
+		txt =_.$('field1').textContent;
+		if(txt!="" && In==false){
+			out=true;
+			_.$('ind-list').style.left="0";
+			_.$('ind-list').style.width ="50%";
+
+
+			// list.style.width = "50%";
+			list= document.getElementsByClassName("ind-list-element");
+			
+			for (var i = list.length - 1; i >= 0; i--) {
+				
+				if(list[i].textContent!=txt){
+					list[i].style.width = (20+industries[list[i].textContent]['degree']/2).toString()+"%";
+
+					// console.log(list[i].textContent);
+					list[i].style.opacity=0.5;
+				}
+				else{
+					list[i].style.width="80%";
+					outelement=list[i];
+					outind = list[i].textContent;
+				}
+			}
+				
+			currind = industries[txt];
+			console.log(currind['outEdges']);
+			console.log(currind['inEdges']);
+			var table = document.createElement('div');
+			if(_.$('ind-out-list-table')){
+				_.$('ind-out-list').removeChild(_.$('ind-out-list-table'));
+
+			}
+			table.setAttribute("id", "ind-out-list-table");
+			table.setAttribute("class", "ind-out-list-table");
+			// for (var i = currind['outEdges'].length - 1; i >= 0; i--) {
+			// 	temp = currind['outEdges'][i];
+			// 	console.log(temp['target']);
+			// }
+			min_link = _.$('min-link-val').textContent;
+			for (var i =0; i < currind['outEdges'].length; i++) {
+				ind = currind['outEdges'][i];
+				if(ind['num']>=min_link){
+					var item = document.createElement('a');
+					// var item = document.createElement('button');
+					item.setAttribute("class","ind-out-list-element");
+					// name = ind['target'];
+					// item.style.width = (20+ind['degree']/2).toString()+"%";
+					item.setAttribute("onClick", 'onclickInOut("'+ind['target']+'")');
+					item.style.title= "Show Inter-Industry Graph";
+
+					item.onmouseover= function(){
+						// console.log("mouseover");
+						// this.style.backgroundColor='#0f0';
+						this.style.cursor='pointer';
+						this.style.opacity = 1.0;
+					}
+					item.onmouseleave= function(){
+						// console.log("mouseleave");
+						// this.style.backgroundColor=industries[this.textContent]['color'];
+						this.style.opacity = 0.8;
+					}
+					// item.style.width = (200+ind['degree']*5).toString()+"px";
+					item.style.backgroundColor = industries[ind['target']]['color'];
+					item.appendChild(document.createTextNode(ind['target']));
+					table.appendChild(item);
+					
+				}
+			}
+			_.$('ind-out-list').appendChild(table);
+			
+		}
+
+
+	}
+
+	_.$("ind-out-hide-btn").onclick=clearOut;
+
+	_.$("ind-out-btn").onclick= createOut;
+
+
+
+	function clearIn(){
+		if(out==false && In==true){
+			In=false;
+			if(_.$('ind-in-list-table')){
+				_.$('ind-in-list').removeChild(_.$('ind-in-list-table'));
+				_.$('ind-list').style.width ="100%";
+				list= document.getElementsByClassName("ind-list-element");
+			
+				for (var i = list.length - 1; i >= 0; i--) {
+					
+					list[i].style.width = (20+industries[list[i].textContent]['degree']/2).toString()+"%";
+					list[i].style.opacity=0.8;
+				}
+				// outelement.style.width = (20+industries[outind]['degree']/2).toString()+"%"
+				// outelement.opacity=0.8;
+
+			}
+		}
+		
+	}
+
+	function createIn(){
+		txt =_.$('field1').textContent;
+		if(txt!="" && out==false){
+			In=true;
+			_.$('ind-list').style.left="0";
+			_.$('ind-list').style.width ="50%";
+
+
+			// list.style.width = "50%";
+			list= document.getElementsByClassName("ind-list-element");
+			
+			for (var i = list.length - 1; i >= 0; i--) {
+				
+				if(list[i].textContent!=txt){
+					list[i].style.width = (20+industries[list[i].textContent]['degree']/2).toString()+"%";
+
+					// console.log(list[i].textContent);
+					list[i].style.opacity=0.5;
+				}
+				else{
+					list[i].style.width="80%";
+					outelement=list[i];
+					outind = list[i].textContent;
+				}
+			}
+				
+			currind = industries[txt];
+			var table = document.createElement('div');
+			if(_.$('ind-in-list-table')){
+				_.$('ind-in-list').removeChild(_.$('ind-in-list-table'));
+
+			}
+			table.setAttribute("id", "ind-in-list-table");
+			table.setAttribute("class", "ind-in-list-table");
+			// for (var i = currind['outEdges'].length - 1; i >= 0; i--) {
+			// 	temp = currind['outEdges'][i];
+			// 	console.log(temp['target']);
+			// }
+			min_link = _.$('min-link-val').textContent;
+			console.log('min link '+min_link);
+			for (var i =0; i < currind['inEdges'].length; i++) {
+				// console.log(ind['num']);
+				ind = currind['inEdges'][i];
+				if(parseInt(ind['num'])>=min_link){
+					// console.log('here');
+					var item = document.createElement('a');
+					// var item = document.createElement('button');
+					item.setAttribute("class","ind-in-list-element");
+					item.setAttribute("onClick", 'onclickInOut("'+ind['source']+'")');
+					item.style.title= "Show Inter-Industry Graph";
+					// name = ind['target'];
+					// item.style.width = (20+ind['degree']/2).toString()+"%";
+					item.onmouseover= function(){
+						// console.log("mouseover");
+						// this.style.backgroundColor='#0f0';
+						this.style.cursor='pointer';
+						this.style.opacity = 1.0;
+					}
+					item.onmouseleave= function(){
+						// console.log("mouseleave");
+						// this.style.backgroundColor=industries[this.textContent]['color'];
+						this.style.opacity = 0.8;
+					}
+					// item.style.width = (200+ind['degree']*5).toString()+"px";
+					item.style.backgroundColor = industries[ind['source']]['color'];
+					item.appendChild(document.createTextNode(ind['source']));
+					table.appendChild(item);
+					
+				}
+			}
+			_.$('ind-in-list').appendChild(table);
+			
+		}
+	}
+
+	_.$("ind-in-hide-btn").onclick= clearIn;
+
+	_.$("ind-in-btn").onclick=createIn;
+
+
+	_.$('reset-btn').addEventListener("click", function(e) {
+		_.$('min-degree').value = 0;
+		_.$('min-degree-val').textContent = '0';
+		_.$('min-link').value = 0;
+		_.$('min-link-val').textContent = '0';
+		_.$('field1').textContent="";
+		_.$('field2').textContent="";
+		_.$('field3').textContent="";
+		clearIn();
+		clearOut();
+	});
+
+
+
+
+
+	function customiseGraph(s) {
+
+		updatePane(s.graph);
+
+		s.graph.nodes().forEach(function(n) {
+			n.label = n.neo4j_data['name'];
+			n.neo4j_data['self_links']=0;
+			n.neo4j_data['degree'] = s.graph.degree(n.id);
+			n.neo4j_data['outEdges']=[];
+			n.neo4j_data['inEdges']=[];
+			n.neo4j_data['minlink']=0;
+			// n.neo4j_data['color']='#' + (Math.random().toString(16) + "000000").substring(2,8);
+			n.neo4j_data['color']=colors[Math.floor(Math.random() * colors.length)];
+		});
+
+		
 		s.refresh();
 
-		function applyMinDegreeFilter(e) {
-			var v = e.target.value;
-			_.$('min-degree-val').textContent = v;
+		s.graph.edges().forEach(function(e){
+			if( e.target==e.source){
+				s.graph.nodes(e.target).neo4j_data['self_links'] = parseInt(e.neo4j_data['num']); 
+			}
+			else{
+				data = e.neo4j_data;
+				data['target'] = s.graph.nodes(e.target).label;
+				data['source'] = s.graph.nodes(e.source).label;
+				s.graph.nodes(e.source).neo4j_data['outEdges'].push(data);
+				data2 = e.neo4j_data;
+				s.graph.nodes(e.target).neo4j_data['inEdges'].push(data);
+				s.graph.nodes(e.source).neo4j_data['minlink'] = Math.max(s.graph.nodes(e.source).neo4j_data['minlink'],e.neo4j_data['num']);
+				s.graph.nodes(e.target).neo4j_data['minlink'] = Math.max(s.graph.nodes(e.target).neo4j_data['minlink'],e.neo4j_data['num']);
+			}
 
-			filter
-			.undo('min-degree')
-			.nodesBy(
-			  function(n, options) {
-			    return this.graph.degree(n.id) >= options.minDegreeVal;
-			  },
-			  {
-			    minDegreeVal: +v
-			  },
-			  'min-degree'
-			)
-			.apply();
+			
+		}); 
 
-		}
-
-		function applyMinLinkFilter(e) {
-			var v = e.target.value;
-			_.$('min-link-val').textContent = v;
-
-			filter
-			.undo('min-link')
-			.edgesBy(
-			  function(n, options) {
-			    return parseFloat(n.neo4j_data['num']) >= options.minLinkVal;
-			  },
-			  {
-			    minLinkVal: +v
-			  },
-			  'min-link'
-			)
-			// .nodesBy
-			.apply();
-
-		}
-
-
-
-		_.$('min-degree').addEventListener("input", applyMinDegreeFilter);  // for Chrome and FF
-		_.$('min-degree').addEventListener("change", applyMinDegreeFilter); // for IE10+, that sucks
-		_.$('min-link').addEventListener("input", applyMinLinkFilter);  // for Chrome and FF
-		_.$('min-link').addEventListener("change", applyMinLinkFilter); // for IE10+, that sucks
-		s.bind('clickNode', function(event) {
-			console.log(event.data.node.label);
-				_.$('f1-label').textContent = "Industry Name:";
-        _.$('f2-label').textContent = "Degree:";
-				_.$('f3-label').textContent = "Self Links:";
-				_.$('field1').textContent=event.data.node.label;
-        _.$('field2').textContent=s.graph.degree(event.data.node.id);
-				_.$('field3').textContent=event.data.node.neo4j_data['self_links'];
+		s.graph.nodes().forEach(function(n){
+			industries[n.label] = n.neo4j_data;
 		});
-		s.bind('clickEdge', function(event) {
-        _.$('f1-label').textContent = "";
-				_.$('field1').textContent = "";
+		s.refresh();
 
-        _.$('f2-label').textContent = "Number of edges:";
-        // _.$('field1').textContent=event.data.edge.label;
-        _.$('field2').textContent=event.data.edge.neo4j_data['num'];
-        _.$('f3-label').textContent = "";
-				_.$('field3').textContent = "";
+		changeList(null);
+
+		_.$('min-degree').addEventListener("input", changeList);  // for Chrome and FF
+		_.$('min-degree').addEventListener("change", changeList); // for IE10+, that sucks
+		_.$('min-link').addEventListener("input", changeList);  // for Chrome and FF
+		_.$('min-link').addEventListener("change", changeList); // for IE10+, that sucks
+
+	}   
+
+sigma.neo4j.cypher(
+	{ url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+	'match (i1:Industry)-[r:DIR_SUB_LINKS]->(i2:Industry) where not(i1.name = "Unknown") and not(i2.name = "Unknown") return i1,r,i2',
+	// 'match (n:Company)-[r]-(p) where n.bussiness_group contains "Tata" return n,r,p'
+	s,
+	customiseGraph
+);
+
+
+
+
+	document.getElementById("btn").onclick=function(){
+		// console.log(legend.getWidget('node','size'));
+		
+		s.toJSON({
+			download: true,
+			pretty: true,
+			filename: 'company_industry.json'
 		});
+		// legend.exportPng('legend.png');
+
+	}
+
+	document.getElementById("export-sub-btn").onclick=function(){
+		window.location = 'in3.html?ind='+_.$('field1').textContent
+		// legend.exportPng('legend.png');
+
+	}
 
 
-
-
-    }   
-
-        sigma.neo4j.cypher(
-                { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-                'match (i1:Industry)-[r:DIR_SUB_LINKS]->(i2:Industry) where not(i1.name = "Unknown") and not(i2.name = "Unknown") return i1,r,i2',
-                // 'match (n:Company)-[r]-(p) where n.bussiness_group contains "Tata" return n,r,p'
-                s,
-                customiseGraph
-        );
-
-
-
-    function f2(){
-        console.log(s);
-        var gexfString = s.toGEXF();
-
-        // Download the GEXF file
-        s.toGEXF({download: true});
-    }
-    // var legend = sigma.plugins.legend(s);
-    // legend.addWidget('edge','color');
-    // legend.addWidget('node','size');
-    // legend.setPlacement('left'); 
-    // legend.setVisibility(true);
-    // legend.draw();
-    document.getElementById("btn").onclick=function(){
-        console.log("sadadasdasdas")
-        // console.log(legend.getWidget('node','size'));
-        
-        s.toJSON({
-          download: true,
-            pretty: true,
-          filename: 'company_industry.json'
-        });
-        // legend.exportPng('legend.png');
-
-    }
-    document.getElementById("export-sub-btn").onclick=function(){
-        window.location = 'in3.html?ind='+_.$('field1').textContent
-        // legend.exportPng('legend.png');
-
-    }
 </script>
 
 

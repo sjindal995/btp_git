@@ -206,32 +206,12 @@
 
 <script type="application/javascript">
 
-var fliststrs= {
-    "Tata" : '["Simone N Tata","Ratan N Tata","Noel N Tata"]',
-    "Ambani": '["Anil D Ambani", "Mukesh D Ambani", "Isha Mukesh Ambani", "Akash Mukesh Ambani", "Tina Anil Ambani"]',
-    "Birla" : '["Priyamvada Birla", "Yashovardhan Birla","Rajashree Birla", "Basant Kumar Birla","Saraladevi Birla", "Chandra Kant Birla","Kumar Mangalam Birla","Avanti Birla", "Sidharth Birla","Krishna Kumar Birla","Radhika Birla","Madhushree Birla","Nirvaan Birla", "Vedant Birla","Amita Birla","Neerja Birla","S K Birla"]',
-    "Adani" : '["Rajesh S Adani", "Gautam S Adani", "Vasant S Adani", "Pranav V Adani","Karan Gautambhai Adani"]',
-    "Godrej" : '["Nadir B Godrej", "Jamshyd N Godrej", "Adi B Godrej", "Pirojsha A Godrej", "Nisaba Godrej", "Sohrab P Godrej"]',
-    "Mahindra" : '["Keshub Mahindra","Harish Mahindra","Anand G Mahindra"]',
-    "Premji": '["Azim Hasham Premji","Yasmeen Azim Premji","Rishad Azim Premji"]'
-};
-var flists= {
-    "Tata" : ["Simone N Tata","Ratan N Tata","Noel N Tata"],
-    "Ambani": ["Anil D Ambani", "Mukesh D Ambani", "Isha Mukesh Ambani", "Akash Mukesh Ambani", "Tina Anil Ambani"],
-    "Birla" : ["Priyamvada Birla", "Yashovardhan Birla","Rajashree Birla", "Basant Kumar Birla","Saraladevi Birla", "Chandra Kant Birla","Kumar Mangalam Birla","Avanti Birla", "Sidharth Birla","Krishna Kumar Birla","Radhika Birla","Madhushree Birla","Nirvaan Birla", "Vedant Birla","Amita Birla","Neerja Birla","S K Birla"],
-    "Adani" : ["Rajesh S Adani", "Gautam S Adani", "Vasant S Adani", "Pranav V Adani","Karan Gautambhai Adani"],
-    "Godrej" : ["Nadir B Godrej", "Jamshyd N Godrej", "Adi B Godrej", "Pirojsha A Godrej", "Nisaba Godrej", "Sohrab P Godrej"],
-    "Mahindra" : ["Keshub Mahindra","Harish Mahindra","Anand G Mahindra"],
-    "Premji": ["Azim Hasham Premji","Yasmeen Azim Premji","Rishad Azim Premji"]
-};
 
 var c = window.location.search
 
 // var iname = "Miscellaneous - Medium / Small"
-var fname = c.substr(c.search('=')+1,c.length-c.search('=')-1).split("\%20").join(" ")
+var gname = c.substr(c.search('=')+1,c.length-c.search('=')-1).split("\%20").join(" ")
 
-var fliststr = fliststrs[fname]
-var flist = flists[fname]
 
 
 var s = new sigma({
@@ -246,7 +226,7 @@ var s = new sigma({
         // enableEdgeHovering: false,
         minEdgeSize: 0.5,
         maxEdgeSize: 1.5,
-        minNodeSize: 7,
+        minNodeSize: 5,
         maxNodeSize: 20,
         animationsTime: 5000,
         scalingMode: 'outside',
@@ -462,8 +442,18 @@ var s = new sigma({
             //  n.hidden = true;
             // }
             if (n.neo4j_labels[0] == 'Company') {
-	            n.size = 1.5*s.graph.degree(n.id)+5;
                 // n.type = 'circle';
+                if(n.neo4j_data['sales'] == "NA"){
+                    n.size = 3  ;
+                    
+                }
+                else{
+                    if(parseFloat(n.neo4j_data['sales']) <100000 )
+                    n.size = parseFloat(n.neo4j_data['sales'])/5000 +8;
+                    else
+                    n.size = parseFloat(n.neo4j_data['sales'])/20000 +8;
+                        
+                }
                 n.color = '#BB0000';
                 n.image = {url:'img/cmpny.png',
                             scale:0.8};
@@ -471,28 +461,35 @@ var s = new sigma({
 
             }   
             if (n.neo4j_labels[0] == 'People') {
-                // n.size = s.graph.degree(n.id)+5;
-                    // n.type = 'diamond';
-                if(flist.indexOf(n.label) <0){
-                	// n.size = s.graph.degree(n.id)+5;
-                	n.size = 0.1;
-                    if(s.graph.degree(n.id)<2) 
-                    	s.graph.dropNode(n.id);
-                    // n.size = 1;
-                }
-                else{
+
+                n.size = s.graph.degree(n.id)+5;
+                // if(flist.indexOf(n.label) <0){
+                //     n.type = 'circle';
+                //     n.size = 2;
+                // }
+                // else{
                     n.image = { url:'img/ppl.png',
                                 scale:0.8};
-                    n.size = 3*s.graph.degree(n.id)+5;
-
+                    // n.size = 10;
                     
-                }
+                // }
                     n.color = '#00BB00';
+                // if(s.graph.degree(n.id)<5){
+                //     s.graph.dropNode(n.id);
+                // }
+                if(s.graph.degree(n.id)<4){
+                    s.graph.dropNode(n.id);
+                }
                 // if(n.label=='Ratan N Tata') n.size = 20; 
                 // n.type = 'diamond';
             }
             if (n.neo4j_labels[0] == 'Industry') {
+                n.size = s.graph.degree(n.id)+1;
+                
                 // n.type = 'square';
+                if(s.graph.degree(n.id)<3){
+                    s.graph.dropNode(n.id);
+                }
                 n.image = { url:'img/ind.png',
                             scale: 0.8};
                 n.color = '#0000BB';
@@ -503,7 +500,7 @@ var s = new sigma({
         s.refresh();
 
         s.graph.edges().forEach(function(e){
-            e.label = e.neo4j_type;
+            // e.label = e.neo4j_type;
             // e.type = 'curvedArrow';
             // e.type = 'arrow';
             e.hover_color = '#000'
@@ -539,7 +536,7 @@ var s = new sigma({
                     // e.neo4j_data['reverse']=true;
             }
             if(e.neo4j_type=='MANAGES'){
-                // e.color = "#222222";          
+                e.color = "#222222";
                 // if(flist.indexOf(s.graph.nodes(e.source).label) < 0){      
                 // // if((s.graph.nodes(e.source).label).indexOf(fname)==-1){
 
@@ -591,13 +588,14 @@ var s = new sigma({
         s.refresh();
 
         // var fa = sigma.layouts.configForceLink(s, {
-        //  worker: true,
-        //  autoStop: true,
-        //  background: true,
-        //  scaleRatio: 10,
-        //  // maxIterations:200,
-        //  gravity: 3,
-        //  easing: 'quadraticInOut'
+        //     linLogMode: true,
+        //     worker: true,
+        //     autoStop: true,
+        //     background: true,
+        //     scaleRatio: 10,
+        //     // maxIterations:200,
+        //     gravity: 3,
+        //     easing: 'quadraticInOut'
 
 
         // });
@@ -626,7 +624,7 @@ var s = new sigma({
         // sigma.layouts.dagre.start(s);
             
         var frListener = sigma.layouts.fruchtermanReingold.configure(s, {
-            iterations: 500,
+            iterations: 700,
             easing: 'quadraticInOut',
             duration: 800
         });
@@ -685,8 +683,10 @@ var s = new sigma({
 
         sigma.neo4j.cypher(
                 { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-                // 'match (c1:Company)-[r:MANAGES]-(p1:People) where (p1.name in '+fliststr+') match (c1)-[r2:MANAGES]-(p2:People) return c1,r,p1,r2,p2',
-                'match (p2:People)-[r2:MANAGES]->(c1:Company)-[r:MANAGES]-(p1:People) where (p1.name in '+fliststr+')  optional match (c1)<-[r3:IS_SUBSIDIARY_OF]-(c2)  return c1,r,p1,r2,c2,p2,r3',
+                'match (c1:Company)-[r:MANAGES]-(p1:People) where (c1.bussiness_group = "'+gname+'") and (c1.sales <> "NA") and (r.designation <> "Auditor")  optional match (c1)-[r2]-(c2)  where type(r2) in ["IS_SUBSIDIARY_OF","INDUSTRY"] return c1,r,p1,c2,r2',
+                // 'match (n:Company) where (n.sales <> "NA") with n order by toFloat(n.sales) desc with collect (n) as comps unwind comps[0..100] as c1 match (c1)-[r1:MANAGES]-(p:People) where r1.designation <> "Auditor" return c1,r1,p',
+                // 'match (n:Company) where (n.sales <> "NA") with n order by toFloat(n.sales) desc with collect (n) as comps unwind comps[0..100] as c1 unwind comps[0..100] as c2  match (c1)-[r1:MANAGES]-(p:People) return c1,r1,p,r2,c2,p2',
+                // 'match (c1:Company) where (c1.bussiness_group = "L&T Group") and (c1.sales <> "NA") optional match (c1)-[r2]-(c2)  where type(r2) in ["IS_SUBSIDIARY_OF","IS_COLLABORATOR_OF"] return c1,c2,r2',
                 s,
                 customiseGraph
         );

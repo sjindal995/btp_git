@@ -244,9 +244,9 @@ var s = new sigma({
         defaultNodeBorderColor: '#000',
         defaultNodeHoverBorderColor: '#000',
         // enableEdgeHovering: false,
-        minEdgeSize: 0.5,
-        maxEdgeSize: 1.5,
-        minNodeSize: 7,
+        minEdgeSize: 1.5,
+        maxEdgeSize: 2.5,
+        minNodeSize: 5,
         maxNodeSize: 20,
         animationsTime: 5000,
         scalingMode: 'outside',
@@ -445,7 +445,6 @@ var s = new sigma({
     }
 
 
-
      function customiseGraph(s) {
 
         s.graph.nodes().forEach(function(n) {
@@ -454,7 +453,7 @@ var s = new sigma({
             n.level = 3;
             n.type = 'square';
             // n.image= {url:'D:/study/btp/New%20folder/linkurious.js/examples/img/img1.png'};
-            // n.size = s.graph.degree(n.id)+5;
+            n.size = s.graph.degree(n.id)+5;
             // if (n.neo4j_labels[0] == 'People' && s.graph.degree(n.id) < 2){
             //  n.hidden = true;
             // }
@@ -462,8 +461,8 @@ var s = new sigma({
             //  n.hidden = true;
             // }
             if (n.neo4j_labels[0] == 'Company') {
-	            n.size = 1.5*s.graph.degree(n.id)+5;
                 // n.type = 'circle';
+                n.size = parseFloat(n.neo4j_data['sales'])/40000 +5;
                 n.color = '#BB0000';
                 n.image = {url:'img/cmpny.png',
                             scale:0.8};
@@ -471,23 +470,26 @@ var s = new sigma({
 
             }   
             if (n.neo4j_labels[0] == 'People') {
+                n.size = 2*s.graph.degree(n.id)+5;
+                //(9-15
                 // n.size = s.graph.degree(n.id)+5;
-                    // n.type = 'diamond';
-                if(flist.indexOf(n.label) <0){
-                	// n.size = s.graph.degree(n.id)+5;
-                	n.size = 0.1;
-                    if(s.graph.degree(n.id)<2) 
-                    	s.graph.dropNode(n.id);
-                    // n.size = 1;
-                }
-                else{
+                // if(flist.indexOf(n.label) <0){
+                //     n.type = 'circle';
+                //     n.size = 2;
+                // }
+                // else{
                     n.image = { url:'img/ppl.png',
                                 scale:0.8};
-                    n.size = 3*s.graph.degree(n.id)+5;
-
+                    // n.size = 10;
                     
-                }
+                // }
                     n.color = '#00BB00';
+                // if(s.graph.degree(n.id)<5){
+                //     s.graph.dropNode(n.id);
+                // }
+                if(s.graph.degree(n.id)<2){
+                    s.graph.dropNode(n.id);
+                }
                 // if(n.label=='Ratan N Tata') n.size = 20; 
                 // n.type = 'diamond';
             }
@@ -503,7 +505,7 @@ var s = new sigma({
         s.refresh();
 
         s.graph.edges().forEach(function(e){
-            e.label = e.neo4j_type;
+            // e.label = e.neo4j_type;
             // e.type = 'curvedArrow';
             // e.type = 'arrow';
             e.hover_color = '#000'
@@ -539,7 +541,10 @@ var s = new sigma({
                     // e.neo4j_data['reverse']=true;
             }
             if(e.neo4j_type=='MANAGES'){
-                // e.color = "#222222";          
+                e.color = "#222222";
+                if(e.neo4j_data['designation'] =="Auditor"){
+                    s.graph.dropEdge(e.id);
+                }
                 // if(flist.indexOf(s.graph.nodes(e.source).label) < 0){      
                 // // if((s.graph.nodes(e.source).label).indexOf(fname)==-1){
 
@@ -591,13 +596,14 @@ var s = new sigma({
         s.refresh();
 
         // var fa = sigma.layouts.configForceLink(s, {
-        //  worker: true,
-        //  autoStop: true,
-        //  background: true,
-        //  scaleRatio: 10,
-        //  // maxIterations:200,
-        //  gravity: 3,
-        //  easing: 'quadraticInOut'
+        //     linLogMode: true,
+        //     worker: true,
+        //     autoStop: true,
+        //     background: true,
+        //     scaleRatio: 10,
+        //     // maxIterations:200,
+        //     gravity: 3,
+        //     easing: 'quadraticInOut'
 
 
         // });
@@ -626,7 +632,7 @@ var s = new sigma({
         // sigma.layouts.dagre.start(s);
             
         var frListener = sigma.layouts.fruchtermanReingold.configure(s, {
-            iterations: 500,
+            iterations: 700,
             easing: 'quadraticInOut',
             duration: 800
         });
@@ -685,8 +691,12 @@ var s = new sigma({
 
         sigma.neo4j.cypher(
                 { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-                // 'match (c1:Company)-[r:MANAGES]-(p1:People) where (p1.name in '+fliststr+') match (c1)-[r2:MANAGES]-(p2:People) return c1,r,p1,r2,p2',
-                'match (p2:People)-[r2:MANAGES]->(c1:Company)-[r:MANAGES]-(p1:People) where (p1.name in '+fliststr+')  optional match (c1)<-[r3:IS_SUBSIDIARY_OF]-(c2)  return c1,r,p1,r2,c2,p2,r3',
+                // 'match (n:Company) where (n.sales <> "NA") with n order by toFloat(n.sales) desc with collect (n) as comps unwind comps[0..200] as c1 unwind comps[0..200] as c2 optional match (c1)-[r1]-(c3:Company)-[r2]-(c2) where type(r1) in ["IS_SUBSIDIARY_OF"] and type(r2) in ["IS_SUBSIDIARY_OF"]  return c1,r1,c2,r2,c3',
+                // 'match (n:Company) where (n.sales <> "NA") with n order by toFloat(n.sales) desc with collect (n) as comps unwind comps[0..100] as c1 unwind comps[0..100] as c2   optional match (c1)-[r1]-(c2) where type(r1) <> "IS_BANK_OF" return c1,r1,c2',
+                'match (n:Company) where (n.sales <> "NA") with n order by toFloat(n.sales) desc with collect (n) as comps unwind comps[0..100] as c1 optional match (c1)-[r1:MANAGES]-(p:People) where r1.designation <> "Auditor" return c1,r1,p',
+                // 'match (n:Company) where (n.sales <> "NA") with n order by toFloat(n.sales) desc with collect (n) as comps unwind comps[0..100] as c1 optional match (c1)-[r1:MANAGES]-(p:People) where r1.designation <> "Auditor" return c1,r1,p',
+                // 'match (n:Company) where (n.sales <> "NA") with n order by toFloat(n.sales) desc with collect (n) as comps unwind comps[0..100] as c1 unwind comps[0..100] as c2  match (c1)-[r1:MANAGES]-(p:People) return c1,r1,p,r2,c2,p2',
+                // 'match (c1:Company) where (c1.bussiness_group = "L&T Group") and (c1.sales <> "NA") optional match (c1)-[r2]-(c2)  where type(r2) in ["IS_SUBSIDIARY_OF","IS_COLLABORATOR_OF"] return c1,c2,r2',
                 s,
                 customiseGraph
         );

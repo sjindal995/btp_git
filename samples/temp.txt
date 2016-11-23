@@ -90,3 +90,29 @@ Hinduja:
 
 Mistry: ["Cyrus P Mistry", "Shapoor P Mistry", ""]
 
+
+////////////////////////
+
+hide auditors, 
+
+
+things done to db:
+remove l&t edge from ambanis
+merged all SPmistry and CPmistry nodes
+merging l&t ppl nodes
+
+
+
+match (p:People{idPeople:"5117"}) match (n:Company{idCompany:"198"}) create (p)-[:MANAGES{renumerations:"0.00",executive:"NA",independent:"NA",year:"NA",designation:"Chairman"}]->(n) return p,n
+
+
+Groups: Show Key People
+
+TODOS:::
+
+Make family graph and group graph more understandable
+top100, take care of duplicate nodes
+
+
+
+

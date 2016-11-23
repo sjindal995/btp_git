@@ -132,13 +132,13 @@
 	<style>
 		.tile {
 			width: 500px;
-			border-radius: 20px; 
+			border-radius: 5px; 
 			margin: auto;
-		    border: 5px black;
-		    border-style: ridge;
+		    border: 1px solid black;
+		    /*border-style: ridge;*/
 		    padding: 10px;
 		    font-family: Arial;
-		    background-color: gainsboro;
+		    background-color: #63B8FF;
 		    /*margin: 25px;*/
 		}
 		.list{
@@ -193,6 +193,19 @@
 	</select>
 	</div>
 	<br>
+	<div class = "tile">
+	<input type="radio" name="radio_btn" id="group_graph" value="Get Business Group graph" />Get Business Group Graph
+	<br>
+	<br>
+	<select id="list_5" class = "list" value="Groups">
+		<option selected="selected">Select Business Group</option>
+	</select>
+	</div>
+	<br>
+	<div class="tile">
+	<input type="radio" name="radio_btn" id="top100_graph" value="Top 100 Graph"/>Show Top 100 Industries with people
+	</div>
+	<br>
 	<br>
 	<div class = "buttons">
 	<input  type="submit" id="submit_btn" name="submit" value="Submit" onclick="submitForm()">
@@ -216,8 +229,10 @@
 	var sel2 = document.getElementById('list_2');
 	var sel3 = document.getElementById('list_3');
 	var sel4 = document.getElementById('list_4');
+	var sel5 = document.getElementById('list_5');
 	var fragment = document.createDocumentFragment();
 	var families = ["Adani", "Ambani", "Birla","Godrej","Mahindra","Premji","Tata"];
+	var groups = ["Tata", "L&T Group", "Mahindra","Anil Ambani","Birla KK","Goenka R P","Birla AV","GMR Group", "U B", "Godrej", "Shapoorji Pallonji", "Murugappa Group", "Indiabulls Group", "Mukesh Ambani","ICICI","Hinduja", "TVS", "Essar","Bajaj","Adani Group","Birla BK"];
 
 	// cuisines.forEach(function(cuisine, index) {
 	//     var opt = document.createElement('option');
@@ -266,6 +281,15 @@
 			}
 		});
 		sel4.appendChild(fragment);
+		groups.forEach(function(n) {
+    		if(n != ''){
+	    		var opt = document.createElement('option');
+			    opt.innerHTML = n;
+			    opt.value = n;
+			    fragment.appendChild(opt);
+			}
+		});
+		sel5.appendChild(fragment);
     }
 
     sigma.neo4j.cypher(
@@ -279,6 +303,9 @@
     function submitForm(){
     	if(document.getElementById('ind_graph').checked){
 			window.location = "industry_graph.html";
+    	}
+    	else if(document.getElementById('top100_graph').checked){
+			window.location = "top100.html";
     	}
     	else if(document.getElementById('ind2subs').checked){
     		var e = document.getElementById('list_1');
@@ -302,10 +329,19 @@
     	else if(document.getElementById('family_graph').checked){
     		var e = document.getElementById('list_4');
     		if(e.options[e.selectedIndex].value != "Select Family"){
-    			window.location = "family_graph.html?family="+e.options[e.selectedIndex].value;
+    			window.location = "family_graph2.html?family="+e.options[e.selectedIndex].value;
     		}
     		else{
     			alert("Please Select Family");
+    		}
+    	}
+    	else if(document.getElementById('group_graph').checked){
+    		var e = document.getElementById('list_5');
+    		if(e.options[e.selectedIndex].value != "Select Business Group"){
+    			window.location = "group.html?family="+e.options[e.selectedIndex].value;
+    		}
+    		else{
+    			alert("Please Select Business Group");
     		}
     	}
     }
