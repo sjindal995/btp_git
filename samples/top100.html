@@ -136,6 +136,7 @@
             left: 0;
             right: 0;
             position: absolute;
+            transition: 0.5s;
         }
         #control-panel {
             top: 10px;
@@ -186,6 +187,10 @@
     <div id="graph-container">    </div>
      <div id="control-panel" >
         <h4 class="underline">INFORMATION PANEL</h4>
+        <!-- <span class="line"></span> -->
+        <br>
+        <button id="hide-ind">Hide Industries</button>
+        <button id="hide-ppl">Hide People</button>
         <h4 id="f1-label"></h4><p id="field1"></p>
         <h4 id="f2-label"></h4><p id="field2"></p>
         <h4 id="f3-label"></h4><p id="field3"></p>
@@ -206,33 +211,6 @@
 
 <script type="application/javascript">
 
-var fliststrs= {
-    "Tata" : '["Simone N Tata","Ratan N Tata","Noel N Tata"]',
-    "Ambani": '["Anil D Ambani", "Mukesh D Ambani", "Isha Mukesh Ambani", "Akash Mukesh Ambani", "Tina Anil Ambani"]',
-    "Birla" : '["Priyamvada Birla", "Yashovardhan Birla","Rajashree Birla", "Basant Kumar Birla","Saraladevi Birla", "Chandra Kant Birla","Kumar Mangalam Birla","Avanti Birla", "Sidharth Birla","Krishna Kumar Birla","Radhika Birla","Madhushree Birla","Nirvaan Birla", "Vedant Birla","Amita Birla","Neerja Birla","S K Birla"]',
-    "Adani" : '["Rajesh S Adani", "Gautam S Adani", "Vasant S Adani", "Pranav V Adani","Karan Gautambhai Adani"]',
-    "Godrej" : '["Nadir B Godrej", "Jamshyd N Godrej", "Adi B Godrej", "Pirojsha A Godrej", "Nisaba Godrej", "Sohrab P Godrej"]',
-    "Mahindra" : '["Keshub Mahindra","Harish Mahindra","Anand G Mahindra"]',
-    "Premji": '["Azim Hasham Premji","Yasmeen Azim Premji","Rishad Azim Premji"]'
-};
-var flists= {
-    "Tata" : ["Simone N Tata","Ratan N Tata","Noel N Tata"],
-    "Ambani": ["Anil D Ambani", "Mukesh D Ambani", "Isha Mukesh Ambani", "Akash Mukesh Ambani", "Tina Anil Ambani"],
-    "Birla" : ["Priyamvada Birla", "Yashovardhan Birla","Rajashree Birla", "Basant Kumar Birla","Saraladevi Birla", "Chandra Kant Birla","Kumar Mangalam Birla","Avanti Birla", "Sidharth Birla","Krishna Kumar Birla","Radhika Birla","Madhushree Birla","Nirvaan Birla", "Vedant Birla","Amita Birla","Neerja Birla","S K Birla"],
-    "Adani" : ["Rajesh S Adani", "Gautam S Adani", "Vasant S Adani", "Pranav V Adani","Karan Gautambhai Adani"],
-    "Godrej" : ["Nadir B Godrej", "Jamshyd N Godrej", "Adi B Godrej", "Pirojsha A Godrej", "Nisaba Godrej", "Sohrab P Godrej"],
-    "Mahindra" : ["Keshub Mahindra","Harish Mahindra","Anand G Mahindra"],
-    "Premji": ["Azim Hasham Premji","Yasmeen Azim Premji","Rishad Azim Premji"]
-};
-
-var c = window.location.search
-
-// var iname = "Miscellaneous - Medium / Small"
-var fname = c.substr(c.search('=')+1,c.length-c.search('=')-1).split("\%20").join(" ")
-
-var fliststr = fliststrs[fname]
-var flist = flists[fname]
-
 
 var s = new sigma({
     renderer: {
@@ -252,8 +230,8 @@ var s = new sigma({
         scalingMode: 'outside',
         // batchEdgesDrawing: true,
         sideMargin: 1,
-        labelThreshold: 18,
-
+        labelThreshold: 10,
+        fontStyle: 'bold',
         edgeColor: 'default',
         defaultEdgeColor: '#000000',
         // edgeLabelSize: 'proportional',
@@ -276,6 +254,8 @@ var s = new sigma({
 
     }
 });
+    
+    var salesvalmap ={};
 
     var _ = {
       $: function (id) {
@@ -293,6 +273,76 @@ var s = new sigma({
         else{
             _.$('control-panel').style.visibility='visible';
             _.$('hide').textContent="Hide Panel";
+
+        }
+    }
+
+    industries=[]
+    people=[];
+    _.$('hide-ind').onclick=function(){
+        if(_.$('hide-ind').textContent=="Hide Industries"){
+            // s.graph.edges().forEach(function(e){
+            //     if(e.neo4j_type=="INDUSTRY"){
+            //         e.hidden=true;
+            //     }
+            // })
+            s.graph.nodes().forEach(function(n){
+                if(n.neo4j_labels[0]=="Industry"){
+                    n.hidden=true;
+                }
+            })
+            s.refresh();
+            // _.$('control-panel').style.visibility='hidden';
+            _.$('hide-ind').textContent="Show Industries";
+        }
+        else{
+            s.graph.nodes().forEach(function(n){
+                if(n.neo4j_labels[0]=="Industry"){
+                    n.hidden=false;
+                }
+            })
+            // s.graph.edges().forEach(function(e){
+            //     if(e.neo4j_type=="INDUSTRY"){
+            //         e.hidden=false;
+            //     }
+            // })
+            s.refresh();
+            // _.$('control-panel').style.visibility='visible';
+            _.$('hide-ind').textContent="Hide Industries";
+
+        }
+    }
+
+    _.$('hide-ppl').onclick=function(){
+        if(_.$('hide-ppl').textContent=="Hide People"){
+            // s.graph.edges().forEach(function(e){
+            //     if(e.neo4j_type=="INDUSTRY"){
+            //         e.hidden=true;
+            //     }
+            // })
+            s.graph.nodes().forEach(function(n){
+                if(n.neo4j_labels[0]=="People"){
+                    n.hidden=true;
+                }
+            })
+            s.refresh();
+            // _.$('control-panel').style.visibility='hidden';
+            _.$('hide-ppl').textContent="Show People";
+        }
+        else{
+            s.graph.nodes().forEach(function(n){
+                if(n.neo4j_labels[0]=="People"){
+                    n.hidden=false;
+                }
+            })
+            // s.graph.edges().forEach(function(e){
+            //     if(e.neo4j_type=="INDUSTRY"){
+            //         e.hidden=false;
+            //     }
+            // })
+            s.refresh();
+            // _.$('control-panel').style.visibility='visible';
+            _.$('hide-ppl').textContent="Hide People";
 
         }
     }
@@ -444,7 +494,8 @@ var s = new sigma({
         });
     }
 
-
+    var alias ={};
+    var orig =[];
      function customiseGraph(s) {
 
         s.graph.nodes().forEach(function(n) {
@@ -466,6 +517,13 @@ var s = new sigma({
                 n.color = '#BB0000';
                 n.image = {url:'img/cmpny.png',
                             scale:0.8};
+                ss = n.neo4j_data['sales'];
+                if(ss in salesvalmap){
+                    if(n.label.length > salesvalmap[ss].label.length ) salesvalmap[ss] = n;
+                }
+                else{
+                    salesvalmap[ss] = n;
+                }
                 // n.url = urls[0];
 
             }   
@@ -500,8 +558,22 @@ var s = new sigma({
                 n.color = '#0000BB';
             }   
         });
-
+        // console.log(salesvalmap);
         
+        s.graph.nodes().forEach(function(n){
+            if(n.neo4j_labels[0]=="Company"){
+                if(salesvalmap[n.neo4j_data['sales']].label != n.label){
+                    // console.log(n.label);
+                    // alias;
+                    s.graph.dropNode(n.id);
+                }
+                // else{
+                //     orig.push(n);
+                // }
+            }
+        })
+
+
         s.refresh();
 
         s.graph.edges().forEach(function(e){
@@ -510,6 +582,7 @@ var s = new sigma({
             // e.type = 'arrow';
             e.hover_color = '#000'
             e.neo4j_data['reverse']=false;
+            // if(alias.s.graph.nodes(e.target))
             // console.log(e.neo4j_data);
             if(e.neo4j_type=='INDUSTRY'){
                 // e.type = 'arrow';
@@ -517,7 +590,8 @@ var s = new sigma({
                 
             }
             if(e.neo4j_type=='IS_BANK_OF'){
-                e.color = "#234567";                
+                e.color = "#234567";
+                s.graph.dropEdge(e.id);                
             }
             if(e.neo4j_type=='IS_COLLABORATOR_OF'){
                 e.color = "#345678";                
@@ -531,7 +605,7 @@ var s = new sigma({
                 e.color = "#567890";                
             }
             if(e.neo4j_type=='INVESTED_IN'){
-                e.color = "#678901";                
+                e.color = "#00aaee";                
             }
             if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
                 e.color = "#AABBCC";                
@@ -541,7 +615,7 @@ var s = new sigma({
                     // e.neo4j_data['reverse']=true;
             }
             if(e.neo4j_type=='MANAGES'){
-                e.color = "#222222";
+                e.color = "#ace111";
                 if(e.neo4j_data['designation'] =="Auditor"){
                     s.graph.dropEdge(e.id);
                 }
@@ -562,34 +636,6 @@ var s = new sigma({
                 // e.size = parseFloat(e.neo4j_data['renumerations']/1000.0 + 1.0);
 
 
-            }
-            if(e.neo4j_type=='MANAGING_DIRECTOR'){
-                s.graph.dropEdge(e.id);
-                // e.color = "#901234";
-                // temp = e.target;
-                // e.target = e.source;
-                // e.source = temp;
-            }
-            if(e.neo4j_type=='COMPANY_SECRETARY'){
-                s.graph.dropEdge(e.id);
-                // e.color = "#012345";                
-                // temp = e.target;
-                // e.target = e.source;                 
-                // e.source = temp;                
-            }
-            if(e.neo4j_type=='AUDITOR'){
-                s.graph.dropEdge(e.id);
-                // e.color = "#AAAAAA";                
-                // temp = e.target;
-                // e.target = e.source;
-                // e.source = temp;                
-            }
-            if(e.neo4j_type=='CHAIRMAN'){
-                s.graph.dropEdge(e.id);
-                // e.color = "#BBBBBB";                
-                // temp = e.target;
-                // e.target = e.source;
-                // e.source = temp;                
             }
         }); 
 
@@ -693,7 +739,7 @@ var s = new sigma({
                 { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
                 // 'match (n:Company) where (n.sales <> "NA") with n order by toFloat(n.sales) desc with collect (n) as comps unwind comps[0..200] as c1 unwind comps[0..200] as c2 optional match (c1)-[r1]-(c3:Company)-[r2]-(c2) where type(r1) in ["IS_SUBSIDIARY_OF"] and type(r2) in ["IS_SUBSIDIARY_OF"]  return c1,r1,c2,r2,c3',
                 // 'match (n:Company) where (n.sales <> "NA") with n order by toFloat(n.sales) desc with collect (n) as comps unwind comps[0..100] as c1 unwind comps[0..100] as c2   optional match (c1)-[r1]-(c2) where type(r1) <> "IS_BANK_OF" return c1,r1,c2',
-                'match (n:Company) where (n.sales <> "NA") with n order by toFloat(n.sales) desc with collect (n) as comps unwind comps[0..100] as c1 optional match (c1)-[r1:MANAGES]-(p:People) where r1.designation <> "Auditor" return c1,r1,p',
+                'match (n:Company) where (n.sales <> "NA") with n order by toFloat(n.sales) desc with collect (n) as comps unwind comps[0..130] as c1 unwind comps[0..130] as c2 optional match (i)-[r1:INDUSTRY]-(c1) optional match (c1)-[r2:MANAGES]-(p:People)-[r3:MANAGES]-(c2) where r2.designation <> "Auditor" and r3.designation <> "Auditor"  return c1,c2,i,r1,r2,p,r3',
                 // 'match (n:Company) where (n.sales <> "NA") with n order by toFloat(n.sales) desc with collect (n) as comps unwind comps[0..100] as c1 optional match (c1)-[r1:MANAGES]-(p:People) where r1.designation <> "Auditor" return c1,r1,p',
                 // 'match (n:Company) where (n.sales <> "NA") with n order by toFloat(n.sales) desc with collect (n) as comps unwind comps[0..100] as c1 unwind comps[0..100] as c2  match (c1)-[r1:MANAGES]-(p:People) return c1,r1,p,r2,c2,p2',
                 // 'match (c1:Company) where (c1.bussiness_group = "L&T Group") and (c1.sales <> "NA") optional match (c1)-[r2]-(c2)  where type(r2) in ["IS_SUBSIDIARY_OF","IS_COLLABORATOR_OF"] return c1,c2,r2',

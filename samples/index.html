@@ -203,7 +203,7 @@
 	</div>
 	<br>
 	<div class="tile">
-	<input type="radio" name="radio_btn" id="top100_graph" value="Top 100 Graph"/>Show Top 100 Industries with people
+	<input type="radio" name="radio_btn" id="top100_graph" value="Top 100 Graph"/>Show Top 100 Companies (with Industries and People)
 	</div>
 	<br>
 	<br>
@@ -232,7 +232,7 @@
 	var sel5 = document.getElementById('list_5');
 	var fragment = document.createDocumentFragment();
 	var families = ["Adani", "Ambani", "Birla","Godrej","Mahindra","Premji","Tata"];
-	var groups = ["Tata", "L&T Group", "Mahindra","Anil Ambani","Birla KK","Goenka R P","Birla AV","GMR Group", "U B", "Godrej", "Shapoorji Pallonji", "Murugappa Group", "Indiabulls Group", "Mukesh Ambani","ICICI","Hinduja", "TVS", "Essar","Bajaj","Adani Group","Birla BK"];
+	var groups = ["Anil Ambani", "Mahindra", "Birla KK", "Shapoorji Pallonji","Tata","Goenka R P","Birla AV","GMR Group","L&T Group", "U B", "Godrej", "Murugappa Group", "Indiabulls Group", "Mukesh Ambani","ICICI","Hinduja", "TVS", "Essar","Bajaj","Adani Group","Birla BK"];
 
 	// cuisines.forEach(function(cuisine, index) {
 	//     var opt = document.createElement('option');
@@ -329,7 +329,7 @@
     	else if(document.getElementById('family_graph').checked){
     		var e = document.getElementById('list_4');
     		if(e.options[e.selectedIndex].value != "Select Family"){
-    			window.location = "family_graph2.html?family="+e.options[e.selectedIndex].value;
+    			window.location = "family_graph.html?family="+e.options[e.selectedIndex].value;
     		}
     		else{
     			alert("Please Select Family");

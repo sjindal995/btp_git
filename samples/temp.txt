@@ -112,7 +112,7 @@ TODOS:::
 
 Make family graph and group graph more understandable
 top100, take care of duplicate nodes
-
+work on industry con
 
 
 

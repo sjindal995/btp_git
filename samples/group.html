@@ -225,14 +225,15 @@ var s = new sigma({
         defaultNodeHoverBorderColor: '#000',
         // enableEdgeHovering: false,
         minEdgeSize: 0.5,
-        maxEdgeSize: 1.5,
+        maxEdgeSize: 0.5,
         minNodeSize: 5,
         maxNodeSize: 20,
         animationsTime: 5000,
         scalingMode: 'outside',
         // batchEdgesDrawing: true,
         sideMargin: 1,
-        labelThreshold: 18,
+        labelThreshold: 15,
+        fontStyle: 'bold',
 
         edgeColor: 'default',
         defaultEdgeColor: '#000000',
@@ -529,14 +530,14 @@ var s = new sigma({
                 e.color = "#678901";                
             }
             if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
-                e.color = "#AABBCC";                
+                e.color = "#0A0BCC";                
                     // tt = e.target;
                     // e.target = e.source;
                     // e.source = tt;
                     // e.neo4j_data['reverse']=true;
             }
             if(e.neo4j_type=='MANAGES'){
-                e.color = "#222222";
+                e.color = "#F222F2";
                 // if(flist.indexOf(s.graph.nodes(e.source).label) < 0){      
                 // // if((s.graph.nodes(e.source).label).indexOf(fname)==-1){
 

@@ -154,6 +154,8 @@
 			left:45%;
 			right:20%;
 			transition: 1s;
+			text-align: center;
+			font-family: Tahoma;
 		}
 		#ind-in-list{
 			overflow:auto;
@@ -164,6 +166,18 @@
 			left:45%;
 			right:20%;
 			transition: 1s;
+			text-align: center;
+			font-family: Tahoma;
+		}
+		#ind-in-list p{
+			font-size: 20;
+			/*background: yellow;*/
+			font-variant: small-caps;
+		}
+		#ind-out-list p{
+			font-size: 20;
+			/*background: yellow;*/
+			font-variant: small-caps;
 		}
 		#ind-list-table a{
 			margin: 0 auto;
@@ -266,7 +280,7 @@
 	</style>
 		<div id="graph-container" hidden="true"></div>
 	<div id="control-pane">
-		<h2 class="underline">filters</h2>
+		<h2 class="underline">information panel</h2>
 
 		<div>
 			<h3>min degree <span id="min-degree-val">0</span></h3>
@@ -286,14 +300,14 @@
 			<button id="reset-btn">Reset filters</button>
 			<button id="export-sub-btn">Subsidiary Graph</button>
 			<br>
-		<button id="ind-out-btn">Show Out Industries</button>
-		<button id="ind-out-hide-btn">Hide</button>
-		<button id="ind-in-btn">Show In Industries</button>
-		<button id="ind-in-hide-btn">Hide</button>
+			<button id="ind-out-btn">Show Out Industries</button>
+			<button id="ind-out-hide-btn">Hide</button>
+			<button id="ind-in-btn">Show In Industries</button>
+			<button id="ind-in-hide-btn">Hide</button>
 		</div>
 	</div>
 		<a href = "/samples/"><button type = "home" id="btn1">Home</button></a>
-		<button type = "home" id="btn">Download JSON</button>
+		<!-- <button type = "home" id="btn">Download JSON</button> -->
 		<div id="ind-list"></div>
 		<div id="ind-out-list"></div>
 		<div id="ind-in-list"></div>
@@ -429,6 +443,7 @@ var s = new sigma({
 				// this.style.backgroundColor='#0f0';
 				if(out==false && In==false)
 				this.style.opacity = 1.5;
+				this.style.cursor ="default";
 			}
 			item.onmouseleave= function(){
 				// console.log("mouseleave");
@@ -585,6 +600,9 @@ var s = new sigma({
 			// 	temp = currind['outEdges'][i];
 			// 	console.log(temp['target']);
 			// }
+			var txt = document.createElement('p');
+			txt.appendChild(document.createTextNode("OUT INDUSTRIES"));
+			table.appendChild(txt);
 			min_link = _.$('min-link-val').textContent;
 			for (var i =0; i < currind['outEdges'].length; i++) {
 				ind = currind['outEdges'][i];
@@ -615,6 +633,7 @@ var s = new sigma({
 					
 				}
 			}
+
 			_.$('ind-out-list').appendChild(table);
 			
 		}
@@ -683,6 +702,9 @@ var s = new sigma({
 			}
 			table.setAttribute("id", "ind-in-list-table");
 			table.setAttribute("class", "ind-in-list-table");
+			var txt = document.createElement('p');
+			txt.appendChild(document.createTextNode("IN INDUSTRIES"));
+			table.appendChild(txt);
 			// for (var i = currind['outEdges'].length - 1; i >= 0; i--) {
 			// 	temp = currind['outEdges'][i];
 			// 	console.log(temp['target']);

@@ -1,4 +1,6 @@
+<head><meta charset="UTF-8"></head>
 <!-- START SIGMA IMPORTS -->
+
 
 <script src="../linkurious/src/sigma.core.js"></script>
 <script src="../linkurious/src/conrad.js"></script>
@@ -182,6 +184,12 @@
             display: none;
             visibility: hidden;
         }
+        #img {
+            position: absolute;
+            left: 15%;
+            top:75%;
+            text-align: center;
+        }
 
     </style>
     <div id="graph-container">    </div>
@@ -194,7 +202,8 @@
         <h4 id="f5-label"></h4><p id="field5"></p>
         <!-- <span class="line"></span> -->
         <!-- </div> -->
-        <div>
+        <div id="img" >
+            <img src="img/legend.jpg"  style="width:150px;height:80px;" align="center">
           <!-- <button id="reset-btn">Reset filters</button> -->
           <!-- <button id="export-sub-btn">Export Sub</button> -->
         </div>
@@ -226,20 +235,25 @@ var s = new sigma({
         defaultNodeBorderColor: '#000',
         defaultNodeHoverBorderColor: '#000',
         // enableEdgeHovering: false,
+        autoRescale: true,
         minEdgeSize: 0.5,
         maxEdgeSize: 1.5,
-        minNodeSize: 3,
-        maxNodeSize: 10,
-        animationsTime: 5000,
+        minNodeSize: 5,
+        maxNodeSize: 15,
+        minArrowSize: 5,
+        animationsTime: 2000,
         scalingMode: 'outside',
         // batchEdgesDrawing: true,
         sideMargin: 1,
-        labelThreshold: 18,
 
         edgeColor: 'default',
         defaultEdgeColor: '#000000',
         // edgeLabelSize: 'proportional',
         edgeLabelSizePowRatio: 1,
+        labelThreshold: 11,
+        fontStyle: 'bold',
+        labelAlignment: 'center',
+        // labelColor: 'red',
         edgeLabelThreshold: 3,
         // minEdgeSize: 10,
         enableEdgeHovering: true,
@@ -428,6 +442,7 @@ var s = new sigma({
     }
 
 
+    var sales =[];
 
 
      function customiseGraph(s) {
@@ -438,7 +453,6 @@ var s = new sigma({
             n.level = 3;
             n.type = 'square';
             // n.image= {url:'D:/study/btp/New%20folder/linkurious.js/examples/img/img1.png'};
-            n.size = s.graph.degree(n.id)+5;
             // if (n.neo4j_labels[0] == 'People' && s.graph.degree(n.id) < 2){
             //  n.hidden = true;
             // }
@@ -448,6 +462,9 @@ var s = new sigma({
             if (n.neo4j_labels[0] == 'Company') {
                 // n.type = 'circle';
                 n.color = '#BB0000';
+                if(n.neo4j_data['sales'] != "NA")
+                sales.push(parseFloat(n.neo4j_data['sales']));
+                // else s.graph.dropNode(n.id);
                 // n.image = {url:'img/cmpny.png',
                 //             scale:0.8};
                 // n.url = urls[0];
@@ -461,6 +478,7 @@ var s = new sigma({
                 n.color = '#00BB00';
             }
             if (n.neo4j_labels[0] == 'Industry') {
+                n.size = 15;
                 // n.type = 'square';
                 // n.image = { url:'img/ind.png',
                 //             scale: 0.8};
@@ -482,36 +500,62 @@ var s = new sigma({
                 target = s.graph.nodes(e.target);
                 source = s.graph.nodes(e.source);
                 if(target.neo4j_data['name'] == c1_name){
-                    target.color = '#000';
+                    target.color = '#0af';
                     target.type = 'diamond';
                     source.type = 'diamond'
-                    source.color = '#f00';
+                    source.color = '#fb0';
                     target.x = 0.5;
                     target.y = 0.1;
                     source.y = 0.3;
                     if(!c1_comps.includes(source)){
-                    	c1_comps.push(source);
+                        if(source.neo4j_data['sales'] == "NA") source.neo4j_data['sales2'] = 0.0;
+                        else source.neo4j_data['sales2'] = parseFloat(source.neo4j_data['sales']);
+                        // console.log(source.neo4j_data['sales2']);
+                        c1_comps.push(source);
                     }
                 }
                 else{
-                    target.color = '#0f0';
+                    target.color = '#f55';
                     target.type = 'circle';
                     source.type = 'circle';
-                    source.color = '#00f';   
+                    source.color = '#a0f';   
                     target.x=0.5;
                     target.y = 0.9;
+                    target.labelAlignment = 'bottom';
                     source.y = 0.7;
                     if(!c2_comps.includes(source)){
+                        if(source.neo4j_data['sales'] == "NA") source.neo4j_data['sales2'] = 0.0
+                        else source.neo4j_data['sales2'] = parseFloat(source.neo4j_data['sales']);
+                        // console.log(source.neo4j_data['sales2']);
                     	c2_comps.push(source);
                     }
                 }
                 if(c1_comps.length + c2_comps.length == s.graph.nodes().length - 2){
+                    c1_comps.sort(function(a, b){return b.neo4j_data['sales2']-a.neo4j_data['sales2']})
+                    // c1_comps.sort(function(a, b){return b.neo4j_data['sales2']-a.neo4j_data['sales2']})
+                    c2_comps.sort(function(a, b){return b.neo4j_data['sales2']-a.neo4j_data['sales2']})
                 	var count=0;
+                    if(c1_comps.length >2){
+                        temp = c1_comps[1];
+                        c1_comps[1] = c1_comps[c1_comps.length-1];    
+                        c1_comps[c1_comps.length-1] = temp;    
+                        
+                    }
+                    if(c2_comps.length >2){
+                        temp = c2_comps[1];
+                        c2_comps[1] = c2_comps[c2_comps.length-1];    
+                        c2_comps[c2_comps.length-1] = temp;    
+                        
+                    }
                 	for(count=0;count < c2_comps.length; count++){
-                		c2_comps[count].x = count*1.0/c2_comps.length;
-                	}
-                	for(count=0;count < c1_comps.length; count++){
-                		c1_comps[count].x = count*1.0/c1_comps.length;
+                        c2_comps[count].x = count*1.0/c2_comps.length;
+                        if(count==c2_comps.length-1)
+                            c2_comps[count].x = 1;
+                    }
+                    for(count=0;count < c1_comps.length; count++){
+                        c1_comps[count].x = count*1.0/c1_comps.length;
+                        if(count==c1_comps.length-1)
+                            c1_comps[count].x = 1;
                 	}
                 }
             }
@@ -568,80 +612,19 @@ var s = new sigma({
             }
         }); 
         // sigma.canvas.edges.autoCurve(s);
+        m = Math.max.apply(Math, sales);
+        s.graph.nodes().forEach(function(n){
+                if(n.neo4j_labels[0]=="Company"){
+                    if(n.neo4j_data['sales2'] ==0.0){
+                        n.size = 5;
+                    }
+                    else{
+                        n.size = Math.floor((parseFloat(n.neo4j_data['sales'])/m)*12);
+                    }
+                    
+                }
+        })
         s.refresh();
-        // var fa = sigma.layouts.configForceLink(s, {
-        //  worker: true,
-        //  autoStop: true,
-        //  background: true,
-        //  scaleRatio: 10,
-        //  // maxIterations:200,
-        //  gravity: 3,
-        //  easing: 'quadraticInOut'
-
-
-        // });
-
-        // // Start the ForceLink algorithm:
-        // sigma.layouts.startForceLink();
-
-
-        // var dagreListener = sigma.layouts.dagre.configure(s, {
-        //     directed: true, // take edge direction into account
-        //     rankdir: 'TB',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
-        //           // where T = top, B = bottom, L = left, and R = right.
-        //     easing: 'quadraticInOut', // animation transition function
-        //     duration: 800,   // animation duration
-        //     compound: true,
-        //     // nodes : s.graph.nodes().slice(0,30), // subset of nodes
-        //     boundingBox: {minX: 0, maxX: 300, minY: 0, maxY:150} // constrain layout bounds ; object or true (all current positions of the given nodes)
-        // });
-
-        // // Bind the events:
-        // dagreListener.bind('start stop interpolate', function(e) {
-        //     console.log(e.type);
-        // });
-
-        // // // Start the DAG layout:
-        // sigma.layouts.dagre.start(s);
-            
-        // var frListener = sigma.layouts.fruchtermanReingold.configure(s, {
-        //     iterations: 100,
-        //     easing: 'quadraticInOut',
-        //     duration: 800
-        // });
-
-        // // Bind the events:
-        // frListener.bind('start stop interpolate', function(e) {
-        //     console.log(e.type);
-        // });
-
-        // // Start the Fruchterman-Reingold algorithm:
-        // sigma.layouts.fruchtermanReingold.start(s);
-
-        // var noverlapListener = s.configNoverlap({
-        //     maxIterations: 300,
-        //       nodeMargin: 0.1,
-        //       gridSize: 50,
-        //       easing: 'quadraticInOut', // animation transition function
-        //       duration: 1000   // animation duration. Long here for the purposes of this example only
-        //     });
-
-        //     // Bind the events:
-        //     noverlapListener.bind('start stop interpolate', function(e) {
-        //       console.log(e.type);
-        //       if(e.type === 'start') {
-        //         console.time('noverlap');
-        //       }
-        //       if(e.type === 'interpolate') {
-        //         console.timeEnd('noverlap');
-        //       }
-        //     });
-
-        //     // Start the layout:
-        //     s.startNoverlap();
-
-
-
 
         var activeState = sigma.plugins.activeState(s);
 
@@ -662,6 +645,17 @@ var s = new sigma({
             alert("This graph has no nodes.\nPlease go back to home")
 
         }
+        // var legend = sigma.plugins.legend(s);
+
+        // legend.getWidget('node', 'size').setUnit('$'); // Add '($)' to the widget representing the node size
+        // legend.setPlacement('left'); // Position the legend on the left (default: bottom)
+        // legend.addTextWidget('This is an example legend'); // Add a widget that will display some text
+        // // legend.exportSvg('myLegend.svg'); // Prompt the user a modal to download the legend in SVG format
+
+        // /* Some code that change the mappings */
+
+        // legend.draw(); // Redraw the widgets based on the new mappings
+        // console.log(legend);
 
         console.log("finished customise graph");
 
@@ -684,12 +678,6 @@ var s = new sigma({
         // Download the GEXF file
         s.toGEXF({download: true});
     }
-    // var legend = sigma.plugins.legend(s);
-    // legend.addWidget('edge','color');
-    // legend.addWidget('node','size');
-    // legend.setPlacement('left'); 
-    // legend.setVisibility(true);
-    // legend.draw();
     document.getElementById("btn").onclick=function(){
         console.log("sadadasdasdas")
         // console.log(legend.getWidget('node','size'));

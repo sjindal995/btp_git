@@ -200,7 +200,7 @@
     
     </div>
     <a href = "/samples/"><button type = "home" id="btn1">Home</button></a>
-    <button id="btn">Download JSON</button>
+    <!-- <button id="btn">Download JSON</button> -->
     <button id="hide">Hide Panel</button>
 </div>
 
@@ -244,10 +244,10 @@ var s = new sigma({
         defaultNodeBorderColor: '#000',
         defaultNodeHoverBorderColor: '#000',
         // enableEdgeHovering: false,
-        minEdgeSize: 0.5,
-        maxEdgeSize: 1.5,
-        minNodeSize: 7,
-        maxNodeSize: 20,
+        minEdgeSize: 1.5,
+        maxEdgeSize: 2.5,
+        minNodeSize: 10,
+        maxNodeSize: 15,
         animationsTime: 5000,
         scalingMode: 'outside',
         // batchEdgesDrawing: true,
@@ -258,7 +258,7 @@ var s = new sigma({
         defaultEdgeColor: '#000000',
         // edgeLabelSize: 'proportional',
         edgeLabelSizePowRatio: 1,
-        edgeLabelThreshold: 5,
+        edgeLabelThreshold: 2,
         // minEdgeSize: 10,
         enableEdgeHovering: true,
 
@@ -454,7 +454,7 @@ var s = new sigma({
             n.level = 3;
             n.type = 'square';
             // n.image= {url:'D:/study/btp/New%20folder/linkurious.js/examples/img/img1.png'};
-            // n.size = s.graph.degree(n.id)+5;
+            n.size = s.graph.degree(n.id)+5;
             // if (n.neo4j_labels[0] == 'People' && s.graph.degree(n.id) < 2){
             //  n.hidden = true;
             // }
@@ -462,7 +462,6 @@ var s = new sigma({
             //  n.hidden = true;
             // }
             if (n.neo4j_labels[0] == 'Company') {
-	            n.size = 1.5*s.graph.degree(n.id)+5;
                 // n.type = 'circle';
                 n.color = '#BB0000';
                 n.image = {url:'img/cmpny.png',
@@ -471,25 +470,12 @@ var s = new sigma({
 
             }   
             if (n.neo4j_labels[0] == 'People') {
-                // n.size = s.graph.degree(n.id)+5;
-                    // n.type = 'diamond';
-                if(flist.indexOf(n.label) <0){
-                	// n.size = s.graph.degree(n.id)+5;
-                	n.size = 0.1;
-                    if(s.graph.degree(n.id)<2) 
-                    	s.graph.dropNode(n.id);
-                    // n.size = 1;
-                }
-                else{
-                    n.image = { url:'img/ppl.png',
-                                scale:0.8};
-                    n.size = 3*s.graph.degree(n.id)+5;
-
-                    
-                }
-                    n.color = '#00BB00';
+                n.size = 3*s.graph.degree(n.id)+5;
                 // if(n.label=='Ratan N Tata') n.size = 20; 
                 // n.type = 'diamond';
+                n.image = { url:'img/ppl.png',
+                            scale:0.8};
+                n.color = '#00BB00';
             }
             if (n.neo4j_labels[0] == 'Industry') {
                 // n.type = 'square';
@@ -533,27 +519,23 @@ var s = new sigma({
             }
             if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
                 e.color = "#AABBCC";                
-                    // tt = e.target;
-                    // e.target = e.source;
-                    // e.source = tt;
-                    // e.neo4j_data['reverse']=true;
             }
             if(e.neo4j_type=='MANAGES'){
-                // e.color = "#222222";          
-                // if(flist.indexOf(s.graph.nodes(e.source).label) < 0){      
-                // // if((s.graph.nodes(e.source).label).indexOf(fname)==-1){
+                e.color = "#222222";          
+                if(flist.indexOf(s.graph.nodes(e.source).label) < 0){      
+                // if((s.graph.nodes(e.source).label).indexOf(fname)==-1){
 
-                //     tt = e.target;
-                //     e.target = e.source;
-                //     e.source = tt;
-                //     e.color = "#999999";
-                //     e.neo4j_data['reverse']=true;
-                //     console.log(parseFloat(e.neo4j_data['renumerations']));
-                //     if(!(parseFloat(e.neo4j_data['renumerations'])>1000.0)){
-                //         // e.hidden = true;
-                //         // s.graph.nodes(e.target).hidden = true;
-                //     }                
-                // }
+                    tt = e.target;
+                    e.target = e.source;
+                    e.source = tt;
+                    e.color = "#999999";
+                    e.neo4j_data['reverse']=true;
+                    console.log(parseFloat(e.neo4j_data['renumerations']));
+                    if(!(parseFloat(e.neo4j_data['renumerations'])>1000.0)){
+                        // e.hidden = true;
+                        // s.graph.nodes(e.target).hidden = true;
+                    }                
+                }
                 // e.size = parseFloat(e.neo4j_data['renumerations']/1000.0 + 1.0);
 
 
@@ -589,7 +571,6 @@ var s = new sigma({
         }); 
 
         s.refresh();
-
         // var fa = sigma.layouts.configForceLink(s, {
         //  worker: true,
         //  autoStop: true,
@@ -606,38 +587,38 @@ var s = new sigma({
         // sigma.layouts.startForceLink();
 
 
-        // var dagreListener = sigma.layouts.dagre.configure(s, {
-        //     directed: true, // take edge direction into account
-        //     rankdir: 'LR',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
-        //           // where T = top, B = bottom, L = left, and R = right.
-        //     easing: 'quadraticInOut', // animation transition function
-        //     duration: 800,   // animation duration
-        //     compound: true,
-        //     // nodes : s.graph.nodes().slice(0,30), // subset of nodes
-        //     boundingBox: {minX: 0, maxX: 300, minY: 0, maxY:200} // constrain layout bounds ; object or true (all current positions of the given nodes)
-        // });
-
-        // // Bind the events:
-        // dagreListener.bind('start stop interpolate', function(e) {
-        //     console.log(e.type);
-        // });
-
-        // // // // Start the DAG layout:
-        // sigma.layouts.dagre.start(s);
-            
-        var frListener = sigma.layouts.fruchtermanReingold.configure(s, {
-            iterations: 500,
-            easing: 'quadraticInOut',
-            duration: 800
+        var dagreListener = sigma.layouts.dagre.configure(s, {
+            directed: true, // take edge direction into account
+            rankdir: 'LR',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
+                  // where T = top, B = bottom, L = left, and R = right.
+            easing: 'quadraticInOut', // animation transition function
+            duration: 800,   // animation duration
+            compound: true,
+            // nodes : s.graph.nodes().slice(0,30), // subset of nodes
+            boundingBox: {minX: 0, maxX: 300, minY: 0, maxY:200} // constrain layout bounds ; object or true (all current positions of the given nodes)
         });
 
         // Bind the events:
-        frListener.bind('start stop interpolate', function(e) {
+        dagreListener.bind('start stop interpolate', function(e) {
             console.log(e.type);
         });
 
-        // Start the Fruchterman-Reingold algorithm:
-        sigma.layouts.fruchtermanReingold.start(s);
+        // // Start the DAG layout:
+        sigma.layouts.dagre.start(s);
+            
+        // var frListener = sigma.layouts.fruchtermanReingold.configure(s, {
+        //     iterations: 100,
+        //     easing: 'quadraticInOut',
+        //     duration: 800
+        // });
+
+        // // Bind the events:
+        // frListener.bind('start stop interpolate', function(e) {
+        //     console.log(e.type);
+        // });
+
+        // // Start the Fruchterman-Reingold algorithm:
+        // sigma.layouts.fruchtermanReingold.start(s);
 
         // var noverlapListener = s.configNoverlap({
         //     maxIterations: 300,
@@ -685,8 +666,7 @@ var s = new sigma({
 
         sigma.neo4j.cypher(
                 { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-                // 'match (c1:Company)-[r:MANAGES]-(p1:People) where (p1.name in '+fliststr+') match (c1)-[r2:MANAGES]-(p2:People) return c1,r,p1,r2,p2',
-                'match (p2:People)-[r2:MANAGES]->(c1:Company)-[r:MANAGES]-(p1:People) where (p1.name in '+fliststr+')  optional match (c1)<-[r3:IS_SUBSIDIARY_OF]-(c2)  return c1,r,p1,r2,c2,p2,r3',
+                'match (c1:Company)-[r:MANAGES]-(p1:People) where (p1.name in '+fliststr+') match (c1)-[r2:MANAGES]-(p2:People) return c1,r,p1,r2,p2',
                 s,
                 customiseGraph
         );
