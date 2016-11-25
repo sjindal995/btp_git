@@ -828,19 +828,20 @@ sigma.neo4j.cypher(
 
 
 
-	document.getElementById("btn").onclick=function(){
-		// console.log(legend.getWidget('node','size'));
+	// document.getElementById("btn").onclick=function(){
+	// 	// console.log(legend.getWidget('node','size'));
 		
-		s.toJSON({
-			download: true,
-			pretty: true,
-			filename: 'company_industry.json'
-		});
-		// legend.exportPng('legend.png');
+	// 	s.toJSON({
+	// 		download: true,
+	// 		pretty: true,
+	// 		filename: 'company_industry.json'
+	// 	});
+	// 	// legend.exportPng('legend.png');
 
-	}
+	// }
 
 	document.getElementById("export-sub-btn").onclick=function(){
+		console.log(_.$('field1').textContent);
 		window.location = 'in3.html?ind='+_.$('field1').textContent
 		// legend.exportPng('legend.png');
 
