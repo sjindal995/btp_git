@@ -1,0 +1,315 @@
+1,Foodstuffs,Aquaculture
+1,Foodstuffs,Breweries
+1,Foodstuffs,Distilleries
+1,Foodstuffs,Food - Proccesing - Rice
+1,Foodstuffs,Food - Processing - Atta / Rava / Sooji
+1,Foodstuffs,Food - Processing - Egg Powder
+1,Foodstuffs,Food - Processing - Fruit Processing
+1,Foodstuffs,Food - Processing - Mushrooms
+1,Foodstuffs,Food - Processing - Others
+1,Foodstuffs,Food - Processing - Spices / Pickles
+1,Foodstuffs,Food And Dairy Products - Indian - Large
+1,Foodstuffs,Food And Dairy Products - Multinational
+1,Foodstuffs,Food and Dairy Products - Indian - Medium / Small
+1,Foodstuffs,Sugar - Integrated
+1,Foodstuffs,Sugar - Others
+1,Foodstuffs,Vanaspati - Large
+1,Foodstuffs,Vanaspati - Medium / Small
+1,Foodstuffs,Chewing Tobacco / Pan Masala
+1,Foodstuffs,Coffee
+1,Foodstuffs,Floriculture / Tissue Culture
+1,Foodstuffs,Tea - Foreign
+1,Foodstuffs,Tea - Indian - Large
+1,Foodstuffs,Tea - Indian - Medium / Small
+1,Foodstuffs,Tea - Processing And Trading
+1,Foodstuffs,Hatcheries
+2,Mineral Products,Cement - Major - North India
+2,Mineral Products,Cement - Major - North India
+2,Mineral Products,Cement - Major - South India
+2,Mineral Products,Cement - Mini - North India
+2,Mineral Products,Cement - Mini - South India
+2,Mineral Products,Cement Products
+2,Mineral Products,Detergents / Intermediates
+2,Mineral Products,Electrodes - Graphites
+2,Mineral Products,Mining / Minerals
+2,Mineral Products,Refractories / Intermediates
+2,Mineral Products,Starch
+2,Mineral Products,Abrasives and Grinding Wheels
+3,Chemical & Allied Industries,Aluminium Chemicals
+3,Chemical & Allied Industries,Carbon Black
+3,Chemical & Allied Industries,Chemicals - Alcohol-based
+3,Chemical & Allied Industries,Chemicals - Benzene-based
+3,Chemical & Allied Industries,Chemicals - Calcium Carbonate
+3,Chemical & Allied Industries,Chemicals - Gelatine
+3,Chemical & Allied Industries,Chemicals - Inorganic - Large
+3,Chemical & Allied Industries,Chemicals - Inorganic - Medium / Small
+3,Chemical & Allied Industries,Chemicals - Maleic Anhydride / Phthalic Anhydride
+3,Chemical & Allied Industries,Chemicals - Organic - Large
+3,Chemical & Allied Industries,Chemicals - Organic - Medium / Small
+3,Chemical & Allied Industries,Chemicals - Pentaerythritol / Formaldehyde
+3,Chemical & Allied Industries,Chemicals - Plasticizers
+3,Chemical & Allied Industries,Chemicals - Speciality - Large
+3,Chemical & Allied Industries,Chemicals - Speciality - Medium / Small
+3,Chemical & Allied Industries,Chlor-Alkali
+3,Chemical & Allied Industries,Dyes - Intermediate
+3,Chemical & Allied Industries,Dyes - Reactive / Direct
+3,Chemical & Allied Industries,Dyes And Pigments - Large
+3,Chemical & Allied Industries,Dyes And Pigments - Medium / Small
+3,Chemical & Allied Industries,Fasteners
+3,Chemical & Allied Industries,Ferro Alloys
+3,Chemical & Allied Industries,Fertilizers - Nitrogenous / Phosphatic
+3,Chemical & Allied Industries,Fertilizers - Phosphatic - Single Super Phosphate
+3,Chemical & Allied Industries,Industrial Explosives
+3,Chemical & Allied Industries,Industrial Gas
+3,Chemical & Allied Industries,LPG Bottling
+3,Chemical & Allied Industries,Leather Chemicals
+3,Chemical & Allied Industries,Oil Drilling
+3,Chemical & Allied Industries,Oil Exploration / Allied Services
+3,Chemical & Allied Industries,Paints / Varnishes
+3,Chemical & Allied Industries,Pesticides / Agrochemicals - Indian - Large
+3,Chemical & Allied Industries,Pesticides / Agrochemicals - Indian - Medium/Small
+3,Chemical & Allied Industries,Pesticides / Agrochemicals - Multinational
+3,Chemical & Allied Industries,Petrochemicals - Others
+3,Chemical & Allied Industries,Petrochemicals - Polymers - Large
+3,Chemical & Allied Industries,Petrochemicals - Polymers - Medium / Small
+3,Chemical & Allied Industries,Pollution Control Equipment
+3,Chemical & Allied Industries,Refineries
+3,Chemical & Allied Industries,Soda Ash
+3,Chemical & Allied Industries,Solvent Extraction - Large
+3,Chemical & Allied Industries,Solvent Extraction - Medium / Small
+4,Plastics & Rubbers,Auto Ancillaries - Plastic Mouldings
+4,Plastics & Rubbers,Engineering - Heavy - Plastic Machinery
+4,Plastics & Rubbers,Laminates
+4,Plastics & Rubbers,Moulded Luggage
+4,Plastics & Rubbers,Packaging - Plastic Containers
+4,Plastics & Rubbers,Plastics - Bottles / Jars
+4,Plastics & Rubbers,Plastics - Drip Irrigation
+4,Plastics & Rubbers,Plastics - Flooring
+4,Plastics & Rubbers,Plastics - Furniture
+4,Plastics & Rubbers,Plastics - Masterbatches
+4,Plastics & Rubbers,Plastics - Others
+4,Plastics & Rubbers,Plastics - PU & PU leather
+4,Plastics & Rubbers,Plastics - Pipes
+4,Plastics & Rubbers,Plastics - Sheets
+4,Plastics & Rubbers,Plastics - Thermoware
+4,Plastics & Rubbers,Rubber - Products
+4,Plastics & Rubbers,Rubber - Retreading
+4,Plastics & Rubbers,Rubber - Synthetic
+4,Plastics & Rubbers,Tyres - Cycles
+4,Plastics & Rubbers,Tyres - Large
+4,Plastics & Rubbers,Tyres - Medium / Small
+5,Textiles,Textile machinery
+5,Textiles,Textiles - Acrylic Fibre
+5,Textiles,Textiles - Composite/Cotton/Blended/Fabric - LARGE
+5,Textiles,Textiles - Composite/Cotton/Blended/Fabric - M/S
+5,Textiles,Textiles - Cotton Yarn - 100% EOUs
+5,Textiles,Textiles - Cotton Yarn - Open-Ended Spinning
+5,Textiles,Textiles - Denim Fabric
+5,Textiles,Textiles - Embroidery Fabric
+5,Textiles,Textiles - Hosiery / Knitwear
+5,Textiles,Textiles - Jute - Yarn / Products
+5,Textiles,Textiles - Manmade - Nylon
+5,Textiles,Textiles - Manmade - PFY / PSF - From Chips
+5,Textiles,Textiles - Manmade - PFY/PSF - InHouse Poly Condsn
+5,Textiles,Textiles - Manmade - Polypropylene Filament Yarn
+5,Textiles,Textiles - Others
+5,Textiles,Textiles - Processing
+5,Textiles,Textiles - Rayon
+5,Textiles,Textiles - Readymade Apparel
+5,Textiles,Textiles - Silk
+5,Textiles,Textiles - Socks
+5,Textiles,Textiles - Spinning - Synthetic / Blended
+5,Textiles,Textiles - Spinning/Cotton/Blended Yarn - Ring Spg
+5,Textiles,Textiles - Terry Towels
+5,Textiles,Textiles - Texturising
+5,Textiles,Textiles - Weaving
+5,Textiles,Textiles - Woollen Processing
+5,Textiles,Textiles - Worsted Fabric
+5,Textiles,Leather Products - Garments
+6,Healthcare,Pharmaceuticals - Gelatin Capsules
+6,Healthcare,Pharmaceuticals - I V Fluids
+6,Healthcare,Pharmaceuticals - Indian - Bulk Drugs
+6,Healthcare,Pharmaceuticals - Indian - Bulk Drugs & Formln Lrg
+6,Healthcare,Pharmaceuticals - Indian - Bulk Drugs & Formln M/S
+6,Healthcare,Pharmaceuticals - Indian - Formulations
+6,Healthcare,Pharmaceuticals - Multinational
+6,Healthcare,Hospitals / Medical Services
+6,Healthcare,Personal Care - Indian - Large
+6,Healthcare,Personal Care - Indian - Medium / Small
+6,Healthcare,Personal Care - Multinational
+6,Healthcare,Biotechnology
+6,Healthcare,Medical Accessories / Disposables
+6,Healthcare,Medical Equipment
+7,Electronics,Computers - Education
+7,Electronics,Computers - Hardware - Large
+7,Electronics,Computers - Hardware - Medium / Small
+7,Electronics,Computers - Peripherals / Accessories
+7,Electronics,Computers - Software - Converts
+7,Electronics,Computers - Software - Large
+7,Electronics,Computers - Software - Medium / Small
+7,Electronics,Dry Cells
+7,Electronics,Electric Equipment - General - Large
+7,Electronics,Electric Equipment - General - Medium / Small
+7,Electronics,Electric Equipment - Gensets / Turbines
+7,Electronics,Electric Equipment - Switchgears/Relays/Circuits
+7,Electronics,Electric Equipment - Transformers
+7,Electronics,Electrodes - Welding Equipment
+7,Electronics,Electronics - Capacitors
+7,Electronics,Electronics - Compact Discs
+7,Electronics,Electronics - Hard Ferrites
+7,Electronics,Electronics - Instrumentation And Process Control
+7,Electronics,Electronics - Others
+7,Electronics,Electronics - PCBs
+7,Electronics,Electronics - Picture Tubes - B & W
+7,Electronics,Electronics - Picture Tubes - Colour
+7,Electronics,Electronics - Picture Tubes - Glass Shells
+7,Electronics,Electronics - Power Devices / Equipment
+7,Electronics,Electronics - Soft Ferrites
+7,Electronics,Electronics - TV / Audio / VCR / VCP
+7,Electronics,IT Enabled Services / Business Process Outsourcing
+7,Electronics,Infotech / Database
+7,Electronics,Lighting Systems
+7,Electronics,Packaging - Lamination / Processors - Large
+7,Electronics,Packaging - Lamination / Processors - Medium/Small
+7,Electronics,Power Generation And Supply
+7,Electronics,Telecommunications - Equipment - Large
+7,Electronics,Telecommunications - Equipment - Medium / Small
+7,Electronics,Telecommunications - Service Provider
+7,Electronics,Air-conditioners
+7,Electronics,Transmisson Line Towers / Equipment
+7,Electronics,Watches & Accessories
+8,Stone & Glass,Engineering - Heavy - Glass-lined Equipment
+8,Stone & Glass,Ceramics - Sanitaryware / Others
+8,Stone & Glass,Ceramics - Tiles
+8,Stone & Glass,Coke / Metalurgical Coke
+8,Stone & Glass,Diamond Cutting / Jewellery - Large
+8,Stone & Glass,Diamond Cutting / Jewellery - Medium / Small
+8,Stone & Glass,Glass - Containers / Others
+8,Stone & Glass,Glass - Safety
+8,Stone & Glass,Glass - Sheet / Float
+8,Stone & Glass,Granite & Marble - Large
+9,Metals,Auto Ancillaries - Sheet Metal
+9,Metals,Castings - Grey Iron
+9,Metals,Castings - Steel / Alloy
+9,Metals,Domestic Appliances - Cookers / Others
+9,Metals,Domestic Appliances - Fans
+9,Metals,Domestic Appliances - White Goods
+9,Metals,Metal - Copper / Copper Alloy Products
+9,Metals,Metal - Others
+9,Metals,Metal - Zinc
+9,Metals,Packaging - Metallic
+9,Metals,Steel - Large
+9,Metals,Steel - Medium / Small
+9,Metals,Steel - Pig Iron
+9,Metals,Steel - Rolling
+9,Metals,Steel - Seamless Tubes
+9,Metals,Steel - Sponge Iron
+9,Metals,Steel - Tubes / Pipes
+9,Metals,Steel - Wires
+9,Metals,Aluminium
+9,Metals,Aluminium - Extrusions
+9,Metals,Aluminium - Sheets / Coils / Wires / Others
+10,Machinery,Auto Ancillaries - Axles / Shafts
+10,Machinery,Auto Ancillaries - Batteries
+10,Machinery,Auto Ancillaries - Brakes
+10,Machinery,Auto Ancillaries - Clutches
+10,Machinery,Auto Ancillaries - Electrical
+10,Machinery,Auto Ancillaries - Engine Parts
+10,Machinery,Auto Ancillaries - Friction Materials
+10,Machinery,Auto Ancillaries - Gears
+10,Machinery,Auto Ancillaries - Instruments
+10,Machinery,Auto Ancillaries - Lamps
+10,Machinery,Auto Ancillaries - Others
+10,Machinery,Auto Ancillaries - Shock Absorbers
+10,Machinery,Auto Ancillaries - Springs
+10,Machinery,Auto Ancillaries - Wheels
+10,Machinery,Bearings - Large
+10,Machinery,Bearings - Medium / Small
+10,Machinery,Cables - Power - Large
+10,Machinery,Cables - Power - Medium / Small
+10,Machinery,Cables - Telephone
+10,Machinery,Compressors / Drilling Equipment
+10,Machinery,Engineering - Light - Gears
+10,Machinery,Engines
+10,Machinery,Hydraulics
+10,Machinery,Lubricants
+10,Machinery,Machine Tools - Others
+10,Machinery,Machine Tools - Tungsten carbide
+10,Machinery,Pumps
+11,Transportation,Automobiles - LCVs/HCVs
+11,Transportation,Automobiles - Motorcycles / Mopeds
+11,Transportation,Automobiles - Scooters and 3-Wheelers
+11,Transportation,Automobiles - Tractors
+11,Transportation,Automobiles - passenger cars
+11,Transportation,Couriers
+11,Transportation,Cycles And Accessories
+11,Transportation,Gas Distribution
+11,Transportation,Ship - Breaking / Repairing
+11,Transportation,Shipping - Large
+11,Transportation,Shipping - medium / small
+11,Transportation,Transport - Airlines
+11,Transportation,Transport - Road
+11,Transportation,Travel Agencies
+12,Miscellaneous,Analytical Laboratory Equipment
+12,Miscellaneous,Cigarettes
+12,Miscellaneous,Contraceptives / Protectives
+12,Miscellaneous,Diversified - Large
+12,Miscellaneous,Diversified - Medium / Small
+12,Miscellaneous,Diversified - Mega
+12,Miscellaneous,Engineering - Heavy - General - Large
+12,Miscellaneous,Engineering - Heavy - General - Medium / Small
+12,Miscellaneous,Engineering - Heavy - Material Handling
+12,Miscellaneous,Engineering - Light - General - Large
+12,Miscellaneous,Engineering - Light - General - Medium / Small
+12,Miscellaneous,Engineering - Light - Tools / Moulds
+12,Miscellaneous,Engineering - Turnkey Services
+12,Miscellaneous,Entertainment - Content Providers
+12,Miscellaneous,Entertainment - Electronic Media
+12,Miscellaneous,Fire - Protection Equipment
+12,Miscellaneous,Forgings - Large
+12,Miscellaneous,Forgings - Medium / Small
+12,Miscellaneous,Hotels - Large
+12,Miscellaneous,Hotels - Medium
+12,Miscellaneous,Hotels - Resorts
+12,Miscellaneous,Hotels - Small
+12,Miscellaneous,Miscellaneous - Large
+12,Miscellaneous,Miscellaneous - Medium / Small
+12,Miscellaneous,Office Equipment
+12,Miscellaneous,Packaging - BOPP Film
+12,Miscellaneous,Packaging - BOPP Self-adhesive Tape
+12,Miscellaneous,Packaging - Others
+12,Miscellaneous,Packaging - Polyester Film
+12,Miscellaneous,Packaging - Polysacks
+12,Miscellaneous,Packaging - Printing Ink
+12,Miscellaneous,Photographic And Allied Products
+12,Miscellaneous,Printing & Stationery
+12,Miscellaneous,Recreation / Amusement Parks
+12,Miscellaneous,Retailing
+12,Miscellaneous,Unknown
+12,Miscellaneous,Leather / Synthetic Footware - Large
+12,Miscellaneous,Leather / Synthetic Footware - Medium / Small
+12,Miscellaneous,Leather Products - Integrated
+12,Miscellaneous,Leather Products - Others
+12,Miscellaneous,Decoratives - Wood-based
+12,Miscellaneous,Construction - Civil / Turnkey - Large
+12,Miscellaneous,Construction - Civil / Turnkey - Medium / Small
+12,Miscellaneous,Construction - Factories / Offices / Commercial
+12,Miscellaneous,Construction - Housing - Large
+12,Miscellaneous,Construction - Housing - Medium / Small
+12,Miscellaneous,Paper - Large
+12,Miscellaneous,Paper - Medium / Small
+13,Finance,Banks - Private Sector
+13,Finance,Auto Ancillaries - Trading
+13,Finance,Banks - Public Sector
+13,Finance,Finance - Equipment - Leasing & Maintenance
+13,Finance,Finance - Housing - Large
+13,Finance,Finance - Housing - Medium / Small
+13,Finance,Finance - Investment / Others
+13,Finance,Finance - Large
+13,Finance,Finance - Leasing And Diversified
+13,Finance,Finance - Medium
+13,Finance,Finance - Small
+13,Finance,Finance - Term-Lending Institutions
+13,Finance,Securities/Commodities Trading Services
+13,Finance,Trading - Large
+13,Finance,Trading - Medium / Small

@@ -453,10 +453,10 @@ var sb = new sigma({
             }
             if(e.neo4j_type=='SECTOR'){
             	e.type = 'line';
-                var tmp = e.source;
-                e.source = e.target;
-                e.target = tmp;
-                map_ind_sec[e.target] = e.source;
+                // var tmp = e.source;
+                // e.source = e.target;
+                // e.target = tmp;
+                map_ind_sec[e.source] = e.target;
             }
         }); 
         // console.log(sublist);
@@ -467,7 +467,9 @@ var sb = new sigma({
          		// var n = s.graph.nodes(e.source);
          		e.source = map_ind_sec[tmp];
          		// s.graph.dropNode(n.id);
-
+         	}
+         	if(e.neo4j_type=='SECTOR'){
+         		s.graph.dropEdge(e.id);
          	}
          });
         s.refresh();
@@ -1015,6 +1017,9 @@ var sb = new sigma({
          		e.target = map_ind_sec[tmp];
          		// s.graph.dropNode(tmp);
 
+         	}
+         	if(e.neo4j_type=='SECTOR'){
+         		s.graph.dropEdge(e.id);
          	}
          });
         s.refresh();
