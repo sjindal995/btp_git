@@ -390,8 +390,8 @@ var sb = new sigma({
             }
         });
     }
-
     function customiseGraph(s) {
+    	var map_ind_sec = {};
         var industries = [];
         var sectors = [];
         s.graph.nodes().forEach(function(n) {
@@ -451,9 +451,27 @@ var sb = new sigma({
             if(e.neo4j_type=='MANAGES'){
                 e.color = "#890123";                
             }
+            if(e.neo4j_type=='SECTOR'){
+            	e.type = 'line';
+                var tmp = e.source;
+                e.source = e.target;
+                e.target = tmp;
+                map_ind_sec[e.target] = e.source;
+            }
         }); 
         // console.log(sublist);
+         s.graph.edges().forEach(function(e){
+         	if(e.neo4j_type=='INDUSTRY' && s.graph.nodes(e.target).label!=iname){
+         		s.graph.nodes(e.source).hidden = true;
+         		var tmp = e.source;
+         		// var n = s.graph.nodes(e.source);
+         		e.source = map_ind_sec[tmp];
+         		// s.graph.dropNode(n.id);
+
+         	}
+         });
         s.refresh();
+
         var dagreListener = sigma.layouts.dagre.configure(s, {
             directed: true, // take edge direction into account
             rankdir: 'BT',  // Direction for rank nodes. Can be TB, BT, LR, or RL,
@@ -773,13 +791,13 @@ var sb = new sigma({
                             hidden: true
                         });
                         s.graph.addEdge({
-                            id: (++did)+'',
+                            id: (++did)+'a',
                             source: 'Dummy'+(nid),
                             target: e.target,
                             hidden: true
                         })
                         s.graph.addEdge({
-                            id: (++did)+'',
+                            id: (++did)+'a',
                             target: 'Dummy'+(nid),
                             source: e.source,
                             hidden: true
@@ -948,6 +966,7 @@ var sb = new sigma({
             }   
         });
         s.refresh();
+        var map_ind_sec = {};
         s.graph.edges().forEach(function(e){
             e.label = e.neo4j_type;
             e.type = 'arrow';
@@ -979,8 +998,25 @@ var sb = new sigma({
             if(e.neo4j_type=='MANAGES'){
                 e.color = "#890123";                
             }
+            if(e.neo4j_type=='SECTOR'){
+            	e.type = 'line';
+                // var tmp = e.source;
+                // e.source = e.target;
+                // e.target = tmp;
+                map_ind_sec[e.source] = e.target;
+            }
         }); 
         // console.log(sublist);
+         s.graph.edges().forEach(function(e){
+         	if(e.neo4j_type=='INDUSTRY' && s.graph.nodes(e.source).label!=iname){
+         		s.graph.nodes(e.target).hidden = true;
+         		var tmp = e.target;
+         		// var n = s.graph.nodes(e.source);
+         		e.target = map_ind_sec[tmp];
+         		// s.graph.dropNode(tmp);
+
+         	}
+         });
         s.refresh();
         var dagreListener = sigma.layouts.dagre.configure(s, {
             directed: true, // take edge direction into account
@@ -1022,13 +1058,13 @@ var sb = new sigma({
     sigma.neo4j.cypher(
             { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
             // 'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'")  and (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2',
-            'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2',
+            'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry)-[r4:SECTOR]-(s:Sector) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2,r4,s',
             st,
             customiseGraph
     );
     sigma.neo4j.cypher(
             { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-            'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'")  and (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2',
+            'match (s:Sector)-[r4:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'")  and (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2,s,r4',
             // 'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2',
             sb,
             customiseGraph3
