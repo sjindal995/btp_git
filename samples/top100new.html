@@ -566,7 +566,10 @@ var s = new sigma({
             for (var j = 0; j < ppl.length; j++) {
                 for (var k = j+1; k < ppl.length; k++) {
                     // c1 = s.graph.nodes()
-                    if(ppl[i]!=ppl[j]){
+
+                    // if(ppl[i]!=ppl[j]){
+                    
+                    if(ppl[k]!=ppl[j]){
 
                         if((comCom[ppl[j]][ppl[k]] === undefined)){
                             s.graph.addEdge({
