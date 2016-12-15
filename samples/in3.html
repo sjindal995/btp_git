@@ -194,7 +194,7 @@
     </div>
     <div id="bottom">
     </div>
-    <div id="control-panel" >
+    <div id="control-panel" style="z-index:1">
         <h4 class="underline">INFORMATION PANEL</h4>
         <h4 id="f1-label"></h4><p id="field1"></p>
         <h4 id="f2-label"></h4><p id="field2"></p>
@@ -210,16 +210,42 @@
     <button id="chng">Add Management</button>
     <button id="chng2">Remove Management</button>
     <button id="hide">Hide Panel</button><br>
-    <div id="top_table_div" style="visibility:hidden;position: absolute; top: 40px; width:100%">
-        <table id="top_table" style="width:100%">
-        <tr id="top_row" style="width:100%">
-        </tr>
+    <div id="top_table_div" style="position: absolute; top: 40px; width:100%">
+        <table id="top_table" style="width:100%" cellspacing="0">
+	        <tr id="top_row" style="width:100%">
+	        	<td bgcolor="#D98880" align="center">Foodstuffs</td>
+	        	<td bgcolor="#9B59B6" align="center">Mineral Products</td>
+	        	<td bgcolor="#154360" align="center">Chemical &amp; Allied Industries</td>
+	        	<td bgcolor="#0B5345" align="center">Plastics &amp; Rubbers</td>
+	        	<td bgcolor="#7E5109" align="center">Textiles</td>
+	        	<td bgcolor="#6E2C00" align="center">Healthcare</td>
+	        	<td bgcolor="#B2BABB" align="center">Electronics</td>
+	        	<td bgcolor="#F4D03F" align="center">Stone &amp; Glass</td>
+	        	<td bgcolor="#E67E22" align="center">Metals</td>
+	        	<td bgcolor="#145A32" align="center">Machinery</td>
+	        	<td bgcolor="#3498DB" align="center">Transportation</td>
+	        	<td bgcolor="#4A235A" align="center">Miscellaneous</td>
+	        	<td bgcolor="#E74C3C" align="center">Finance</td>
+	        </tr>
         </table>
     </div>
-    <div id="bot_table_div" style="visibility:hidden; position: absolute; bottom: 5px; width:100%">
-        <table id="bot_table" style="width:100%">
-        <tr id="bot_row" style="width:100%">
-        </tr>
+    <div id="bot_table_div" style="position: absolute; bottom: 5px; width:100%">
+        <table id="bot_table" style="width:100%" cellspacing="0">
+	        <tr id="bot_row" style="width:100%">
+	        	<td bgcolor="#D98880" align="center">Foodstuffs</td>
+	        	<td bgcolor="#9B59B6" align="center">Mineral Products</td>
+	        	<td bgcolor="#154360" align="center">Chemical &amp; Allied Industries</td>
+	        	<td bgcolor="#0B5345" align="center">Plastics &amp; Rubbers</td>
+	        	<td bgcolor="#7E5109" align="center">Textiles</td>
+	        	<td bgcolor="#6E2C00" align="center">Healthcare</td>
+	        	<td bgcolor="#B2BABB" align="center">Electronics</td>
+	        	<td bgcolor="#F4D03F" align="center">Stone &amp; Glass</td>
+	        	<td bgcolor="#E67E22" align="center">Metals</td>
+	        	<td bgcolor="#145A32" align="center">Machinery</td>
+	        	<td bgcolor="#3498DB" align="center">Transportation</td>
+	        	<td bgcolor="#4A235A" align="center">Miscellaneous</td>
+	        	<td bgcolor="#E74C3C" align="center">Finance</td>
+	        </tr>
         </table>
     </div>
     
@@ -227,6 +253,25 @@
 </div>
 
 <script type="application/javascript">
+
+var color_map = {
+	"Foodstuffs": "#D98880",
+	"Mineral Products": "#9B59B6",
+	"Chemical & Allied Industries": "#154360",
+	"Plastics & Rubbers": "#0B5345",
+	"Textiles": "#7E5109",
+	"Healthcare": "#6E2C00",
+	"Electronics": "#B2BABB",
+	"Stone & Glass": "#F4D03F",
+	"Metals": "#E67E22",
+	"Machinery": "#145A32",
+	"Transportation": "#3498DB",
+	"Miscellaneous": "#4A235A",
+	"Finance": "#E74C3C"
+};
+
+
+
 var top_boxes_drawn=false;
 var bot_boxes_drawn=false;
 var c = window.location.search
@@ -417,7 +462,11 @@ var sb = new sigma({
                 if(n.neo4j_data['name'] != iname){
                     industries.push(n);
                 }
-            }   
+            }
+            if (n.neo4j_labels[0] == 'Sector') {
+            	n.size = 5*s.graph.degree(n.id)+5;
+            	n.color = color_map[n.neo4j_data['name']];
+            }
         });
         s.refresh();
         s.graph.edges().forEach(function(e){
@@ -498,19 +547,19 @@ var sb = new sigma({
             alert("This graph has no nodes.\nPlease go back to home")
 
         }
-        if(!bot_boxes_drawn){
-            var tr = document.getElementById('bot_row');
-            for(var i=0;i<sectors.length;i++){
-                var td = document.createElement('td');
-                td.innerHTML = sectors[i];
-                td.style.fontSize="10px";
-                td.style.border="solid black 2px";
-                td.style.width=(100/sectors.length).toString()+"%";
-                // td.style.backgroundColor="red";
-                tr.appendChild(td);
-            }
-            bot_boxes_drawn=true;
-        }
+        // if(!bot_boxes_drawn){
+        //     var tr = document.getElementById('bot_row');
+        //     for(var i=0;i<sectors.length;i++){
+        //         var td = document.createElement('td');
+        //         td.innerHTML = sectors[i];
+        //         td.style.fontSize="10px";
+        //         td.style.border="solid black 2px";
+        //         td.style.width=(100/sectors.length).toString()+"%";
+        //         // td.style.backgroundColor="red";
+        //         tr.appendChild(td);
+        //     }
+        //     bot_boxes_drawn=true;
+        // }
     }   
     function customiseGraph2(s) {
         nid=0
@@ -965,7 +1014,11 @@ var sb = new sigma({
                 if(n.neo4j_data['name'] != iname){
                     industries.push(n);
                 }
-            }   
+            }
+            if (n.neo4j_labels[0] == 'Sector') {
+            	n.size = 5*s.graph.degree(n.id)+5;
+            	n.color = color_map[n.neo4j_data['name']];
+            }
         });
         s.refresh();
         var map_ind_sec = {};
@@ -1045,19 +1098,19 @@ var sb = new sigma({
         if(s.graph.nodes().length==0){
             alert("This graph has no nodes.\nPlease go back to home");
         }
-        if(!top_boxes_drawn){
-            var tr = document.getElementById('top_row');
-            for(var i=0;i<sectors.length;i++){
-                var td = document.createElement('td');
-                td.innerHTML = sectors[i];
-                td.style.fontSize="10px";
-                td.style.border="solid black 2px";
-                td.style.width=(100/sectors.length).toString()+"%";
-                // td.style.backgroundColor="red";
-                tr.appendChild(td);
-            }
-            top_boxes_drawn=true;
-        }
+        // if(!top_boxes_drawn){
+        //     var tr = document.getElementById('top_row');
+        //     for(var i=0;i<sectors.length;i++){
+        //         var td = document.createElement('td');
+        //         td.innerHTML = sectors[i];
+        //         td.style.fontSize="10px";
+        //         td.style.border="solid black 2px";
+        //         td.style.width=(100/sectors.length).toString()+"%";
+        //         // td.style.backgroundColor="red";
+        //         tr.appendChild(td);
+        //     }
+        //     top_boxes_drawn=true;
+        // }
     }   
 
     sigma.neo4j.cypher(
