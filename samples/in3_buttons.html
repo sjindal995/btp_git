@@ -441,6 +441,18 @@ var sb = new sigma({
                 _.$('field4').textContent=event.data.edge.neo4j_data['year'];
                 _.$('field5').textContent=event.data.edge.neo4j_data['designation'];
             }
+            else if(event.data.edge.neo4j_type=="INVESTED_IN"){
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Investor:";
+                _.$('f3-label').textContent = "Investee:";
+                _.$('f4-label').textContent = "Shares Count:";
+                _.$('f5-label').textContent = "Investment Cost(Rs in Cr):";
+                _.$('field1').textContent="Investor - Investee";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field4').textContent=event.data.edge.neo4j_data['equity_shares_count'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['investments_cost'];
+            }
         });
     }
     function customiseGraph(s) {
@@ -479,7 +491,7 @@ var sb = new sigma({
         s.refresh();
         s.graph.edges().forEach(function(e){
             e.label = e.neo4j_type;
-            e.type = 'arrow';
+            e.type = 'line';
             e.neo4j_data['reverse']=false;
             e.hover_color = '#000'
             if(e.neo4j_type=='INDUSTRY'){
@@ -596,7 +608,7 @@ var sb = new sigma({
         var map_ind_sec = {};
         s.graph.edges().forEach(function(e){
             e.label = e.neo4j_type;
-            e.type = 'arrow';
+            e.type = 'line';
             e.neo4j_data['reverse']=false;
             e.hover_color = '#000'
             if(e.neo4j_type=='INDUSTRY'){
@@ -687,11 +699,11 @@ var sb = new sigma({
         //     top_boxes_drawn=true;
         // }
     }
-    var pplComps = {};
-    var comCom = {};
-    var comInd = {};
-    var eid=0;
     function customiseGraph_PeopleT(s) {
+	    var pplComps = {};
+	    var comCom = {};
+	    var comInd = {};
+	    var eid=0;
         var industries=[];
         var sectors=[];
         s.graph.nodes().forEach(function(n) {
@@ -731,7 +743,7 @@ var sb = new sigma({
         var map_ind_sec = {};
         s.graph.edges().forEach(function(e){
             e.label = e.neo4j_type;
-            e.type = 'arrow';
+            e.type = 'line';
             e.neo4j_data['reverse']=false;
             e.hover_color = '#000'
             if(e.neo4j_type=='INDUSTRY'){
@@ -875,11 +887,11 @@ var sb = new sigma({
         }
     }
 
-    var pplComps2 = {};
-    var comCom2 = {};
-    var comInd2 = {};
-    var eid2=0;
     function customiseGraph_PeopleB(s) {
+	    var pplComps2 = {};
+	    var comCom2 = {};
+	    var comInd2 = {};
+	    var eid2=0;
         var industries=[];
         var sectors=[];
         s.graph.nodes().forEach(function(n) {
@@ -919,7 +931,7 @@ var sb = new sigma({
         var map_ind_sec = {};
         s.graph.edges().forEach(function(e){
             e.label = e.neo4j_type;
-            e.type = 'arrow';
+            e.type = 'line';
             e.neo4j_data['reverse']=false;
             e.hover_color = '#000'
             if(e.neo4j_type=='INDUSTRY'){
