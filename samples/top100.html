@@ -500,6 +500,22 @@ var s = new sigma({
                 n.color = '#0000BB';
             }   
         });
+        
+        s.graph.edges().forEach(function(e){
+            console.log(e);
+            var src = s.graph.nodes(e.source);
+            var trgt = s.graph.nodes(e.target);
+            if(src.neo4j_type == "Company"){
+                if(salesvalmap[src.neo4j_data['sales']].label != src.label){
+                    e.source = salesvalmap[src.neo4j_data['sales']];
+                }
+            }
+            if(trgt.neo4j_type == "Company"){
+                if(salesvalmap[trgt.neo4j_data['sales']].label != trgt.label){
+                    e.target = salesvalmap[trgt.neo4j_data['sales']];
+                }
+            }
+        });
 
         s.graph.nodes().forEach(function(n){
             if(n.neo4j_labels[0]=="Company"){
@@ -507,7 +523,7 @@ var s = new sigma({
                     s.graph.dropNode(n.id);
                 }
             }
-        })
+        });
 
         // Refresh sigma instance
         s.refresh();
@@ -541,7 +557,7 @@ var s = new sigma({
             }
             if(e.neo4j_type=='INVESTED_IN'){
                 e.color = "#00aaee";
-                console.log(e.source + ", " + e.target);
+                // console.log(e.source + ", " + e.target);
             }
             if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
                 e.color = "#FF5733";                
@@ -566,7 +582,7 @@ var s = new sigma({
             }
         })
 
-        console.log(comCom);
+        // console.log(comCom);
 
         for(var i in pplComps){
             ppl = pplComps[i];
@@ -596,7 +612,7 @@ var s = new sigma({
 
                         else{
                             ee = comCom[ppl[j]][ppl[k]];
-                            console.log(ee);
+                            // console.log(ee);
                             e = s.graph.edges(ee);
                             e.num++  
                             e.size = e.num; 
