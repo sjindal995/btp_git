@@ -1,0 +1,826 @@
+<!-- START SIGMA IMPORTS -->
+
+<script src="../linkurious/src/sigma.core.js"></script>
+<script src="../linkurious/src/conrad.js"></script>
+<script src="../linkurious/src/utils/sigma.utils.js"></script>
+<script src="../linkurious/src/utils/sigma.polyfills.js"></script>
+<script src="../linkurious/src/sigma.settings.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.dispatcher.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.configurable.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.graph.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.camera.js"></script>
+<script src="../linkurious/src/classes/sigma.classes.quad.js"></script>
+<script src="../linkurious/src/captors/sigma.captors.mouse.js"></script>
+<script src="../linkurious/src/captors/sigma.captors.touch.js"></script>
+<script src="../linkurious/src/renderers/sigma.renderers.canvas.js"></script>
+<script src="../linkurious/src/renderers/sigma.renderers.webgl.js"></script>
+<script src="../linkurious/src/renderers/sigma.renderers.svg.js"></script>
+<script src="../linkurious/src/renderers/sigma.renderers.def.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.nodes.def.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.nodes.fast.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.edges.def.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.edges.fast.js"></script>
+<script src="../linkurious/src/renderers/webgl/sigma.webgl.edges.arrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.labels.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.hovers.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.nodes.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edges.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edges.curve.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="../linkurious/src/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.utils.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.nodes.def.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.edges.def.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.edges.curve.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.edges.curvedArrow.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.labels.def.js"></script>
+<script src="../linkurious/src/renderers/svg/sigma.svg.hovers.def.js"></script>
+<script src="../linkurious/src/middlewares/sigma.middlewares.rescale.js"></script>
+<script src="../linkurious/src/middlewares/sigma.middlewares.copy.js"></script>
+<script src="../linkurious/src/misc/sigma.misc.animation.js"></script>
+<script src="../linkurious/src/misc/sigma.misc.bindEvents.js"></script>
+<script src="../linkurious/src/misc/sigma.misc.bindDOMEvents.js"></script>
+<script src="../linkurious/src/misc/sigma.misc.drawHovers.js"></script>
+<!-- END SIGMA IMPORTS -->
+
+<script src="../linkurious/plugins/sigma.parsers.json/sigma.parsers.json.js"></script>
+<script src="../linkurious/plugins/sigma.exporters.json/sigma.exporters.json.js"></script>
+
+<script src="../linkurious/plugins/sigma.parsers.cypher/sigma.parsers.cypher.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.animate/sigma.plugins.animate.js"></script>
+
+<script src="../linkurious/plugins/sigma.layouts.forceLink/worker.js"></script>
+<script src="../linkurious/plugins/sigma.layouts.forceLink/supervisor.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.dragNodes/sigma.plugins.dragNodes.js"></script>
+
+<script src="../linkurious/plugins/sigma.helpers.graph/sigma.helpers.graph.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.activeState/sigma.plugins.activeState.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.select/sigma.plugins.select.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.keyboard/sigma.plugins.keyboard.js"></script>
+<!-- <script src="../linkurious/plugins/sigma.layouts.noverlap/sigma.layouts.noverlap.js"></script>
+ -->
+<!-- <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script> -->
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.cross.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.diamond.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.equilateral.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.square.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.star.js"></script>
+
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.arrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dashed.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dotted.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.parallel.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.tapered.js"></script>
+
+<!-- <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script> -->
+
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dashed.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dotted.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.parallel.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.tapered.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dashed.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dotted.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.parallel.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.tapered.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.legend/sigma.plugins.legend.js"></script>
+<script src="../linkurious/plugins/sigma.plugins.design/sigma.plugins.design.js"></script>
+
+<script src="../linkurious/plugins/sigma.renderers.edgeLabels/settings.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curvedArrow.js"></script>
+
+<script src="../linkurious/plugins/sigma.renderers.linkurious/settings.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.labels.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edges.autoCurve.js"></script>
+<script src="../linkurious/plugins/sigma.plugins.animate/sigma.plugins.animate.js"></script>
+<script src="../linkurious/plugins/sigma.layouts.dagre/sigma.layout.dagre.js"></script>
+<script src="lib/dagre.js"></script>
+<script src="../linkurious/plugins/sigma.layouts.fruchtermanReingold/sigma.layout.fruchtermanReingold.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.animate/sigma.plugins.animate.js"></script>
+<script src="../linkurious/plugins/sigma.layouts.noverlap/sigma.layouts.noverlap.js"></script>
+
+<script src="../linkurious/plugins/sigma.plugins.filter/sigma.plugins.filter.js"></script>
+
+
+<div id="container">
+    <style>
+        #graph-container {
+            top: 40;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+        }
+        #control-panel {
+            top: 10px;
+            bottom: 10px;
+            right: 10px;
+            position: absolute;
+            width: 230px;
+            background-color: rgb(249, 247, 237);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        #control-panel > div {
+            margin: 10px;
+            overflow-x: auto;
+        }
+        .line {
+            clear: both;
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 12px 0 0 0;
+            border-bottom: 1px solid #aac789;
+            background: transparent;
+        }
+        h2, h3, h4 {
+            padding: 0;
+            font-variant: small-caps;
+            font-family: 'Tahoma';
+        }   
+        .green {
+            color: #437356;
+        }
+        h4.underline {
+            color: #437356;
+            background: #f4f0e4;
+            margin: 0;
+            border-radius: 2px;
+            padding: 8px 12px;
+            font-weight: 700;
+        }
+        .hidden {
+            display: none;
+            visibility: hidden;
+        }
+    </style>
+    <div id="graph-container">    </div>
+    <div id="control-panel" style="z-index:1">
+        <h4 class="underline">INFORMATION PANEL</h4>
+        <h4 id="f1-label"></h4><p id="field1"></p>
+        <h4 id="f2-label"></h4><p id="field2"></p>
+        <h4 id="f3-label"></h4><p id="field3"></p>
+        <h4 id="f4-label"></h4><p id="field4"></p>
+        <h4 id="f5-label"></h4><p id="field5"></p>
+        <div>
+        </div>
+    </div>
+    <a href = "/samples/"><button type = "home" id="btn1">Home</button></a>
+    <a href = "/samples/industry_graph.html"><button type = "home" id="btn1">Industry Graph</button></a>
+    <button id="btn">Download JSON</button>
+    <!-- <button id="chng">Add Management</button> -->
+    <!-- <button id="chng2">Remove Management</button> -->
+    <button id="hide">Hide Panel</button>
+    <!-- <div class="tile"> -->
+	<input type="radio" name="radio_btn" id="sub" value="Subsidiary" checked="checked"/>Subsidiary
+	<input type="radio" name="radio_btn" id="sub_i" value="Subsidiary+Investment"/>Subsidiary+Investment
+	<input type="radio" name="radio_btn" id="sub_p" value="Subsidiary+People"/>Subsidiary+People
+	<input type="radio" name="radio_btn" id="sub_i_p" value="Subsidiary+Investment+People"/>Subsidiary+Investment+People
+	<input  type="submit" id="submit_btn" name="submit" value="Submit" onclick="submitForm()">
+	<!-- </div> -->
+    <br>
+    <div id="top_table_div" style="position: absolute; top: 40px; width:100%">
+        <table id="top_table" style="width:99%" cellspacing="0">
+	        <tr id="top_row">
+	        	<td bgcolor="#D98880" align="center" id="top Foodstuffs">Foodstuffs</td>
+	        	<td bgcolor="#9B59B6" align="center" id="top Mineral Products">Mineral Products</td>
+	        	<td bgcolor="#154360" align="center" id="top Chemical & Allied Industries">Chemical &amp; Allied Industries</td>
+	        	<td bgcolor="#0B5345" align="center" id="top Plastics">Plastics &amp; Rubbers</td>
+	        	<td bgcolor="#7E5109" align="center" id="top Textiles">Textiles</td>
+	        	<td bgcolor="#6E2C00" align="center" id="top Healthcare">Healthcare</td>
+	        	<td bgcolor="#B2BABB" align="center" id="top Electronics">Electronics</td>
+	        	<td bgcolor="#F4D03F" align="center" id="top Stone & Glass">Stone &amp; Glass</td>
+	        	<td bgcolor="#E67E22" align="center" id="top Metals">Metals</td>
+	        	<td bgcolor="#145A32" align="center" id="top Machinery">Machinery</td>
+	        	<td bgcolor="#3498DB" align="center" id="top Transportation">Transportation</td>
+	        	<td bgcolor="#4A235A" align="center" id="top Miscellaneous">Miscellaneous</td>
+	        	<td bgcolor="#E74C3C" align="center" id="top Finance">Finance</td>
+	        </tr>
+        </table>
+    </div>
+    <div id="bot_table_div" style="position: absolute; bottom: 5px; width:100%">
+        <table id="bot_table" style="width:99%" cellspacing="0">
+	        <tr id="bot_row" >
+	        	<td bgcolor="#D98880" align="center" id="bot Foodstuffs">Foodstuffs</td>
+                <td bgcolor="#9B59B6" align="center" id="bot Mineral Products">Mineral Products</td>
+                <td bgcolor="#154360" align="center" id="bot Chemical & Allied Industries">Chemical &amp; Allied Industries</td>
+                <td bgcolor="#0B5345" align="center" id="bot Plastics">Plastics &amp; Rubbers</td>
+                <td bgcolor="#7E5109" align="center" id="bot Textiles">Textiles</td>
+                <td bgcolor="#6E2C00" align="center" id="bot Healthcare">Healthcare</td>
+                <td bgcolor="#B2BABB" align="center" id="bot Electronics">Electronics</td>
+                <td bgcolor="#F4D03F" align="center" id="bot Stone & Glass">Stone &amp; Glass</td>
+                <td bgcolor="#E67E22" align="center" id="bot Metals">Metals</td>
+                <td bgcolor="#145A32" align="center" id="bot Machinery">Machinery</td>
+                <td bgcolor="#3498DB" align="center" id="bot Transportation">Transportation</td>
+                <td bgcolor="#4A235A" align="center" id="bot Miscellaneous">Miscellaneous</td>
+                <td bgcolor="#E74C3C" align="center" id="bot Finance">Finance</td>
+	        </tr>
+        </table>
+    </div>
+    
+    
+</div>
+
+<script type="application/javascript">
+
+var color_map = {
+	"Foodstuffs": "#D98880",
+	"Mineral Products": "#9B59B6",
+	"Chemical & Allied Industries": "#154360",
+	"Plastics & Rubbers": "#0B5345",
+	"Textiles": "#7E5109",
+	"Healthcare": "#6E2C00",
+	"Electronics": "#B2BABB",
+	"Stone & Glass": "#F4D03F",
+	"Metals": "#E67E22",
+	"Machinery": "#145A32",
+	"Transportation": "#3498DB",
+	"Miscellaneous": "#4A235A",
+	"Finance": "#E74C3C"
+};
+
+var sectors = ["Foodstuffs","Mineral Products", "Chemical & Allied Industries", "Plastics & Rubbers", "Textiles", "Healthcare", "Electronics", "Stone & Glass", "Metals", "Machinery", "Transportation", "Miscellaneous", "Finance"];
+
+var c = window.location.search
+var iname = c.substr(c.search('=')+1,c.length).split("\%20").join(" ")
+
+var s = new sigma({
+    renderer: {
+        container: document.getElementById('graph-container'),
+        type: 'canvas'
+    },
+    settings: {
+        dragNodeStickiness: 0.01,
+        defaultNodeBorderColor: '#000',
+        defaultNodeHoverBorderColor: '#000',
+        minEdgeSize: 0.5,
+        maxEdgeSize: 1.5,
+        minNodeSize: 5,
+        maxNodeSize: 15,
+        animationsTime: 5000,
+        // scalingMode: 'outside',
+        // sideMargin: 1,
+        labelThreshold: 18,
+        edgeColor: 'default',
+        defaultEdgeColor: '#000000',
+        edgeLabelSizePowRatio: 1,
+        edgeLabelThreshold: 2,
+        enableEdgeHovering: true,
+        edgeHoverColor: "edge",
+        edgeHoverSizeRatio: 1,
+        edgeHoverExtremities: true,
+        imageThreshold: 0,
+    }
+});
+
+
+    var _ = {
+      $: function (id) {
+        return document.getElementById(id);
+      },
+    };
+    _.$('hide').onclick=function(){
+        if(_.$('hide').textContent=="Hide Panel"){
+            _.$('control-panel').style.visibility='hidden';
+            _.$('hide').textContent="Show Panel";
+        }
+        else{
+            _.$('control-panel').style.visibility='visible';
+            _.$('hide').textContent="Hide Panel";
+
+        }
+    }
+    function clearPanel(){
+        _.$('f1-label').textContent = "";
+        _.$('f2-label').textContent = "";
+        _.$('f3-label').textContent = "";
+        _.$('f4-label').textContent = "";
+        _.$('f5-label').textContent = "";
+        _.$('field1').textContent="";
+        _.$('field2').textContent="";
+        _.$('field3').textContent="";
+        _.$('field4').textContent="";
+        _.$('field5').textContent="";    
+    }
+    function updatePanel(s){
+        s.bind('clickNode', function(event) {
+            clearPanel();
+            if(event.data.node.neo4j_labels[0]=="Company"){
+                _.$('f1-label').textContent = "Company Name:";
+                _.$('f2-label').textContent = "Incorporation Year:";
+                _.$('f3-label').textContent = "Sales(Rs in Cr):";
+                _.$('f4-label').textContent = "Sector:";
+                _.$('f5-label').textContent = "Business Group:";
+                _.$('field1').textContent=event.data.node.label;
+                _.$('field2').textContent=event.data.node.neo4j_data['incorporation_year'];
+                _.$('field3').textContent=event.data.node.neo4j_data['sales'];
+                _.$('field4').textContent=event.data.node.neo4j_data['sector'];
+                _.$('field5').textContent=event.data.node.neo4j_data['bussiness_group'];
+            }
+            else if(event.data.node.neo4j_labels[0]=="Industry"){
+                _.$('f1-label').textContent = "Industry Name:";
+                _.$('field1').textContent=event.data.node.label;
+            }
+            else if(event.data.node.neo4j_labels[0]=="People"){
+                _.$('f1-label').textContent = "Name:";
+                _.$('field1').textContent=event.data.node.label;
+            }
+        });
+        s.bind('clickEdge', function(event) {
+            clearPanel();
+            if(event.data.edge.neo4j_type=="INDUSTRY"){
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Company:";
+                _.$('f3-label').textContent = "Industry:";
+                _.$('field1').textContent="Company-Industry";
+                if (event.data.edge.neo4j_data['reverse']==false){
+                    _.$('field2').textContent=s.graph.nodes(event.data.edge.source).label;
+                    _.$('field3').textContent=s.graph.nodes(event.data.edge.target).label;
+                }
+                else{
+                    _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                    _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                }
+            }
+            else if(event.data.edge.neo4j_type=="IS_SUBSIDIARY_OF"){
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Owner:";
+                _.$('f3-label').textContent = "Subsidiary:";
+                _.$('f4-label').textContent = "% Holding:";
+                _.$('f5-label').textContent = "Shares Count:";
+                _.$('field1').textContent="Subsidiary";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field4').textContent=event.data.edge.neo4j_data['percent_holding'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['shares_count'];
+            }
+            else if(event.data.edge.neo4j_type=="MANAGES"){
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Company:";
+                _.$('f3-label').textContent = "Person:";
+                _.$('f4-label').textContent = "Year:";
+                _.$('f5-label').textContent = "Designation:";
+                _.$('field1').textContent="Management";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.source).label;
+                if(event.data.edge.neo4j_data['reverse']==true){
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.target).label;
+                }
+                _.$('field4').textContent=event.data.edge.neo4j_data['year'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['designation'];
+            }
+            else if(event.data.edge.neo4j_type=="INVESTED_IN"){
+                _.$('f1-label').textContent = "Relationship:";
+                _.$('f2-label').textContent = "Investor:";
+                _.$('f3-label').textContent = "Investee:";
+                _.$('f4-label').textContent = "Shares Count:";
+                _.$('f5-label').textContent = "Investment Cost(Rs in Cr):";
+                _.$('field1').textContent="Investor - Investee";
+                _.$('field2').textContent=s.graph.nodes(event.data.edge.source).label;
+                _.$('field3').textContent=s.graph.nodes(event.data.edge.target).label;
+                _.$('field4').textContent=event.data.edge.neo4j_data['equity_shares_count'];
+                _.$('field5').textContent=event.data.edge.neo4j_data['investments_cost'];
+            }
+        });
+    }
+    
+    function customiseGraph(s) {
+        var top_arr = [];
+        var bot_arr = [];
+        var com2Ind = {};
+        var ind2Sec = {};
+        var sec_present = [];
+        s.graph.nodes().forEach(function(n) {
+            n.label = n.neo4j_data['name'];
+            n.type = 'square';
+            n.size = s.graph.degree(n.id)+5;
+            if (n.neo4j_labels[0] == 'Company') {
+                n.color = '#BB0000';
+                n.image = {url:'img/cmpny.png',
+                            scale:0.8};
+            }   
+            if (n.neo4j_labels[0] == 'People') {
+                n.image = { url:'img/ppl.png',
+                            scale:0.8};
+                n.color = '#00BB00';
+            }
+            if (n.neo4j_labels[0] == 'Industry') {
+                n.image = { url:'img/ind.png',
+                            scale: 0.8};
+                n.color = '#0000BB';
+                if(n.neo4j_data['name'] == iname){
+                	n.x=0.5;
+                	n.y=0.5;
+                }
+            }
+            if (n.neo4j_labels[0] == 'Sector') {
+                n.size = 5*s.graph.degree(n.id)+5;
+                n.color = color_map[n.neo4j_data['name']];
+                // sec2Id[n.neo4j_data['name']] = n.id;
+            }
+        });
+        s.refresh();
+        s.graph.edges().forEach(function(e){
+            e.label = e.neo4j_type;
+            e.type = 'line';
+            e.hover_color = '#000';
+            if(e.neo4j_type=='INDUSTRY'){
+                e.type = 'line';
+                e.color = "#123456";
+                com2Ind[e.source] = e.target;
+                // console.log(s.graph.nodes(e.source).label);
+            }
+            if(e.neo4j_type=='INVESTED_IN'){
+                e.color = "#678901";
+            }
+            
+            if(e.neo4j_type=='MANAGES'){
+                e.color = "#890123";                
+            }
+            if(e.neo4j_type=='SECTOR'){
+                e.type = 'line';
+                ind2Sec[e.source] = e.target;
+            }
+        });
+        // console.log(com2Ind);
+        s.graph.edges().forEach(function(e){
+            if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
+    			// console.log('adsadasdasdasdasd : ' + s.graph.nodes(e.target).label);
+                if(s.graph.nodes(com2Ind[e.target]).label == iname){
+                	var a = [e.target, e.source, com2Ind[e.source], ind2Sec[com2Ind[e.source]]];
+                	bot_arr.push(a);
+                }
+                else if(s.graph.nodes(com2Ind[e.source]).label == iname){
+                	var a = [e.source, e.target, com2Ind[e.target], ind2Sec[com2Ind[e.target]]];
+                	top_arr.push(a);
+                }
+    			// console.log('lklkjlkjlkjlkjll');
+            }
+        });
+        var sorted_top_arr = [];
+        var sorted_bot_arr = [];
+        for (var sec in sectors){
+    		// console.log(sec);
+        	for (var a in top_arr){
+        		if(s.graph.nodes(top_arr[a][3]).label == sectors[sec]){
+        			sorted_top_arr.push(top_arr[a]);
+        		}
+        	}
+        	for (var a in bot_arr){
+        		if(s.graph.nodes(bot_arr[a][3]).label == sectors[sec]){
+        			sorted_bot_arr.push(bot_arr[a]);
+        		}
+        	}
+        }
+        
+
+        var query_bot_comps = [];
+        var bot_comps = [];
+        var bot_inds = [];
+        var bot_sec2Id = {};
+        for (var i =0; i<sorted_bot_arr.length;i++){
+        	var n0 = sorted_bot_arr[i][0];
+        	var n1 = sorted_bot_arr[i][1];
+        	var n2 = sorted_bot_arr[i][2];
+        	if(query_bot_comps.indexOf(n0) == -1) query_bot_comps.push(n0);
+        	if(bot_comps.indexOf(n1) == -1) bot_comps.push(n1);
+        	if(bot_inds.indexOf(n2) == -1) bot_inds.push(n2);
+        	if(!(s.graph.nodes(sorted_bot_arr[i][3]).label in bot_sec2Id)) bot_sec2Id[s.graph.nodes(sorted_bot_arr[i][3]).label] = sorted_bot_arr[i][3];
+        }
+
+        var nid = 0;
+        for( var sec in sectors){
+        	if(!(sectors[sec] in bot_sec2Id)){
+        		s.graph.addNode({
+                    id: 'bot'+(nid),
+                    label: sectors[sec],
+                    color: color_map[sectors[sec]],
+                   	type: 'square',
+                   	neo4j_labels: ["Sector"],
+                   	neo4j_data: {'name':sectors[sec]}
+                });
+                bot_sec2Id[sectors[sec]] = "bot"+nid;
+                nid++;
+        	}
+        }
+
+        for(var i=0;i<query_bot_comps.length;i++){
+        	var n = s.graph.nodes(query_bot_comps[i]);
+        	n.x = (i+1)/parseFloat(query_bot_comps.length+1);
+        	n.y = 0.6;
+        }
+        for(var i=0;i<bot_comps.length;i++){
+        	var n = s.graph.nodes(bot_comps[i]);
+        	n.x = (i+1)/parseFloat(bot_comps.length+1);
+        	n.y = 0.7;
+        }
+        for(var i=0;i<bot_inds.length;i++){
+        	var n = s.graph.nodes(bot_inds[i]);
+        	n.x = (i+1)/parseFloat(bot_inds.length+1);
+        	n.y = 0.8;
+        }
+        for(var i=0;i<sectors.length;i++){
+        	var n = s.graph.nodes(bot_sec2Id[sectors[i]]);
+        	n.x = (i+1)/parseFloat(sectors.length+1);
+        	n.y = 0.9;
+        }
+
+        var query_top_comps = [];
+        var top_comps = [];
+        var top_inds = [];
+        var top_sec2Id = {};
+
+        for (var i =0; i<sorted_top_arr.length;i++){
+        	var n0 = sorted_top_arr[i][0];
+        	var n1 = sorted_top_arr[i][1];
+        	var n2 = sorted_top_arr[i][2];
+        	if(query_top_comps.indexOf(n0) == -1) query_top_comps.push(n0);
+        	if(top_comps.indexOf(n1) == -1) top_comps.push(n1);
+        	if(top_inds.indexOf(n2) == -1) top_inds.push(n2);
+        	if(!(s.graph.nodes(sorted_top_arr[i][3]).label in top_sec2Id)) top_sec2Id[s.graph.nodes(sorted_top_arr[i][3]).label] = sorted_top_arr[i][3];
+        }
+
+        var nid = 0;
+        for( var sec in sectors){
+        	if(!(sectors[sec] in top_sec2Id)){
+        		s.graph.addNode({
+                    id: 'top'+(nid),
+                    label: sectors[sec],
+                    color: color_map[sectors[sec]],
+                   	type: 'square',
+                   	neo4j_labels: ["Sector"],
+                   	neo4j_data: {'name':sectors[sec]}
+                });
+                top_sec2Id[sectors[sec]] = "top"+nid;
+                nid++;
+        	}
+        }
+        var updated_query_top_comps = [];
+        for(var i=0;i<query_top_comps.length;i++){
+        	var bot_index = query_bot_comps.indexOf(query_top_comps[i]);
+        	var n = s.graph.nodes(query_top_comps[i]);
+        	if(bot_index == -1){
+	        	n.x = (i+1)/parseFloat(query_top_comps.length+1);
+	        	n.y = 0.4;
+	        	updated_query_top_comps.push(top_comps[i]);
+	        }
+	        else{
+	        	s.graph.addNode({
+                    id: 'top'+(nid),
+                    label: n.label,
+                    color: n.color,
+                   	type: n.type,
+                   	image: n.image,
+                   	neo4j_data: n.neo4j_data,
+                   	neo4j_labels: n.neo4j_labels,
+					x: (i+1)/parseFloat(query_top_comps.length+1),
+	        		y: 0.4
+                });
+                updated_query_top_comps.push("top" + nid);
+                nid++;
+	        }
+        }
+
+        var updated_top_comps = [];
+        for(var i=0;i<top_comps.length;i++){
+        	var bot_index = bot_comps.indexOf(top_comps[i]);
+        	var n = s.graph.nodes(top_comps[i]);
+        	if(bot_index == -1){
+	        	n.x = (i+1)/parseFloat(top_comps.length+1);
+	        	n.y = 0.3;
+	        	updated_top_comps.push(top_comps[i])
+	        }
+	        else{
+	        	s.graph.addNode({
+                    id: 'top'+(nid),
+                    label: n.label,
+                    color: n.color,
+                   	type: n.type,
+                   	image: n.image,
+                   	neo4j_data: n.neo4j_data,
+                   	neo4j_labels: n.neo4j_labels,
+                   	x: (i+1)/parseFloat(top_comps.length+1),
+	        		y: 0.3
+                });
+                updated_top_comps.push("top" + nid);
+                nid++;
+	        }
+        }
+
+        var updated_top_inds = [];
+        for(var i=0;i<top_inds.length;i++){
+        	var bot_index = bot_inds.indexOf(top_inds[i]);
+        	var n = s.graph.nodes(top_inds[i]);
+        	if(bot_index == -1){
+	        	n.x = (i+1)/parseFloat(top_inds.length+1);
+	        	n.y = 0.2;
+	        	updated_top_inds.push(top_inds[i]);
+	        }
+	        else{
+	        	s.graph.addNode({
+                    id: 'top'+(nid),
+                    label: n.label,
+                    color: n.color,
+                   	type: n.type,
+                   	image: n.image,
+                   	neo4j_data: n.neo4j_data,
+                   	neo4j_labels: n.neo4j_labels,
+                   	x: (i+1)/parseFloat(top_inds.length+1),
+	        		y: 0.2
+                });
+                updated_top_inds.push("top" + nid);
+                nid++;
+	        }
+        }
+
+        for(var i=0;i<sectors.length;i++){
+        	var n = s.graph.nodes(top_sec2Id[sectors[i]]);
+        	if(top_sec2Id[sectors[i]] == bot_sec2Id[sectors[i]]){
+        		s.graph.addNode({
+                    id: 'top'+(nid),
+                    label: n.label,
+                    color: n.color,
+                   	type: n.type,
+                   	image: n.image,
+                   	neo4j_labels: n.neo4j_labels,
+                   	neo4j_data: n.neo4j_data,
+                   	x: (i+1)/parseFloat(sectors.length+1),
+                   	y: 0.1
+                });
+                top_sec2Id[sectors[i]] = "top"+nid;
+                nid++;
+        	}
+        	else{
+	        	n.x = (i+1)/parseFloat(sectors.length+1);
+	        	n.y = 0.1;
+	        }
+        }
+        var eid=0;
+        deg_diff = {};
+        s.graph.edges().forEach(function(e){
+        	if(e.neo4j_type == "INDUSTRY"){
+        		if((query_top_comps.indexOf(e.source) >= 0) && (query_bot_comps.indexOf(e.source) >= 0)){
+        			var x = updated_query_top_comps[query_top_comps.indexOf(e.source)];
+        			s.graph.addEdge({
+                        id: "top" + eid,
+                        source: x,
+                        target: e.target
+                    })
+                    eid++;
+                    if(x in deg_diff) deg_diff[x]++;
+                    else deg_diff[x]=1;
+                    if(e.target in deg_diff) deg_diff[e.target]++;
+                    else deg_diff[e.target]=1;
+        		}
+        		if((top_comps.indexOf(e.source) >= 0) && (bot_comps.indexOf(e.source) >= 0)){
+        			var x = updated_top_comps[top_comps.indexOf(e.source)];
+        			var y = updated_top_inds[top_inds.indexOf(e.target)];
+        			s.graph.addEdge({
+                        id: "top" + eid,
+                        source: x,
+                        target: y
+                    })
+                    eid++;
+                    if(x in deg_diff) deg_diff[x]++;
+                    else deg_diff[x]=1;
+                    if( y in deg_diff) deg_diff[y]++;
+                    else deg_diff[y]=1;
+        		}
+        		if((top_inds.indexOf(e.target) >= 0) && (bot_inds.indexOf(e.target) >= 0) && (top_comps.indexOf(e.source) >= 0)){
+        			if(e.target in deg_diff) deg_diff[e.target]--;
+        			else deg_diff[e.target] = -1;
+        			e.target = updated_top_inds[top_inds.indexOf(e.target)];
+        			if(e.target in deg_diff) deg_diff[e.target]++;
+        			else deg_diff[e.target] = 1;
+        		}
+        	}
+        	if(e.neo4j_type == "IS_SUBSIDIARY_OF"){
+        		if((query_bot_comps.indexOf(e.source) >= 0) && (query_top_comps.indexOf(e.source) >= 0) && (top_comps.indexOf(e.target) >= 0)){
+        			if(e.source in deg_diff) deg_diff[e.source]--;
+        			else deg_diff[e.source] = -1;
+        			e.source = updated_query_top_comps[query_top_comps.indexOf(e.source)];
+        			if(e.source in deg_diff) deg_diff[e.source]++;
+        			else deg_diff[e.source] = 1;
+        		}
+        		if((bot_comps.indexOf(e.target) >= 0) && (top_comps.indexOf(e.target) >= 0) && (query_top_comps.indexOf(e.source) >= 0)){
+        			if(e.target in deg_diff) deg_diff[e.target]--;
+        			else deg_diff[e.target] = -1;
+        			e.target = updated_top_comps[top_comps.indexOf(e.target)];
+        			if(e.target in deg_diff) deg_diff[e.target]++;
+        			else deg_diff[e.target] = 1;
+        		}
+        	}
+        	if(e.neo4j_type == "SECTOR"){
+        		var old_n = s.graph.nodes(e.target);
+        		console.log(s.graph.nodes(e.source).label + " , " + s.graph.nodes(e.target).label);
+        		if(top_inds.indexOf(e.source) >= 0 && (bot_inds.indexOf(e.source) == -1)){
+        			if(e.target in deg_diff) deg_diff[e.target]--;
+        			else deg_diff[e.target] = -1;
+        			e.target = top_sec2Id[old_n.label];
+        			if(e.target in deg_diff) deg_diff[e.target]++;
+        			else deg_diff[e.target] = 1;
+        		}
+        		if((top_inds.indexOf(e.source) >= 0) && (bot_inds.indexOf(e.source) >= 0)){
+        			var x = updated_top_inds[top_inds.indexOf(e.source)];
+        			var y = top_sec2Id[s.graph.nodes(e.target).label];
+        			s.graph.addEdge({
+                        id: "top" + eid,
+                        source: x,
+                        target: y
+                    })
+                    eid++;
+                    if(x in deg_diff) deg_diff[x]++;
+                    else deg_diff[x]=1;
+                    if(y in deg_diff) deg_diff[y]++;
+                    else deg_diff[y]=1;
+
+        		}
+        	}
+        });
+        s.graph.nodes().forEach(function(n){
+        	if(n.neo4j_labels[0] == "Sector"){
+        		if(n.id in deg_diff){
+        			n.size = 5*(s.graph.degree(n.id) + deg_diff[n.id]) + 5;
+        		}
+        		else{
+        			n.size = 5*(s.graph.degree(n.id)) + 5;	
+        		}
+        	}
+        	else{
+        		if(n.id in deg_diff){
+        			n.size = (s.graph.degree(n.id) + deg_diff[n.id]) + 5;
+        		}
+        		else{
+        			n.size = (s.graph.degree(n.id)) + 5;	
+        		}	
+        	}
+        });
+
+        s.refresh();
+
+        var activeState = sigma.plugins.activeState(s);
+        var dragListener = sigma.plugins.dragNodes(s, s.renderers[0], activeState);
+        var select = sigma.plugins.select(s, activeState);
+        var keyboard = sigma.plugins.keyboard(s, s.renderers[0]);
+        select.bindKeyboard(keyboard);
+        updatePanel(s)
+        console.log("finished customise graph");
+        if(s.graph.nodes().length==0){
+            alert("This graph has no nodes.\nPlease go back to home")
+
+        }
+    }
+
+    // sigma.neo4j.cypher(
+    //         { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+    //         'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry)-[r4:SECTOR]-(s:Sector) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2,r4,s',
+    //         // 'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry)-[r4:SECTOR]-(s:Sector) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2,r4,s union match (s:Sector)-[r4:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'")  and (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2,r4,s',
+    //         s,
+    //         customiseGraph
+    // );
+    sigma.neo4j.cypher(
+            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry)<-[r4:INDUSTRY]-(c3:Company)<-[r5:IS_SUBSIDIARY_OF]-(c4:Company)-[r6:INDUSTRY]->(i3:Industry)-[r7:SECTOR]-(s2:Sector) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") and not (i3.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2,r4,c3,r5,c4,r6,i3,r7,s2',
+            s,
+            customiseGraph
+    );
+    
+
+
+    document.getElementById("btn").onclick=function(){
+        console.log("sadadasdasdas")
+        s.toJSON({
+          download: true,
+            pretty: true,
+          filename: 'company_industry.json'
+        });
+    }
+</script>
