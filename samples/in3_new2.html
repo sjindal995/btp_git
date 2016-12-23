@@ -413,6 +413,7 @@ var s = new sigma({
     }
     
     function customiseGraph(s) {
+    	console.log("started customiseGraph!!");
         var top_arr = [];
         var bot_arr = [];
         var com2Ind = {};
@@ -470,11 +471,9 @@ var s = new sigma({
                 ind2Sec[e.source] = e.target;
             }
         });
-        // console.log(com2Ind);
         s.graph.edges().forEach(function(e){
             if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
-    			// console.log('adsadasdasdasdasd : ' + s.graph.nodes(e.target).label);
-                if(s.graph.nodes(com2Ind[e.target]).label == iname){
+    			if(s.graph.nodes(com2Ind[e.target]).label == iname){
                 	var a = [e.target, e.source, com2Ind[e.source], ind2Sec[com2Ind[e.source]]];
                 	bot_arr.push(a);
                 }
@@ -482,7 +481,16 @@ var s = new sigma({
                 	var a = [e.source, e.target, com2Ind[e.target], ind2Sec[com2Ind[e.target]]];
                 	top_arr.push(a);
                 }
-    			// console.log('lklkjlkjlkjlkjll');
+            }
+            if(e.neo4j_type=="INVESTED_IN"){
+            	if(s.graph.nodes(com2Ind[e.source]).label == iname){
+                	var a = [e.source, e.target, com2Ind[e.target], ind2Sec[com2Ind[e.target]]];
+                	bot_arr.push(a);
+                }
+                else if(s.graph.nodes(com2Ind[e.target]).label == iname){
+                	var a = [e.target, e.source, com2Ind[e.source], ind2Sec[com2Ind[e.source]]];
+                	top_arr.push(a);
+                }	
             }
         });
         var sorted_top_arr = [];
@@ -739,6 +747,22 @@ var s = new sigma({
         			else deg_diff[e.target] = 1;
         		}
         	}
+        	if(e.neo4j_type == "INVESTED_IN"){
+        		if((query_bot_comps.indexOf(e.target) >= 0) && (query_top_comps.indexOf(e.target) >= 0) && (top_comps.indexOf(e.source) >= 0)){
+        			if(e.target in deg_diff) deg_diff[e.target]--;
+        			else deg_diff[e.target] = -1;
+        			e.target = updated_query_top_comps[query_top_comps.indexOf(e.target)];
+        			if(e.target in deg_diff) deg_diff[e.target]++;
+        			else deg_diff[e.target] = 1;
+        		}
+        		if((bot_comps.indexOf(e.source) >= 0) && (top_comps.indexOf(e.source) >= 0) && (query_top_comps.indexOf(e.target) >= 0)){
+        			if(e.source in deg_diff) deg_diff[e.source]--;
+        			else deg_diff[e.source] = -1;
+        			e.source = updated_top_comps[top_comps.indexOf(e.source)];
+        			if(e.source in deg_diff) deg_diff[e.source]++;
+        			else deg_diff[e.source] = 1;
+        		}
+        	}
         	if(e.neo4j_type == "SECTOR"){
         		var old_n = s.graph.nodes(e.target);
         		// console.log(s.graph.nodes(e.source).label + " , " + s.graph.nodes(e.target).label);
@@ -771,8 +795,8 @@ var s = new sigma({
         	if(e.neo4j_type == "INDUSTRY"){
         		var ind = s.graph.nodes(e.target);
         		if(ind.neo4j_data['name'] != iname){
-        			console.log(e.target);
-        			console.log(s.graph.nodes(ind2Sec[e.target]).label + " , " + updated_top_inds.indexOf(e.target));
+        			// console.log(e.target);
+        			// console.log(s.graph.nodes(ind2Sec[e.target]).label + " , " + updated_top_inds.indexOf(e.target));
         			if(updated_top_inds.indexOf(e.target) >= 0){
         				e.target = top_sec2Id[s.graph.nodes(ind2Sec[e.target]).label];
         			}
@@ -823,18 +847,55 @@ var s = new sigma({
 
     // sigma.neo4j.cypher(
     //         { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-    //         'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry)-[r4:SECTOR]-(s:Sector) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2,r4,s',
-    //         // 'match (i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry)-[r4:SECTOR]-(s:Sector) where (i1.name = "'+iname+'")  and not (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2,r4,s union match (s:Sector)-[r4:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'")  and (i2.name="'+iname+'") return i1,r,c1,r2,c2,r3,i2,r4,s',
+    //         'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry)<-[r4:INDUSTRY]-(c3:Company)<-[r5:IS_SUBSIDIARY_OF]-(c4:Company)-[r6:INDUSTRY]->(i3:Industry)-[r7:SECTOR]-(s2:Sector) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") and not (i3.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2,r4,c3,r5,c4,r6,i3,r7,s2',
     //         s,
     //         customiseGraph
     // );
     sigma.neo4j.cypher(
             { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry)<-[r4:INDUSTRY]-(c3:Company)<-[r5:IS_SUBSIDIARY_OF]-(c4:Company)-[r6:INDUSTRY]->(i3:Industry)-[r7:SECTOR]-(s2:Sector) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") and not (i3.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2,r4,c3,r5,c4,r6,i3,r7,s2',
+            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:IS_SUBSIDIARY_OF]-(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2',
             s,
             customiseGraph
     );
     
+    function submitForm(){
+    	if(document.getElementById('sub').checked){
+    		console.log("clicked sub");
+    		sigma.neo4j.cypher(
+	            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+	            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:IS_SUBSIDIARY_OF]-(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2',
+	            s,
+	            customiseGraph
+		    );		
+    	}
+    	else if(document.getElementById('sub_i').checked){
+    		console.log("clicked sub_i");
+    		sigma.neo4j.cypher(
+	            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+	            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:IS_SUBSIDIARY_OF]-(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)-[r2:INVESTED_IN]->(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)-[r2:INVESTED_IN]->(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2',
+	            s,
+	            customiseGraph
+		    );		
+    	}
+    	else if(document.getElementById('sub_p').checked){
+    		console.log("clicked sub_p");
+    		sigma.neo4j.cypher(
+	            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+	            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry)<-[r4:INDUSTRY]-(c3:Company)<-[r5:IS_SUBSIDIARY_OF]-(c4:Company)-[r6:INDUSTRY]->(i3:Industry)-[r7:SECTOR]-(s2:Sector) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") and not (i3.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2,r4,c3,r5,c4,r6,i3,r7,s2',
+	            s,
+	            customiseGraph
+		    );		
+    	}
+    	else if(document.getElementById('sub_i_p').checked){
+    		console.log("clicked sub_i_p");
+    		sigma.neo4j.cypher(
+	            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
+	            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry)<-[r4:INDUSTRY]-(c3:Company)<-[r5:IS_SUBSIDIARY_OF]-(c4:Company)-[r6:INDUSTRY]->(i3:Industry)-[r7:SECTOR]-(s2:Sector) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") and not (i3.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2,r4,c3,r5,c4,r6,i3,r7,s2',
+	            s,
+	            customiseGraph
+		    );		
+    	}
+    }
 
 
     document.getElementById("btn").onclick=function(){
