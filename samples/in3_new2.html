@@ -419,6 +419,8 @@ var s = new sigma({
         var com2Ind = {};
         var ind2Sec = {};
         var sec_present = [];
+        var ppl_query_comps = {};
+        var ppl_bot_comps = {};
         s.graph.nodes().forEach(function(n) {
             n.label = n.neo4j_data['name'];
             n.type = 'square';
@@ -490,9 +492,38 @@ var s = new sigma({
                 else if(s.graph.nodes(com2Ind[e.target]).label == iname){
                 	var a = [e.target, e.source, com2Ind[e.source], ind2Sec[com2Ind[e.source]]];
                 	top_arr.push(a);
-                }	
+                }
+            }
+            if(e.neo4j_type == "MANAGES"){
+            	if(s.graph.nodes(com2Ind[e.target]).label == iname){
+            		if(e.source in ppl_query_comps) ppl_query_comps[e.source].push(e.target);
+            		else ppl_query_comps[e.source] = [e.target];
+            	}
+            	else{
+            		if(e.source in ppl_bot_comps) ppl_bot_comps[e.source].push(e.target);
+            		else ppl_bot_comps[e.source] = [e.target];
+            	}
             }
         });
+		
+		var eid = 0;
+		for(var person in ppl_query_comps){
+			for(var q in ppl_query_comps[person]){
+				for(var b in ppl_bot_comps[person]){
+					s.graph.addEdge({
+                        id: "people" + eid,
+                        source: ppl_query_comps[person][q],
+                        target: ppl_bot_comps[person][b],
+                        neo4j_type: 'MANAGE_INTERSECTION'
+                    })
+                    eid++;
+                    var a = [ppl_query_comps[person][q], ppl_bot_comps[person][b], com2Ind[ppl_bot_comps[person][b]], ind2Sec[com2Ind[ppl_bot_comps[person][b]]]];
+                    // console.log(a);
+                    if(bot_arr.indexOf(a) == -1) bot_arr.push(a);
+				}
+			}
+		}
+
         var sorted_top_arr = [];
         var sorted_bot_arr = [];
         for (var sec in sectors){
@@ -576,7 +607,6 @@ var s = new sigma({
         	if(!(s.graph.nodes(sorted_top_arr[i][3]).label in top_sec2Id)) top_sec2Id[s.graph.nodes(sorted_top_arr[i][3]).label] = sorted_top_arr[i][3];
         }
 
-        var nid = 0;
         for( var sec in sectors){
         	if(!(sectors[sec] in top_sec2Id)){
         		s.graph.addNode({
@@ -692,7 +722,6 @@ var s = new sigma({
 	        	n.y = 0.05;
 	        }
         }
-        var eid=0;
         deg_diff = {};
         s.graph.edges().forEach(function(e){
         	if(e.neo4j_type == "INDUSTRY"){
@@ -821,6 +850,9 @@ var s = new sigma({
         		// s.graph.dropNode(n.id);
         		n.hidden = true;
         	}
+        	else if(n.neo4j_labels[0] == "People"){
+        		n.hidden = true;
+        	}
         	else{
         		if(n.id in deg_diff){
         			n.size = (s.graph.degree(n.id) + deg_diff[n.id]) + 5;
@@ -881,7 +913,7 @@ var s = new sigma({
     		console.log("clicked sub_p");
     		sigma.neo4j.cypher(
 	            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-	            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry)<-[r4:INDUSTRY]-(c3:Company)<-[r5:IS_SUBSIDIARY_OF]-(c4:Company)-[r6:INDUSTRY]->(i3:Industry)-[r7:SECTOR]-(s2:Sector) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") and not (i3.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2,r4,c3,r5,c4,r6,i3,r7,s2',
+	            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2,"na" as p,"na" as r4 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:IS_SUBSIDIARY_OF]-(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2,"na" as p,"na" as r4 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:MANAGES]-(p:People)-[r4:MANAGES]->(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2,p,r4',
 	            s,
 	            customiseGraph
 		    );		
@@ -890,7 +922,7 @@ var s = new sigma({
     		console.log("clicked sub_i_p");
     		sigma.neo4j.cypher(
 	            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-	            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry)<-[r4:INDUSTRY]-(c3:Company)<-[r5:IS_SUBSIDIARY_OF]-(c4:Company)-[r6:INDUSTRY]->(i3:Industry)-[r7:SECTOR]-(s2:Sector) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") and not (i3.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2,r4,c3,r5,c4,r6,i3,r7,s2',
+	            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:IS_SUBSIDIARY_OF]-(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2',
 	            s,
 	            customiseGraph
 		    );		
