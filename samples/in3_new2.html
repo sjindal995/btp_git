@@ -730,7 +730,9 @@ var s = new sigma({
         			s.graph.addEdge({
                         id: "top" + eid,
                         source: x,
-                        target: e.target
+                        target: e.target,
+                        neo4j_type: e.neo4j_type,
+                        neo4j_data: e.neo4j_data
                     })
                     eid++;
                     if(x in deg_diff) deg_diff[x]++;
@@ -744,7 +746,9 @@ var s = new sigma({
         			s.graph.addEdge({
                         id: "top" + eid,
                         source: x,
-                        target: y
+                        target: y,
+                        neo4j_type: e.neo4j_type,
+                        neo4j_data: e.neo4j_data
                     })
                     eid++;
                     if(x in deg_diff) deg_diff[x]++;
@@ -761,14 +765,14 @@ var s = new sigma({
         		}
         	}
         	if(e.neo4j_type == "IS_SUBSIDIARY_OF"){
-        		if((query_bot_comps.indexOf(e.source) >= 0) && (query_top_comps.indexOf(e.source) >= 0) && (top_comps.indexOf(e.target) >= 0)){
+        		if((query_bot_comps.indexOf(e.source) >= 0) && (query_top_comps.indexOf(e.source) >= 0) && ((top_comps.indexOf(e.target) >= 0) || (updated_top_comps.indexOf(e.target) >= 0))){
         			if(e.source in deg_diff) deg_diff[e.source]--;
         			else deg_diff[e.source] = -1;
         			e.source = updated_query_top_comps[query_top_comps.indexOf(e.source)];
         			if(e.source in deg_diff) deg_diff[e.source]++;
         			else deg_diff[e.source] = 1;
         		}
-        		if((bot_comps.indexOf(e.target) >= 0) && (top_comps.indexOf(e.target) >= 0) && (query_top_comps.indexOf(e.source) >= 0)){
+        		if((bot_comps.indexOf(e.target) >= 0) && (top_comps.indexOf(e.target) >= 0) && ((query_top_comps.indexOf(e.source) >= 0) || (updated_query_top_comps.indexOf(e.source) >= 0))){
         			if(e.target in deg_diff) deg_diff[e.target]--;
         			else deg_diff[e.target] = -1;
         			e.target = updated_top_comps[top_comps.indexOf(e.target)];
@@ -777,14 +781,14 @@ var s = new sigma({
         		}
         	}
         	if(e.neo4j_type == "INVESTED_IN"){
-        		if((query_bot_comps.indexOf(e.target) >= 0) && (query_top_comps.indexOf(e.target) >= 0) && (top_comps.indexOf(e.source) >= 0)){
+        		if((query_bot_comps.indexOf(e.target) >= 0) && (query_top_comps.indexOf(e.target) >= 0) && ((top_comps.indexOf(e.source) >= 0) || (updated_top_comps.indexOf(e.source) >= 0))){
         			if(e.target in deg_diff) deg_diff[e.target]--;
         			else deg_diff[e.target] = -1;
         			e.target = updated_query_top_comps[query_top_comps.indexOf(e.target)];
         			if(e.target in deg_diff) deg_diff[e.target]++;
         			else deg_diff[e.target] = 1;
         		}
-        		if((bot_comps.indexOf(e.source) >= 0) && (top_comps.indexOf(e.source) >= 0) && (query_top_comps.indexOf(e.target) >= 0)){
+        		if((bot_comps.indexOf(e.source) >= 0) && (top_comps.indexOf(e.source) >= 0) && ((query_top_comps.indexOf(e.target) >= 0) || (updated_query_top_comps.indexOf(e.target) >= 0))){
         			if(e.source in deg_diff) deg_diff[e.source]--;
         			else deg_diff[e.source] = -1;
         			e.source = updated_top_comps[top_comps.indexOf(e.source)];
@@ -808,7 +812,9 @@ var s = new sigma({
         			s.graph.addEdge({
                         id: "top" + eid,
                         source: x,
-                        target: y
+                        target: y,
+                        neo4j_type: e.neo4j_type,
+                        neo4j_data: e.neo4j_data
                     })
                     eid++;
                     if(x in deg_diff) deg_diff[x]++;
@@ -885,7 +891,7 @@ var s = new sigma({
     // );
     sigma.neo4j.cypher(
             { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:IS_SUBSIDIARY_OF]-(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2',
+            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") and not (c1.sales = "NA") and not(c2.sales = "NA") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:IS_SUBSIDIARY_OF]-(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") and not (c1.sales = "NA") and not(c2.sales = "NA") return s,r0,i1,r,c1,r2,c2,r3,i2',
             s,
             customiseGraph
     );
@@ -895,7 +901,7 @@ var s = new sigma({
     		console.log("clicked sub");
     		sigma.neo4j.cypher(
 	            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-	            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:IS_SUBSIDIARY_OF]-(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2',
+	            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") and not (c1.sales = "NA") and not(c2.sales = "NA") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:IS_SUBSIDIARY_OF]-(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") and not (c1.sales = "NA") and not(c2.sales = "NA") return s,r0,i1,r,c1,r2,c2,r3,i2',
 	            s,
 	            customiseGraph
 		    );		
@@ -904,7 +910,7 @@ var s = new sigma({
     		console.log("clicked sub_i");
     		sigma.neo4j.cypher(
 	            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-	            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:IS_SUBSIDIARY_OF]-(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)-[r2:INVESTED_IN]->(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)-[r2:INVESTED_IN]->(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2',
+	            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") and not (c1.sales = "NA") and not(c2.sales = "NA") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:IS_SUBSIDIARY_OF]-(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") and not (c1.sales = "NA") and not(c2.sales = "NA") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)-[r2:INVESTED_IN]->(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") and not (c1.sales = "NA") and not(c2.sales = "NA") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)-[r2:INVESTED_IN]->(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") and not (c1.sales = "NA") and not(c2.sales = "NA") return s,r0,i1,r,c1,r2,c2,r3,i2',
 	            s,
 	            customiseGraph
 		    );		
@@ -913,7 +919,7 @@ var s = new sigma({
     		console.log("clicked sub_p");
     		sigma.neo4j.cypher(
 	            { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-	            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2,"na" as p,"na" as r4 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:IS_SUBSIDIARY_OF]-(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2,"na" as p,"na" as r4 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:MANAGES]-(p:People)-[r4:MANAGES]->(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2,p,r4',
+	            'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") and not (c1.sales = "NA") and not(c2.sales = "NA") return s,r0,i1,r,c1,r2,c2,r3,i2,"na" as p,"na" as r4 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:IS_SUBSIDIARY_OF]-(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") and not (c1.sales = "NA") and not(c2.sales = "NA") return s,r0,i1,r,c1,r2,c2,r3,i2,"na" as p,"na" as r4 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:MANAGES]-(p:People)-[r4:MANAGES]->(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") and not (c1.sales = "NA") and not(c2.sales = "NA") return s,r0,i1,r,c1,r2,c2,r3,i2,p,r4',
 	            s,
 	            customiseGraph
 		    );		
