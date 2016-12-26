@@ -212,6 +212,31 @@ var c = window.location.search
 // var iname = "Miscellaneous - Medium / Small"
 var gname = c.substr(c.search('=')+1,c.length-c.search('=')-1).split("\%20").join(" ")
 
+var glists = {
+    "Anil Ambani"   : ["Tina Anil Ambani","Mukesh D Ambani","Dhirubhai H Ambani", "Anil D Ambani"],
+    "Mahindra"      : ["Keshub Mahindra","Harish Mahindra","Anand G Mahindra", "Pawan Goenka", "Rajeev Dubey", "S P Shukla", "Ulhas N Yargop","Anita Arjundas","Zhooben Bhiwandiwala","S Durgashankar"],
+    "Shapoorji Pallonji" : ["Pallonji S Mistry","Cyrus P Mistry"],
+    "Tata"          : ["Ratan N Tata", "Noel N Tata","Simone N Tata"],
+    "Goenka R P"    : ["H V Goenka", "Anant Vardhan Goenka", "Sanjiv Goenka", "Vimal Kejriwal","Sachin Nandgaonkar"],
+    "Birla AV"      : ["Kumar Mangalam Birla", "Rajashree Birla", "K C Birla", "Ajay Srinivasan","Satish Pai","D Bhattacharya", "HIMANSHU KAPANIA", "Pranab Barua","Santrupt Misra","Shailendra K Jain", "A K Agarwala","D D Rathi"],
+    "U B"           : ["Vijay Mallya","S R Gupte","A K Ravi Nedungadi", "A K R Nedungadi", "Anil Pisharody","V S Venkataraman"],
+    "GMR Group"     : ["G M Rao", "G B S Raju","Srinivas Bommidala","Kiran Kumar Grandhi", "B V Nageswara Rao", "B V N Rao"],
+    "L&T Group"     : ["K Venkatesh","Y M Deosthalee", "N Sivaraman", "T S Venkatesan", "R Chandrasekaran", "K Venkataramanan", "B Ramakrishnan", "Manoj Dave", "A M Naik", "A K Chhatwani"],
+    "Godrej"        : ["Nadir B Godrej", "Jamshyd N Godrej", "Adi B Godrej", "Pirojsha A Godrej", "Nisaba Godrej", "Sohrab P Godrej"],
+    "Murugappa Group"   : ["A Vellayan", "M M Murugappan","M V Subbiah", "M M Venkatachalam", "M A Alagappan", "M V Murugappan","Vellayan Subbiah", "Arunachalam Murugappa Arunachalam Murugappan"],
+    "Mukesh Ambani" : ["Mukesh D Ambani", "Dhirubhai H Ambani", "Isha Mukesh Ambani", "Ramniklal H Ambani", "Akash Mukesh Ambani", "Anil D Ambani"],
+    "Essar"         : ["Shashi Ruia", "Prashant Ruia", "S N Ruia", "Anshuman Ruia", "Anshuman S Ruia", "Ravi Ruia", "A S Ruia", "P S Ruia", "Ravikant N Ruia", "R R Ruia", "B S Ruia", "Rewant R Ruia"],
+    "Bajaj"         : ["Niraj Bajaj", "Rahul Bajaj", "Shekhar Bajaj", "Madhur Bajaj", "Shishir Bajaj", "Sanjiv Bajaj", "Kushagra Bajaj", "H G Bajaj", "Rajiv Bajaj", "K K Bajaj"],
+    "Adani"         : ["Rajesh S Adani", "Gautam S Adani", "Pranav V Adani", "Vasant S Adani"],
+    "Birla BK"      : ["Basant Kumar Birla", "Surendra Kumar Birla", "Kumar Mangalam Birla", "Priyamvada Birla", "Rajashree Birla", "Chandra Kant Birla"],
+    "Indiabulls Group"  : ["Sameer Gehlaut", "Gagan Banga", "Ashwini Omprakash Kumar", "Narendra Gehlaut","Pia Johnson","Aishwarya Katoch"],
+    "ICICI"     : ["Chanda Kochhar", "Chanda D Kochhar", "N S Kannan", "H N Sinor", "S Mukherji", "Marti G Subrahmanyam", "M K Sharma","Dileep C Choksi", "Rajiv Sabharwal", "Lalita D Gupte"] , 
+    "TVS"       : ["Venu Srinivasan", "T K Balaji", "K RAMESH", "Arvind Balaji","Suresh Krishna", "R Dinesh", "S Ram", "T Kannan"]
+
+}
+
+var glist = glists[gname];
+
 
 
 var s = new sigma({
@@ -478,7 +503,8 @@ var s = new sigma({
                 // if(s.graph.degree(n.id)<5){
                 //     s.graph.dropNode(n.id);
                 // }
-                if(s.graph.degree(n.id)<4){
+                // if(s.graph.degree(n.id)<4){
+                if(glist.indexOf(n.label)<0){
                     s.graph.dropNode(n.id);
                 }
                 // if(n.label=='Ratan N Tata') n.size = 20; 
