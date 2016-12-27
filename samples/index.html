@@ -206,6 +206,14 @@
 	<input type="radio" name="radio_btn" id="top100_graph" value="Top 100 Graph"/>Show Top 100 Companies (with Industries and People)
 	</div>
 	<br>
+	<div class="tile">
+	<input type="radio" name="radio_btn" id="top200_graph" value="Top 200 Graph"/>Show Top 200 Companies (with Industries and People)
+	</div>
+	<br>
+	<div class="tile">
+	<input type="radio" name="radio_btn" id="top500_graph" value="Top 500 Graph"/>Show Top 500 Companies (with Industries and People)
+	</div>
+	<br>
 	<br>
 	<div class = "buttons">
 	<input  type="submit" id="submit_btn" name="submit" value="Submit" onclick="submitForm()">
@@ -213,17 +221,6 @@
 </div>
 
 <script type="application/javascript">
-	// var cuisines;
-
-	// document.getElementById("list_1").hide();
-    // document.getElementById("ind2subs").change(function () {
-
-    //     if (document.getElementById(this).val() == "Industry to subsidiaries graph") {
-    //         document.getElementById("list_1").show();
-    //     } else {
-    //         document.getElementById("list_1").hide();
-    //     }
-    // });
 	var backgroundurl = "localhost/samples/"
 	var sel = document.getElementById('list_1');
 	var sel2 = document.getElementById('list_2');
@@ -233,13 +230,6 @@
 	var fragment = document.createDocumentFragment();
 	var families = ["Adani", "Ambani", "Birla","Godrej","Mahindra","Premji","Tata"];
 	var groups = ["Anil Ambani", "Mahindra",  "Shapoorji Pallonji","Tata","Goenka R P","Birla AV","GMR Group","L&T Group", "U B", "Godrej", "Murugappa Group", "Indiabulls Group", "Mukesh Ambani","ICICI", "TVS", "Essar","Bajaj","Adani Group","Birla BK"];
-
-	// cuisines.forEach(function(cuisine, index) {
-	//     var opt = document.createElement('option');
-	//     opt.innerHTML = cuisine;
-	//     opt.value = cuisine;
-	//     fragment.appendChild(opt);
-	// });
 
 	var s = new sigma();
 
@@ -295,7 +285,6 @@
     sigma.neo4j.cypher(
             { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
             'match (i1:Industry) return i1',
-            // 'match (n:Company)-[r]-(p) where n.bussiness_group contains "Tata" return n,r,p'
             s,
             customiseGraph
     );
@@ -306,6 +295,12 @@
     	}
     	else if(document.getElementById('top100_graph').checked){
 			window.location = "top100.html";
+    	}
+    	else if(document.getElementById('top200_graph').checked){
+			window.location = "top200.html";
+    	}
+    	else if(document.getElementById('top500_graph').checked){
+			window.location = "top500.html";
     	}
     	else if(document.getElementById('ind2subs').checked){
     		var e = document.getElementById('list_1');
