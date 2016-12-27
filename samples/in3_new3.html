@@ -413,7 +413,9 @@ var s = new sigma({
     }
     
     function customiseGraph(s) {
-    	console.log("started customiseGraph!!");
+        console.log("started customiseGraph!!");
+        console.log("No of Nodes: "+ s.graph.nodes().length);
+    	console.log("No of Edges: "+ s.graph.edges().length);
         var top_arr = [];
         var bot_arr = [];
         var right_arr = [];
