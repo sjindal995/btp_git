@@ -516,7 +516,7 @@ var s = new sigma({
                 }
             }
         });
-
+        //removing duplicates
         s.graph.nodes().forEach(function(n){
             if(n.neo4j_labels[0]=="Company"){
                 if(salesvalmap[n.neo4j_data['sales']].label != n.label){
@@ -575,6 +575,7 @@ var s = new sigma({
             }
         }); 
 
+        //drop people nodes
         s.graph.nodes().forEach(function(n){
             if(n.neo4j_labels[0]=="People"){
                 // n.hidden=true;
@@ -583,7 +584,7 @@ var s = new sigma({
         })
 
         // console.log(comCom);
-
+        //create people edges, from list of companies managed by each person
         for(var i in pplComps){
             ppl = pplComps[i];
             for (var j = 0; j < ppl.length; j++) {
@@ -668,6 +669,7 @@ var s = new sigma({
         s,
         customiseGraph
     );
+    //queries for different radio buttons
     function submitForm(){
         if(document.getElementById('sub').checked){
             console.log("----------------clicked sub------------------");

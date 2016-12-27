@@ -213,6 +213,8 @@
 
 <script type="application/javascript">
 
+
+//the list of top 500 companies
 topcomps = ["Indian Oil Corporati",
 "Indian Oil Corporation Ltd",
 "Reliance Industries Ltd",
@@ -1034,7 +1036,7 @@ var s = new sigma({
                     s.graph.dropNode(n.id);
                 }
                 else{
-                    
+
                     comInd[n.label]=0;
                     comCom[n.id]={name: n.label}  ;
                     n.size = parseFloat(n.neo4j_data['sales'])/40000 +5;
@@ -1086,7 +1088,7 @@ var s = new sigma({
                 }
             }
         });
-
+        //remove duplicates
         s.graph.nodes().forEach(function(n){
             if(n.neo4j_labels[0]=="Company"){
                 if(salesvalmap[n.neo4j_data['sales']].label != n.label){
@@ -1144,7 +1146,7 @@ var s = new sigma({
                 e.hidden=true;
             }
         }); 
-
+        //drop people nodes
         s.graph.nodes().forEach(function(n){
             if(n.neo4j_labels[0]=="People"){
                 // n.hidden=true;
@@ -1153,7 +1155,7 @@ var s = new sigma({
         })
 
         // console.log(comCom);
-
+        //create people edges, from list of companies managed by each person
         for(var i in pplComps){
             ppl = pplComps[i];
             for (var j = 0; j < ppl.length; j++) {
@@ -1238,6 +1240,7 @@ var s = new sigma({
         s,
         customiseGraph
     );
+    //queries for different radio buttons
     function submitForm(){
         if(document.getElementById('sub').checked){
             console.log("----------------clicked sub------------------");
