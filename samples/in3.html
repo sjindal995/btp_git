@@ -67,9 +67,6 @@
 <script src="../linkurious/plugins/sigma.plugins.select/sigma.plugins.select.js"></script>
 
 <script src="../linkurious/plugins/sigma.plugins.keyboard/sigma.plugins.keyboard.js"></script>
-<!-- <script src="../linkurious/plugins/sigma.layouts.noverlap/sigma.layouts.noverlap.js"></script>
- -->
-<!-- <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script> -->
 <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.def.js"></script>
 <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.cross.js"></script>
 <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.nodes.diamond.js"></script>
@@ -90,8 +87,6 @@
 <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.dotted.js"></script>
 <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.parallel.js"></script>
 <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.edgehovers.tapered.js"></script>
-
-<!-- <script src="../linkurious/plugins/sigma.renderers.linkurious/canvas/sigma.canvas.hovers.def.js"></script> -->
 
 <script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dashed.js"></script>
 <script src="../linkurious/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dotted.js"></script>
@@ -128,7 +123,7 @@
 
 <script src="../linkurious/plugins/sigma.plugins.filter/sigma.plugins.filter.js"></script>
 
-
+<!-- style HTML elements -->
 <div id="container">
     <style>
         #graph-container {
@@ -195,17 +190,13 @@
     <a href = "/samples/"><button type = "home" id="btn1">Home</button></a>
     <a href = "/samples/industry_graph.html"><button type = "home" id="btn1">Industry Graph</button></a>
     <button id="btn">Download JSON</button>
-    <!-- <button id="chng">Add Management</button> -->
-    <!-- <button id="chng2">Remove Management</button> -->
     <button id="hide">Hide Panel</button>
-    <!-- <div class="tile"> -->
-	<input type="radio" name="radio_btn" id="sub" value="Subsidiary" checked="checked"/>Subsidiary
+    <input type="radio" name="radio_btn" id="sub" value="Subsidiary" checked="checked"/>Subsidiary
 	<input type="radio" name="radio_btn" id="sub_i" value="Subsidiary+Investment"/>Subsidiary+Investment
 	<input type="radio" name="radio_btn" id="sub_p" value="Subsidiary+People"/>Subsidiary+People
 	<input type="radio" name="radio_btn" id="sub_i_p" value="Subsidiary+Investment+People"/>Subsidiary+Investment+People
 	<input  type="submit" id="submit_btn" name="submit" value="Submit" onclick="submitForm()">
-	<!-- </div> -->
-    <br>
+	<br>
     <div id="top_table_div" style="position: absolute; top: 40px; width:100%">
         <table id="top_table" style="width:99%" cellspacing="0">
 	        <tr id="top_row">
@@ -244,12 +235,12 @@
 	        </tr>
         </table>
     </div>
-    
-    
 </div>
+
 
 <script type="application/javascript">
 
+// map sectors to color codes
 var color_map = {
 	"Foodstuffs": "#D98880",
 	"Mineral Products": "#9B59B6",
@@ -266,11 +257,14 @@ var color_map = {
 	"Finance": "#E74C3C"
 };
 
+// sectors array
 var sectors = ["Foodstuffs","Mineral Products", "Chemical & Allied Industries", "Plastics & Rubbers", "Textiles", "Healthcare", "Electronics", "Stone & Glass", "Metals", "Machinery", "Transportation", "Miscellaneous", "Finance"];
 
+// extract query industry
 var c = window.location.search
 var iname = c.substr(c.search('=')+1,c.length).split("\%20").join(" ")
 
+// Initialize sigma
 var s = new sigma({
     renderer: {
         container: document.getElementById('graph-container'),
@@ -285,8 +279,6 @@ var s = new sigma({
         minNodeSize: 5,
         maxNodeSize: 15,
         animationsTime: 5000,
-        // scalingMode: 'outside',
-        // sideMargin: 1,
         labelThreshold: 18,
         edgeColor: 'default',
         defaultEdgeColor: '#000000',
@@ -306,6 +298,8 @@ var s = new sigma({
         return document.getElementById(id);
       },
     };
+
+    // hide or show side panel
     _.$('hide').onclick=function(){
         if(_.$('hide').textContent=="Hide Panel"){
             _.$('control-panel').style.visibility='hidden';
@@ -317,6 +311,8 @@ var s = new sigma({
 
         }
     }
+
+    // clear panel
     function clearPanel(){
         _.$('f1-label').textContent = "";
         _.$('f2-label').textContent = "";
@@ -329,6 +325,8 @@ var s = new sigma({
         _.$('field4').textContent="";
         _.$('field5').textContent="";    
     }
+
+    // update information on panel
     function updatePanel(s){
         s.bind('clickNode', function(event) {
             clearPanel();
@@ -412,6 +410,7 @@ var s = new sigma({
         });
     }
     
+    // customization callback function
     function customiseGraph(s) {
     	console.log("started customiseGraph!!");
         var top_arr = [];
@@ -422,10 +421,14 @@ var s = new sigma({
         var sec_present = [];
         var ppl_query_comps = {};
         var ppl_right_comps = {};
+
+        // iterate over each node
         s.graph.nodes().forEach(function(n) {
+        	// set node properties
             n.label = n.neo4j_data['name'];
             n.type = 'square';
             n.size = s.graph.degree(n.id)+5;
+
             if (n.neo4j_labels[0] == 'Company') {
                 n.color = '#BB0000';
                 n.image = {url:'img/cmpny.png',
@@ -448,19 +451,22 @@ var s = new sigma({
             if (n.neo4j_labels[0] == 'Sector') {
                 n.size = 5*s.graph.degree(n.id)+5;
                 n.color = color_map[n.neo4j_data['name']];
-                // sec2Id[n.neo4j_data['name']] = n.id;
             }
         });
         s.refresh();
+
+        // iterate over each edge
         s.graph.edges().forEach(function(e){
+        	// set properties of edge
             e.label = e.neo4j_type;
             e.type = 'line';
             e.hover_color = '#000';
+
             if(e.neo4j_type=='INDUSTRY'){
                 e.type = 'line';
                 e.color = "#123456";
+                // fill in map of company to industry
                 com2Ind[e.source] = e.target;
-                // console.log(s.graph.nodes(e.source).label);
             }
             if(e.neo4j_type=='INVESTED_IN'){
                 e.color = "#678901";
@@ -474,7 +480,10 @@ var s = new sigma({
                 ind2Sec[e.source] = e.target;
             }
         });
+
+        // iterate over each edge
         s.graph.edges().forEach(function(e){
+        	// create array containing 4 elements as following [query_company, outer level company (investment/subsidiary), industry for outer levvel company, corresponding sector]
             if(e.neo4j_type=='IS_SUBSIDIARY_OF'){
     			if(s.graph.nodes(com2Ind[e.target]).label == iname){
                 	var a = [e.target, e.source, com2Ind[e.source], ind2Sec[com2Ind[e.source]]];
@@ -496,6 +505,7 @@ var s = new sigma({
                 }
             }
             if(e.neo4j_type == "MANAGES"){
+            	// populate maps for people to companies that they manage
             	if(s.graph.nodes(com2Ind[e.target]).label == iname){
             		if(e.source in ppl_query_comps) ppl_query_comps[e.source].push(e.target);
             		else ppl_query_comps[e.source] = [e.target];
@@ -511,6 +521,7 @@ var s = new sigma({
 		for(var person in ppl_query_comps){
 			for(var q in ppl_query_comps[person]){
 				for(var b in ppl_right_comps[person]){
+					// create new edges for companies that have management intersection between them
 					s.graph.addEdge({
                         id: "people" + eid,
                         source: ppl_query_comps[person][q],
@@ -521,18 +532,18 @@ var s = new sigma({
                         type: 'line'
                     })
                     eid++;
+                    // populate array containing the right portion of the graph
                     var a = [ppl_query_comps[person][q], ppl_right_comps[person][b], com2Ind[ppl_right_comps[person][b]], ind2Sec[com2Ind[ppl_right_comps[person][b]]]];
-                    // console.log(a);
                     if(right_arr.indexOf(a) == -1) right_arr.push(a);
 				}
 			}
 		}
 
+		// sort top,bot and right arrays with respect to the order of the sectors in sectors array
         var sorted_top_arr = [];
         var sorted_bot_arr = [];
         var sorted_right_arr = [];
         for (var sec in sectors){
-    		// console.log(sec);
         	for (var a in top_arr){
         		if(s.graph.nodes(top_arr[a][3]).label == sectors[sec]){
         			sorted_top_arr.push(top_arr[a]);
@@ -550,7 +561,7 @@ var s = new sigma({
         	}
         }
         
-
+        // distribute bot array to separate arrays with distict elements
         var query_bot_comps = [];
         var bot_comps = [];
         var bot_inds = [];
@@ -565,6 +576,7 @@ var s = new sigma({
         	if(!(s.graph.nodes(sorted_bot_arr[i][3]).label in bot_sec2Id)) bot_sec2Id[s.graph.nodes(sorted_bot_arr[i][3]).label] = sorted_bot_arr[i][3];
         }
 
+        // create nodes for sectors which are not present already
         var nid = 0;
         for( var sec in sectors){
         	if(!(sectors[sec] in bot_sec2Id)){
@@ -580,7 +592,7 @@ var s = new sigma({
                 nid++;
         	}
         }
-
+        // position nodes in bot portion of graph
         for(var i=0;i<query_bot_comps.length;i++){
         	var n = s.graph.nodes(query_bot_comps[i]);
         	n.x = (i+1)*0.6/parseFloat(query_bot_comps.length+1);
@@ -602,6 +614,7 @@ var s = new sigma({
         	n.y = 0.95;
         }
 
+        // distribute top array to separate arrays with distict elements
         var query_top_comps = [];
         var top_comps = [];
         var top_inds = [];
@@ -617,6 +630,7 @@ var s = new sigma({
         	if(!(s.graph.nodes(sorted_top_arr[i][3]).label in top_sec2Id)) top_sec2Id[s.graph.nodes(sorted_top_arr[i][3]).label] = sorted_top_arr[i][3];
         }
 
+        // create sector nodes which are not already present
         for( var sec in sectors){
         	if(!(sectors[sec] in top_sec2Id)){
         		s.graph.addNode({
@@ -631,6 +645,7 @@ var s = new sigma({
                 nid++;
         	}
         }
+        // position top nodes and create if that node alrady present in bot portion of graph
         var updated_query_top_comps = [];
         for(var i=0;i<query_top_comps.length;i++){
         	var bot_index = query_bot_comps.indexOf(query_top_comps[i]);
@@ -733,6 +748,7 @@ var s = new sigma({
 	        }
         }
 
+        // distribute right array to separate arrays with distict elements
         var query_right_comps = [];
         var right_comps = [];
         var right_inds = [];
@@ -747,7 +763,8 @@ var s = new sigma({
         	if(right_inds.indexOf(n2) == -1) right_inds.push(n2);
         	if(!(s.graph.nodes(sorted_right_arr[i][3]).label in right_sec2Id)) right_sec2Id[s.graph.nodes(sorted_right_arr[i][3]).label] = sorted_right_arr[i][3];
         }
-        // console.log(query_right_comps);
+
+        // create sector nodes if not already present
         for( var sec in sectors){
         	if(!(sectors[sec] in right_sec2Id)){
         		s.graph.addNode({
@@ -762,6 +779,8 @@ var s = new sigma({
                 nid++;
         	}
         }
+
+        // create updated arrays containing unique elements and position nodes in right portion of graph
         var updated_query_right_comps = [];
         for(var i=0;i<query_right_comps.length;i++){
         	var bot_index = query_bot_comps.indexOf(query_right_comps[i]);
@@ -868,7 +887,7 @@ var s = new sigma({
         }
 
 
-
+        // create edges between copy of nodes created and populate deg_diff (degree difference) hashmap
         deg_diff = {};
         s.graph.edges().forEach(function(e){
         	if(e.neo4j_type == "INDUSTRY"){
@@ -938,7 +957,6 @@ var s = new sigma({
                     if(e.target in deg_diff) deg_diff[e.target]++;
                     else deg_diff[e.target]=1;
         		}
-        		// console.log("entry");
         		if(((right_comps.indexOf(e.source) >= 0) && (bot_comps.indexOf(e.source) >= 0)) || ((right_comps.indexOf(e.source) >= 0) && (top_comps.indexOf(e.source) >= 0))){
         			var x = updated_right_comps[right_comps.indexOf(e.source)];
         			var y = updated_right_inds[right_inds.indexOf(e.target)];
@@ -962,7 +980,6 @@ var s = new sigma({
                     if( y in deg_diff) deg_diff[y]++;
                     else deg_diff[y]=1;
         		}
-        		// console.log("exit");
         		if(((right_inds.indexOf(e.target) >= 0) && (bot_inds.indexOf(e.target) >= 0) && (updated_right_comps.indexOf(e.source) >= 0)) || ((right_inds.indexOf(e.target) >= 0) && (top_inds.indexOf(e.target) >= 0) && (updated_right_comps.indexOf(e.source) >= 0))){
         			if(e.target in deg_diff) deg_diff[e.target]--;
         			else deg_diff[e.target] = -1;
@@ -1080,12 +1097,11 @@ var s = new sigma({
         	}
         });
 		
+		// change target of industry edge to corresponding sectors
         s.graph.edges().forEach(function(e){
         	if(e.neo4j_type == "INDUSTRY"){
         		var ind = s.graph.nodes(e.target);
         		if(ind.neo4j_data['name'] != iname){
-        			// console.log(e.target);
-        			// console.log(s.graph.nodes(ind2Sec[e.target]).label + " , " + updated_top_inds.indexOf(e.target));
         			if(updated_top_inds.indexOf(e.target) >= 0){
         				e.target = top_sec2Id[s.graph.nodes(ind2Sec[e.target]).label];
         			}
@@ -1099,9 +1115,9 @@ var s = new sigma({
         	}
         });
 
+        // hide industry and people nodes and adjust size of new nodes
         s.graph.nodes().forEach(function(n){
-        	// n.label = n.neo4j_data['name'] + " , " + n.id;
-    		n.labelThreshold=2;
+        	n.labelThreshold=2;
         	if(n.neo4j_labels[0] == "Sector"){
         		if(n.id in deg_diff){
         			n.size = 3*(s.graph.degree(n.id) + deg_diff[n.id]) + 5;
@@ -1111,7 +1127,6 @@ var s = new sigma({
         		}
         	}
         	else if(n.neo4j_labels[0] == "Industry" && n.neo4j_data['name'] != iname){
-        		// s.graph.dropNode(n.id);
         		n.hidden = true;
         	}
         	else if(n.neo4j_labels[0] == "People"){
@@ -1127,6 +1142,7 @@ var s = new sigma({
         	}
         });
 
+        // hide sector nodes if no node in that portion of the graph
         if(query_top_comps.length == 0){
         	for(var sec in top_sec2Id){
         		s.graph.nodes(top_sec2Id[sec]).hidden = true;
@@ -1152,12 +1168,6 @@ var s = new sigma({
         }
     }
 
-    // sigma.neo4j.cypher(
-    //         { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
-    //         'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry)<-[r4:INDUSTRY]-(c3:Company)<-[r5:IS_SUBSIDIARY_OF]-(c4:Company)-[r6:INDUSTRY]->(i3:Industry)-[r7:SECTOR]-(s2:Sector) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") and not (i3.name = "'+iname+'") return s,r0,i1,r,c1,r2,c2,r3,i2,r4,c3,r5,c4,r6,i3,r7,s2',
-    //         s,
-    //         customiseGraph
-    // );
     sigma.neo4j.cypher(
             { url: 'http://localhost:7474', user: 'neo4j', password: 'btp' },
             'match (s:Sector)-[r0:SECTOR]-(i1:Industry)<-[r:INDUSTRY]-(c1:Company)<-[r2:IS_SUBSIDIARY_OF]-(c2:Company)-[r3:INDUSTRY]->(i2:Industry) where not (i1.name = "'+iname+'") and (i2.name = "'+iname+'") and not (c1.sales = "NA") and not(c2.sales = "NA") return s,r0,i1,r,c1,r2,c2,r3,i2 union match (i2:Industry)<-[r3:INDUSTRY]-(c2:Company)<-[r2:IS_SUBSIDIARY_OF]-(c1:Company)-[r:INDUSTRY]->(i1:Industry)-[r0:SECTOR]-(s:Sector) where (i2.name = "'+iname+'") and not (i1.name = "'+iname+'") and not (c1.sales = "NA") and not(c2.sales = "NA") return s,r0,i1,r,c1,r2,c2,r3,i2',
